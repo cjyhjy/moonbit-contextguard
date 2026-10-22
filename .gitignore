@@ -1,0 +1,10 @@
+_build/
+.toolchain/
+.moon/
+node_modules/
+__pycache__/
+*.pyc
+reports/captures/
+reports/logs/
+release/
+.DS_Store

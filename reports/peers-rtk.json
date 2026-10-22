@@ -1,0 +1,521 @@
+{
+  "schema_version": 1,
+  "captured_utc": "2026-10-22T15:34:38Z",
+  "command": "python3 research/replay_peers.py",
+  "fixture_manifest_sha256": "d7d85bd7e171e8a17bacc8f5fd69dc121a4fdb7732a611241695f79d8ce2c8ab",
+  "python_version": "3.9.6 (default, May 22 2026, 11:13:45) \n[Clang 21.0.0 (clang-2100.1.1.101)]",
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "interpretation": "Actual upstream offline stdout processing on synthetic-source real process outputs. No model-token, API-cost, task-success, or net-savings measurement. Original process metadata and stderr are external to peer stdin.",
+  "records": [
+    {
+      "available": true,
+      "peer": "RTK OSS 1.0.1 pipe auto-detection",
+      "revision": "4ef8730cf3a0dea11c8d64a9b90bc0616fe52100",
+      "binary_sha256": "897581cccf1d2b2d0886063133eadcf4377d71354c1ed4b8b3b7691f3e7633d2",
+      "platform": "Darwin arm64",
+      "mode": "pipe-auto",
+      "input_sha256": "49989ebc71f0f054b406b6405c9442375538ec5889748fa074f6e1fc87183e21",
+      "output_sha256": "49989ebc71f0f054b406b6405c9442375538ec5889748fa074f6e1fc87183e21",
+      "input_bytes_utf8": 346,
+      "output_bytes_utf8": 346,
+      "input_chars_python_codepoints": 338,
+      "output_chars_python_codepoints": 338,
+      "byte_identical": true,
+      "elapsed_ns_including_rtk_subprocess": 6578667,
+      "hook_stderr": "",
+      "pipe_exit_code": 0,
+      "scope": "offline stdin pipe only; pipe exit code is not original command status; no forced unsupported format filter",
+      "fixture_id": "node-tap-all-pass",
+      "output_file": "reports/peers/rtk/node-tap-all-pass/output.txt",
+      "required_evidence_results": [
+        {
+          "tag": "tap-version",
+          "source_line_start": 1,
+          "source_line_end": 1,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-plan",
+          "source_line_start": 14,
+          "source_line_end": 14,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-tests",
+          "source_line_start": 15,
+          "source_line_end": 15,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-suites",
+          "source_line_start": 16,
+          "source_line_end": 16,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-pass",
+          "source_line_start": 17,
+          "source_line_end": 17,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-fail",
+          "source_line_start": 18,
+          "source_line_end": 18,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-cancelled",
+          "source_line_start": 19,
+          "source_line_end": 19,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-skipped",
+          "source_line_start": 20,
+          "source_line_end": 20,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-todo",
+          "source_line_start": 21,
+          "source_line_end": 21,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-duration_ms",
+          "source_line_start": 22,
+          "source_line_end": 22,
+          "present_exact_contiguous": true
+        }
+      ],
+      "required_evidence_present": 10,
+      "required_evidence_total": 10,
+      "original_process_metadata_external_to_stdin": {
+        "exit_code": 0,
+        "scope": [
+          "fixtures/sources/all-pass.test.cjs"
+        ],
+        "truncated": false
+      }
+    },
+    {
+      "available": true,
+      "peer": "RTK OSS 1.0.1 pipe auto-detection",
+      "revision": "4ef8730cf3a0dea11c8d64a9b90bc0616fe52100",
+      "binary_sha256": "897581cccf1d2b2d0886063133eadcf4377d71354c1ed4b8b3b7691f3e7633d2",
+      "platform": "Darwin arm64",
+      "mode": "pipe-auto",
+      "input_sha256": "93a1e18710ac0e034c8a9cfb02e0a8f4ff8f11749e7fa5a61db5e756f34adf85",
+      "output_sha256": "93a1e18710ac0e034c8a9cfb02e0a8f4ff8f11749e7fa5a61db5e756f34adf85",
+      "input_bytes_utf8": 117,
+      "output_bytes_utf8": 117,
+      "input_chars_python_codepoints": 117,
+      "output_chars_python_codepoints": 117,
+      "byte_identical": true,
+      "elapsed_ns_including_rtk_subprocess": 6241500,
+      "hook_stderr": "",
+      "pipe_exit_code": 0,
+      "scope": "offline stdin pipe only; pipe exit code is not original command status; no forced unsupported format filter",
+      "fixture_id": "node-tap-zero-tests",
+      "output_file": "reports/peers/rtk/node-tap-zero-tests/output.txt",
+      "required_evidence_results": [
+        {
+          "tag": "tap-version",
+          "source_line_start": 1,
+          "source_line_end": 1,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-plan",
+          "source_line_start": 2,
+          "source_line_end": 2,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-tests",
+          "source_line_start": 3,
+          "source_line_end": 3,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-suites",
+          "source_line_start": 4,
+          "source_line_end": 4,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-pass",
+          "source_line_start": 5,
+          "source_line_end": 5,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-fail",
+          "source_line_start": 6,
+          "source_line_end": 6,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-cancelled",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-skipped",
+          "source_line_start": 8,
+          "source_line_end": 8,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-todo",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-duration_ms",
+          "source_line_start": 10,
+          "source_line_end": 10,
+          "present_exact_contiguous": true
+        }
+      ],
+      "required_evidence_present": 10,
+      "required_evidence_total": 10,
+      "original_process_metadata_external_to_stdin": {
+        "exit_code": 0,
+        "scope": [
+          "fixtures/sources/empty-tests"
+        ],
+        "truncated": false
+      }
+    },
+    {
+      "available": true,
+      "peer": "RTK OSS 1.0.1 pipe auto-detection",
+      "revision": "4ef8730cf3a0dea11c8d64a9b90bc0616fe52100",
+      "binary_sha256": "897581cccf1d2b2d0886063133eadcf4377d71354c1ed4b8b3b7691f3e7633d2",
+      "platform": "Darwin arm64",
+      "mode": "pipe-auto",
+      "input_sha256": "0bdbc87eb282f48c0c0255a4f37985ac9f99730d39a86512df502df04d39ecc0",
+      "output_sha256": "0bdbc87eb282f48c0c0255a4f37985ac9f99730d39a86512df502df04d39ecc0",
+      "input_bytes_utf8": 11007,
+      "output_bytes_utf8": 11007,
+      "input_chars_python_codepoints": 10335,
+      "output_chars_python_codepoints": 10335,
+      "byte_identical": true,
+      "elapsed_ns_including_rtk_subprocess": 7117667,
+      "hook_stderr": "",
+      "pipe_exit_code": 0,
+      "scope": "offline stdin pipe only; pipe exit code is not original command status; no forced unsupported format filter",
+      "fixture_id": "node-tap-middle-failure",
+      "output_file": "reports/peers/rtk/node-tap-middle-failure/output.txt",
+      "required_evidence_results": [
+        {
+          "tag": "tap-version",
+          "source_line_start": 1,
+          "source_line_end": 1,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-failure-block",
+          "source_line_start": 218,
+          "source_line_end": 256,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-failure-location",
+          "source_line_start": 223,
+          "source_line_end": 223,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-assertion-actual",
+          "source_line_start": 243,
+          "source_line_end": 243,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-assertion-expected",
+          "source_line_start": 239,
+          "source_line_end": 239,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-assertion-error",
+          "source_line_start": 225,
+          "source_line_end": 225,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-skip",
+          "source_line_start": 258,
+          "source_line_end": 258,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-todo",
+          "source_line_start": 264,
+          "source_line_end": 264,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-plan",
+          "source_line_start": 485,
+          "source_line_end": 485,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-tests",
+          "source_line_start": 486,
+          "source_line_end": 486,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-suites",
+          "source_line_start": 487,
+          "source_line_end": 487,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-pass",
+          "source_line_start": 488,
+          "source_line_end": 488,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-fail",
+          "source_line_start": 489,
+          "source_line_end": 489,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-cancelled",
+          "source_line_start": 490,
+          "source_line_end": 490,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-skipped",
+          "source_line_start": 491,
+          "source_line_end": 491,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-todo",
+          "source_line_start": 492,
+          "source_line_end": 492,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-duration_ms",
+          "source_line_start": 493,
+          "source_line_end": 493,
+          "present_exact_contiguous": true
+        }
+      ],
+      "required_evidence_present": 17,
+      "required_evidence_total": 17,
+      "original_process_metadata_external_to_stdin": {
+        "exit_code": 1,
+        "scope": [
+          "fixtures/sources/many-tests.test.cjs"
+        ],
+        "truncated": false
+      }
+    },
+    {
+      "available": true,
+      "peer": "RTK OSS 1.0.1 pipe auto-detection",
+      "revision": "4ef8730cf3a0dea11c8d64a9b90bc0616fe52100",
+      "binary_sha256": "897581cccf1d2b2d0886063133eadcf4377d71354c1ed4b8b3b7691f3e7633d2",
+      "platform": "Darwin arm64",
+      "mode": "pipe-auto",
+      "input_sha256": "fbc535bdcdd94edf67179dd9b4ef6f7a41ac555085320b43c45c7a5a93f658d7",
+      "output_sha256": "fbc535bdcdd94edf67179dd9b4ef6f7a41ac555085320b43c45c7a5a93f658d7",
+      "input_bytes_utf8": 10533,
+      "output_bytes_utf8": 10533,
+      "input_chars_python_codepoints": 6740,
+      "output_chars_python_codepoints": 6740,
+      "byte_identical": true,
+      "elapsed_ns_including_rtk_subprocess": 6467917,
+      "hook_stderr": "",
+      "pipe_exit_code": 0,
+      "scope": "offline stdin pipe only; pipe exit code is not original command status; no forced unsupported format filter",
+      "fixture_id": "rg-json-multiple-unicode-long",
+      "output_file": "reports/peers/rtk/rg-json-multiple-unicode-long/output.txt",
+      "required_evidence_results": [
+        {
+          "tag": "rg-context",
+          "source_line_start": 2,
+          "source_line_end": 2,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "rg-match",
+          "source_line_start": 3,
+          "source_line_end": 3,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "rg-match",
+          "source_line_start": 4,
+          "source_line_end": 4,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "rg-context",
+          "source_line_start": 5,
+          "source_line_end": 5,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "rg-context",
+          "source_line_start": 8,
+          "source_line_end": 8,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "rg-match",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "rg-context",
+          "source_line_start": 10,
+          "source_line_end": 10,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "rg-context",
+          "source_line_start": 11,
+          "source_line_end": 11,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "rg-match",
+          "source_line_start": 12,
+          "source_line_end": 12,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "rg-context",
+          "source_line_start": 13,
+          "source_line_end": 13,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "rg-context",
+          "source_line_start": 16,
+          "source_line_end": 16,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "rg-match",
+          "source_line_start": 17,
+          "source_line_end": 17,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "rg-context",
+          "source_line_start": 18,
+          "source_line_end": 18,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "rg-summary",
+          "source_line_start": 20,
+          "source_line_end": 20,
+          "present_exact_contiguous": true
+        }
+      ],
+      "required_evidence_present": 14,
+      "required_evidence_total": 14,
+      "original_process_metadata_external_to_stdin": {
+        "exit_code": 0,
+        "scope": [
+          "fixtures/sources/search"
+        ],
+        "truncated": false
+      }
+    },
+    {
+      "available": true,
+      "peer": "RTK OSS 1.0.1 pipe auto-detection",
+      "revision": "4ef8730cf3a0dea11c8d64a9b90bc0616fe52100",
+      "binary_sha256": "897581cccf1d2b2d0886063133eadcf4377d71354c1ed4b8b3b7691f3e7633d2",
+      "platform": "Darwin arm64",
+      "mode": "pipe-auto",
+      "input_sha256": "a3cdb4acd573211cdbdcd691cdf02f691493a41e6d229f2a981ab9e2010557fe",
+      "output_sha256": "a3cdb4acd573211cdbdcd691cdf02f691493a41e6d229f2a981ab9e2010557fe",
+      "input_bytes_utf8": 263,
+      "output_bytes_utf8": 263,
+      "input_chars_python_codepoints": 263,
+      "output_chars_python_codepoints": 263,
+      "byte_identical": true,
+      "elapsed_ns_including_rtk_subprocess": 6628041,
+      "hook_stderr": "",
+      "pipe_exit_code": 0,
+      "scope": "offline stdin pipe only; pipe exit code is not original command status; no forced unsupported format filter",
+      "fixture_id": "rg-json-no-results",
+      "output_file": "reports/peers/rtk/rg-json-no-results/output.txt",
+      "required_evidence_results": [
+        {
+          "tag": "rg-summary",
+          "source_line_start": 1,
+          "source_line_end": 1,
+          "present_exact_contiguous": true
+        }
+      ],
+      "required_evidence_present": 1,
+      "required_evidence_total": 1,
+      "original_process_metadata_external_to_stdin": {
+        "exit_code": 1,
+        "scope": [
+          "fixtures/sources/search"
+        ],
+        "truncated": false
+      }
+    },
+    {
+      "available": true,
+      "peer": "RTK OSS 1.0.1 pipe auto-detection",
+      "revision": "4ef8730cf3a0dea11c8d64a9b90bc0616fe52100",
+      "binary_sha256": "897581cccf1d2b2d0886063133eadcf4377d71354c1ed4b8b3b7691f3e7633d2",
+      "platform": "Darwin arm64",
+      "mode": "pipe-auto",
+      "input_sha256": "3f2e00b22d91108ef6d6411c6239e4d979546cb43ce8633ec710105d4d28c5ff",
+      "output_sha256": "3f2e00b22d91108ef6d6411c6239e4d979546cb43ce8633ec710105d4d28c5ff",
+      "input_bytes_utf8": 255,
+      "output_bytes_utf8": 255,
+      "input_chars_python_codepoints": 255,
+      "output_chars_python_codepoints": 255,
+      "byte_identical": true,
+      "elapsed_ns_including_rtk_subprocess": 6513541,
+      "hook_stderr": "",
+      "pipe_exit_code": 0,
+      "scope": "offline stdin pipe only; pipe exit code is not original command status; no forced unsupported format filter",
+      "fixture_id": "rg-json-invalid-path",
+      "output_file": "reports/peers/rtk/rg-json-invalid-path/output.txt",
+      "required_evidence_results": [
+        {
+          "tag": "rg-summary",
+          "source_line_start": 1,
+          "source_line_end": 1,
+          "present_exact_contiguous": true
+        }
+      ],
+      "required_evidence_present": 1,
+      "required_evidence_total": 1,
+      "original_process_metadata_external_to_stdin": {
+        "exit_code": 2,
+        "scope": [
+          "fixtures/sources/does-not-exist"
+        ],
+        "truncated": false
+      }
+    }
+  ]
+}

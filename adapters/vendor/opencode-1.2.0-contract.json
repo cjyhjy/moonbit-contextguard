@@ -1,0 +1,40 @@
+{
+  "pin": {
+    "version": "1.2.0",
+    "commit": "ffc000de8e446c63d41a2e352d119d9ff43530d0",
+    "repository": "https://github.com/anomalyco/opencode",
+    "verified_on": "2026-10-22",
+    "sources": [
+      {
+        "path": "packages/plugin/src/index.ts",
+        "blob_sha": "bd4ba530498d5af7dfa12b6cda885e8dbdafde53",
+        "url": "https://github.com/anomalyco/opencode/blob/ffc000de8e446c63d41a2e352d119d9ff43530d0/packages/plugin/src/index.ts"
+      },
+      {
+        "path": "packages/plugin/package.json",
+        "blob_sha": "7fd11531b7e396a4ac64f81d8bbae71555c41674",
+        "url": "https://github.com/anomalyco/opencode/blob/ffc000de8e446c63d41a2e352d119d9ff43530d0/packages/plugin/package.json"
+      },
+      {
+        "path": "packages/opencode/src/session/prompt.ts",
+        "blob_sha": "f705f209aa9a2e11052209aac7dcf23b0a4a6079",
+        "url": "https://github.com/anomalyco/opencode/blob/ffc000de8e446c63d41a2e352d119d9ff43530d0/packages/opencode/src/session/prompt.ts"
+      },
+      {
+        "path": "packages/opencode/src/tool/bash.ts",
+        "blob_sha": "67559b78c08516215753f24a38bd068a2ee2fd67",
+        "url": "https://github.com/anomalyco/opencode/blob/ffc000de8e446c63d41a2e352d119d9ff43530d0/packages/opencode/src/tool/bash.ts"
+      },
+      {
+        "path": "packages/opencode/src/plugin/index.ts",
+        "blob_sha": "24dc695d6350d59104496050543d97d368d1cdd4",
+        "url": "https://github.com/anomalyco/opencode/blob/ffc000de8e446c63d41a2e352d119d9ff43530d0/packages/opencode/src/plugin/index.ts"
+      }
+    ]
+  },
+  "hook": "  \"tool.execute.after\"?: (\n    input: { tool: string; sessionID: string; callID: string; args: any },\n    output: {\n      title: string\n      output: string\n      metadata: any\n    },\n  ) => Promise<void>",
+  "trigger": "  export async function trigger<\n    Name extends Exclude<keyof Required<Hooks>, \"auth\" | \"event\" | \"tool\">,\n    Input = Parameters<Required<Hooks>[Name]>[0],\n    Output = Parameters<Required<Hooks>[Name]>[1],\n  >(name: Name, input: Input, output: Output): Promise<Output> {\n    if (!name) return output\n    for (const hook of await state().then((x) => x.hooks)) {\n      const fn = hook[name]\n      if (!fn) continue\n      // @ts-expect-error if you feel adventurous, please fix the typing, make sure to bump the try-counter if you\n      // give up.\n      // try-counter: 2\n      await fn(input, output)\n    }\n    return output\n  }",
+  "callsite": "          const result = await item.execute(args, ctx)\n          await Plugin.trigger(\n            \"tool.execute.after\",\n            {\n              tool: item.id,\n              sessionID: ctx.sessionID,\n              callID: ctx.callID,\n              args,\n            },\n            result,\n          )\n          return result",
+  "bash_result": "      return {\n        title: params.description,\n        metadata: {\n          output: output.length > MAX_METADATA_LENGTH ? output.slice(0, MAX_METADATA_LENGTH) + \"\\n\\n...\" : output,\n          exit: proc.exitCode,\n          description: params.description,\n        },\n        output,\n      }",
+  "note": "Verbatim excerpts from pinned upstream MIT source. Offline protocol replay only; not a full OpenCode runtime or model run."
+}

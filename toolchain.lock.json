@@ -1,0 +1,15 @@
+{
+  "moon": "0.1.20261012 (748b63c 2026-10-12)",
+  "moonc": "0.10.15+943464bfa",
+  "node_tested": "26.7.0",
+  "python_tested": "3.9.6",
+  "rg_fixture_version": "15.2.0 (e89fff89ac)",
+  "compiler_base_url": "https://cli.moonbitlang.com/binaries/0.10.15%2B943464bfa/",
+  "official_archive_sha256_from_existing_local_lock": {
+    "moonbit-darwin-aarch64.tar.gz": "563109ff02c6dc77fdc74acd0be423964ef678dfea4d9b948c19d245dc8b0e83",
+    "moonbit-linux-x86_64.tar.gz": "24b93a5409d2a4fb8e3d1b84b473f27b63476cef4418094764df96cb26b03c09"
+  },
+  "core_archive_url": "https://cli.moonbitlang.com/cores/core-0.10.15%2B943464bfa.tar.gz",
+  "core_archive_sha256_from_existing_local_lock": "96d30f4dbcc6a9e1736ef26fbdd0e8fb0e97cb01d50e55d2a0072208b8061ae5",
+  "status": "Used existing local toolchain read-only. Version queried in this run. This project did not download or independently attest archive hashes."
+}

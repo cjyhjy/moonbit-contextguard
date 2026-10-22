@@ -1,0 +1,61 @@
+TAP version 13
+# Subtest: middle failure retains actual expected and location
+not ok 37 - middle failure retains actual expected and location
+  ---
+  duration_ms: 2.084625
+  type: 'test'
+  location: '/private/tmp/contextguard-fixture-capture-GL8acl/fixtures/sources/many-tests.test.cjs:11:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+      {
+        account: '演示账户',
+    +   remaining: 7,
+    +   state: 'pending'
+    -   remaining: 9,
+    -   state: 'ready'
+      }
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    account: '演示账户'
+    remaining: 9
+    state: 'ready'
+  actual:
+    account: '演示账户'
+    remaining: 7
+    state: 'pending'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (/private/tmp/contextguard-fixture-capture-GL8acl/fixtures/sources/many-tests.test.cjs:12:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1397:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:969:18)
+    Test.postRun (node:internal/test_runner/test:1537:19)
+    Test.run (node:internal/test_runner/test:1462:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+  ...
+# Subtest: explicit skip retains its reason
+ok 38 - explicit skip retains its reason # SKIP synthetic unavailable optional service
+  ---
+  duration_ms: 0.04925
+  type: 'test'
+  ...
+# Subtest: explicit todo retains its reason
+ok 39 - explicit todo retains its reason # TODO synthetic future behavior
+  ---
+  duration_ms: 0.027
+  type: 'test'
+  ...
+1..75
+# tests 75
+# suites 0
+# pass 72
+# fail 1
+# cancelled 0
+# skipped 1
+# todo 1
+# duration_ms 91.549292

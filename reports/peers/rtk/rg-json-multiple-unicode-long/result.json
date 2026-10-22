@@ -1,0 +1,117 @@
+{
+  "available": true,
+  "peer": "RTK OSS 1.0.1 pipe auto-detection",
+  "revision": "4ef8730cf3a0dea11c8d64a9b90bc0616fe52100",
+  "binary_sha256": "897581cccf1d2b2d0886063133eadcf4377d71354c1ed4b8b3b7691f3e7633d2",
+  "platform": "Darwin arm64",
+  "mode": "pipe-auto",
+  "output": "{\"type\":\"begin\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/gamma.txt\"}}}\n{\"type\":\"context\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/gamma.txt\"},\"lines\":{\"text\":\"before gamma\\n\"},\"line_number\":1,\"absolute_offset\":0,\"submatches\":[]}}\n{\"type\":\"match\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/gamma.txt\"},\"lines\":{\"text\":\"needle gamma one\\n\"},\"line_number\":2,\"absolute_offset\":13,\"submatches\":[{\"match\":{\"text\":\"needle\"},\"start\":0,\"end\":6}]}}\n{\"type\":\"match\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/gamma.txt\"},\"lines\":{\"text\":\"needle gamma adjacent\\n\"},\"line_number\":3,\"absolute_offset\":30,\"submatches\":[{\"match\":{\"text\":\"needle\"},\"start\":0,\"end\":6}]}}\n{\"type\":\"context\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/gamma.txt\"},\"lines\":{\"text\":\"after gamma\\n\"},\"line_number\":4,\"absolute_offset\":52,\"submatches\":[]}}\n{\"type\":\"end\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/gamma.txt\"},\"binary_offset\":null,\"stats\":{\"elapsed\":{\"secs\":0,\"nanos\":51625,\"human\":\"0.000052s\"},\"searches\":1,\"searches_with_match\":1,\"bytes_searched\":81,\"bytes_printed\":843,\"matched_lines\":2,\"matches\":2}}}\n{\"type\":\"begin\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/βeta.txt\"}}}\n{\"type\":\"context\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/βeta.txt\"},\"lines\":{\"text\":\"before a long middle hit\\n\"},\"line_number\":2,\"absolute_offset\":22,\"submatches\":[]}}\n{\"type\":\"match\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/βeta.txt\"},\"lines\":{\"text\":\"needle long-middle 保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ- END-OF-LONG-HIT\\n\"},\"line_number\":3,\"absolute_offset\":47,\"submatches\":[{\"match\":{\"text\":\"needle\"},\"start\":0,\"end\":6}]}}\n{\"type\":\"context\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/βeta.txt\"},\"lines\":{\"text\":\"after a long middle hit\\n\"},\"line_number\":4,\"absolute_offset\":6803,\"submatches\":[]}}\n{\"type\":\"context\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/βeta.txt\"},\"lines\":{\"text\":\"before final hit\\n\"},\"line_number\":7,\"absolute_offset\":6843,\"submatches\":[]}}\n{\"type\":\"match\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/βeta.txt\"},\"lines\":{\"text\":\"needle final Ω match\\n\"},\"line_number\":8,\"absolute_offset\":6860,\"submatches\":[{\"match\":{\"text\":\"needle\"},\"start\":0,\"end\":6}]}}\n{\"type\":\"context\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/βeta.txt\"},\"lines\":{\"text\":\"after final hit\\n\"},\"line_number\":9,\"absolute_offset\":6882,\"submatches\":[]}}\n{\"type\":\"end\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/βeta.txt\"},\"binary_offset\":null,\"stats\":{\"elapsed\":{\"secs\":0,\"nanos\":15958,\"human\":\"0.000016s\"},\"searches\":1,\"searches_with_match\":1,\"bytes_searched\":6898,\"bytes_printed\":7956,\"matched_lines\":2,\"matches\":2}}}\n{\"type\":\"begin\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/alpha.txt\"}}}\n{\"type\":\"context\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/alpha.txt\"},\"lines\":{\"text\":\"context before first hit\\n\"},\"line_number\":2,\"absolute_offset\":14,\"submatches\":[]}}\n{\"type\":\"match\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/alpha.txt\"},\"lines\":{\"text\":\"needle first match 中文\\n\"},\"line_number\":3,\"absolute_offset\":39,\"submatches\":[{\"match\":{\"text\":\"needle\"},\"start\":0,\"end\":6}]}}\n{\"type\":\"context\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/alpha.txt\"},\"lines\":{\"text\":\"context after first hit\\n\"},\"line_number\":4,\"absolute_offset\":65,\"submatches\":[]}}\n{\"type\":\"end\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/alpha.txt\"},\"binary_offset\":null,\"stats\":{\"elapsed\":{\"secs\":0,\"nanos\":3750,\"human\":\"0.000004s\"},\"searches\":1,\"searches_with_match\":1,\"bytes_searched\":105,\"bytes_printed\":658,\"matched_lines\":1,\"matches\":1}}}\n{\"data\":{\"elapsed_total\":{\"human\":\"0.004955s\",\"nanos\":4954709,\"secs\":0},\"stats\":{\"bytes_printed\":9457,\"bytes_searched\":7084,\"elapsed\":{\"human\":\"0.000071s\",\"nanos\":71333,\"secs\":0},\"matched_lines\":5,\"matches\":5,\"searches\":3,\"searches_with_match\":3}},\"type\":\"summary\"}\n",
+  "input_sha256": "fbc535bdcdd94edf67179dd9b4ef6f7a41ac555085320b43c45c7a5a93f658d7",
+  "output_sha256": "fbc535bdcdd94edf67179dd9b4ef6f7a41ac555085320b43c45c7a5a93f658d7",
+  "input_bytes_utf8": 10533,
+  "output_bytes_utf8": 10533,
+  "input_chars_python_codepoints": 6740,
+  "output_chars_python_codepoints": 6740,
+  "byte_identical": true,
+  "elapsed_ns_including_rtk_subprocess": 6467917,
+  "hook_stderr": "",
+  "pipe_exit_code": 0,
+  "scope": "offline stdin pipe only; pipe exit code is not original command status; no forced unsupported format filter",
+  "fixture_id": "rg-json-multiple-unicode-long",
+  "output_file": "reports/peers/rtk/rg-json-multiple-unicode-long/output.txt",
+  "required_evidence_results": [
+    {
+      "tag": "rg-context",
+      "source_line_start": 2,
+      "source_line_end": 2,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "rg-match",
+      "source_line_start": 3,
+      "source_line_end": 3,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "rg-match",
+      "source_line_start": 4,
+      "source_line_end": 4,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "rg-context",
+      "source_line_start": 5,
+      "source_line_end": 5,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "rg-context",
+      "source_line_start": 8,
+      "source_line_end": 8,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "rg-match",
+      "source_line_start": 9,
+      "source_line_end": 9,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "rg-context",
+      "source_line_start": 10,
+      "source_line_end": 10,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "rg-context",
+      "source_line_start": 11,
+      "source_line_end": 11,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "rg-match",
+      "source_line_start": 12,
+      "source_line_end": 12,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "rg-context",
+      "source_line_start": 13,
+      "source_line_end": 13,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "rg-context",
+      "source_line_start": 16,
+      "source_line_end": 16,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "rg-match",
+      "source_line_start": 17,
+      "source_line_end": 17,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "rg-context",
+      "source_line_start": 18,
+      "source_line_end": 18,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "rg-summary",
+      "source_line_start": 20,
+      "source_line_end": 20,
+      "present_exact_contiguous": true
+    }
+  ],
+  "required_evidence_present": 14,
+  "required_evidence_total": 14,
+  "original_process_metadata_external_to_stdin": {
+    "exit_code": 0,
+    "scope": [
+      "fixtures/sources/search"
+    ],
+    "truncated": false
+  }
+}

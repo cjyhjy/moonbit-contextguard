@@ -1,0 +1,132 @@
+{
+  "sources": [
+    {
+      "repository": "pzs19/HarnessPro",
+      "revision": "8ae622eb4a4923dbb4b515be7ded614f88fd4f38",
+      "upstream_path": "harnesses/terminal-bench-2/lite/runtime/hook.py",
+      "local_path": "vendor/harnesspro/hook.py",
+      "git_blob_sha1": "2eb13a90f215ef3ab65fe911020c16583757a8a2",
+      "url": "https://github.com/pzs19/HarnessPro/blob/8ae622eb4a4923dbb4b515be7ded614f88fd4f38/harnesses/terminal-bench-2/lite/runtime/hook.py"
+    },
+    {
+      "repository": "pzs19/HarnessPro",
+      "revision": "8ae622eb4a4923dbb4b515be7ded614f88fd4f38",
+      "upstream_path": "harnesses/terminal-bench-2/lite/runtime/policy.json",
+      "local_path": "vendor/harnesspro/policy.json",
+      "git_blob_sha1": "e1ad9141ab6d1ef36733ce6790e0332dbd67eba0",
+      "url": "https://github.com/pzs19/HarnessPro/blob/8ae622eb4a4923dbb4b515be7ded614f88fd4f38/harnesses/terminal-bench-2/lite/runtime/policy.json"
+    },
+    {
+      "repository": "pzs19/HarnessPro",
+      "revision": "8ae622eb4a4923dbb4b515be7ded614f88fd4f38",
+      "upstream_path": "LICENSE",
+      "local_path": "vendor/harnesspro/LICENSE",
+      "git_blob_sha1": "5f2d0388a2fb032ed08d72b197046fb3f493ed64",
+      "url": "https://github.com/pzs19/HarnessPro/blob/8ae622eb4a4923dbb4b515be7ded614f88fd4f38/LICENSE"
+    },
+    {
+      "repository": "pzs19/HarnessPro",
+      "revision": "8ae622eb4a4923dbb4b515be7ded614f88fd4f38",
+      "upstream_path": "third_party/licenses/RHO-MIT.txt",
+      "local_path": "vendor/harnesspro/RHO-MIT.txt",
+      "git_blob_sha1": "48b690a4a98e0358c8d183902a77acbfe83d112b",
+      "url": "https://github.com/pzs19/HarnessPro/blob/8ae622eb4a4923dbb4b515be7ded614f88fd4f38/third_party/licenses/RHO-MIT.txt"
+    },
+    {
+      "repository": "rtk-ai/rtk",
+      "revision": "5ab6291365e9d14f486a89d04af6b7da6710105c",
+      "upstream_path": "src/cmds/system/search.rs",
+      "local_path": "research/sources/rtk-search.rs",
+      "git_blob_sha1": "a1cefae75c41ff9c0acdaec24db5c529c1a58c4c",
+      "url": "https://github.com/rtk-ai/rtk/blob/5ab6291365e9d14f486a89d04af6b7da6710105c/src/cmds/system/search.rs"
+    },
+    {
+      "repository": "rtk-ai/rtk",
+      "revision": "5ab6291365e9d14f486a89d04af6b7da6710105c",
+      "upstream_path": "src/core/guard.rs",
+      "local_path": "research/sources/rtk-guard.rs",
+      "git_blob_sha1": "b665799a670504b03b9c11c1da128da15acdb889",
+      "url": "https://github.com/rtk-ai/rtk/blob/5ab6291365e9d14f486a89d04af6b7da6710105c/src/core/guard.rs"
+    },
+    {
+      "repository": "rtk-ai/rtk",
+      "revision": "5ab6291365e9d14f486a89d04af6b7da6710105c",
+      "upstream_path": "LICENSE",
+      "local_path": "research/sources/RTK-LICENSE",
+      "git_blob_sha1": "fb19f9923f93b788a02245f9a27f552aa7acb6ef",
+      "url": "https://github.com/rtk-ai/rtk/blob/5ab6291365e9d14f486a89d04af6b7da6710105c/LICENSE"
+    },
+    {
+      "repository": "rtk-ai/rtk",
+      "revision": "5ab6291365e9d14f486a89d04af6b7da6710105c",
+      "upstream_path": "engine/LICENSE",
+      "local_path": "research/sources/RTK-ENGINE-LICENSE",
+      "git_blob_sha1": "c0f904dccb82648ff0664c0a733b61a3ad55711e",
+      "url": "https://github.com/rtk-ai/rtk/blob/5ab6291365e9d14f486a89d04af6b7da6710105c/engine/LICENSE"
+    },
+    {
+      "repository": "rtk-ai/rtk",
+      "revision": "5ab6291365e9d14f486a89d04af6b7da6710105c",
+      "upstream_path": "Cargo.toml",
+      "local_path": "research/sources/rtk-Cargo.toml",
+      "git_blob_sha1": "0cfe06bfaf7c277e885cd64ab2083a82c0d698b3",
+      "url": "https://github.com/rtk-ai/rtk/blob/5ab6291365e9d14f486a89d04af6b7da6710105c/Cargo.toml"
+    },
+    {
+      "repository": "headroomlabs-ai/headroom",
+      "revision": "e995eb9f1dacac7ed548758406de6c1508caef95",
+      "upstream_path": "headroom/transforms/search_compressor.py",
+      "local_path": "research/sources/headroom-search_compressor.py",
+      "git_blob_sha1": "cc98022d51365d78739938e27627ac6b34878bc1",
+      "url": "https://github.com/headroomlabs-ai/headroom/blob/e995eb9f1dacac7ed548758406de6c1508caef95/headroom/transforms/search_compressor.py"
+    },
+    {
+      "repository": "headroomlabs-ai/headroom",
+      "revision": "e995eb9f1dacac7ed548758406de6c1508caef95",
+      "upstream_path": "headroom/transforms/log_compressor.py",
+      "local_path": "research/sources/headroom-log_compressor.py",
+      "git_blob_sha1": "c5cb05250129b61a619a6ec61bdf8d28227ce12c",
+      "url": "https://github.com/headroomlabs-ai/headroom/blob/e995eb9f1dacac7ed548758406de6c1508caef95/headroom/transforms/log_compressor.py"
+    },
+    {
+      "repository": "headroomlabs-ai/headroom",
+      "revision": "e995eb9f1dacac7ed548758406de6c1508caef95",
+      "upstream_path": "docs/content/docs/ccr.mdx",
+      "local_path": "research/sources/headroom-ccr.mdx",
+      "git_blob_sha1": "6ba202dbe3c88eb3a2897e20d0558e480d1744eb",
+      "url": "https://github.com/headroomlabs-ai/headroom/blob/e995eb9f1dacac7ed548758406de6c1508caef95/docs/content/docs/ccr.mdx"
+    },
+    {
+      "repository": "headroomlabs-ai/headroom",
+      "revision": "e995eb9f1dacac7ed548758406de6c1508caef95",
+      "upstream_path": "LICENSE",
+      "local_path": "research/sources/HEADROOM-LICENSE",
+      "git_blob_sha1": "6ee2620b190c4340d3f18e4ccc5ee111847b1ee3",
+      "url": "https://github.com/headroomlabs-ai/headroom/blob/e995eb9f1dacac7ed548758406de6c1508caef95/LICENSE"
+    },
+    {
+      "repository": "headroomlabs-ai/headroom",
+      "revision": "e995eb9f1dacac7ed548758406de6c1508caef95",
+      "upstream_path": "NOTICE",
+      "local_path": "research/sources/HEADROOM-NOTICE",
+      "git_blob_sha1": "15ed267577045495d3075219950e7fbc97a48149",
+      "url": "https://github.com/headroomlabs-ai/headroom/blob/e995eb9f1dacac7ed548758406de6c1508caef95/NOTICE"
+    },
+    {
+      "repository": "rtk-ai/rtk",
+      "revision": "4ef8730cf3a0dea11c8d64a9b90bc0616fe52100",
+      "upstream_path": "src/cmds/system/pipe_cmd.rs",
+      "local_path": "research/sources/rtk-v1.0.1-pipe_cmd.rs",
+      "git_blob_sha1": "e5161c6db44c0201c83bff87c791060cbb7b92e6",
+      "url": "https://github.com/rtk-ai/rtk/blob/4ef8730cf3a0dea11c8d64a9b90bc0616fe52100/src/cmds/system/pipe_cmd.rs"
+    },
+    {
+      "repository": "pzs19/HarnessPro",
+      "revision": "8ae622eb4a4923dbb4b515be7ded614f88fd4f38",
+      "upstream_path": "THIRD_PARTY_NOTICES.md",
+      "local_path": "vendor/harnesspro/UPSTREAM-THIRD-PARTY-NOTICES.md",
+      "git_blob_sha1": "e89420af54355529e6ad2894d69ac149e01c7a1d",
+      "url": "https://github.com/pzs19/HarnessPro/blob/8ae622eb4a4923dbb4b515be7ded614f88fd4f38/THIRD_PARTY_NOTICES.md"
+    }
+  ]
+}

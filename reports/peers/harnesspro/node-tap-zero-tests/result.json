@@ -1,0 +1,98 @@
+{
+  "peer": "HarnessPro Terminal-Bench 2 Lite PostToolUse",
+  "revision": "8ae622eb4a4923dbb4b515be7ded614f88fd4f38",
+  "source_git_blob_sha1": "2eb13a90f215ef3ab65fe911020c16583757a8a2",
+  "mode": "published-default",
+  "limits": {
+    "tool_output_max_chars": 4000,
+    "tool_output_head_chars": 2400,
+    "tool_output_tail_chars": 900
+  },
+  "output": "TAP version 13\n1..0\n# tests 0\n# suites 0\n# pass 0\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 3.586541\n",
+  "input_sha256": "93a1e18710ac0e034c8a9cfb02e0a8f4ff8f11749e7fa5a61db5e756f34adf85",
+  "output_sha256": "93a1e18710ac0e034c8a9cfb02e0a8f4ff8f11749e7fa5a61db5e756f34adf85",
+  "input_chars_python_codepoints": 117,
+  "output_chars_python_codepoints": 117,
+  "input_bytes_utf8": 117,
+  "output_bytes_utf8": 117,
+  "compacted": false,
+  "raw_recovery_verified": false,
+  "raw_file": null,
+  "elapsed_ns_including_python_subprocess": 25644833,
+  "hook_stdout": "",
+  "hook_stderr": "",
+  "scope": "single offline PostToolUse event; no pre-tool RTK rewrite, agent, or model run",
+  "fixture_id": "node-tap-zero-tests",
+  "output_file": "reports/peers/harnesspro/node-tap-zero-tests/output.txt",
+  "required_evidence_results": [
+    {
+      "tag": "tap-version",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "tap-plan",
+      "source_line_start": 2,
+      "source_line_end": 2,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "tap-summary-tests",
+      "source_line_start": 3,
+      "source_line_end": 3,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "tap-summary-suites",
+      "source_line_start": 4,
+      "source_line_end": 4,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "tap-summary-pass",
+      "source_line_start": 5,
+      "source_line_end": 5,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "tap-summary-fail",
+      "source_line_start": 6,
+      "source_line_end": 6,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "tap-summary-cancelled",
+      "source_line_start": 7,
+      "source_line_end": 7,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "tap-summary-skipped",
+      "source_line_start": 8,
+      "source_line_end": 8,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "tap-summary-todo",
+      "source_line_start": 9,
+      "source_line_end": 9,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "tap-summary-duration_ms",
+      "source_line_start": 10,
+      "source_line_end": 10,
+      "present_exact_contiguous": true
+    }
+  ],
+  "required_evidence_present": 10,
+  "required_evidence_total": 10,
+  "original_process_metadata_external_to_stdin": {
+    "exit_code": 0,
+    "scope": [
+      "fixtures/sources/empty-tests"
+    ],
+    "truncated": false
+  }
+}

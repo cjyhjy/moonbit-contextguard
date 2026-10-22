@@ -1,0 +1,76 @@
+TAP version 13
+# Subtest: vendored official type source matches Git blob SHA and mutable hook signature
+ok 1 - vendored official type source matches Git blob SHA and mutable hook signature
+  ---
+  duration_ms: 0.648541
+  type: 'test'
+  ...
+# Subtest: actual pinned trigger mutates same output while preserving metadata and attachments
+ok 2 - actual pinned trigger mutates same output while preserving metadata and attachments
+  ---
+  duration_ms: 12.454459
+  type: 'test'
+  ...
+# Subtest: missing exit code, missing truncation, unsupported tool, wrong command and cwd remain untouched
+ok 3 - missing exit code, missing truncation, unsupported tool, wrong command and cwd remain untouched
+  ---
+  duration_ms: 0.79475
+  type: 'test'
+  ...
+# Subtest: upstream truncated and mixed unsupported output fail open through real core
+ok 4 - upstream truncated and mixed unsupported output fail open through real core
+  ---
+  duration_ms: 5.683834
+  type: 'test'
+  ...
+# Subtest: guard errors or changed process context do not alter visible output
+ok 5 - guard errors or changed process context do not alter visible output
+  ---
+  duration_ms: 2.68975
+  type: 'test'
+  ...
+# Subtest: unwritable evidence destination leaves output intact
+ok 6 - unwritable evidence destination leaves output intact
+  ---
+  duration_ms: 0.448292
+  type: 'test'
+  ...
+# Subtest: format inference does not accept shell composition or implicit default reporter
+ok 7 - format inference does not accept shell composition or implicit default reporter
+  ---
+  duration_ms: 0.100458
+  type: 'test'
+  ...
+# Subtest: default factory does not activate any command
+ok 8 - default factory does not activate any command
+  ---
+  duration_ms: 0.4325
+  type: 'test'
+  ...
+# Subtest: serves local demo and real fixture manifest without remote dependencies
+ok 9 - serves local demo and real fixture manifest without remote dependencies
+  ---
+  duration_ms: 22.017667
+  type: 'test'
+  ...
+# Subtest: actual HTTP guard returns MoonBit compression, repair, fallback and evidence
+ok 10 - actual HTTP guard returns MoonBit compression, repair, fallback and evidence
+  ---
+  duration_ms: 18.111
+  type: 'test'
+  ...
+# Subtest: rejects foreign-origin, non-JSON, malformed requests and arbitrary routes
+ok 11 - rejects foreign-origin, non-JSON, malformed requests and arbitrary routes
+  ---
+  duration_ms: 2.894917
+  type: 'test'
+  ...
+1..11
+# tests 11
+# suites 0
+# pass 11
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 98.785333

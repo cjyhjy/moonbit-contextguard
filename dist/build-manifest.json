@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "source": {
+    "sha256": "8c9a70d6f9fa261c6078183acbb5f4ce562098cdea3e50f8021ee43d3d30119a",
+    "files": [
+      {
+        "path": "cmd/bridge/entry.mbt",
+        "sha256": "919c95ff83fd22be57e2e5240e734137cd9c6cae2f10b8909c2c2439859f35a2"
+      },
+      {
+        "path": "cmd/bridge/moon.pkg",
+        "sha256": "ae4dff2413aacebe6e6db44dcdacdef34012ab6edf57047fda163b9cea0a1e5a"
+      },
+      {
+        "path": "moon.mod",
+        "sha256": "137b77c4744de2ef1d2cc099130fde59a6419fb39e5157f3e16ce2f65f415ab2"
+      },
+      {
+        "path": "src/compressor.mbt",
+        "sha256": "cbafc57f651fff179ce44211b23db0df03853bf883f1cfa85830f7036f6138c4"
+      },
+      {
+        "path": "src/guard_wbtest.mbt",
+        "sha256": "5b5e2c8b8093a1910c3ab81550d1ad19c50d2597e44475c2410e652df7ba7e03"
+      },
+      {
+        "path": "src/moon.pkg",
+        "sha256": "0c9c8b5768ee43ba43fead81e79b877ec73f2ab9742f23fc18d5c816775b3272"
+      },
+      {
+        "path": "src/request.mbt",
+        "sha256": "244c4976ab0c7a82a5c9060ba0a375ebe4f95d22f0a41a2116b24660da457d53"
+      },
+      {
+        "path": "src/rg.mbt",
+        "sha256": "909e3cdfb9fca331fdaa86ffc03c64b8822a857038eb6831043ed152c6f9198f"
+      },
+      {
+        "path": "src/tap.mbt",
+        "sha256": "e2a42e93e97aa2bc6011af8a41725e13e2426a92c0b2f1ddac42e4cbd2bcabbc"
+      },
+      {
+        "path": "src/types.mbt",
+        "sha256": "913ce9ccf291b1659dc089a3ab25744a94c54d010cde7f27fac77958a1cd0332"
+      },
+      {
+        "path": "src/validator.mbt",
+        "sha256": "44f2e64aa29cc0ba53406425c21096c34c43567162abcc7d74c6d8c3249135d1"
+      }
+    ]
+  },
+  "compiler": "moon 0.1.20261012 (748b63c 2026-10-12)\n\nFeature flags enabled: rr_moon_mod,rr_moon_pkg",
+  "artifact_sha256": "a1602e0b1ccf59da8fd01ddcb93aec2f278990998c53fe28a955765ae7aea6a6"
+}

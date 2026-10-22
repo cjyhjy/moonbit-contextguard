@@ -1,0 +1,578 @@
+///|
+/// ModelPort aggregator with host-injected model slots.
+///
+/// The router is deliberately unaware of provider adapters, endpoint
+/// configuration, model discovery, and credential transport. A host composes
+/// ModelSlot values and injects already-constructed ModelPorts.
+
+///|
+pub(all) struct RouterModelPort {
+  slots : Map[String, ModelSlot]
+  slot_order : Array[String]
+  mut active_id : String
+  mut active_effort : String?
+  /// Devkit status bus for the model/ctx/cache status segments; `None`
+  /// disables publication entirely.
+  bus : @devkit.EventBus?
+  /// Latest core-projected context state per session id; the `ctx` status
+  /// segment renders the entry of the session an event is scoped to.
+  context_states : Map[String, @types.ContextState]
+  /// Canonical one-record store. When present, login writes a tagged
+  /// ProviderCredential and replaces the previous method atomically.
+  provider_credential_store : &@oauth.ProviderCredentialStore?
+  cred_store : &@oauth.CredentialStore?
+  auth_interaction : &@oauth.AuthInteraction?
+  api_key_store : &@oauth.ApiKeyStore?
+  auth_prompt : &@oauth.AuthPromptInteraction?
+  credentials : Map[String, @oauth.Credential]
+  api_key_credentials : Map[String, @oauth.ApiKeyCredential]
+  /// Host-injected quota sources keyed by provider id, consulted before the
+  /// devkit registry. Codex is push-shaped (readings ride on chat responses
+  /// into a shared tracker with no polling endpoint), so its host injects the
+  /// tracker here; registering it in the registry would make the active-
+  /// provider path double-publish "5h"/"weekly" segments against the codex
+  /// status publisher.
+  extra_quota_sources : Map[String, &@devkit.QuotaSource]
+  /// Optional semantic judgement capability used for per-call effort selection.
+  priv mut decision : &@posoco.DecisionPort?
+  /// Latest value per status segment observed on the shared bus; `/status`
+  /// surfaces the provider-published quota windows ("5h", "weekly") from it.
+  priv status_segments : Map[String, String]
+  /// Latest registry quota readings for the active provider, rendered onto
+  /// the status bar by `publish_quota_segments`.
+  priv mut quota_readings : Array[@devkit.QuotaReading]
+  /// Last successful registry pull (ms since epoch); throttles re-reads.
+  priv mut quota_fetched_at : Int64
+  /// Last failed registry pull (ms since epoch); backs re-reads off.
+  priv mut quota_failed_at : Int64
+  /// Quota segment names this router currently has published on the bar.
+  priv mut quota_shown : Array[String]
+}
+
+///|
+/// Construct a router from a non-empty, uniquely keyed slot list.
+///
+/// An empty default id selects the first slot in insertion order. A
+/// non-empty default that is absent from `slots` raises, unless
+/// `allow_missing_default` is set: hosts then keep the persisted selection
+/// as a *pending* active id — requests to it fail visibly until the slot
+/// appears (login/refresh) instead of silently moving to another model.
+/// Composition failures are raised before the router is returned, so
+/// callers never see a partially populated routing table.
+pub fn RouterModelPort::RouterModelPort(
+  slots~ : Array[ModelSlot],
+  default_slot_id? : String = "",
+  allow_missing_default? : Bool = false,
+  bus? : @devkit.EventBus? = None,
+  provider_credential_store? : &@oauth.ProviderCredentialStore? = None,
+  cred_store? : &@oauth.CredentialStore? = None,
+  auth_interaction? : &@oauth.AuthInteraction? = None,
+  api_key_store? : &@oauth.ApiKeyStore? = None,
+  auth_prompt? : &@oauth.AuthPromptInteraction? = None,
+  extra_quota_sources? : Map[String, &@devkit.QuotaSource] = Map::from_array([]),
+) -> RouterModelPort raise @posoco.CompositionError {
+  if slots.is_empty() {
+    raise @posoco.CompositionError::EmptyPort("posoco_ext_llm.slots")
+  }
+  let slot_map : Map[String, ModelSlot] = Map::from_array([])
+  let slot_order : Array[String] = []
+  for slot in slots {
+    if slot.id.length() == 0 {
+      raise @posoco.CompositionError::ManifestSchemaError(
+        manifest_id="posoco_ext_llm",
+        detail="model slot id must not be empty",
+      )
+    }
+    if slot_map.contains(slot.id) {
+      raise @posoco.CompositionError::ManifestSchemaError(
+        manifest_id="posoco_ext_llm",
+        detail="duplicate model slot id: " + slot.id,
+      )
+    }
+    slot_map[slot.id] = slot
+    slot_order.push(slot.id)
+  }
+  let active_id = if default_slot_id.length() == 0 {
+    slot_order[0]
+  } else if !slot_map.contains(default_slot_id) && allow_missing_default {
+    default_slot_id
+  } else {
+    if !slot_map.contains(default_slot_id) {
+      raise @posoco.CompositionError::ManifestSchemaError(
+        manifest_id="posoco_ext_llm",
+        detail="unknown default model slot: " + default_slot_id,
+      )
+    }
+    default_slot_id
+  }
+  let router : RouterModelPort = {
+    slots: slot_map,
+    slot_order,
+    active_id,
+    active_effort: None,
+    bus,
+    context_states: Map::from_array([]),
+    provider_credential_store,
+    cred_store,
+    auth_interaction,
+    api_key_store,
+    auth_prompt,
+    credentials: Map::from_array([]),
+    api_key_credentials: Map::from_array([]),
+    extra_quota_sources,
+    decision: None,
+    status_segments: Map::from_array([]),
+    quota_readings: [],
+    quota_fetched_at: 0L,
+    quota_failed_at: 0L,
+    quota_shown: [],
+  }
+  match bus {
+    Some(bus) => bus.subscribe(router as &@devkit.BusSubscriber)
+    None => ()
+  }
+  router
+}
+
+///|
+/// Construct a router from provider-owned catalogs. Each provider extension
+/// builds its own slots and capability metadata; this function only flattens
+/// catalogs and lets `new` perform the final collision check.
+pub fn RouterModelPort::from_catalogs(
+  catalogs : Array[ProviderModelCatalog],
+  default_slot_id? : String = "",
+  allow_missing_default? : Bool = false,
+  bus? : @devkit.EventBus? = None,
+  provider_credential_store? : &@oauth.ProviderCredentialStore? = None,
+  cred_store? : &@oauth.CredentialStore? = None,
+  auth_interaction? : &@oauth.AuthInteraction? = None,
+  api_key_store? : &@oauth.ApiKeyStore? = None,
+  auth_prompt? : &@oauth.AuthPromptInteraction? = None,
+  extra_quota_sources? : Map[String, &@devkit.QuotaSource] = Map::from_array([]),
+  transient_retry? : TransientRetryPolicy? = Some(
+    TransientRetryPolicy::default(),
+  ),
+) -> RouterModelPort raise @posoco.CompositionError {
+  // from_catalogs is the one slot-ingestion seam: every provider port is
+  // wrapped with the transient-failure retry decorator here (chat and compact
+  // both dispatch through slot.port). A host that constructs RouterModelPort
+  // directly bypasses this policy. `None` disables retrying entirely.
+  let slots : Array[ModelSlot] = []
+  for catalog in catalogs {
+    for slot in catalog.slots() {
+      let slot = match transient_retry {
+        Some(policy) =>
+          { ..slot, port: transient_retry_port(inner=slot.port, policy~), }
+        None => slot
+      }
+      slots.push(slot)
+    }
+  }
+  RouterModelPort(
+    slots~,
+    default_slot_id~,
+    allow_missing_default~,
+    bus~,
+    provider_credential_store~,
+    cred_store~,
+    auth_interaction~,
+    api_key_store~,
+    auth_prompt~,
+    extra_quota_sources~,
+  )
+}
+
+///|
+/// Return the active slot when it exists. `None` marks a pending default: a
+/// persisted selection whose slot is absent from the current catalogs — a
+/// visible user state, not an invariant violation.
+fn RouterModelPort::active_slot_opt(self : RouterModelPort) -> ModelSlot? {
+  self.slots.get(self.active_id)
+}
+
+///|
+/// Dispatch target for model calls. A pending default fails the request with
+/// a typed error so the user sees exactly which selection cannot be served.
+fn RouterModelPort::dispatch_slot(
+  self : RouterModelPort,
+) -> ModelSlot raise @posoco.ModelError {
+  match self.slots.get(self.active_id) {
+    Some(slot) => slot
+    None =>
+      raise @posoco.ModelError::RequestBuild(
+        "model slot '" +
+        self.active_id +
+        "' is not configured (persisted selection); switch with /model or log in to the provider",
+      )
+  }
+}
+
+///|
+/// Split a `"provider/model"` slot id into its parts. Every provider
+/// extension builds slot ids in this shape; a malformed id degrades to the
+/// whole string in both parts — the result is display-only, never a routing
+/// fact.
+fn split_slot_id(slot_id : String) -> (String, String) {
+  match slot_id.find("/") {
+    Some(index) => (slot_id[0:index].to_owned(), slot_id[index + 1:].to_owned())
+    None => (slot_id, slot_id)
+  }
+}
+
+///|
+/// Return slots in the same order in which they were composed.
+pub fn RouterModelPort::list_slots(self : RouterModelPort) -> Array[ModelSlot] {
+  let result : Array[ModelSlot] = []
+  for id in self.slot_order {
+    match self.slots.get(id) {
+      Some(slot) => result.push(slot)
+      None =>
+        abort(
+          "posoco_ext_llm router invariant violated: ordered slot is missing: " +
+          id,
+        )
+    }
+  }
+  result
+}
+
+///|
+/// Return all slot ids in composition order.
+pub fn RouterModelPort::list_slot_ids(self : RouterModelPort) -> Array[String] {
+  self.slot_order.copy()
+}
+
+///|
+pub fn RouterModelPort::active_slot_id(self : RouterModelPort) -> String {
+  self.active_id
+}
+
+///|
+pub fn RouterModelPort::current_provider_id(self : RouterModelPort) -> String {
+  match self.active_slot_opt() {
+    Some(slot) => slot.provider_id
+    None => split_slot_id(self.active_id).0
+  }
+}
+
+///|
+pub fn RouterModelPort::current_model_id(self : RouterModelPort) -> String {
+  match self.active_slot_opt() {
+    Some(slot) => slot.model_id
+    None => split_slot_id(self.active_id).1
+  }
+}
+
+///|
+pub fn RouterModelPort::active_effort(self : RouterModelPort) -> String? {
+  self.active_effort
+}
+
+///|
+/// Select a slot without rebuilding its ModelPort.
+pub fn RouterModelPort::switch_slot(
+  self : RouterModelPort,
+  slot_id : String,
+) -> Unit raise @posoco.CompositionError {
+  if !self.slots.contains(slot_id) {
+    raise @posoco.CompositionError::ManifestSchemaError(
+      manifest_id="posoco_ext_llm",
+      detail="unknown model slot: " + slot_id,
+    )
+  }
+  self.active_id = slot_id
+  self.active_effort = None
+  self.publish_model_status()
+  self.publish_provider_event()
+  // The new provider's readings are unknown until its first response (or an
+  // immediate /model probe): drop the previous provider's quota segments and
+  // reset the pull cache.
+  self.clear_quota_segments()
+}
+
+///|
+/// Replace every slot of one provider in place, preserving composition order
+/// for all other providers. Hosts use this after a live model-discovery
+/// refresh: the refreshed catalog's slots replace the provider's previous
+/// slots without recomposing the Agent.
+///
+/// Validation mirrors `new` (non-empty, unique ids, provider id match) and
+/// fails before any mutation, so a rejected replacement leaves the routing
+/// table untouched. The active selection survives when its slot id still
+/// exists afterwards (the slot object is swapped, selection and effort stay);
+/// when a previously present active slot disappears, selection falls back to
+/// the provider's first new slot and the effort selection is cleared. A
+/// pending default is untouched: if the replacement provides its slot the
+/// selection heals in place, otherwise it stays pending.
+///
+/// Every success path ends with a model-status republication, so the status
+/// bar reflects the swapped catalog; the provider event rides only the
+/// fallback path, where the active slot context changed.
+pub fn RouterModelPort::replace_provider_slots(
+  self : RouterModelPort,
+  provider_id : String,
+  slots : Array[ModelSlot],
+) -> Unit raise @posoco.CompositionError {
+  if slots.is_empty() {
+    raise @posoco.CompositionError::ManifestSchemaError(
+      manifest_id="posoco_ext_llm",
+      detail="replacement model slots must not be empty: " + provider_id,
+    )
+  }
+  let seen : Map[String, Unit] = Map::from_array([])
+  for slot in slots {
+    if slot.provider_id != provider_id {
+      raise @posoco.CompositionError::ManifestSchemaError(
+        manifest_id="posoco_ext_llm",
+        detail="replacement slot provider id does not match: " + slot.id,
+      )
+    }
+    if seen.contains(slot.id) {
+      raise @posoco.CompositionError::ManifestSchemaError(
+        manifest_id="posoco_ext_llm",
+        detail="duplicate replacement model slot id: " + slot.id,
+      )
+    }
+    seen[slot.id] = ()
+  }
+  let old_active_id = self.active_id
+  // A pending default (persisted selection without a slot object) must stay
+  // pending across replacements: only a previously present active slot can
+  // fall back to the provider's first new slot.
+  let had_active = self.slots.contains(old_active_id)
+  // Drop the provider's previous ids from the ordered list, then re-insert
+  // the replacement ids where the provider's first old id appeared (append
+  // when the provider contributed no slots before).
+  let replaced_order : Array[String] = []
+  let mut inserted = false
+  for id in self.slot_order {
+    if self.slots.get(id) is Some(slot) && slot.provider_id == provider_id {
+      if !inserted {
+        for new_slot in slots {
+          replaced_order.push(new_slot.id)
+        }
+        inserted = true
+      }
+    } else {
+      replaced_order.push(id)
+    }
+  }
+  if !inserted {
+    for new_slot in slots {
+      replaced_order.push(new_slot.id)
+    }
+  }
+  for old_id in self.slot_order.copy() {
+    if self.slots.get(old_id) is Some(slot) && slot.provider_id == provider_id {
+      ignore(self.slots.remove(old_id))
+    }
+  }
+  for new_slot in slots {
+    self.slots[new_slot.id] = new_slot
+  }
+  self.slot_order.clear()
+  self.slot_order.append(replaced_order)
+  if had_active && !self.slots.contains(old_active_id) {
+    self.active_id = slots[0].id
+    self.active_effort = None
+    self.publish_provider_event()
+  }
+  // Last, and only once the active id is guaranteed valid again: the model
+  // segment render reads the active slot.
+  self.publish_model_status()
+}
+
+///|
+/// User-authored text only when the current model input ends in a user message.
+/// Tool-followup model rounds therefore reuse the already selected/default effort
+/// instead of paying for a repeated semantic classification.
+fn current_user_text(messages : ArrayView[@posoco.Message]) -> String? {
+  let message = match messages.last() {
+    Some(message) => message
+    None => return None
+  }
+  match message {
+    @posoco.Message::UserMessage(content~) => {
+      let builder = StringBuilder()
+      let mut wrote = false
+      for part in content {
+        match part {
+          @posoco.Content::Text(text) => {
+            if wrote {
+              builder.write_string("\n")
+            }
+            builder.write_string(text)
+            wrote = true
+          }
+          _ => ()
+        }
+      }
+      let text = builder.to_string()
+      if text.trim().length() > 0 {
+        Some(text)
+      } else {
+        None
+      }
+    }
+    _ => None
+  }
+}
+
+///|
+fn highest_probability_index(probabilities : Array[Double]) -> Int? {
+  if probabilities.is_empty() {
+    return None
+  }
+  let mut best = 0
+  for i = 1; i < probabilities.length(); i = i + 1 {
+    if probabilities[i] > probabilities[best] {
+      best = i
+    }
+  }
+  Some(best)
+}
+
+///|
+/// Return a temporary slot rebuilt at a DecisionPort-selected reasoning
+/// effort. This never mutates the router's active slot or sticky effort. Any
+/// DecisionPort failure falls back to the current deterministic selection.
+async fn RouterModelPort::decision_slot_for_chat(
+  self : RouterModelPort,
+  messages : ArrayView[@posoco.Message],
+  tool_count : Int,
+) -> ModelSlot? noraise {
+  if self.active_effort is Some(_) {
+    return None
+  }
+  let decision = match self.decision {
+    Some(decision) => decision
+    None => return None
+  }
+  let slot = match self.active_slot_opt() {
+    Some(slot) => slot
+    None => return None
+  }
+  if slot.thinking_efforts.length() < 2 || slot.rebuild_on_effort is None {
+    return None
+  }
+  let user_text = match current_user_text(messages) {
+    Some(text) => text
+    None => return None
+  }
+  let levels = slot.thinking_efforts.map(fn(effort) {
+    Json::object({ "effort": Json::string(effort) })
+  })
+  let request : @posoco.DecisionRequest = {
+    state: Json::object({
+      "user_request": Json::string(user_text),
+      "provider_id": Json::string(slot.provider_id),
+      "model_id": Json::string(slot.model_id),
+      "tool_count": Json::number(tool_count.to_double()),
+    }),
+    questions: [
+      @posoco.DecisionQuestion::Score(
+        id="llm.reasoning_effort",
+        instructions=Json::string(
+          "Estimate how much reasoning effort this user turn needs. Levels are ordered from least to most effort. Judge task complexity only; do not choose a provider or model.",
+        ),
+        levels~,
+      ),
+    ],
+  }
+  let result = decision.evaluate(request) catch { _ => return None }
+  result.validate_for(request) catch {
+    _ => return None
+  }
+  for answer in result.answers {
+    match answer {
+      @posoco.DecisionAnswer::ScoreAnswer(
+        id="llm.reasoning_effort",
+        probabilities~,
+        ..
+      ) =>
+        match highest_probability_index(probabilities) {
+          Some(index) if index < slot.thinking_efforts.length() &&
+            probabilities[index] >= 0.6 =>
+            match slot.rebuild_on_effort {
+              Some(rebuild) =>
+                return Some(rebuild(slot.thinking_efforts[index]))
+              None => return None
+            }
+          _ => return None
+        }
+      _ => ()
+    }
+  }
+  None
+}
+
+///|
+pub impl @posoco.ModelPort for RouterModelPort with fn chat(
+  self : RouterModelPort,
+  scope : @posoco.InvocationScope,
+  messages : ArrayView[@posoco.Message],
+  tools : Array[@posoco.ToolDef],
+  options : @posoco.ChatOptions,
+  stream : @posoco.StreamMode,
+) -> @posoco.ModelCallResult raise @posoco.ModelError {
+  let slot = match self.decision_slot_for_chat(messages, tools.length()) {
+    Some(slot) => slot
+    None => self.dispatch_slot()
+  }
+  let result = slot.port.chat(scope, messages, tools, options, stream)
+  // Refresh after the response: the registry pull never delays the first
+  // token, and every failure inside stays captured (this never raises).
+  self.refresh_quota_if_due()
+  result
+}
+
+///|
+pub extend RouterModelPort with @posoco.ModelPort::{chat, compact}
+
+///|
+pub impl @posoco.ModelPort for RouterModelPort with fn compact(
+  self : RouterModelPort,
+  scope : @posoco.InvocationScope,
+  messages : ArrayView[@posoco.Message],
+  options : @posoco.ChatOptions,
+  trigger : @posoco.CompactTrigger,
+) -> @posoco.CompactResult raise @posoco.ModelError {
+  self.dispatch_slot().port.compact(scope, messages, options, trigger)
+}
+
+///|
+pub impl @posoco.ModelPort for RouterModelPort with fn provider_config(
+  self : RouterModelPort,
+) -> @posoco.ProviderConfig {
+  match self.active_slot_opt() {
+    Some(slot) => slot.port.provider_config()
+    // A pending default reports no capabilities: auto-compact stays off and
+    // effort resets instead of fabricating facts for a slot that is absent.
+    None => @posoco.ProviderConfig::empty()
+  }
+}
+
+///|
+/// Consume one bus event: keep the latest value of every status segment so
+/// `/status` can surface provider-published quota windows. A register
+/// without a value (or an unregister) clears the segment. The router only
+/// reads the bus here — model/ctx/cache segments are published elsewhere —
+/// so this subscriber never feeds back into the bus.
+pub impl @devkit.BusSubscriber for RouterModelPort with fn on_bus_event(
+  self : RouterModelPort,
+  event : @devkit.BusEvent,
+) -> Unit {
+  match @devkit.decode_status_op(event) {
+    Some(Register(segment~, value~, ..)) =>
+      match value {
+        Some(v) => self.status_segments[segment] = v
+        None => ignore(self.status_segments.remove(segment))
+      }
+    Some(Update(segment~, value~)) => self.status_segments[segment] = value
+    Some(Unregister(segment~)) => ignore(self.status_segments.remove(segment))
+    None => ()
+  }
+}
+
+///|
+pub extend RouterModelPort with @posoco/devkit.BusSubscriber::{on_bus_event}

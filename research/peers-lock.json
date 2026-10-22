@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "checked_utc_date": "2026-10-22",
+  "sources": [
+    {
+      "id": "harnesspro",
+      "repository": "pzs19/HarnessPro",
+      "ref": "main",
+      "revision": "8ae622eb4a4923dbb4b515be7ded614f88fd4f38",
+      "license": "MIT; RHO-derived runtime carries additional MIT attribution",
+      "executed": true,
+      "scope": "stdlib PostToolUse hook only; TB2 Lite policy; no complete agent evaluation"
+    },
+    {
+      "id": "rtk-develop",
+      "repository": "rtk-ai/rtk",
+      "ref": "develop",
+      "revision": "5ab6291365e9d14f486a89d04af6b7da6710105c",
+      "license": "CLI Apache-2.0; engine and proxy BUSL-1.1",
+      "executed": false,
+      "scope": "source inspection only, distinct from release executable"
+    },
+    {
+      "id": "rtk-release",
+      "repository": "rtk-ai/rtk",
+      "ref": "v1.0.1",
+      "revision": "4ef8730cf3a0dea11c8d64a9b90bc0616fe52100",
+      "license": "downloaded OSS edition: Apache-2.0",
+      "executed": true,
+      "scope": "rtk pipe auto detection and native rg --json CLI, no hooks installed",
+      "archive": "research/downloads/rtk-oss-v1.0.1-aarch64-apple-darwin.tar.gz",
+      "archive_sha256": "4a4d9d09656ff29423336aa506e680afc3f7b6dafe84f0194a1c9a523a3c80e1",
+      "url": "https://github.com/rtk-ai/rtk/releases/download/v1.0.1/rtk-oss-aarch64-apple-darwin.tar.gz"
+    },
+    {
+      "id": "headroom",
+      "repository": "headroomlabs-ai/headroom",
+      "ref": "main",
+      "revision": "e995eb9f1dacac7ed548758406de6c1508caef95",
+      "license": "Apache-2.0 (root); retained NOTICE; ML model/dependency terms not assessed",
+      "executed": false,
+      "scope": "source inspection of current Rust-backed log/search shims and CCR documentation only"
+    },
+    {
+      "id": "posoco-ext-llm",
+      "package": "posoco/ext-llm",
+      "version": "0.2.0",
+      "license": "Apache-2.0 declared in registry and moon.mod; no standalone LICENSE found in archive",
+      "executed": false,
+      "scope": "Mooncakes package manifest/router source inspection only",
+      "archive": "research/downloads/posoco-ext-llm-0.2.0.zip",
+      "url": "https://download.mooncakes.io/user/posoco/ext-llm/0.2.0.zip",
+      "docs_url": "https://mooncakes.io/docs/posoco/ext-llm@0.2.0",
+      "archive_sha256": "50d9c1b5df9d2c7ffc36ce9872a2b763c5c5ea7e82987fb3fd132ed0c20966a9"
+    },
+    {
+      "id": "harness-self-evolution",
+      "package": "Across2005/harness-self-evolution",
+      "version": "0.3.8",
+      "repository": "Across2005/harness-self-evolution-plugin",
+      "repository_revision": "167d15d6dbcc80ff1cd5571c632add1bd1fac6af",
+      "license": "MIT",
+      "executed": false,
+      "scope": "pinned Mooncakes package source inspection only; GitHub revision separately recorded, no archive-to-commit equivalence claimed",
+      "archive": "research/downloads/harness-self-evolution-0.3.8.zip",
+      "url": "https://download.mooncakes.io/user/Across2005/harness-self-evolution/0.3.8.zip",
+      "docs_url": "https://mooncakes.io/docs/Across2005/harness-self-evolution@0.3.8",
+      "archive_sha256": "89ab2ca632232f26081a381035fa385c9761b73dce649af41452e6b3deb53388"
+    }
+  ]
+}

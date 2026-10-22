@@ -1,0 +1,49 @@
+TAP version 13
+# Subtest: before 01 — 中文 passes
+ok 1 - before 01 — 中文 passes
+  ---
+  duration_ms: 0.737625
+  type: 'test'
+  ...
+# Subtest: before 02 — 中文 passes
+ok 2 - before 02 — 中文 passes
+  ---
+  duration_ms: 0.069375
+  type: 'test'
+  ...
+# Subtest: before 03 — 中文 passes
+ok 3 - before 03 — 中文 passes
+  ---
+  duration_ms: 0.037291
+  type: 'test'
+  ...
+# Subtest: before 04 — 中文 passes
+ok 4 - before 04 — 中文 passes
+  ---
+  duration_ms: 0.579084
+ok 73 - after 34 — unicode λ passes
+  ---
+  duration_ms: 0.026541
+  type: 'test'
+  ...
+# Subtest: after 35 — unicode λ passes
+ok 74 - after 35 — unicode λ passes
+  ---
+  duration_ms: 0.025042
+  type: 'test'
+  ...
+# Subtest: after 36 — unicode λ passes
+ok 75 - after 36 — unicode λ passes
+  ---
+  duration_ms: 0.014875
+  type: 'test'
+  ...
+1..75
+# tests 75
+# suites 0
+# pass 72
+# fail 1
+# cancelled 0
+# skipped 1
+# todo 1
+# duration_ms 91.549292

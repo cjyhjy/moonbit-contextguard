@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "peer": "RTK OSS 1.0.1 rg --json native CLI",
+  "revision": "4ef8730cf3a0dea11c8d64a9b90bc0616fe52100",
+  "command": "python3 research/check_rtk_rg.py",
+  "normalization": "JSON parsing; recursively remove elapsed and elapsed_total; compare event multisets (file traversal order may vary). Raw stdout/stderr retained. No other field removed.",
+  "scope": "Actual native rg and RTK-wrapped rg processes; these fresh outputs are not the frozen stdin replay inputs.",
+  "records": [
+    {
+      "fixture_id": "rg-json-multiple-unicode-long",
+      "native_command": [
+        "rg",
+        "--json",
+        "--context",
+        "1",
+        "needle",
+        "fixtures/sources/search"
+      ],
+      "rtk_command": [
+        "vendor/rtk-oss-v1.0.1-darwin-arm64/rtk",
+        "rg",
+        "--json",
+        "--context",
+        "1",
+        "needle",
+        "fixtures/sources/search"
+      ],
+      "native_exit_code": 0,
+      "rtk_exit_code": 0,
+      "exit_codes_equal": true,
+      "stderr_byte_equal": true,
+      "stdout_byte_equal": false,
+      "normalized_json_event_multiset_equal": true,
+      "native_stdout_sha256": "afa878ea1b9be675bb8dbf9aea679980f8db10f3797247539184958f8d22ee88",
+      "rtk_stdout_sha256": "7fa5687087d672d9118a5a34d71d4a6164e893a71ebcf4e71d8a6154d65cec3d",
+      "output_directory": "reports/peers/rtk-native-rg/rg-json-multiple-unicode-long"
+    },
+    {
+      "fixture_id": "rg-json-no-results",
+      "native_command": [
+        "rg",
+        "--json",
+        "--context",
+        "1",
+        "ABSENT_PATTERN_7f913",
+        "fixtures/sources/search"
+      ],
+      "rtk_command": [
+        "vendor/rtk-oss-v1.0.1-darwin-arm64/rtk",
+        "rg",
+        "--json",
+        "--context",
+        "1",
+        "ABSENT_PATTERN_7f913",
+        "fixtures/sources/search"
+      ],
+      "native_exit_code": 1,
+      "rtk_exit_code": 1,
+      "exit_codes_equal": true,
+      "stderr_byte_equal": true,
+      "stdout_byte_equal": false,
+      "normalized_json_event_multiset_equal": true,
+      "native_stdout_sha256": "066511c49725e83b97b9ed645a032d5ddbea408f63b13826d864357f7a1002cb",
+      "rtk_stdout_sha256": "eaf8434aa61b033b18426c6c2e4b9146483b0e625788cbc1331323cbd3168e37",
+      "output_directory": "reports/peers/rtk-native-rg/rg-json-no-results"
+    },
+    {
+      "fixture_id": "rg-json-invalid-path",
+      "native_command": [
+        "rg",
+        "--json",
+        "--context",
+        "1",
+        "needle",
+        "fixtures/sources/does-not-exist"
+      ],
+      "rtk_command": [
+        "vendor/rtk-oss-v1.0.1-darwin-arm64/rtk",
+        "rg",
+        "--json",
+        "--context",
+        "1",
+        "needle",
+        "fixtures/sources/does-not-exist"
+      ],
+      "native_exit_code": 2,
+      "rtk_exit_code": 2,
+      "exit_codes_equal": true,
+      "stderr_byte_equal": true,
+      "stdout_byte_equal": false,
+      "normalized_json_event_multiset_equal": true,
+      "native_stdout_sha256": "0871e1a04e247ef1bcb0ffed4d4875fd6cfcbd98fb9ecc141623b9b9fe787699",
+      "rtk_stdout_sha256": "151a93b5fcaaaff753f7137b10ad0b38428526959333e5c3ac0aed18ae0491d1",
+      "output_directory": "reports/peers/rtk-native-rg/rg-json-invalid-path"
+    }
+  ],
+  "fixture_manifest_sha256_at_final_review": "d7d85bd7e171e8a17bacc8f5fd69dc121a4fdb7732a611241695f79d8ce2c8ab",
+  "executable_sha256": "897581cccf1d2b2d0886063133eadcf4377d71354c1ed4b8b3b7691f3e7633d2",
+  "platform": "Darwin arm64"
+}

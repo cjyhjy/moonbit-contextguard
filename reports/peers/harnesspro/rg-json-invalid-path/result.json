@@ -1,0 +1,44 @@
+{
+  "peer": "HarnessPro Terminal-Bench 2 Lite PostToolUse",
+  "revision": "8ae622eb4a4923dbb4b515be7ded614f88fd4f38",
+  "source_git_blob_sha1": "2eb13a90f215ef3ab65fe911020c16583757a8a2",
+  "mode": "published-default",
+  "limits": {
+    "tool_output_max_chars": 4000,
+    "tool_output_head_chars": 2400,
+    "tool_output_tail_chars": 900
+  },
+  "output": "{\"data\":{\"elapsed_total\":{\"human\":\"0.000345s\",\"nanos\":344958,\"secs\":0},\"stats\":{\"bytes_printed\":0,\"bytes_searched\":0,\"elapsed\":{\"human\":\"0.000000s\",\"nanos\":0,\"secs\":0},\"matched_lines\":0,\"matches\":0,\"searches\":0,\"searches_with_match\":0}},\"type\":\"summary\"}\n",
+  "input_sha256": "3f2e00b22d91108ef6d6411c6239e4d979546cb43ce8633ec710105d4d28c5ff",
+  "output_sha256": "3f2e00b22d91108ef6d6411c6239e4d979546cb43ce8633ec710105d4d28c5ff",
+  "input_chars_python_codepoints": 255,
+  "output_chars_python_codepoints": 255,
+  "input_bytes_utf8": 255,
+  "output_bytes_utf8": 255,
+  "compacted": false,
+  "raw_recovery_verified": false,
+  "raw_file": null,
+  "elapsed_ns_including_python_subprocess": 23992000,
+  "hook_stdout": "",
+  "hook_stderr": "",
+  "scope": "single offline PostToolUse event; no pre-tool RTK rewrite, agent, or model run",
+  "fixture_id": "rg-json-invalid-path",
+  "output_file": "reports/peers/harnesspro/rg-json-invalid-path/output.txt",
+  "required_evidence_results": [
+    {
+      "tag": "rg-summary",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "present_exact_contiguous": true
+    }
+  ],
+  "required_evidence_present": 1,
+  "required_evidence_total": 1,
+  "original_process_metadata_external_to_stdin": {
+    "exit_code": 2,
+    "scope": [
+      "fixtures/sources/does-not-exist"
+    ],
+    "truncated": false
+  }
+}

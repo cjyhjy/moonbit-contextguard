@@ -1,0 +1,3 @@
+{"type":"begin","data":{"path":{"text":"fixtures/sources/search/gamma.txt"}}}
+{"type":"context","data":{"path":{"text":"fixtures/sources/search/gamma.txt"},"lines":{"text":"before gamma\n"},"line_number":1,"absolute_offset":0,"submatches":[]}}
+{"data":{"elapsed_total":{"human":"0.004955s","nanos":4954709,"secs":0},"stats":{"bytes_printed":9457,"bytes_searched":7084,"elapsed":{"human":"0.000071s","nanos":71333,"secs":0},"matched_lines":5,"matches":5,"searches":3,"searches_with_match":3}},"type":"summary"}

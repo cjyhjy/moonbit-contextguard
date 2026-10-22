@@ -1,0 +1,1 @@
+{"data":{"elapsed_total":{"human":"0.003944s","nanos":3944083,"secs":0},"stats":{"bytes_printed":0,"bytes_searched":7084,"elapsed":{"human":"0.000009s","nanos":8875,"secs":0},"matched_lines":0,"matches":0,"searches":3,"searches_with_match":0}},"type":"summary"}

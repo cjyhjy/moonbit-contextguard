@@ -1,0 +1,545 @@
+{
+  "schema_version": 1,
+  "captured_utc": "2026-10-22T15:34:38Z",
+  "command": "python3 research/replay_peers.py",
+  "fixture_manifest_sha256": "d7d85bd7e171e8a17bacc8f5fd69dc121a4fdb7732a611241695f79d8ce2c8ab",
+  "python_version": "3.9.6 (default, May 22 2026, 11:13:45) \n[Clang 21.0.0 (clang-2100.1.1.101)]",
+  "platform": "macOS-26.5.1-arm64-arm-64bit",
+  "interpretation": "Actual upstream offline stdout processing on synthetic-source real process outputs. No model-token, API-cost, task-success, or net-savings measurement. Original process metadata and stderr are external to peer stdin.",
+  "records": [
+    {
+      "peer": "HarnessPro Terminal-Bench 2 Lite PostToolUse",
+      "revision": "8ae622eb4a4923dbb4b515be7ded614f88fd4f38",
+      "source_git_blob_sha1": "2eb13a90f215ef3ab65fe911020c16583757a8a2",
+      "mode": "published-default",
+      "limits": {
+        "tool_output_max_chars": 4000,
+        "tool_output_head_chars": 2400,
+        "tool_output_tail_chars": 900
+      },
+      "input_sha256": "49989ebc71f0f054b406b6405c9442375538ec5889748fa074f6e1fc87183e21",
+      "output_sha256": "49989ebc71f0f054b406b6405c9442375538ec5889748fa074f6e1fc87183e21",
+      "input_chars_python_codepoints": 338,
+      "output_chars_python_codepoints": 338,
+      "input_bytes_utf8": 346,
+      "output_bytes_utf8": 346,
+      "compacted": false,
+      "raw_recovery_verified": false,
+      "raw_file": null,
+      "elapsed_ns_including_python_subprocess": 26385208,
+      "hook_stderr": "",
+      "scope": "single offline PostToolUse event; no pre-tool RTK rewrite, agent, or model run",
+      "fixture_id": "node-tap-all-pass",
+      "output_file": "reports/peers/harnesspro/node-tap-all-pass/output.txt",
+      "required_evidence_results": [
+        {
+          "tag": "tap-version",
+          "source_line_start": 1,
+          "source_line_end": 1,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-plan",
+          "source_line_start": 14,
+          "source_line_end": 14,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-tests",
+          "source_line_start": 15,
+          "source_line_end": 15,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-suites",
+          "source_line_start": 16,
+          "source_line_end": 16,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-pass",
+          "source_line_start": 17,
+          "source_line_end": 17,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-fail",
+          "source_line_start": 18,
+          "source_line_end": 18,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-cancelled",
+          "source_line_start": 19,
+          "source_line_end": 19,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-skipped",
+          "source_line_start": 20,
+          "source_line_end": 20,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-todo",
+          "source_line_start": 21,
+          "source_line_end": 21,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-duration_ms",
+          "source_line_start": 22,
+          "source_line_end": 22,
+          "present_exact_contiguous": true
+        }
+      ],
+      "required_evidence_present": 10,
+      "required_evidence_total": 10,
+      "original_process_metadata_external_to_stdin": {
+        "exit_code": 0,
+        "scope": [
+          "fixtures/sources/all-pass.test.cjs"
+        ],
+        "truncated": false
+      }
+    },
+    {
+      "peer": "HarnessPro Terminal-Bench 2 Lite PostToolUse",
+      "revision": "8ae622eb4a4923dbb4b515be7ded614f88fd4f38",
+      "source_git_blob_sha1": "2eb13a90f215ef3ab65fe911020c16583757a8a2",
+      "mode": "published-default",
+      "limits": {
+        "tool_output_max_chars": 4000,
+        "tool_output_head_chars": 2400,
+        "tool_output_tail_chars": 900
+      },
+      "input_sha256": "93a1e18710ac0e034c8a9cfb02e0a8f4ff8f11749e7fa5a61db5e756f34adf85",
+      "output_sha256": "93a1e18710ac0e034c8a9cfb02e0a8f4ff8f11749e7fa5a61db5e756f34adf85",
+      "input_chars_python_codepoints": 117,
+      "output_chars_python_codepoints": 117,
+      "input_bytes_utf8": 117,
+      "output_bytes_utf8": 117,
+      "compacted": false,
+      "raw_recovery_verified": false,
+      "raw_file": null,
+      "elapsed_ns_including_python_subprocess": 25644833,
+      "hook_stderr": "",
+      "scope": "single offline PostToolUse event; no pre-tool RTK rewrite, agent, or model run",
+      "fixture_id": "node-tap-zero-tests",
+      "output_file": "reports/peers/harnesspro/node-tap-zero-tests/output.txt",
+      "required_evidence_results": [
+        {
+          "tag": "tap-version",
+          "source_line_start": 1,
+          "source_line_end": 1,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-plan",
+          "source_line_start": 2,
+          "source_line_end": 2,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-tests",
+          "source_line_start": 3,
+          "source_line_end": 3,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-suites",
+          "source_line_start": 4,
+          "source_line_end": 4,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-pass",
+          "source_line_start": 5,
+          "source_line_end": 5,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-fail",
+          "source_line_start": 6,
+          "source_line_end": 6,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-cancelled",
+          "source_line_start": 7,
+          "source_line_end": 7,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-skipped",
+          "source_line_start": 8,
+          "source_line_end": 8,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-todo",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-duration_ms",
+          "source_line_start": 10,
+          "source_line_end": 10,
+          "present_exact_contiguous": true
+        }
+      ],
+      "required_evidence_present": 10,
+      "required_evidence_total": 10,
+      "original_process_metadata_external_to_stdin": {
+        "exit_code": 0,
+        "scope": [
+          "fixtures/sources/empty-tests"
+        ],
+        "truncated": false
+      }
+    },
+    {
+      "peer": "HarnessPro Terminal-Bench 2 Lite PostToolUse",
+      "revision": "8ae622eb4a4923dbb4b515be7ded614f88fd4f38",
+      "source_git_blob_sha1": "2eb13a90f215ef3ab65fe911020c16583757a8a2",
+      "mode": "published-default",
+      "limits": {
+        "tool_output_max_chars": 4000,
+        "tool_output_head_chars": 2400,
+        "tool_output_tail_chars": 900
+      },
+      "input_sha256": "0bdbc87eb282f48c0c0255a4f37985ac9f99730d39a86512df502df04d39ecc0",
+      "output_sha256": "0eec4ff539f7206bada7cf6145e53d875d4373a3e78a6769d118881f30ba7e78",
+      "input_chars_python_codepoints": 10335,
+      "output_chars_python_codepoints": 3582,
+      "input_bytes_utf8": 11007,
+      "output_bytes_utf8": 3870,
+      "compacted": true,
+      "raw_recovery_verified": true,
+      "raw_file": "reports/peers/harnesspro/node-tap-middle-failure/.rho_runtime/raw/0bdbc87eb282f48c0c0255a4f37985ac9f99730d39a86512df502df04d39ecc0.json",
+      "elapsed_ns_including_python_subprocess": 27680916,
+      "hook_stderr": "",
+      "scope": "single offline PostToolUse event; no pre-tool RTK rewrite, agent, or model run",
+      "fixture_id": "node-tap-middle-failure",
+      "output_file": "reports/peers/harnesspro/node-tap-middle-failure/output.txt",
+      "required_evidence_results": [
+        {
+          "tag": "tap-version",
+          "source_line_start": 1,
+          "source_line_end": 1,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-failure-block",
+          "source_line_start": 218,
+          "source_line_end": 256,
+          "present_exact_contiguous": false
+        },
+        {
+          "tag": "tap-failure-location",
+          "source_line_start": 223,
+          "source_line_end": 223,
+          "present_exact_contiguous": false
+        },
+        {
+          "tag": "tap-assertion-actual",
+          "source_line_start": 243,
+          "source_line_end": 243,
+          "present_exact_contiguous": false
+        },
+        {
+          "tag": "tap-assertion-expected",
+          "source_line_start": 239,
+          "source_line_end": 239,
+          "present_exact_contiguous": false
+        },
+        {
+          "tag": "tap-assertion-error",
+          "source_line_start": 225,
+          "source_line_end": 225,
+          "present_exact_contiguous": false
+        },
+        {
+          "tag": "tap-skip",
+          "source_line_start": 258,
+          "source_line_end": 258,
+          "present_exact_contiguous": false
+        },
+        {
+          "tag": "tap-todo",
+          "source_line_start": 264,
+          "source_line_end": 264,
+          "present_exact_contiguous": false
+        },
+        {
+          "tag": "tap-plan",
+          "source_line_start": 485,
+          "source_line_end": 485,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-tests",
+          "source_line_start": 486,
+          "source_line_end": 486,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-suites",
+          "source_line_start": 487,
+          "source_line_end": 487,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-pass",
+          "source_line_start": 488,
+          "source_line_end": 488,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-fail",
+          "source_line_start": 489,
+          "source_line_end": 489,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-cancelled",
+          "source_line_start": 490,
+          "source_line_end": 490,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-skipped",
+          "source_line_start": 491,
+          "source_line_end": 491,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-todo",
+          "source_line_start": 492,
+          "source_line_end": 492,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "tap-summary-duration_ms",
+          "source_line_start": 493,
+          "source_line_end": 493,
+          "present_exact_contiguous": true
+        }
+      ],
+      "required_evidence_present": 10,
+      "required_evidence_total": 17,
+      "original_process_metadata_external_to_stdin": {
+        "exit_code": 1,
+        "scope": [
+          "fixtures/sources/many-tests.test.cjs"
+        ],
+        "truncated": false
+      }
+    },
+    {
+      "peer": "HarnessPro Terminal-Bench 2 Lite PostToolUse",
+      "revision": "8ae622eb4a4923dbb4b515be7ded614f88fd4f38",
+      "source_git_blob_sha1": "2eb13a90f215ef3ab65fe911020c16583757a8a2",
+      "mode": "published-default",
+      "limits": {
+        "tool_output_max_chars": 4000,
+        "tool_output_head_chars": 2400,
+        "tool_output_tail_chars": 900
+      },
+      "input_sha256": "fbc535bdcdd94edf67179dd9b4ef6f7a41ac555085320b43c45c7a5a93f658d7",
+      "output_sha256": "92c78d33bccedae600973450df12a043b33ab635b216184f3b49f0d705f67fb8",
+      "input_chars_python_codepoints": 6740,
+      "output_chars_python_codepoints": 3581,
+      "input_bytes_utf8": 10533,
+      "output_bytes_utf8": 4775,
+      "compacted": true,
+      "raw_recovery_verified": true,
+      "raw_file": "reports/peers/harnesspro/rg-json-multiple-unicode-long/.rho_runtime/raw/fbc535bdcdd94edf67179dd9b4ef6f7a41ac555085320b43c45c7a5a93f658d7.json",
+      "elapsed_ns_including_python_subprocess": 25155625,
+      "hook_stderr": "",
+      "scope": "single offline PostToolUse event; no pre-tool RTK rewrite, agent, or model run",
+      "fixture_id": "rg-json-multiple-unicode-long",
+      "output_file": "reports/peers/harnesspro/rg-json-multiple-unicode-long/output.txt",
+      "required_evidence_results": [
+        {
+          "tag": "rg-context",
+          "source_line_start": 2,
+          "source_line_end": 2,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "rg-match",
+          "source_line_start": 3,
+          "source_line_end": 3,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "rg-match",
+          "source_line_start": 4,
+          "source_line_end": 4,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "rg-context",
+          "source_line_start": 5,
+          "source_line_end": 5,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "rg-context",
+          "source_line_start": 8,
+          "source_line_end": 8,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "rg-match",
+          "source_line_start": 9,
+          "source_line_end": 9,
+          "present_exact_contiguous": false
+        },
+        {
+          "tag": "rg-context",
+          "source_line_start": 10,
+          "source_line_end": 10,
+          "present_exact_contiguous": false
+        },
+        {
+          "tag": "rg-context",
+          "source_line_start": 11,
+          "source_line_end": 11,
+          "present_exact_contiguous": false
+        },
+        {
+          "tag": "rg-match",
+          "source_line_start": 12,
+          "source_line_end": 12,
+          "present_exact_contiguous": false
+        },
+        {
+          "tag": "rg-context",
+          "source_line_start": 13,
+          "source_line_end": 13,
+          "present_exact_contiguous": false
+        },
+        {
+          "tag": "rg-context",
+          "source_line_start": 16,
+          "source_line_end": 16,
+          "present_exact_contiguous": false
+        },
+        {
+          "tag": "rg-match",
+          "source_line_start": 17,
+          "source_line_end": 17,
+          "present_exact_contiguous": false
+        },
+        {
+          "tag": "rg-context",
+          "source_line_start": 18,
+          "source_line_end": 18,
+          "present_exact_contiguous": true
+        },
+        {
+          "tag": "rg-summary",
+          "source_line_start": 20,
+          "source_line_end": 20,
+          "present_exact_contiguous": true
+        }
+      ],
+      "required_evidence_present": 7,
+      "required_evidence_total": 14,
+      "original_process_metadata_external_to_stdin": {
+        "exit_code": 0,
+        "scope": [
+          "fixtures/sources/search"
+        ],
+        "truncated": false
+      }
+    },
+    {
+      "peer": "HarnessPro Terminal-Bench 2 Lite PostToolUse",
+      "revision": "8ae622eb4a4923dbb4b515be7ded614f88fd4f38",
+      "source_git_blob_sha1": "2eb13a90f215ef3ab65fe911020c16583757a8a2",
+      "mode": "published-default",
+      "limits": {
+        "tool_output_max_chars": 4000,
+        "tool_output_head_chars": 2400,
+        "tool_output_tail_chars": 900
+      },
+      "input_sha256": "a3cdb4acd573211cdbdcd691cdf02f691493a41e6d229f2a981ab9e2010557fe",
+      "output_sha256": "a3cdb4acd573211cdbdcd691cdf02f691493a41e6d229f2a981ab9e2010557fe",
+      "input_chars_python_codepoints": 263,
+      "output_chars_python_codepoints": 263,
+      "input_bytes_utf8": 263,
+      "output_bytes_utf8": 263,
+      "compacted": false,
+      "raw_recovery_verified": false,
+      "raw_file": null,
+      "elapsed_ns_including_python_subprocess": 24577875,
+      "hook_stderr": "",
+      "scope": "single offline PostToolUse event; no pre-tool RTK rewrite, agent, or model run",
+      "fixture_id": "rg-json-no-results",
+      "output_file": "reports/peers/harnesspro/rg-json-no-results/output.txt",
+      "required_evidence_results": [
+        {
+          "tag": "rg-summary",
+          "source_line_start": 1,
+          "source_line_end": 1,
+          "present_exact_contiguous": true
+        }
+      ],
+      "required_evidence_present": 1,
+      "required_evidence_total": 1,
+      "original_process_metadata_external_to_stdin": {
+        "exit_code": 1,
+        "scope": [
+          "fixtures/sources/search"
+        ],
+        "truncated": false
+      }
+    },
+    {
+      "peer": "HarnessPro Terminal-Bench 2 Lite PostToolUse",
+      "revision": "8ae622eb4a4923dbb4b515be7ded614f88fd4f38",
+      "source_git_blob_sha1": "2eb13a90f215ef3ab65fe911020c16583757a8a2",
+      "mode": "published-default",
+      "limits": {
+        "tool_output_max_chars": 4000,
+        "tool_output_head_chars": 2400,
+        "tool_output_tail_chars": 900
+      },
+      "input_sha256": "3f2e00b22d91108ef6d6411c6239e4d979546cb43ce8633ec710105d4d28c5ff",
+      "output_sha256": "3f2e00b22d91108ef6d6411c6239e4d979546cb43ce8633ec710105d4d28c5ff",
+      "input_chars_python_codepoints": 255,
+      "output_chars_python_codepoints": 255,
+      "input_bytes_utf8": 255,
+      "output_bytes_utf8": 255,
+      "compacted": false,
+      "raw_recovery_verified": false,
+      "raw_file": null,
+      "elapsed_ns_including_python_subprocess": 23992000,
+      "hook_stderr": "",
+      "scope": "single offline PostToolUse event; no pre-tool RTK rewrite, agent, or model run",
+      "fixture_id": "rg-json-invalid-path",
+      "output_file": "reports/peers/harnesspro/rg-json-invalid-path/output.txt",
+      "required_evidence_results": [
+        {
+          "tag": "rg-summary",
+          "source_line_start": 1,
+          "source_line_end": 1,
+          "present_exact_contiguous": true
+        }
+      ],
+      "required_evidence_present": 1,
+      "required_evidence_total": 1,
+      "original_process_metadata_external_to_stdin": {
+        "exit_code": 2,
+        "scope": [
+          "fixtures/sources/does-not-exist"
+        ],
+        "truncated": false
+      }
+    }
+  ]
+}

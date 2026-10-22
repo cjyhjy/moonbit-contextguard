@@ -1,0 +1,178 @@
+[Tool output compacted from 10335 characters. Full raw result: .rho_runtime/raw/0bdbc87eb282f48c0c0255a4f37985ac9f99730d39a86512df502df04d39ecc0.json. Read only a targeted range if more detail is necessary.]
+TAP version 13
+# Subtest: before 01 — 中文 passes
+ok 1 - before 01 — 中文 passes
+  ---
+  duration_ms: 0.737625
+  type: 'test'
+  ...
+# Subtest: before 02 — 中文 passes
+ok 2 - before 02 — 中文 passes
+  ---
+  duration_ms: 0.069375
+  type: 'test'
+  ...
+# Subtest: before 03 — 中文 passes
+ok 3 - before 03 — 中文 passes
+  ---
+  duration_ms: 0.037291
+  type: 'test'
+  ...
+# Subtest: before 04 — 中文 passes
+ok 4 - before 04 — 中文 passes
+  ---
+  duration_ms: 0.579084
+  type: 'test'
+  ...
+# Subtest: before 05 — 中文 passes
+ok 5 - before 05 — 中文 passes
+  ---
+  duration_ms: 0.046917
+  type: 'test'
+  ...
+# Subtest: before 06 — 中文 passes
+ok 6 - before 06 — 中文 passes
+  ---
+  duration_ms: 0.028625
+  type: 'test'
+  ...
+# Subtest: before 07 — 中文 passes
+ok 7 - before 07 — 中文 passes
+  ---
+  duration_ms: 0.029458
+  type: 'test'
+  ...
+# Subtest: before 08 — 中文 passes
+ok 8 - before 08 — 中文 passes
+  ---
+  duration_ms: 0.028042
+  type: 'test'
+  ...
+# Subtest: before 09 — 中文 passes
+ok 9 - before 09 — 中文 passes
+  ---
+  duration_ms: 0.043333
+  type: 'test'
+  ...
+# Subtest: before 10 — 中文 passes
+ok 10 - before 10 — 中文 passes
+  ---
+  duration_ms: 0.066292
+  type: 'test'
+  ...
+# Subtest: before 11 — 中文 passes
+ok 11 - before 11 — 中文 passes
+  ---
+  duration_ms: 0.0385
+  type: 'test'
+  ...
+# Subtest: before 12 — 中文 passes
+ok 12 - before 12 — 中文 passes
+  ---
+  duration_ms: 0.376916
+  type: 'test'
+  ...
+# Subtest: before 13 — 中文 passes
+ok 13 - before 13 — 中文 passes
+  ---
+  duration_ms: 0.041166
+  type: 'test'
+  ...
+# Subtest: before 14 — 中文 passes
+ok 14 - before 14 — 中文 passes
+  ---
+  duration_ms: 0.0215
+  type: 'test'
+  ...
+# Subtest: before 15 — 中文 passes
+ok 15 - before 15 — 中文 passes
+  ---
+  duration_ms: 0.017208
+  type: 'test'
+  ...
+# Subtest: before 16 — 中文 passes
+ok 16 - before 16 — 中文 passes
+  ---
+  duration_ms: 0.0195
+  type: 'test'
+  ...
+# Subtest: before 17 — 中文 passes
+ok 17 - before 17 — 中文 passes
+  ---
+  duration_ms: 0.014541
+  type: 'test'
+  ...
+# Subtest: before 18 — 中文 passes
+ok 18 - before 18 — 中文 passes
+  ---
+  duration_ms: 0.012417
+  type: 'test'
+  ...
+# Subtest: before 19 — 中文 passes
+ok 19 - before 19 — 中文 passes
+  ---
+  duration_ms: 0.01175
+  type: 'test'
+  ...
+# Subtest: before 20 — 中文 passes
+ok 20 - before 20 — 中文 passes
+  ---
+  duration_ms: 0.014542
+  type: 'test'
+  ...
+# Subtest: before 21 — 中文 passes
+ok 21 - before 21 — 中文 passes
+  ---
+  duration_ms: 0.011084
+  type: 'test'
+  ...
+# Subte
+... [7034 characters omitted; use the raw path for a targeted range] ...
+tion_ms: 0.013542
+  type: 'test'
+  ...
+# Subtest: after 31 — unicode λ passes
+ok 70 - after 31 — unicode λ passes
+  ---
+  duration_ms: 0.017833
+  type: 'test'
+  ...
+# Subtest: after 32 — unicode λ passes
+ok 71 - after 32 — unicode λ passes
+  ---
+  duration_ms: 0.014667
+  type: 'test'
+  ...
+# Subtest: after 33 — unicode λ passes
+ok 72 - after 33 — unicode λ passes
+  ---
+  duration_ms: 0.015083
+  type: 'test'
+  ...
+# Subtest: after 34 — unicode λ passes
+ok 73 - after 34 — unicode λ passes
+  ---
+  duration_ms: 0.026541
+  type: 'test'
+  ...
+# Subtest: after 35 — unicode λ passes
+ok 74 - after 35 — unicode λ passes
+  ---
+  duration_ms: 0.025042
+  type: 'test'
+  ...
+# Subtest: after 36 — unicode λ passes
+ok 75 - after 36 — unicode λ passes
+  ---
+  duration_ms: 0.014875
+  type: 'test'
+  ...
+1..75
+# tests 75
+# suites 0
+# pass 72
+# fail 1
+# cancelled 0
+# skipped 1
+# todo 1
+# duration_ms 91.549292

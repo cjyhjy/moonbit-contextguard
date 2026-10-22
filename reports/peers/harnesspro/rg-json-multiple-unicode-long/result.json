@@ -1,0 +1,122 @@
+{
+  "peer": "HarnessPro Terminal-Bench 2 Lite PostToolUse",
+  "revision": "8ae622eb4a4923dbb4b515be7ded614f88fd4f38",
+  "source_git_blob_sha1": "2eb13a90f215ef3ab65fe911020c16583757a8a2",
+  "mode": "published-default",
+  "limits": {
+    "tool_output_max_chars": 4000,
+    "tool_output_head_chars": 2400,
+    "tool_output_tail_chars": 900
+  },
+  "output": "[Tool output compacted from 6740 characters. Full raw result: .rho_runtime/raw/fbc535bdcdd94edf67179dd9b4ef6f7a41ac555085320b43c45c7a5a93f658d7.json. Read only a targeted range if more detail is necessary.]\n{\"type\":\"begin\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/gamma.txt\"}}}\n{\"type\":\"context\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/gamma.txt\"},\"lines\":{\"text\":\"before gamma\\n\"},\"line_number\":1,\"absolute_offset\":0,\"submatches\":[]}}\n{\"type\":\"match\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/gamma.txt\"},\"lines\":{\"text\":\"needle gamma one\\n\"},\"line_number\":2,\"absolute_offset\":13,\"submatches\":[{\"match\":{\"text\":\"needle\"},\"start\":0,\"end\":6}]}}\n{\"type\":\"match\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/gamma.txt\"},\"lines\":{\"text\":\"needle gamma adjacent\\n\"},\"line_number\":3,\"absolute_offset\":30,\"submatches\":[{\"match\":{\"text\":\"needle\"},\"start\":0,\"end\":6}]}}\n{\"type\":\"context\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/gamma.txt\"},\"lines\":{\"text\":\"after gamma\\n\"},\"line_number\":4,\"absolute_offset\":52,\"submatches\":[]}}\n{\"type\":\"end\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/gamma.txt\"},\"binary_offset\":null,\"stats\":{\"elapsed\":{\"secs\":0,\"nanos\":51625,\"human\":\"0.000052s\"},\"searches\":1,\"searches_with_match\":1,\"bytes_searched\":81,\"bytes_printed\":843,\"matched_lines\":2,\"matches\":2}}}\n{\"type\":\"begin\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/βeta.txt\"}}}\n{\"type\":\"context\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/βeta.txt\"},\"lines\":{\"text\":\"before a long middle hit\\n\"},\"line_number\":2,\"absolute_offset\":22,\"submatches\":[]}}\n{\"type\":\"match\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/βeta.txt\"},\"lines\":{\"text\":\"needle long-middle 保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-\n... [3439 characters omitted; use the raw path for a targeted range] ...\n{\"text\":\"fixtures/sources/search/alpha.txt\"},\"lines\":{\"text\":\"needle first match 中文\\n\"},\"line_number\":3,\"absolute_offset\":39,\"submatches\":[{\"match\":{\"text\":\"needle\"},\"start\":0,\"end\":6}]}}\n{\"type\":\"context\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/alpha.txt\"},\"lines\":{\"text\":\"context after first hit\\n\"},\"line_number\":4,\"absolute_offset\":65,\"submatches\":[]}}\n{\"type\":\"end\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/alpha.txt\"},\"binary_offset\":null,\"stats\":{\"elapsed\":{\"secs\":0,\"nanos\":3750,\"human\":\"0.000004s\"},\"searches\":1,\"searches_with_match\":1,\"bytes_searched\":105,\"bytes_printed\":658,\"matched_lines\":1,\"matches\":1}}}\n{\"data\":{\"elapsed_total\":{\"human\":\"0.004955s\",\"nanos\":4954709,\"secs\":0},\"stats\":{\"bytes_printed\":9457,\"bytes_searched\":7084,\"elapsed\":{\"human\":\"0.000071s\",\"nanos\":71333,\"secs\":0},\"matched_lines\":5,\"matches\":5,\"searches\":3,\"searches_with_match\":3}},\"type\":\"summary\"}",
+  "input_sha256": "fbc535bdcdd94edf67179dd9b4ef6f7a41ac555085320b43c45c7a5a93f658d7",
+  "output_sha256": "92c78d33bccedae600973450df12a043b33ab635b216184f3b49f0d705f67fb8",
+  "input_chars_python_codepoints": 6740,
+  "output_chars_python_codepoints": 3581,
+  "input_bytes_utf8": 10533,
+  "output_bytes_utf8": 4775,
+  "compacted": true,
+  "raw_recovery_verified": true,
+  "raw_file": "reports/peers/harnesspro/rg-json-multiple-unicode-long/.rho_runtime/raw/fbc535bdcdd94edf67179dd9b4ef6f7a41ac555085320b43c45c7a5a93f658d7.json",
+  "elapsed_ns_including_python_subprocess": 25155625,
+  "hook_stdout": "{\"decision\": \"block\", \"reason\": \"[Tool output compacted from 6740 characters. Full raw result: .rho_runtime/raw/fbc535bdcdd94edf67179dd9b4ef6f7a41ac555085320b43c45c7a5a93f658d7.json. Read only a targeted range if more detail is necessary.]\\n{\\\"type\\\":\\\"begin\\\",\\\"data\\\":{\\\"path\\\":{\\\"text\\\":\\\"fixtures/sources/search/gamma.txt\\\"}}}\\n{\\\"type\\\":\\\"context\\\",\\\"data\\\":{\\\"path\\\":{\\\"text\\\":\\\"fixtures/sources/search/gamma.txt\\\"},\\\"lines\\\":{\\\"text\\\":\\\"before gamma\\\\n\\\"},\\\"line_number\\\":1,\\\"absolute_offset\\\":0,\\\"submatches\\\":[]}}\\n{\\\"type\\\":\\\"match\\\",\\\"data\\\":{\\\"path\\\":{\\\"text\\\":\\\"fixtures/sources/search/gamma.txt\\\"},\\\"lines\\\":{\\\"text\\\":\\\"needle gamma one\\\\n\\\"},\\\"line_number\\\":2,\\\"absolute_offset\\\":13,\\\"submatches\\\":[{\\\"match\\\":{\\\"text\\\":\\\"needle\\\"},\\\"start\\\":0,\\\"end\\\":6}]}}\\n{\\\"type\\\":\\\"match\\\",\\\"data\\\":{\\\"path\\\":{\\\"text\\\":\\\"fixtures/sources/search/gamma.txt\\\"},\\\"lines\\\":{\\\"text\\\":\\\"needle gamma adjacent\\\\n\\\"},\\\"line_number\\\":3,\\\"absolute_offset\\\":30,\\\"submatches\\\":[{\\\"match\\\":{\\\"text\\\":\\\"needle\\\"},\\\"start\\\":0,\\\"end\\\":6}]}}\\n{\\\"type\\\":\\\"context\\\",\\\"data\\\":{\\\"path\\\":{\\\"text\\\":\\\"fixtures/sources/search/gamma.txt\\\"},\\\"lines\\\":{\\\"text\\\":\\\"after gamma\\\\n\\\"},\\\"line_number\\\":4,\\\"absolute_offset\\\":52,\\\"submatches\\\":[]}}\\n{\\\"type\\\":\\\"end\\\",\\\"data\\\":{\\\"path\\\":{\\\"text\\\":\\\"fixtures/sources/search/gamma.txt\\\"},\\\"binary_offset\\\":null,\\\"stats\\\":{\\\"elapsed\\\":{\\\"secs\\\":0,\\\"nanos\\\":51625,\\\"human\\\":\\\"0.000052s\\\"},\\\"searches\\\":1,\\\"searches_with_match\\\":1,\\\"bytes_searched\\\":81,\\\"bytes_printed\\\":843,\\\"matched_lines\\\":2,\\\"matches\\\":2}}}\\n{\\\"type\\\":\\\"begin\\\",\\\"data\\\":{\\\"path\\\":{\\\"text\\\":\\\"fixtures/sources/search/βeta.txt\\\"}}}\\n{\\\"type\\\":\\\"context\\\",\\\"data\\\":{\\\"path\\\":{\\\"text\\\":\\\"fixtures/sources/search/βeta.txt\\\"},\\\"lines\\\":{\\\"text\\\":\\\"before a long middle hit\\\\n\\\"},\\\"line_number\\\":2,\\\"absolute_offset\\\":22,\\\"submatches\\\":[]}}\\n{\\\"type\\\":\\\"match\\\",\\\"data\\\":{\\\"path\\\":{\\\"text\\\":\\\"fixtures/sources/search/βeta.txt\\\"},\\\"lines\\\":{\\\"text\\\":\\\"needle long-middle 保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-\\n... [3439 characters omitted; use the raw path for a targeted range] ...\\n{\\\"text\\\":\\\"fixtures/sources/search/alpha.txt\\\"},\\\"lines\\\":{\\\"text\\\":\\\"needle first match 中文\\\\n\\\"},\\\"line_number\\\":3,\\\"absolute_offset\\\":39,\\\"submatches\\\":[{\\\"match\\\":{\\\"text\\\":\\\"needle\\\"},\\\"start\\\":0,\\\"end\\\":6}]}}\\n{\\\"type\\\":\\\"context\\\",\\\"data\\\":{\\\"path\\\":{\\\"text\\\":\\\"fixtures/sources/search/alpha.txt\\\"},\\\"lines\\\":{\\\"text\\\":\\\"context after first hit\\\\n\\\"},\\\"line_number\\\":4,\\\"absolute_offset\\\":65,\\\"submatches\\\":[]}}\\n{\\\"type\\\":\\\"end\\\",\\\"data\\\":{\\\"path\\\":{\\\"text\\\":\\\"fixtures/sources/search/alpha.txt\\\"},\\\"binary_offset\\\":null,\\\"stats\\\":{\\\"elapsed\\\":{\\\"secs\\\":0,\\\"nanos\\\":3750,\\\"human\\\":\\\"0.000004s\\\"},\\\"searches\\\":1,\\\"searches_with_match\\\":1,\\\"bytes_searched\\\":105,\\\"bytes_printed\\\":658,\\\"matched_lines\\\":1,\\\"matches\\\":1}}}\\n{\\\"data\\\":{\\\"elapsed_total\\\":{\\\"human\\\":\\\"0.004955s\\\",\\\"nanos\\\":4954709,\\\"secs\\\":0},\\\"stats\\\":{\\\"bytes_printed\\\":9457,\\\"bytes_searched\\\":7084,\\\"elapsed\\\":{\\\"human\\\":\\\"0.000071s\\\",\\\"nanos\\\":71333,\\\"secs\\\":0},\\\"matched_lines\\\":5,\\\"matches\\\":5,\\\"searches\\\":3,\\\"searches_with_match\\\":3}},\\\"type\\\":\\\"summary\\\"}\", \"hookSpecificOutput\": {\"hookEventName\": \"PostToolUse\", \"additionalContext\": \"The original tool result was replaced by a recoverable head/tail view. Do not rerun the command merely to recover omitted progress noise.\"}}\n",
+  "hook_stderr": "",
+  "scope": "single offline PostToolUse event; no pre-tool RTK rewrite, agent, or model run",
+  "fixture_id": "rg-json-multiple-unicode-long",
+  "output_file": "reports/peers/harnesspro/rg-json-multiple-unicode-long/output.txt",
+  "required_evidence_results": [
+    {
+      "tag": "rg-context",
+      "source_line_start": 2,
+      "source_line_end": 2,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "rg-match",
+      "source_line_start": 3,
+      "source_line_end": 3,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "rg-match",
+      "source_line_start": 4,
+      "source_line_end": 4,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "rg-context",
+      "source_line_start": 5,
+      "source_line_end": 5,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "rg-context",
+      "source_line_start": 8,
+      "source_line_end": 8,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "rg-match",
+      "source_line_start": 9,
+      "source_line_end": 9,
+      "present_exact_contiguous": false
+    },
+    {
+      "tag": "rg-context",
+      "source_line_start": 10,
+      "source_line_end": 10,
+      "present_exact_contiguous": false
+    },
+    {
+      "tag": "rg-context",
+      "source_line_start": 11,
+      "source_line_end": 11,
+      "present_exact_contiguous": false
+    },
+    {
+      "tag": "rg-match",
+      "source_line_start": 12,
+      "source_line_end": 12,
+      "present_exact_contiguous": false
+    },
+    {
+      "tag": "rg-context",
+      "source_line_start": 13,
+      "source_line_end": 13,
+      "present_exact_contiguous": false
+    },
+    {
+      "tag": "rg-context",
+      "source_line_start": 16,
+      "source_line_end": 16,
+      "present_exact_contiguous": false
+    },
+    {
+      "tag": "rg-match",
+      "source_line_start": 17,
+      "source_line_end": 17,
+      "present_exact_contiguous": false
+    },
+    {
+      "tag": "rg-context",
+      "source_line_start": 18,
+      "source_line_end": 18,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "rg-summary",
+      "source_line_start": 20,
+      "source_line_end": 20,
+      "present_exact_contiguous": true
+    }
+  ],
+  "required_evidence_present": 7,
+  "required_evidence_total": 14,
+  "original_process_metadata_external_to_stdin": {
+    "exit_code": 0,
+    "scope": [
+      "fixtures/sources/search"
+    ],
+    "truncated": false
+  }
+}

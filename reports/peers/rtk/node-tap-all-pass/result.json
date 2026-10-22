@@ -1,0 +1,93 @@
+{
+  "available": true,
+  "peer": "RTK OSS 1.0.1 pipe auto-detection",
+  "revision": "4ef8730cf3a0dea11c8d64a9b90bc0616fe52100",
+  "binary_sha256": "897581cccf1d2b2d0886063133eadcf4377d71354c1ed4b8b3b7691f3e7633d2",
+  "platform": "Darwin arm64",
+  "mode": "pipe-auto",
+  "output": "TAP version 13\n# Subtest: addition works\nok 1 - addition works\n  ---\n  duration_ms: 0.298417\n  type: 'test'\n  ...\n# Subtest: Unicode 字符 remains intact\nok 2 - Unicode 字符 remains intact\n  ---\n  duration_ms: 0.047167\n  type: 'test'\n  ...\n1..2\n# tests 2\n# suites 0\n# pass 2\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 35.930916\n",
+  "input_sha256": "49989ebc71f0f054b406b6405c9442375538ec5889748fa074f6e1fc87183e21",
+  "output_sha256": "49989ebc71f0f054b406b6405c9442375538ec5889748fa074f6e1fc87183e21",
+  "input_bytes_utf8": 346,
+  "output_bytes_utf8": 346,
+  "input_chars_python_codepoints": 338,
+  "output_chars_python_codepoints": 338,
+  "byte_identical": true,
+  "elapsed_ns_including_rtk_subprocess": 6578667,
+  "hook_stderr": "",
+  "pipe_exit_code": 0,
+  "scope": "offline stdin pipe only; pipe exit code is not original command status; no forced unsupported format filter",
+  "fixture_id": "node-tap-all-pass",
+  "output_file": "reports/peers/rtk/node-tap-all-pass/output.txt",
+  "required_evidence_results": [
+    {
+      "tag": "tap-version",
+      "source_line_start": 1,
+      "source_line_end": 1,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "tap-plan",
+      "source_line_start": 14,
+      "source_line_end": 14,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "tap-summary-tests",
+      "source_line_start": 15,
+      "source_line_end": 15,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "tap-summary-suites",
+      "source_line_start": 16,
+      "source_line_end": 16,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "tap-summary-pass",
+      "source_line_start": 17,
+      "source_line_end": 17,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "tap-summary-fail",
+      "source_line_start": 18,
+      "source_line_end": 18,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "tap-summary-cancelled",
+      "source_line_start": 19,
+      "source_line_end": 19,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "tap-summary-skipped",
+      "source_line_start": 20,
+      "source_line_end": 20,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "tap-summary-todo",
+      "source_line_start": 21,
+      "source_line_end": 21,
+      "present_exact_contiguous": true
+    },
+    {
+      "tag": "tap-summary-duration_ms",
+      "source_line_start": 22,
+      "source_line_end": 22,
+      "present_exact_contiguous": true
+    }
+  ],
+  "required_evidence_present": 10,
+  "required_evidence_total": 10,
+  "original_process_metadata_external_to_stdin": {
+    "exit_code": 0,
+    "scope": [
+      "fixtures/sources/all-pass.test.cjs"
+    ],
+    "truncated": false
+  }
+}

@@ -1,0 +1,60 @@
+# API 契约（schema_version 1）
+
+MoonBit 库入口：`@guard.guard_request(request_json : String) -> String`，包路径 `contextguard/guard/src`。JS 胶水入口：`import { guard } from './tools/api.mjs'`，同步返回对象。CLI 从 stdin 或一个文件读单个 JSON 请求，stdout 输出单个 JSON 响应；非法 JSON/传输上限错误以退出码 2 写 stderr。
+
+```json
+{
+  "format": "node-tap",
+  "raw": "TAP version 13\n...",
+  "process": {
+    "exit_code": 1,
+    "scope": ["node --test --test-reporter=tap test.cjs"],
+    "truncated": false
+  },
+  "max_output_chars": 4000,
+  "max_input_chars": 1048576
+}
+```
+
+`candidate` 可选，为外部压缩器给出的**正文字符串**。省略或 null 使用内置提取器。额外的候选 `facts`、`preserved_fact_ids` 等字段不会影响验证。候选不得替换可信进程元数据。
+
+| 字段 | 约束 |
+|---|---|
+| format | `node-tap` 或 `rg-json`；其他值回退 |
+| raw | 必须为字符串；保留原始换行和原文，不自动规范化 |
+| process.exit_code | int32 整数；TAP 0/1、rg 0/1 成功完整流与实际结果相符；其他值保留原文 |
+| process.scope | 至少一个非空字符串，由真实调用者提供命令/参数/路径上下文 |
+| process.truncated | 明确 false 才能验证；true 回退，不能从正文猜测完整性 |
+| max_input_chars | 默认 1,048,576，最大 4,194,304，正整数 |
+| max_output_chars | 默认 16,000，范围 0–4,194,304 |
+
+长度以 **UTF-16 code units** 计，与 JS `string.length` 一致；不是 token 数。还有 50,000 行、JSON 嵌套 64 层限制。最外层 JSON 请求硬限 8,388,608 个 UTF-16 单元；无法安全解析时返回 `error`，JS API 抛出异常，不能宣称已回退或 verified。真实进程包装器捕获该错误，另外明确返回 `core_transport_error` 并保存采集原文。
+
+`max_output_chars` 是期望预算，不是强制截断：证据不能放下时返回可能更长的原文。原始截断时只保留**已收到的原文**，不补造丢失部分。
+
+## 响应
+
+| 字段 | 含义 |
+|---|---|
+| decision | `compressed` 内置选择通过；`accepted` 外部候选通过；`repaired` 缺失/不完整单元被完整重建；`fallback` 返回原文 |
+| reason | 机器可读原因，如 `candidate_changed_or_reordered_source`、`required_evidence_exceeds_budget`、`source_truncated` |
+| output | 交付正文；回退时等于 raw |
+| process | 原封不动返回调用者提供的元数据；不认证调用者是否诚实 |
+| output_kind | `original` 或 `evidence_projection`；后者是证据摘录，不是完整原格式 |
+| assurance | 仅为 `required_source_units_verified` 或 `original_passthrough`，不承诺任意语义正确 |
+| evidence | 必需单元的 id、kind、1 基含首尾的行范围、原文 text；不含被省略的普通通过测试 |
+| metrics | input_chars、output_chars、required_facts、missing_facts、char_unit；facts 计数是**单元数**，不是独立评测标注字段数 |
+
+`missing_facts` 描述修复前候选缺失的单元数；有部分单元或未对齐内容时是保守诊断值，不是语义错误数量。原文无法识别时 evidence 为空。进程包装器另加 stderr、capture（目录和双流 SHA-256）、耗时及采集状态。
+
+## 支持的格式
+
+**Node 平面 TAP v13**：`# Subtest:` 后跟顺序编号的 `ok/not ok` 和 Node YAML 诊断块；完整计划、tests/suites/pass/fail/cancelled/skipped/todo/duration 汇总。保留整个失败块（身份、状态、断言、实际/期望、位置、堆栈等）、skip/todo 块、协议头和全部汇总。只丢弃仅含 duration/type 的普通通过测试块。嵌套套件、自定义日志、bailout、取消、不同 reporter/未知字段均回退。测试名称、通过测试耗时不在必保契约中，可回查原文。
+
+**ripgrep JSONL**：检查 begin/end 配对、路径关联、行号/绝对偏移、submatch 区间、逐文件计数及最终计数与 exit 状态。保留每个 match/context 的完整原始 JSON 行和 summary。无二进制截断标记时可省略 begin/end（其路径、命中事实和汇总在保留事件中）；非 null binary_offset、未知事件、缺失 summary、错误退出或坏 JSON 回退。该 profile 是文本单行匹配；多行匹配的统计差异可能触发保守回退。`--max-count` 等搜索限制的含义由 scope 原样保留，不把搜索结果说成全仓库完备证明。
+
+## 候选内容规则
+
+验证器按原始顺序逐个匹配候选中的**完整原始单元**，并检查每个必需单元出现。它不使用候选给出的索引或元数据。候选若仅删行、删块，可从可信原文重建完整必要摘录；插入新文本、修改数值/路径/状态、重排原文都回退。候选即使语义等价、只改 JSON 空白，也可能被拒绝，这是明确的保守限制。
+
+此机制不判断工具是否撒谎、测试断言是否合理，亦不防御原始工具输出本身含恶意指令；所有工具文本始终应作为不可信数据交给 Agent。

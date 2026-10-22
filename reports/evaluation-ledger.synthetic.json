@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "boundary": "This tool validates and totals submitted ledger data; it does not execute tasks, verify provider bills, estimate token counts, or establish causal quality/cost improvements.",
+  "online_model_evaluation": "not_run",
+  "real_cost_evaluation": "not_run",
+  "counts": {
+    "records": 5,
+    "pairs": 2,
+    "runs": 4,
+    "actual_online_runs": 0,
+    "synthetic_runs": 4,
+    "offline_replay_runs": 0
+  },
+  "offline_costs": [
+    {
+      "optimization_id": "synthetic-optimization-1",
+      "evidence_kind": "synthetic",
+      "cost_source": "synthetic",
+      "incurred_cost_usd": 0.3,
+      "amortization_runs": 100,
+      "allocated_runs": 2,
+      "allocated_cost_usd": 0.006,
+      "unallocated_cost_usd": 0.294,
+      "recorded_offline_usage": {
+        "input_uncached_tokens": 100000,
+        "input_cached_tokens": 0,
+        "output_tokens": 10000
+      }
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "synthetic-original-1",
+      "pair_id": "synthetic-pair-1",
+      "condition": "original",
+      "evidence_kind": "synthetic",
+      "status": "completed",
+      "task_success": true,
+      "duration_ms": 1000,
+      "recorded_online_usage": {
+        "input_uncached_tokens": 12000,
+        "input_cached_tokens": 0,
+        "output_tokens": 1000
+      },
+      "cost_sources": [
+        "synthetic"
+      ],
+      "costs_usd": {
+        "primary": 0.014,
+        "summary": 0,
+        "retrieval": 0,
+        "retry": 0,
+        "offline_optimization": 0
+      },
+      "direct_cost_usd": 0.014,
+      "allocated_total_cost_usd": 0.014
+    },
+    {
+      "run_id": "synthetic-guard-1",
+      "pair_id": "synthetic-pair-1",
+      "condition": "guard",
+      "evidence_kind": "synthetic",
+      "status": "completed",
+      "task_success": true,
+      "duration_ms": 1100,
+      "recorded_online_usage": {
+        "input_uncached_tokens": 11000,
+        "input_cached_tokens": 3000,
+        "output_tokens": 1900
+      },
+      "cost_sources": [
+        "synthetic"
+      ],
+      "costs_usd": {
+        "primary": 0.007,
+        "summary": 0.002,
+        "retrieval": 0.001,
+        "retry": 0.005,
+        "offline_optimization": 0.003
+      },
+      "direct_cost_usd": 0.015,
+      "allocated_total_cost_usd": 0.018
+    },
+    {
+      "run_id": "synthetic-original-2",
+      "pair_id": "synthetic-pair-2",
+      "condition": "original",
+      "evidence_kind": "synthetic",
+      "status": "completed",
+      "task_success": true,
+      "duration_ms": 1000,
+      "recorded_online_usage": {
+        "input_uncached_tokens": 12000,
+        "input_cached_tokens": 0,
+        "output_tokens": 1000
+      },
+      "cost_sources": [
+        "synthetic"
+      ],
+      "costs_usd": {
+        "primary": 0.014,
+        "summary": 0,
+        "retrieval": 0,
+        "retry": 0,
+        "offline_optimization": 0
+      },
+      "direct_cost_usd": 0.014,
+      "allocated_total_cost_usd": 0.014
+    },
+    {
+      "run_id": "synthetic-guard-2",
+      "pair_id": "synthetic-pair-2",
+      "condition": "guard",
+      "evidence_kind": "synthetic",
+      "status": "failed",
+      "task_success": false,
+      "duration_ms": 1100,
+      "recorded_online_usage": {
+        "input_uncached_tokens": 7000,
+        "input_cached_tokens": 2000,
+        "output_tokens": 1400
+      },
+      "cost_sources": [
+        "synthetic"
+      ],
+      "costs_usd": {
+        "primary": 0.007,
+        "summary": 0.002,
+        "retrieval": 0.001,
+        "retry": 0,
+        "offline_optimization": 0.003
+      },
+      "direct_cost_usd": 0.01,
+      "allocated_total_cost_usd": 0.013
+    }
+  ],
+  "pairs": [
+    {
+      "pair_id": "synthetic-pair-1",
+      "evidence_kind": "synthetic",
+      "task_id": "synthetic-task-1",
+      "original_run_id": "synthetic-original-1",
+      "guard_run_id": "synthetic-guard-1",
+      "original_allocated_cost_usd": 0.014,
+      "guard_allocated_cost_usd": 0.018,
+      "guard_minus_original_cost_usd": 0.004,
+      "original_task_success": true,
+      "guard_task_success": true,
+      "task_success_comparison": "same_recorded_outcome"
+    },
+    {
+      "pair_id": "synthetic-pair-2",
+      "evidence_kind": "synthetic",
+      "task_id": "synthetic-task-2",
+      "original_run_id": "synthetic-original-2",
+      "guard_run_id": "synthetic-guard-2",
+      "original_allocated_cost_usd": 0.014,
+      "guard_allocated_cost_usd": 0.013,
+      "guard_minus_original_cost_usd": -0.001,
+      "original_task_success": true,
+      "guard_task_success": false,
+      "task_success_comparison": "different_recorded_outcome"
+    }
+  ]
+}
