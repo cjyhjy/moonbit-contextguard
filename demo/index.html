@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ContextGuard · 工具输出证据实验室</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/app.mjs"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="wordmark" href="/" aria-label="ContextGuard 首页"><span class="logo">C<span>G</span></span><span>ContextGuard<small>工具输出证据实验室</small></span></a>
+      <div class="nav-label">LOCAL WORKSPACE</div>
+      <div class="nav-item active"><span>◈</span> 输出工作台 <span class="nav-count">01</span></div>
+      <a class="nav-item" href="#evidence-section"><span>▤</span> 原始证据</a>
+      <a class="nav-item" href="#compare-section"><span>⇄</span> 候选对照</a>
+      <div class="sidebar-note"><div class="live-dot"></div><strong>离线 · 本地计算</strong><p>MoonBit 校验核心<br>无需模型或 API 密钥</p></div>
+      <div class="boundary"><span>范围说明</span><p>限定 TAP 与 rg JSON 的必要事实。输出为可回查的证据投影；未知输入保留原文。</p></div>
+      <footer>CONTEXT, WITH EVIDENCE.<br><span>MoonBit · 2026</span></footer>
+    </aside>
+
+    <main>
+      <header class="topbar"><span>实验室 <span class="slash">/</span> 工具输出工作台</span><span class="local-badge"><i></i> 本地会话</span></header>
+      <section class="intro">
+        <div><div class="eyebrow">VERIFY BEFORE YOU COMPRESS</div><h1>让输出更短，让证据留下。</h1><p>将原文与候选分开校验，保留失败、位置、上下文与进程状态。</p></div>
+        <div class="engine-tag"><span>ENGINE</span><strong>MoonBit</strong><small>独立字段校验</small></div>
+      </section>
+
+      <section class="controls" aria-label="校验设置">
+        <div class="field fixture-field"><label for="fixture">选择示例</label><select id="fixture"><option>正在加载本地示例…</option></select></div>
+        <div class="field"><label for="format">输出格式</label><select id="format"><option value="node-tap">Node TAP</option><option value="rg-json">rg JSON</option><option value="unknown">未知格式 · 回退</option></select></div>
+        <div class="field budget-field"><label for="budget">输出预算 <span>UTF-16 单位</span></label><input id="budget" type="number" min="0" step="100" value="12000"></div>
+        <button id="run" class="primary" disabled>校验输出 <span>↗</span></button>
+      </section>
+      <p class="source-note" id="fixture-note">示例为合成源程序的真实进程输出，不代表生产任务或模型在线实验。</p>
+
+      <div class="metrics" aria-label="结果指标">
+        <article><span>原文长度</span><strong id="input-chars">—</strong><small>UTF-16 单位</small></article>
+        <article><span>交付长度</span><strong id="output-chars">—</strong><small id="output-kind">证据投影 / 原文</small></article>
+        <article class="reduction-card"><span>字符减少</span><strong id="reduction">—</strong><small>不等于 token 或费用节省</small></article>
+        <article><span>必要证据</span><strong id="fact-count">—</strong><small id="missing-count">等待独立校验</small></article>
+      </div>
+
+      <div class="status-strip" id="status" role="status" aria-live="polite"><span class="status-symbol">○</span><div><strong id="status-title">选择示例，检查每一次省略</strong><span id="status-reason">原始输出和外部候选都可以编辑。</span></div><span id="status-decision" class="pill">READY</span></div>
+
+      <section class="process-bar" aria-label="进程上下文">
+        <span class="process-label">进程上下文</span>
+        <label>退出码 <input id="exit-code" type="number" value="1" step="1"></label>
+        <label class="scope-label">范围 <input id="scope" value="" placeholder="每行一个路径；此处用逗号分隔"></label>
+        <label class="check-label"><input id="truncated" type="checkbox">上游已截断</label>
+      </section>
+
+      <section class="workspace" aria-label="输出比较">
+        <article class="editor-card"><div class="editor-heading"><div><span class="step">01</span><h2>原始输出</h2></div><span class="editor-note">SOURCE</span></div><textarea id="raw" spellcheck="false" aria-label="原始工具输出"></textarea><div class="editor-footer"><span>可编辑 · 证据行号始终对应此原文</span><span id="raw-lines">0 行</span></div></article>
+        <article class="editor-card candidate-card"><div class="editor-heading"><div><span class="step">02</span><h2>压缩候选</h2></div><label class="check-label"><input id="candidate-enabled" type="checkbox">使用外部候选</label></div><textarea id="candidate" spellcheck="false" aria-label="待验证的压缩候选" placeholder="未启用时，核心生成抽取式候选。启用后，单独校验此处文本；空候选也会被校验。"></textarea><div class="editor-footer"><button id="head-tail" class="text-button">生成头尾截断反例 ↗</button><button id="clear-candidate" class="text-button">重置</button></div></article>
+        <article class="editor-card result-card"><div class="editor-heading"><div><span class="step">03</span><h2>交付输出</h2></div><span class="editor-note" id="result-label">VERIFIED OUTPUT</span></div><pre id="output" tabindex="0">等待校验…</pre><div class="editor-footer"><span>证据投影不是完整 TAP / rg 数据流</span><button id="copy" class="text-button">复制结果</button></div></article>
+      </section>
+
+      <section id="evidence-section" class="lower-grid">
+        <article class="panel evidence-panel"><div class="section-heading"><div><span class="section-kicker">TRACE BACK</span><h2>每条证据，都有来处</h2></div><span class="pill muted" id="evidence-total">0 条</span></div><p class="panel-help">选择一条记录，回查原始行；校验的是实际文本。</p><div id="evidence-list" class="evidence-list"><p class="empty">运行校验后，证据索引将在这里显示。</p></div></article>
+        <article class="panel source-panel"><div class="section-heading"><div><span class="section-kicker">ORIGINAL LINES</span><h2 id="source-title">原文回查</h2></div><span id="source-range" class="pill muted">未选择</span></div><pre id="source-lines">点击左侧证据，查看对应原文。</pre></article>
+      </section>
+
+      <section id="compare-section" class="panel compare-panel"><div class="section-heading"><div><span class="section-kicker">SAME SOURCE · SAME VALIDATOR</span><h2>同一原文，独立对照</h2></div><button id="compare" class="secondary">运行四组对照 <span>⇄</span></button></div><p class="panel-help">原文、头尾截断、自定义候选与自动候选分别提交给 MoonBit 校验器。结果显示修复或回退后的长度，不能当作未校验候选的保留率。</p><div class="table-wrap"><table><thead><tr><th>输入方式</th><th>候选长度</th><th>缺失证据</th><th>决策</th><th>交付长度</th></tr></thead><tbody id="comparison"><tr><td colspan="5" class="empty">点击“运行四组对照”开始。</td></tr></tbody></table></div></section>
+      <details class="stderr-panel"><summary>查看单独捕获的 stderr <span id="stderr-count">0 单位</span></summary><p>演示将 stdout 作为校验原文；此 stderr 单独展示，不计入字符减少。真实进程包装器负责保留两条流。</p><pre id="stderr">（空）</pre></details>
+      <div class="endnote">ContextGuard 校验定义内的必要事实，不承诺任意语义无损。所有长度均按 UTF-16 单位计算。</div>
+    </main>
+  </div>
+</body>
+</html>

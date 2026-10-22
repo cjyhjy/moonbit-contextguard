@@ -1,0 +1,88 @@
+{
+  "recorded_at": "2026-10-22T15:39:58.416259+00:00",
+  "environment": {
+    "node": "v26.7.0",
+    "platform": "Darwin",
+    "machine": "arm64"
+  },
+  "remote_model_calls": false,
+  "user_agent_configuration_modified": false,
+  "publicly_hosted": false,
+  "tool": "Tabbit CLI (installed launcher), actual browser UI",
+  "task": "ContextGuard Demo QA",
+  "url": "http://127.0.0.1:4187/",
+  "host_binding": "127.0.0.1 only",
+  "fixture_id": "node-tap-middle-failure",
+  "fixture_stdout_sha256": "0bdbc87eb282f48c0c0255a4f37985ac9f99730d39a86512df502df04d39ecc0",
+  "fixture_count": 6,
+  "observed_metrics": {
+    "input_utf16": 10335,
+    "output_utf16": 1725,
+    "reduction_percent_rounded": 83.3,
+    "required_units": 5,
+    "automatic_candidate_missing_units": 0
+  },
+  "checks": [
+    "initial selected fixture explicitly uses node-tap-middle-failure",
+    "failure source recall L218-L256 includes ERR_ASSERTION",
+    "head-tail candidate repaired",
+    "empty external candidate repaired",
+    "budget=100 returns exact raw",
+    "long Unicode rg match preserves END-OF-LONG-HIT",
+    "unknown format returns raw",
+    "upstream truncation returns raw",
+    "original candidate accepted and not mislabeled fallback",
+    "four comparison rows rendered",
+    "390px mobile view has scrollWidth=375<=innerWidth=390",
+    "desktop and mobile screenshots visually inspected"
+  ],
+  "comparison": [
+    {
+      "method": "original",
+      "candidate_utf16": 10335,
+      "missing_units": 0,
+      "decision": "accepted",
+      "output_utf16": 10335
+    },
+    {
+      "method": "head-tail",
+      "candidate_utf16": 185,
+      "missing_units": 4,
+      "decision": "repaired",
+      "output_utf16": 1725
+    },
+    {
+      "method": "empty external candidate",
+      "candidate_utf16": 0,
+      "missing_units": 5,
+      "decision": "repaired",
+      "output_utf16": 1725
+    },
+    {
+      "method": "automatic",
+      "candidate_utf16": null,
+      "missing_units": 0,
+      "decision": "compressed",
+      "output_utf16": 1725
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "reports/demo-desktop.png",
+      "sha256": "15da85a0bfc4ba865e78ae5a46ebc9d34ac9609848a410297282a433bbfa3504",
+      "bytes": 267538
+    },
+    {
+      "path": "reports/demo-mobile.png",
+      "sha256": "3e9010fea46b4ad7a757ed095de54f442e91c2876baa996531683c0fadbd5435",
+      "bytes": 168983
+    }
+  ],
+  "limitations": [
+    "Local UI validation, not external user testing",
+    "Synthetic sources with real process output",
+    "Character counts are not model tokens or measured costs",
+    "Fixture stderr shown separately and excluded from stdout reduction",
+    "Screenshots include the browser assistant overlay"
+  ]
+}
