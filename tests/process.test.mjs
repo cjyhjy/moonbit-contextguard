@@ -51,3 +51,7 @@ test('spawn failure and binary output do not masquerade as complete text',async(
   assert.equal(binary.reason,'non_utf8_capture');assert.equal(binary.process.invalid_utf8,true);
   assert.deepEqual([...readFileSync(join(binary.capture.directory,'stdout.bin'))],[255,0]);
 });
+test('signal termination preserves signal-specific shell status and incomplete flag',async()=>{
+  const r=await runProcess([process.execPath,'-e',"process.kill(process.pid,'SIGTERM')"],options());
+  assert.equal(r.process.exit_code,143);assert.equal(r.process.signal,'SIGTERM');assert.equal(r.process.truncated,true);
+});

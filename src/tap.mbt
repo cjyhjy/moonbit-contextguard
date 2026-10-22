@@ -4,6 +4,25 @@ fn after_prefix(s : String, prefix : String) -> String {
 }
 
 ///|
+fn valid_duration(s : String) -> Bool {
+  if s == "" || s.has_prefix(".") || s.has_suffix(".") {
+    return false
+  }
+  let mut dots = 0
+  for c in s.iter() {
+    if c == '.' {
+      dots = dots + 1
+      if dots > 1 {
+        return false
+      }
+    } else if c < '0' || c > '9' {
+      return false
+    }
+  }
+  true
+}
+
+///|
 // Deliberately a flat Node TAP profile, not a general TAP/YAML parser.
 // Unknown comments, nested suites, bailouts and partial output pass through.
 fn parse_tap(lines : Array[String], exit_code : Int32) -> Parsed {
@@ -66,6 +85,9 @@ fn parse_tap(lines : Array[String], exit_code : Int32) -> Parsed {
         return failed("tap_broken_diagnostics")
       }
       if line.has_prefix("  duration_ms: ") {
+        if !valid_duration(after_prefix(line, "  duration_ms: ")) {
+          return failed("tap_invalid_duration")
+        }
         has_duration = true
       }
       if line.has_prefix("  error: ") {
@@ -134,6 +156,9 @@ fn parse_tap(lines : Array[String], exit_code : Int32) -> Parsed {
   }
   if i >= lines.length() || !lines[i].has_prefix("# duration_ms ") {
     return failed("tap_missing_duration")
+  }
+  if !valid_duration(after_prefix(lines[i], "# duration_ms ")) {
+    return failed("tap_invalid_duration")
   }
   i = i + 1
   if i != lines.length() {

@@ -1,10 +1,14 @@
 import { spawnSync } from 'node:child_process';
-import { mkdirSync, copyFileSync } from 'node:fs';
+import { mkdirSync, copyFileSync, readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
+import { createHash } from 'node:crypto';
+import { sourceDigest } from './source-digest.mjs';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const result = spawnSync('sh', ['tools/moon', 'build', '--target', 'js', '--release'], {cwd:root,stdio:'inherit'});
 if (result.error) throw result.error;
 if (result.status !== 0) process.exit(result.status ?? 1);
 mkdirSync(new URL('../dist/', import.meta.url), {recursive:true});
 copyFileSync(new URL('../_build/js/release/build/cmd/bridge/bridge.js', import.meta.url), new URL('../dist/contextguard.mjs', import.meta.url));
+const version = spawnSync('sh',['tools/moon','version'],{cwd:root,encoding:'utf8'});
+writeFileSync(new URL('../dist/build-manifest.json',import.meta.url), JSON.stringify({schema_version:1,source:sourceDigest(root),compiler:version.stdout.trim(),artifact_sha256:createHash('sha256').update(readFileSync(new URL('../dist/contextguard.mjs',import.meta.url))).digest('hex')},null,2)+'\n');
 console.log('Built dist/contextguard.mjs from MoonBit');

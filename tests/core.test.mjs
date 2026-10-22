@@ -4,7 +4,7 @@ import {readFileSync} from 'node:fs';
 import {guard} from '../tools/api.mjs';
 const manifest=JSON.parse(readFileSync(new URL('../fixtures/manifest.json',import.meta.url)));
 const requests=manifest.fixtures.map(f=>({...f,raw:readFileSync(new URL('../'+f.stdout,import.meta.url),'utf8')}));
-const tap=requests.find(f=>f.format==='node-tap');
+const tap=requests.find(f=>f.id==='node-tap-middle-failure');
 const rg=requests.find(f=>f.id==='rg-json-multiple-unicode-long');
 const request=f=>({raw:f.raw,format:f.format,process:f.process});
 for(const f of requests) test(`public API preserves trusted process context: ${f.id}`,()=>{
@@ -65,4 +65,18 @@ test('UTF16 length handles emoji without splitting codepoints',()=>{
 test('transport errors are explicit',()=>{
   assert.throws(()=>guard({format:'node-tap'}),/raw_must_be_string/);
   let deep=0;for(let i=0;i<65;i++)deep=[deep];assert.throws(()=>guard(deep),/request_budget_exceeded/);
+});
+test('non-numeric optional pass timing is unsupported data and stays visible',()=>{
+  const raw=tap.raw.replace(/  duration_ms: [0-9.]+/,'  duration_ms: ERROR: undocumented diagnostic');
+  const r=guard({...request(tap),raw});assert.equal(r.reason,'tap_invalid_duration');assert.equal(r.output,raw);
+});
+test('preserved string sets do not allow swapping path-line associations',()=>{
+  const stream=swapped=>[['a.ts',swapped?9:7],['b.ts',swapped?7:9]].flatMap(([path,line])=>[
+    {type:'begin',data:{path:{text:path}}},
+    {type:'match',data:{path:{text:path},lines:{text:'needle\n'},line_number:line,absolute_offset:12,submatches:[{match:{text:'needle'},start:0,end:6}]}},
+    {type:'end',data:{path:{text:path},binary_offset:null,stats:{matched_lines:1,matches:1}}}
+  ]).concat({type:'summary',data:{stats:{matched_lines:2,matches:2,searches:2}}}).map(JSON.stringify).join('\n')+'\n';
+  const r={format:'rg-json',raw:stream(false),process:{exit_code:0,scope:['a.ts','b.ts'],truncated:false}};
+  assert.equal(guard({...r,candidate:r.raw}).decision,'accepted');
+  const result=guard({...r,candidate:stream(true)});assert.equal(result.decision,'fallback');assert.equal(result.output,r.raw);
 });
