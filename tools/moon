@@ -1,0 +1,9 @@
+#!/bin/sh
+set -eu
+if [ -n "${MOON_HOME:-}" ] && [ -x "$MOON_HOME/bin/moon" ]; then
+  export PATH="$MOON_HOME/bin:$PATH"
+  exec "$MOON_HOME/bin/moon" "$@"
+fi
+if command -v moon >/dev/null 2>&1; then exec moon "$@"; fi
+printf '%s\n' 'MoonBit not found. Set MOON_HOME to an existing toolchain, or install MoonBit separately.' >&2
+exit 127

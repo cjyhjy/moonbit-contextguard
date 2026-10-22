@@ -1,4 +1,11 @@
-import { "contextguard/guard/src" @guard }
+import {
+  "contextguard/guard/src" @guard,
+}
+
 pkgtype(kind: "foreign_library")
+
 supported_targets = "js"
-options(link: { "js": { "format": "esm" } })
+
+options(
+  link: { "js": { "format": "esm" } },
+)
