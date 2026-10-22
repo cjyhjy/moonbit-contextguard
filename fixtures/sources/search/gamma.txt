@@ -1,0 +1,5 @@
+before gamma
+needle gamma one
+needle gamma adjacent
+after gamma
+unmatched ending

@@ -1,0 +1,6 @@
+alpha heading
+context before first hit
+needle first match 中文
+context after first hit
+quiet line
+tail

@@ -1,0 +1,41 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { accountLedger, parseLedger } from './ledger.mjs';
+const charge = (category, cost_usd, cached = 0) => ({ category, cost_usd, cost_source: 'synthetic', input_uncached_tokens: 100, input_cached_tokens: cached, output_tokens: 10 });
+const original = () => ({ schema_version: 1, record_type: 'run', evidence_kind: 'synthetic', pair_id: 'pair-1', run_id: 'run-original', task_id: 'task-1', input_sha256: 'a'.repeat(64), model: 'synthetic-model-not-called', settings: { seed: 42 }, condition: 'original', status: 'completed', task_success: true, duration_ms: 100, charges: [charge('primary', 1)], offline_optimization_ids: [] });
+const guard = () => ({ ...original(), run_id: 'run-guard', condition: 'guard', charges: [charge('primary', 0.4, 300), charge('summary', 0.1), charge('retrieval', 0.05), charge('retry', 0.2)], offline_optimization_ids: ['opt-1'] });
+const offline = () => ({ schema_version: 1, record_type: 'offline_cost', evidence_kind: 'synthetic', optimization_id: 'opt-1', amortization_runs: 10, ...charge(undefined, 1) });
+const sample = () => [offline(), original(), guard()];
+test('accounts cache, auxiliary costs, retry and one-time amortization separately', () => {
+  const result = accountLedger(sample());
+  assert.equal(result.runs[1].recorded_online_usage.input_cached_tokens, 300);
+  assert.equal(result.runs[1].direct_cost_usd, 0.75);
+  assert.equal(result.runs[1].allocated_total_cost_usd, 0.85);
+  assert.equal(result.pairs[0].guard_minus_original_cost_usd, -0.15);
+  assert.equal(result.offline_costs[0].incurred_cost_usd, 1);
+  assert.equal(result.offline_costs[0].unallocated_cost_usd, 0.9);
+  assert.equal(result.online_model_evaluation, 'not_run');
+  assert.equal(result.real_cost_evaluation, 'not_run');
+});
+test('offline assets are incurred once while allocated independently across pairs', () => {
+  const secondOriginal = { ...original(), run_id: 'original-2', pair_id: 'pair-2' };
+  const secondGuard = { ...guard(), run_id: 'guard-2', pair_id: 'pair-2' };
+  const result = accountLedger([...sample(), secondOriginal, secondGuard]);
+  assert.equal(result.offline_costs.length, 1);
+  assert.equal(result.offline_costs[0].allocated_cost_usd, 0.2);
+});
+test('JSONL parser identifies malformed source line', () => assert.throws(() => parseLedger('{}\nBAD'), /line 2/));
+test('missing paired condition is rejected', () => assert.throws(() => accountLedger([original()]), /exactly one/));
+test('mismatched task snapshots are rejected', () => { const records = sample(); records[2].input_sha256 = 'b'.repeat(64); assert.throws(() => accountLedger(records), /pair mismatch: input_sha256/); });
+test('mismatched model/settings cannot masquerade as paired evidence', () => { const records = sample(); records[2].settings.seed = 43; assert.throws(() => accountLedger(records), /pair mismatch: settings/); });
+test('duplicate run ids are rejected', () => { const records = sample(); records[2].run_id = records[1].run_id; assert.throws(() => accountLedger(records), /duplicate run_id/); });
+test('negative or fractional tokens cannot enter accounting', () => { for (const value of [-1, 0.5, '100']) { const records = sample(); records[2].charges[0].input_cached_tokens = value; assert.throws(() => accountLedger(records), /safe integer/); } });
+test('negative costs and failed-success contradictions are rejected', () => { const records = sample(); records[2].charges[0].cost_usd = -1; assert.throws(() => accountLedger(records), /nonnegative/); const records2 = sample(); records2[2].status = 'failed'; assert.throws(() => accountLedger(records2), /cannot claim/); });
+test('synthetic costs cannot be mislabeled as actual provider bills', () => { const records = sample(); records[2].charges[0].cost_source = 'provider_billed'; assert.throws(() => accountLedger(records), /synthetic data/); });
+test('unknown and overallocated offline optimizations are rejected', () => { const records = sample(); records[2].offline_optimization_ids = ['unknown']; assert.throws(() => accountLedger(records), /unknown offline/); const records2 = sample(); records2[0].amortization_runs = 1; records2[1].offline_optimization_ids = ['opt-1']; assert.throws(() => accountLedger(records2), /allocations exceed/); });
+test('offline costs must be amortized over positive runs', () => { const records = sample(); records[0].amortization_runs = 0; assert.throws(() => accountLedger(records), /positive integer/); });
+test('unmeasured outcomes are not counted as success', () => { const records = sample(); records[1].task_success = null; assert.equal(accountLedger(records).pairs[0].task_success_comparison, 'not_measured'); });
+test('submitted measured records remain explicitly unverified', () => {
+  const records = sample().map(record => ({ ...record, evidence_kind: 'measured_online', ...(record.record_type === 'offline_cost' ? { cost_source: 'provider_billed' } : { charges: record.charges.map(item => ({ ...item, cost_source: 'provider_billed' })) }) }));
+  assert.equal(accountLedger(records).real_cost_evaluation, 'provider_billed_records_provided_not_independently_verified');
+});

@@ -1,0 +1,1 @@
+rg: fixtures/sources/does-not-exist: IO error for operation on fixtures/sources/does-not-exist: No such file or directory (os error 2)

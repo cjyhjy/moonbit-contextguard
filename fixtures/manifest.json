@@ -1,0 +1,720 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-10-22T15:32:07.865Z",
+  "data_origin": "synthetic source programs and corpus, real subprocess outputs; no production traces or model calls",
+  "tools": {
+    "node": "v26.7.0",
+    "rg": "ripgrep 15.2.0 (rev e89fff89ac)\n\nfeatures:+pcre2\nsimd(compile):+NEON\nsimd(runtime):+NEON\n\nPCRE2 10.45 is available (JIT is available)"
+  },
+  "regeneration_command": "node evaluation/capture-fixtures.mjs",
+  "evidence_origin": "independent external fixture annotator in evaluation/capture-fixtures.mjs; expected line spans from original stdout, manually reviewed against source intent; never guard-provided fact metadata",
+  "stderr_boundary": "stdout is the guard raw input in these offline cases. Stderr is separately captured and hash checked, not claimed to be included or preserved by guard stdout output.",
+  "fixtures": [
+    {
+      "id": "node-tap-all-pass",
+      "captured_at": "2026-10-22T15:30:43.553Z",
+      "format": "node-tap",
+      "source_origin": "synthetic passing test program; actual captured node --test TAP stdout/stderr",
+      "invocation": {
+        "command": "node",
+        "args": [
+          "--test",
+          "--test-reporter=tap",
+          "fixtures/sources/all-pass.test.cjs"
+        ],
+        "cwd": "/tmp/contextguard-fixture-capture-k76mex",
+        "portable_cwd": "temporary directory containing a copy of fixtures/sources",
+        "shell_display": "node --test --test-reporter=tap fixtures/sources/all-pass.test.cjs",
+        "environment": "inherited local environment, no credentials needed"
+      },
+      "process": {
+        "exit_code": 0,
+        "scope": [
+          "fixtures/sources/all-pass.test.cjs"
+        ],
+        "truncated": false
+      },
+      "stdout": "fixtures/raw/node-tap-all-pass.stdout.txt",
+      "stderr": "fixtures/raw/node-tap-all-pass.stderr.txt",
+      "stdout_sha256": "49989ebc71f0f054b406b6405c9442375538ec5889748fa074f6e1fc87183e21",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_files": [
+        "fixtures/sources/all-pass.test.cjs"
+      ],
+      "required_evidence": [
+        {
+          "tag": "tap-version",
+          "line_start": 1,
+          "line_end": 1,
+          "lines": [
+            "TAP version 13"
+          ]
+        },
+        {
+          "tag": "tap-plan",
+          "line_start": 14,
+          "line_end": 14,
+          "lines": [
+            "1..2"
+          ]
+        },
+        {
+          "tag": "tap-summary-tests",
+          "line_start": 15,
+          "line_end": 15,
+          "lines": [
+            "# tests 2"
+          ]
+        },
+        {
+          "tag": "tap-summary-suites",
+          "line_start": 16,
+          "line_end": 16,
+          "lines": [
+            "# suites 0"
+          ]
+        },
+        {
+          "tag": "tap-summary-pass",
+          "line_start": 17,
+          "line_end": 17,
+          "lines": [
+            "# pass 2"
+          ]
+        },
+        {
+          "tag": "tap-summary-fail",
+          "line_start": 18,
+          "line_end": 18,
+          "lines": [
+            "# fail 0"
+          ]
+        },
+        {
+          "tag": "tap-summary-cancelled",
+          "line_start": 19,
+          "line_end": 19,
+          "lines": [
+            "# cancelled 0"
+          ]
+        },
+        {
+          "tag": "tap-summary-skipped",
+          "line_start": 20,
+          "line_end": 20,
+          "lines": [
+            "# skipped 0"
+          ]
+        },
+        {
+          "tag": "tap-summary-todo",
+          "line_start": 21,
+          "line_end": 21,
+          "lines": [
+            "# todo 0"
+          ]
+        },
+        {
+          "tag": "tap-summary-duration_ms",
+          "line_start": 22,
+          "line_end": 22,
+          "lines": [
+            "# duration_ms 35.930916"
+          ]
+        }
+      ],
+      "required_process_fields": [
+        "exit_code",
+        "scope",
+        "truncated"
+      ]
+    },
+    {
+      "id": "node-tap-zero-tests",
+      "captured_at": "2026-10-22T15:32:07.864Z",
+      "format": "node-tap",
+      "source_origin": "deliberately empty synthetic discovery directory; actual captured node --test TAP stdout/stderr with 0 tests",
+      "invocation": {
+        "command": "node",
+        "args": [
+          "--test",
+          "--test-reporter=tap"
+        ],
+        "cwd": "/tmp/contextguard-fixture-capture-HJJAaE/fixtures/sources/empty-tests",
+        "cwd_relative": "fixtures/sources/empty-tests",
+        "portable_cwd": "temporary directory containing a copy of fixtures/sources; apply cwd_relative",
+        "shell_display": "node --test --test-reporter=tap",
+        "environment": "inherited local environment, no credentials needed"
+      },
+      "process": {
+        "exit_code": 0,
+        "scope": [
+          "fixtures/sources/empty-tests"
+        ],
+        "truncated": false
+      },
+      "stdout": "fixtures/raw/node-tap-zero-tests.stdout.txt",
+      "stderr": "fixtures/raw/node-tap-zero-tests.stderr.txt",
+      "stdout_sha256": "93a1e18710ac0e034c8a9cfb02e0a8f4ff8f11749e7fa5a61db5e756f34adf85",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_files": [],
+      "required_evidence": [
+        {
+          "tag": "tap-version",
+          "line_start": 1,
+          "line_end": 1,
+          "lines": [
+            "TAP version 13"
+          ]
+        },
+        {
+          "tag": "tap-plan",
+          "line_start": 2,
+          "line_end": 2,
+          "lines": [
+            "1..0"
+          ]
+        },
+        {
+          "tag": "tap-summary-tests",
+          "line_start": 3,
+          "line_end": 3,
+          "lines": [
+            "# tests 0"
+          ]
+        },
+        {
+          "tag": "tap-summary-suites",
+          "line_start": 4,
+          "line_end": 4,
+          "lines": [
+            "# suites 0"
+          ]
+        },
+        {
+          "tag": "tap-summary-pass",
+          "line_start": 5,
+          "line_end": 5,
+          "lines": [
+            "# pass 0"
+          ]
+        },
+        {
+          "tag": "tap-summary-fail",
+          "line_start": 6,
+          "line_end": 6,
+          "lines": [
+            "# fail 0"
+          ]
+        },
+        {
+          "tag": "tap-summary-cancelled",
+          "line_start": 7,
+          "line_end": 7,
+          "lines": [
+            "# cancelled 0"
+          ]
+        },
+        {
+          "tag": "tap-summary-skipped",
+          "line_start": 8,
+          "line_end": 8,
+          "lines": [
+            "# skipped 0"
+          ]
+        },
+        {
+          "tag": "tap-summary-todo",
+          "line_start": 9,
+          "line_end": 9,
+          "lines": [
+            "# todo 0"
+          ]
+        },
+        {
+          "tag": "tap-summary-duration_ms",
+          "line_start": 10,
+          "line_end": 10,
+          "lines": [
+            "# duration_ms 3.586541"
+          ]
+        }
+      ],
+      "required_process_fields": [
+        "exit_code",
+        "scope",
+        "truncated"
+      ]
+    },
+    {
+      "id": "node-tap-middle-failure",
+      "format": "node-tap",
+      "source_origin": "synthetic test program; actual captured node --test TAP stdout/stderr",
+      "invocation": {
+        "command": "node",
+        "args": [
+          "--test",
+          "--test-reporter=tap",
+          "fixtures/sources/many-tests.test.cjs"
+        ],
+        "cwd": "/tmp/contextguard-fixture-capture-GL8acl",
+        "portable_cwd": "temporary directory containing a copy of fixtures/sources",
+        "shell_display": "node --test --test-reporter=tap fixtures/sources/many-tests.test.cjs",
+        "environment": "inherited local environment, no credentials needed"
+      },
+      "process": {
+        "exit_code": 1,
+        "scope": [
+          "fixtures/sources/many-tests.test.cjs"
+        ],
+        "truncated": false
+      },
+      "stdout": "fixtures/raw/node-tap-middle-failure.stdout.txt",
+      "stderr": "fixtures/raw/node-tap-middle-failure.stderr.txt",
+      "stdout_sha256": "0bdbc87eb282f48c0c0255a4f37985ac9f99730d39a86512df502df04d39ecc0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_files": [
+        "fixtures/sources/many-tests.test.cjs"
+      ],
+      "required_evidence": [
+        {
+          "tag": "tap-version",
+          "line_start": 1,
+          "line_end": 1,
+          "lines": [
+            "TAP version 13"
+          ]
+        },
+        {
+          "tag": "tap-failure-block",
+          "line_start": 218,
+          "line_end": 256,
+          "lines": [
+            "# Subtest: middle failure retains actual expected and location",
+            "not ok 37 - middle failure retains actual expected and location",
+            "  ---",
+            "  duration_ms: 2.084625",
+            "  type: 'test'",
+            "  location: '/private/tmp/contextguard-fixture-capture-GL8acl/fixtures/sources/many-tests.test.cjs:11:1'",
+            "  failureType: 'testCodeFailure'",
+            "  error: |-",
+            "    Expected values to be strictly deep-equal:",
+            "    + actual - expected",
+            "    ",
+            "      {",
+            "        account: '演示账户',",
+            "    +   remaining: 7,",
+            "    +   state: 'pending'",
+            "    -   remaining: 9,",
+            "    -   state: 'ready'",
+            "      }",
+            "    ",
+            "  code: 'ERR_ASSERTION'",
+            "  name: 'AssertionError'",
+            "  expected:",
+            "    account: '演示账户'",
+            "    remaining: 9",
+            "    state: 'ready'",
+            "  actual:",
+            "    account: '演示账户'",
+            "    remaining: 7",
+            "    state: 'pending'",
+            "  operator: 'deepStrictEqual'",
+            "  stack: |-",
+            "    TestContext.<anonymous> (/private/tmp/contextguard-fixture-capture-GL8acl/fixtures/sources/many-tests.test.cjs:12:10)",
+            "    Test.runInAsyncScope (node:async_hooks:226:14)",
+            "    Test.run (node:internal/test_runner/test:1397:25)",
+            "    Test.processPendingSubtests (node:internal/test_runner/test:969:18)",
+            "    Test.postRun (node:internal/test_runner/test:1537:19)",
+            "    Test.run (node:internal/test_runner/test:1462:12)",
+            "    async Test.processPendingSubtests (node:internal/test_runner/test:969:7)",
+            "  ..."
+          ]
+        },
+        {
+          "tag": "tap-failure-location",
+          "line_start": 223,
+          "line_end": 223,
+          "lines": [
+            "  location: '/private/tmp/contextguard-fixture-capture-GL8acl/fixtures/sources/many-tests.test.cjs:11:1'"
+          ]
+        },
+        {
+          "tag": "tap-assertion-actual",
+          "line_start": 243,
+          "line_end": 243,
+          "lines": [
+            "  actual:"
+          ]
+        },
+        {
+          "tag": "tap-assertion-expected",
+          "line_start": 239,
+          "line_end": 239,
+          "lines": [
+            "  expected:"
+          ]
+        },
+        {
+          "tag": "tap-assertion-error",
+          "line_start": 225,
+          "line_end": 225,
+          "lines": [
+            "  error: |-"
+          ]
+        },
+        {
+          "tag": "tap-skip",
+          "line_start": 258,
+          "line_end": 258,
+          "lines": [
+            "ok 38 - explicit skip retains its reason # SKIP synthetic unavailable optional service"
+          ]
+        },
+        {
+          "tag": "tap-todo",
+          "line_start": 264,
+          "line_end": 264,
+          "lines": [
+            "ok 39 - explicit todo retains its reason # TODO synthetic future behavior"
+          ]
+        },
+        {
+          "tag": "tap-plan",
+          "line_start": 485,
+          "line_end": 485,
+          "lines": [
+            "1..75"
+          ]
+        },
+        {
+          "tag": "tap-summary-tests",
+          "line_start": 486,
+          "line_end": 486,
+          "lines": [
+            "# tests 75"
+          ]
+        },
+        {
+          "tag": "tap-summary-suites",
+          "line_start": 487,
+          "line_end": 487,
+          "lines": [
+            "# suites 0"
+          ]
+        },
+        {
+          "tag": "tap-summary-pass",
+          "line_start": 488,
+          "line_end": 488,
+          "lines": [
+            "# pass 72"
+          ]
+        },
+        {
+          "tag": "tap-summary-fail",
+          "line_start": 489,
+          "line_end": 489,
+          "lines": [
+            "# fail 1"
+          ]
+        },
+        {
+          "tag": "tap-summary-cancelled",
+          "line_start": 490,
+          "line_end": 490,
+          "lines": [
+            "# cancelled 0"
+          ]
+        },
+        {
+          "tag": "tap-summary-skipped",
+          "line_start": 491,
+          "line_end": 491,
+          "lines": [
+            "# skipped 1"
+          ]
+        },
+        {
+          "tag": "tap-summary-todo",
+          "line_start": 492,
+          "line_end": 492,
+          "lines": [
+            "# todo 1"
+          ]
+        },
+        {
+          "tag": "tap-summary-duration_ms",
+          "line_start": 493,
+          "line_end": 493,
+          "lines": [
+            "# duration_ms 91.549292"
+          ]
+        }
+      ],
+      "required_process_fields": [
+        "exit_code",
+        "scope",
+        "truncated"
+      ],
+      "captured_at": "2026-10-22T15:23:14.979Z"
+    },
+    {
+      "id": "rg-json-multiple-unicode-long",
+      "format": "rg-json",
+      "source_origin": "synthetic text corpus; actual captured rg JSON stdout/stderr",
+      "invocation": {
+        "command": "rg",
+        "args": [
+          "--json",
+          "--context",
+          "1",
+          "needle",
+          "fixtures/sources/search"
+        ],
+        "cwd": "/tmp/contextguard-fixture-capture-GL8acl",
+        "portable_cwd": "temporary directory containing a copy of fixtures/sources",
+        "shell_display": "rg --json --context 1 needle fixtures/sources/search",
+        "environment": "inherited local environment, no credentials needed"
+      },
+      "process": {
+        "exit_code": 0,
+        "scope": [
+          "fixtures/sources/search"
+        ],
+        "truncated": false
+      },
+      "stdout": "fixtures/raw/rg-json-multiple-unicode-long.stdout.txt",
+      "stderr": "fixtures/raw/rg-json-multiple-unicode-long.stderr.txt",
+      "stdout_sha256": "fbc535bdcdd94edf67179dd9b4ef6f7a41ac555085320b43c45c7a5a93f658d7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_files": [
+        "fixtures/sources/search/alpha.txt",
+        "fixtures/sources/search/βeta.txt",
+        "fixtures/sources/search/gamma.txt"
+      ],
+      "required_evidence": [
+        {
+          "tag": "rg-context",
+          "line_start": 2,
+          "line_end": 2,
+          "lines": [
+            "{\"type\":\"context\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/gamma.txt\"},\"lines\":{\"text\":\"before gamma\\n\"},\"line_number\":1,\"absolute_offset\":0,\"submatches\":[]}}"
+          ]
+        },
+        {
+          "tag": "rg-match",
+          "line_start": 3,
+          "line_end": 3,
+          "lines": [
+            "{\"type\":\"match\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/gamma.txt\"},\"lines\":{\"text\":\"needle gamma one\\n\"},\"line_number\":2,\"absolute_offset\":13,\"submatches\":[{\"match\":{\"text\":\"needle\"},\"start\":0,\"end\":6}]}}"
+          ]
+        },
+        {
+          "tag": "rg-match",
+          "line_start": 4,
+          "line_end": 4,
+          "lines": [
+            "{\"type\":\"match\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/gamma.txt\"},\"lines\":{\"text\":\"needle gamma adjacent\\n\"},\"line_number\":3,\"absolute_offset\":30,\"submatches\":[{\"match\":{\"text\":\"needle\"},\"start\":0,\"end\":6}]}}"
+          ]
+        },
+        {
+          "tag": "rg-context",
+          "line_start": 5,
+          "line_end": 5,
+          "lines": [
+            "{\"type\":\"context\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/gamma.txt\"},\"lines\":{\"text\":\"after gamma\\n\"},\"line_number\":4,\"absolute_offset\":52,\"submatches\":[]}}"
+          ]
+        },
+        {
+          "tag": "rg-context",
+          "line_start": 8,
+          "line_end": 8,
+          "lines": [
+            "{\"type\":\"context\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/βeta.txt\"},\"lines\":{\"text\":\"before a long middle hit\\n\"},\"line_number\":2,\"absolute_offset\":22,\"submatches\":[]}}"
+          ]
+        },
+        {
+          "tag": "rg-match",
+          "line_start": 9,
+          "line_end": 9,
+          "lines": [
+            "{\"type\":\"match\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/βeta.txt\"},\"lines\":{\"text\":\"needle long-middle 保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ- END-OF-LONG-HIT\\n\"},\"line_number\":3,\"absolute_offset\":47,\"submatches\":[{\"match\":{\"text\":\"needle\"},\"start\":0,\"end\":6}]}}"
+          ]
+        },
+        {
+          "tag": "rg-context",
+          "line_start": 10,
+          "line_end": 10,
+          "lines": [
+            "{\"type\":\"context\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/βeta.txt\"},\"lines\":{\"text\":\"after a long middle hit\\n\"},\"line_number\":4,\"absolute_offset\":6803,\"submatches\":[]}}"
+          ]
+        },
+        {
+          "tag": "rg-context",
+          "line_start": 11,
+          "line_end": 11,
+          "lines": [
+            "{\"type\":\"context\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/βeta.txt\"},\"lines\":{\"text\":\"before final hit\\n\"},\"line_number\":7,\"absolute_offset\":6843,\"submatches\":[]}}"
+          ]
+        },
+        {
+          "tag": "rg-match",
+          "line_start": 12,
+          "line_end": 12,
+          "lines": [
+            "{\"type\":\"match\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/βeta.txt\"},\"lines\":{\"text\":\"needle final Ω match\\n\"},\"line_number\":8,\"absolute_offset\":6860,\"submatches\":[{\"match\":{\"text\":\"needle\"},\"start\":0,\"end\":6}]}}"
+          ]
+        },
+        {
+          "tag": "rg-context",
+          "line_start": 13,
+          "line_end": 13,
+          "lines": [
+            "{\"type\":\"context\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/βeta.txt\"},\"lines\":{\"text\":\"after final hit\\n\"},\"line_number\":9,\"absolute_offset\":6882,\"submatches\":[]}}"
+          ]
+        },
+        {
+          "tag": "rg-context",
+          "line_start": 16,
+          "line_end": 16,
+          "lines": [
+            "{\"type\":\"context\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/alpha.txt\"},\"lines\":{\"text\":\"context before first hit\\n\"},\"line_number\":2,\"absolute_offset\":14,\"submatches\":[]}}"
+          ]
+        },
+        {
+          "tag": "rg-match",
+          "line_start": 17,
+          "line_end": 17,
+          "lines": [
+            "{\"type\":\"match\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/alpha.txt\"},\"lines\":{\"text\":\"needle first match 中文\\n\"},\"line_number\":3,\"absolute_offset\":39,\"submatches\":[{\"match\":{\"text\":\"needle\"},\"start\":0,\"end\":6}]}}"
+          ]
+        },
+        {
+          "tag": "rg-context",
+          "line_start": 18,
+          "line_end": 18,
+          "lines": [
+            "{\"type\":\"context\",\"data\":{\"path\":{\"text\":\"fixtures/sources/search/alpha.txt\"},\"lines\":{\"text\":\"context after first hit\\n\"},\"line_number\":4,\"absolute_offset\":65,\"submatches\":[]}}"
+          ]
+        },
+        {
+          "tag": "rg-summary",
+          "line_start": 20,
+          "line_end": 20,
+          "lines": [
+            "{\"data\":{\"elapsed_total\":{\"human\":\"0.004955s\",\"nanos\":4954709,\"secs\":0},\"stats\":{\"bytes_printed\":9457,\"bytes_searched\":7084,\"elapsed\":{\"human\":\"0.000071s\",\"nanos\":71333,\"secs\":0},\"matched_lines\":5,\"matches\":5,\"searches\":3,\"searches_with_match\":3}},\"type\":\"summary\"}"
+          ]
+        }
+      ],
+      "required_process_fields": [
+        "exit_code",
+        "scope",
+        "truncated"
+      ],
+      "captured_at": "2026-10-22T15:23:14.979Z"
+    },
+    {
+      "id": "rg-json-no-results",
+      "format": "rg-json",
+      "source_origin": "synthetic text corpus with deliberately absent pattern; actual captured rg JSON stdout/stderr",
+      "invocation": {
+        "command": "rg",
+        "args": [
+          "--json",
+          "--context",
+          "1",
+          "ABSENT_PATTERN_7f913",
+          "fixtures/sources/search"
+        ],
+        "cwd": "/tmp/contextguard-fixture-capture-GL8acl",
+        "portable_cwd": "temporary directory containing a copy of fixtures/sources",
+        "shell_display": "rg --json --context 1 ABSENT_PATTERN_7f913 fixtures/sources/search",
+        "environment": "inherited local environment, no credentials needed"
+      },
+      "process": {
+        "exit_code": 1,
+        "scope": [
+          "fixtures/sources/search"
+        ],
+        "truncated": false
+      },
+      "stdout": "fixtures/raw/rg-json-no-results.stdout.txt",
+      "stderr": "fixtures/raw/rg-json-no-results.stderr.txt",
+      "stdout_sha256": "a3cdb4acd573211cdbdcd691cdf02f691493a41e6d229f2a981ab9e2010557fe",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_files": [
+        "fixtures/sources/search/alpha.txt",
+        "fixtures/sources/search/βeta.txt",
+        "fixtures/sources/search/gamma.txt"
+      ],
+      "required_evidence": [
+        {
+          "tag": "rg-summary",
+          "line_start": 1,
+          "line_end": 1,
+          "lines": [
+            "{\"data\":{\"elapsed_total\":{\"human\":\"0.002627s\",\"nanos\":2626584,\"secs\":0},\"stats\":{\"bytes_printed\":0,\"bytes_searched\":7084,\"elapsed\":{\"human\":\"0.000099s\",\"nanos\":99250,\"secs\":0},\"matched_lines\":0,\"matches\":0,\"searches\":3,\"searches_with_match\":0}},\"type\":\"summary\"}"
+          ]
+        }
+      ],
+      "required_process_fields": [
+        "exit_code",
+        "scope",
+        "truncated"
+      ],
+      "captured_at": "2026-10-22T15:23:14.979Z"
+    },
+    {
+      "id": "rg-json-invalid-path",
+      "format": "rg-json",
+      "source_origin": "deliberately nonexistent synthetic path; actual captured rg JSON stdout/stderr",
+      "invocation": {
+        "command": "rg",
+        "args": [
+          "--json",
+          "--context",
+          "1",
+          "needle",
+          "fixtures/sources/does-not-exist"
+        ],
+        "cwd": "/tmp/contextguard-fixture-capture-GL8acl",
+        "portable_cwd": "temporary directory containing a copy of fixtures/sources",
+        "shell_display": "rg --json --context 1 needle fixtures/sources/does-not-exist",
+        "environment": "inherited local environment, no credentials needed"
+      },
+      "process": {
+        "exit_code": 2,
+        "scope": [
+          "fixtures/sources/does-not-exist"
+        ],
+        "truncated": false
+      },
+      "stdout": "fixtures/raw/rg-json-invalid-path.stdout.txt",
+      "stderr": "fixtures/raw/rg-json-invalid-path.stderr.txt",
+      "stdout_sha256": "3f2e00b22d91108ef6d6411c6239e4d979546cb43ce8633ec710105d4d28c5ff",
+      "stderr_sha256": "667373161a965614164a256e1bfdabf9915544dc22567f3f599d0622d52bc3d2",
+      "source_files": [
+        "fixtures/sources/search/alpha.txt",
+        "fixtures/sources/search/βeta.txt",
+        "fixtures/sources/search/gamma.txt"
+      ],
+      "required_evidence": [
+        {
+          "tag": "rg-summary",
+          "line_start": 1,
+          "line_end": 1,
+          "lines": [
+            "{\"data\":{\"elapsed_total\":{\"human\":\"0.000345s\",\"nanos\":344958,\"secs\":0},\"stats\":{\"bytes_printed\":0,\"bytes_searched\":0,\"elapsed\":{\"human\":\"0.000000s\",\"nanos\":0,\"secs\":0},\"matched_lines\":0,\"matches\":0,\"searches\":0,\"searches_with_match\":0}},\"type\":\"summary\"}"
+          ]
+        }
+      ],
+      "required_process_fields": [
+        "exit_code",
+        "scope",
+        "truncated"
+      ],
+      "captured_at": "2026-10-22T15:23:14.979Z"
+    }
+  ]
+}
