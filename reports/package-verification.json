@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "ContextGuard",
-  "generated_at": "2026-10-22T15:46:12Z",
+  "generated_at": "2026-10-22T15:52:35Z",
   "status": "passed",
   "clean_directory": true,
   "directory_removed_after_check": true,
@@ -12,13 +12,13 @@
     "--portable"
   ],
   "exit_code": 0,
-  "elapsed_seconds": 1.3726778030395508,
+  "elapsed_seconds": 1.5942981243133545,
   "stdout_stderr": "passed: public-api-process-adapter-http-tests\npassed: paired-ledger-tests\npassed: independent-evaluation\npassed: independent-mutation-audit\npassed: paired-ledger-example\npassed: json-cli\npassed: example\n",
   "portable_verification": {
     "schema_version": 1,
     "project": "ContextGuard",
     "version": "0.1.0",
-    "generated_at": "2026-10-22T15:46:12.388Z",
+    "generated_at": "2026-10-22T15:52:35.458Z",
     "user_timezone": "America/New_York",
     "mode": "portable_prebuilt",
     "status": "passed",
@@ -553,7 +553,7 @@
         "status": "passed",
         "exit_code": 0,
         "signal": null,
-        "elapsed_ms": 405.021875,
+        "elapsed_ms": 474.88016700000003,
         "log": "reports/logs/public-api-process-adapter-http-tests.log"
       },
       {
@@ -566,7 +566,7 @@
         "status": "passed",
         "exit_code": 0,
         "signal": null,
-        "elapsed_ms": 67.099917,
+        "elapsed_ms": 83.08329200000003,
         "log": "reports/logs/paired-ledger-tests.log"
       },
       {
@@ -578,7 +578,7 @@
         "status": "passed",
         "exit_code": 0,
         "signal": null,
-        "elapsed_ms": 573.038667,
+        "elapsed_ms": 680.8760830000001,
         "log": "reports/logs/independent-evaluation.log"
       },
       {
@@ -590,7 +590,7 @@
         "status": "passed",
         "exit_code": 0,
         "signal": null,
-        "elapsed_ms": 153.03100000000018,
+        "elapsed_ms": 164.7460840000001,
         "log": "reports/logs/independent-mutation-audit.log"
       },
       {
@@ -605,7 +605,7 @@
         "status": "passed",
         "exit_code": 0,
         "signal": null,
-        "elapsed_ms": 28.870749999999816,
+        "elapsed_ms": 29.230583000000024,
         "log": "reports/logs/paired-ledger-example.log"
       },
       {
@@ -618,7 +618,7 @@
         "status": "passed",
         "exit_code": 0,
         "signal": null,
-        "elapsed_ms": 35.94312500000001,
+        "elapsed_ms": 36.71950000000015,
         "log": "reports/logs/json-cli.log"
       },
       {
@@ -630,7 +630,7 @@
         "status": "passed",
         "exit_code": 0,
         "signal": null,
-        "elapsed_ms": 37.05425000000014,
+        "elapsed_ms": 38.22404099999994,
         "log": "reports/logs/example.log"
       }
     ],
@@ -654,7 +654,7 @@
   },
   "boundary": "Clean extraction used only bundled compiled core, source, Python standard library and installed Node. No network, no MoonBit rebuild, no platform-specific RTK executable. Remote CI and online model tasks not run.",
   "archive": "release/contextguard-0.1.0.zip",
-  "sha256": "8398b31752b865d9e5226a372c2ef5ece8061a56d3221b497427be40260e2852",
+  "sha256": "0b92b6c61e63d67659c8261aa06dfb9c563ae2f5c349dcb4bbe495a4edb63b36",
   "file_count": 257,
-  "archive_bytes": 850148
+  "archive_bytes": 850231
 }
