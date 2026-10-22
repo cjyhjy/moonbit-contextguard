@@ -19,7 +19,7 @@ def digest(data):
 
 def allowed(relative):
     parts = relative.parts
-    if any(p in {'.git', '_build', '.toolchain', 'node_modules', '__pycache__', '.DS_Store', 'release'} for p in parts):
+    if any(p in {'.git', '_build', '.toolchain', '.toolchain-downloads', '.contextguard', 'node_modules', '__pycache__', '.DS_Store', 'release'} for p in parts):
         return False
     value = relative.as_posix()
     if value.startswith(('research/downloads/', 'research/runs/', 'reports/captures/', 'reports/logs/', 'reports/evaluation/audit/')):
@@ -63,7 +63,7 @@ def main():
         process=subprocess.run(command,cwd=extracted,capture_output=True,text=True,timeout=180)
         log=process.stdout+process.stderr
         result=json.loads((extracted/'reports/verification-portable.json').read_text()) if (extracted/'reports/verification-portable.json').exists() else None
-        report={'schema_version':1,'project':'ContextGuard','generated_at':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'status':'passed' if process.returncode==0 else 'failed','clean_directory':True,'directory_removed_after_check':True,'checksums_checked':len(files),'command':command,'exit_code':process.returncode,'elapsed_seconds':time.time()-started,'stdout_stderr':log,'portable_verification':result,'boundary':'Clean extraction used only bundled compiled core, source, Python standard library and installed Node. No network, no MoonBit rebuild, no platform-specific RTK executable. Remote CI and online model tasks not run.'}
+        report={'schema_version':1,'project':'ContextGuard','generated_at':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'status':'passed' if process.returncode==0 else 'failed','execution':verification.get('execution', {'environment':'local'}),'clean_directory':True,'directory_removed_after_check':True,'checksums_checked':len(files),'command':command,'exit_code':process.returncode,'elapsed_seconds':time.time()-started,'stdout_stderr':log,'portable_verification':result,'boundary':'Clean extraction used only bundled compiled core, source, Python standard library and installed Node. No network, no MoonBit rebuild, no platform-specific RTK executable. Execution location is recorded separately. Online model tasks and registry publication are not tested.'}
         print(log)
         if process.returncode != 0:
             (ROOT/'reports/package-verification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')

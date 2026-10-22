@@ -8,3 +8,17 @@ reports/captures/
 reports/logs/
 release/
 .DS_Store
+.contextguard/
+.toolchain-downloads/
+research/downloads/
+research/runs/
+reports/evaluation/audit/
+**/audit.jsonl
+vendor/rtk-oss-v1.0.1-darwin-arm64/rtk
+.env
+.env.*
+!.env.example
+credentials.json
+auth.json
+*.pem
+*.key

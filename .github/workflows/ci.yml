@@ -4,18 +4,29 @@ permissions:
   contents: read
 jobs:
   verify:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
+    env:
+      MOON_HOME: ${{ github.workspace }}/.toolchain
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '26.7.0'
-      - uses: hustcer/setup-moonbit@v1.22
-        with:
-          version: '0.10.15+943464bfa'
-          core-version: '0.10.15+943464bfa'
+      - name: Install pinned official MoonBit archives
+        run: python3 -B tools/bootstrap.py
       - name: Build and verify local artifacts
         run: node tools/verify.mjs
       - name: Verify portable package
         run: python3 -B tools/package.py
+      - name: Retain verification evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: contextguard-verification-${{ github.sha }}
+          path: |
+            reports/
+            dist/build-manifest.json
+            release/*.zip
+            release/*.sha256
+          retention-days: 14

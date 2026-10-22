@@ -1,6 +1,6 @@
 # 本轮开发记录
 
-日期：2026-10-22。所有步骤在 ContextGuard 所属目录完成，没有修改共享 Git 索引/分支或相邻项目；以下是本地开发记录，不是公开 commit 历史。
+日期：2026-10-22。所有步骤在 ContextGuard 所属目录完成，没有修改共享 Git 索引/分支或相邻项目；以下记录原本地开发阶段；对应真实提交现已按 `HISTORY.md` 提取为独立仓库历史。
 
 1. 检查任务简报与空目标目录，读取相邻项目既有工具链版本；保留原项目。固定主要近邻来源，启动三个 Astra ultra 并行任务。
 2. 实现 MoonBit 严格原文 profile、连续证据单元、独立候选正文验证、缺失修复和原文回退。选择 Node 平面 TAP 与 rg JSONL，未知格式不冒险解析。
@@ -10,4 +10,4 @@
 6. 实现固定 OpenCode v1.2.0 可选 hook、真实核心驱动的本地演示、离线成对账本与边界文档。在线模型评测保持未测。
 7. 最终检查、构建来源校验、干净目录解包和 ZIP 校验以 `reports/verification.json`、`reports/package-verification.json` 为准。中间失败不计作最终通过；最终报告记录实际命令和状态。
 
-CI 工作流是准备好的文件，尚未推送或远程执行。`hustcer/setup-moonbit` 参数根据其 [上游说明](https://github.com/hustcer/setup-moonbit) 配置；Actions 平台、Linux 工具链下载和远程运行尚未实测，不能将本地成功写成远程绿色 CI。
+独立发布阶段替换了未能解析的 `hustcer/setup-moonbit@v1.22`：改用官方固定版本归档与锁定 SHA-256，安装到仓库内 `.toolchain/`。Linux CI 对 JS、native、wasm-gc 分别 check/build/test，并执行完整 API/真实进程/OpenCode 协议/HTTP、独立评测、变异审计与干净目录 portable 验收。每次运行保存证据 artifact；实际结论见对应提交的 [Actions run](https://github.com/cjyhjy/moonbit-contextguard/actions/workflows/ci.yml)，历史本地报告不冒充新 CI 结果。

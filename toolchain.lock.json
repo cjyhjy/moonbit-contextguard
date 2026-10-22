@@ -11,5 +11,5 @@
   },
   "core_archive_url": "https://cli.moonbitlang.com/cores/core-0.10.15%2B943464bfa.tar.gz",
   "core_archive_sha256_from_existing_local_lock": "96d30f4dbcc6a9e1736ef26fbdd0e8fb0e97cb01d50e55d2a0072208b8061ae5",
-  "status": "Used existing local toolchain read-only. Version queried in this run. This project did not download or independently attest archive hashes."
+  "status": "Initial local verification reused an existing toolchain. tools/bootstrap.py now downloads official versioned compiler/core archives and checks their bytes against these retained SHA-256 values before extraction; CI receipts record actual execution."
 }
