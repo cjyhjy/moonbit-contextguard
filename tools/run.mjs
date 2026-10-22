@@ -4,6 +4,7 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 import { resolve, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash, randomUUID } from 'node:crypto';
+import { constants as osConstants } from 'node:os';
 import { guard } from './api.mjs';
 
 /** Captures a real argv process. No shell, inference, network or global hooks. */
@@ -38,7 +39,9 @@ export async function runProcess(argv, options = {}) {
   const buffers = Object.fromEntries(Object.entries(chunks).map(([k,v]) => [k, Buffer.concat(v)]));
   const stdout = buffers.stdout.toString('utf8'), stderr = buffers.stderr.toString('utf8');
   const invalidUtf8 = ['stdout','stderr'].some(k => !Buffer.from(buffers[k].toString('utf8')).equals(buffers[k]));
-  const processMeta = { exit_code: spawnError ? 127 : (status.code ?? 137), scope: [JSON.stringify(argv)], truncated: captureLimitHit || timedOut || invalidUtf8 || spawnError !== null, signal:status.signal, timed_out:timedOut, capture_limit_hit:captureLimitHit, invalid_utf8:invalidUtf8, spawn_error:spawnError };
+  const signalExit = 128 + (osConstants.signals[status.signal] ?? 0);
+  const processMeta = { exit_code: spawnError ? 127 : (status.code ?? signalExit), scope: [JSON.stringify(argv)], truncated: captureLimitHit || timedOut || invalidUtf8 || spawnError !== null || status.signal !== null, signal:status.signal, timed_out:timedOut, capture_limit_hit:captureLimitHit, invalid_utf8:invalidUtf8, spawn_error:spawnError };
+  processMeta.exit_code_source = spawnError ? 'synthesized_spawn_error' : status.code === null ? 'synthesized_signal' : 'process';
   let result;
   try { result = guard({format:options.format ?? 'unknown', raw:stdout, process:processMeta, max_output_chars:options.maxOutputChars ?? 16000}); }
   catch (error) {
@@ -62,6 +65,7 @@ export function renderForAgent(result) {
   const p = result.process;
   return `[ContextGuard ${result.output_kind}; ${result.decision}; reason=${result.reason}]\n` +
     `exit_code=${p.exit_code}; truncated=${p.truncated}; scope=${JSON.stringify(p.scope)}\n` +
+    `exit_code_source=${p.exit_code_source ?? 'unspecified'}; signal=${JSON.stringify(p.signal ?? null)}; timed_out=${Boolean(p.timed_out)}; capture_limit_hit=${Boolean(p.capture_limit_hit)}; invalid_utf8=${Boolean(p.invalid_utf8)}; spawn_error=${JSON.stringify(p.spawn_error ?? null)}\n` +
     `evidence=${result.capture.directory}; recall: node tools/recall.mjs ${JSON.stringify(result.capture.directory)} stdout START END\n` +
     `--- stdout ---\n${result.output}${result.output.endsWith('\n')?'':'\n'}--- stderr (uncompressed) ---\n${result.stderr}`;
 }
