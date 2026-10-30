@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "version": "0.1.2",
-  "checked_at": "2026-10-30T12:32:14.732826+00:00",
+  "checked_at": "2026-10-30T12:35:00.792576+00:00",
   "repository": "https://github.com/cjyhjy/moonbit-contextguard",
   "previous_public_commit": "671b33e3fad3ae04f53a4f9c2d64934a3b7f6672",
   "local_verification": "passed",
@@ -11,7 +11,40 @@
     "http_status": 202,
     "account": "cjyhjy"
   },
-  "registry_publication": "pending",
-  "remote_ci": "pending",
-  "boundary": "Dry run and offline consumer tests do not certify publication. Final registry and CI receipts will be recorded after verification."
+  "registry_publication": {
+    "status": "published",
+    "http_status": 200,
+    "module": "cjyhjy/contextguard",
+    "version": "0.1.2",
+    "url": "https://mooncakes.io/docs/cjyhjy/contextguard@0.1.2",
+    "api_url": "https://mooncakes.io/api/v0/modules/cjyhjy/contextguard",
+    "build_status": "success",
+    "yanked": false,
+    "license": "MIT",
+    "registry_checksum": "3bbabd501568fa19cf2fb8b5e154120861be47f9ecaa31c7ba34fdc01b3f5b92",
+    "created_at": "2026-10-30T12:33:42.061126+00:00",
+    "local_archive_sha256": "3bbabd501568fa19cf2fb8b5e154120861be47f9ecaa31c7ba34fdc01b3f5b92",
+    "archive_bytes": 19039
+  },
+  "remote_ci": {
+    "status": "completed",
+    "conclusion": "success",
+    "id": 41056100569,
+    "head_sha": "598e922d403bb0187fba313437e986435c5c479b",
+    "url": "https://github.com/cjyhjy/moonbit-contextguard/actions/runs/41056100569"
+  },
+  "boundary": "Public source, the exact implementation commit CI, registry publication and fresh registry import are verified. No online model cost/success claims or contest form submission.",
+  "source_commit": "598e922d403bb0187fba313437e986435c5c479b",
+  "clean_registry_import": {
+    "status": "passed",
+    "receipt": "reports/registry-published-smoke.json",
+    "fresh_registry_cache": true,
+    "local_path_overrides": false,
+    "tests_per_backend": 6,
+    "targets": [
+      "js",
+      "native",
+      "wasm-gc"
+    ]
+  }
 }
