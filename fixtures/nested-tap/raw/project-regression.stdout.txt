@@ -1,0 +1,184 @@
+TAP version 13
+# Subtest: new fields in omitted rg events and their nested metadata cannot disappear
+ok 1 - new fields in omitted rg events and their nested metadata cannot disappear
+  ---
+  duration_ms: 9.823
+  type: 'test'
+  ...
+# Subtest: rg requires an explicit null binary_offset and validates supplied statistics
+ok 2 - rg requires an explicit null binary_offset and validates supplied statistics
+  ---
+  duration_ms: 7.627084
+  type: 'test'
+  ...
+# Subtest: duplicate JSON keys, including escaped names and nested keys, fail open
+ok 3 - duplicate JSON keys, including escaped names and nested keys, fail open
+  ---
+  duration_ms: 1.762
+  type: 'test'
+  ...
+# Subtest: duplicate top-level or nested request keys are explicit transport errors
+ok 4 - duplicate top-level or nested request keys are explicit transport errors
+  ---
+  duration_ms: 0.915417
+  type: 'test'
+  ...
+# Subtest: text and base64 are exclusive, decoded and checked before accepting ranges
+ok 5 - text and base64 are exclusive, decoded and checked before accepting ranges
+  ---
+  duration_ms: 0.968333
+  type: 'test'
+  ...
+# Subtest: rg submatches validate UTF8 bounds, ordering and actual byte content
+ok 6 - rg submatches validate UTF8 bounds, ordering and actual byte content
+  ---
+  duration_ms: 1.102333
+  type: 'test'
+  ...
+# Subtest: rg rejects contradictory source line numbers and absolute offsets
+ok 7 - rg rejects contradictory source line numbers and absolute offsets
+  ---
+  duration_ms: 0.8315
+  type: 'test'
+  ...
+# Subtest: multiline and NUL-delimited rg data stays original under the single-line profile
+ok 8 - multiline and NUL-delimited rg data stays original under the single-line profile
+  ---
+  duration_ms: 0.285334
+  type: 'test'
+  ...
+# Subtest: a zero-record file keeps its otherwise lost path and repairs omitted boundaries
+ok 9 - a zero-record file keeps its otherwise lost path and repairs omitted boundaries
+  ---
+  duration_ms: 0.236667
+  type: 'test'
+  ...
+# Subtest: source and candidate line budgets apply before creating line arrays
+ok 10 - source and candidate line budgets apply before creating line arrays
+  ---
+  duration_ms: 11.293167
+  type: 'test'
+  ...
+# Subtest: similar failure blocks cannot substitute for each other in external candidates
+ok 11 - similar failure blocks cannot substitute for each other in external candidates
+  ---
+  duration_ms: 34.728167
+  type: 'test'
+  ...
+# Subtest: actual ripgrep stdin output works with UTF8 and non-UTF8 match lines
+ok 12 - actual ripgrep stdin output works with UTF8 and non-UTF8 match lines
+  ---
+  duration_ms: 6.56675
+  type: 'test'
+  ...
+# Subtest: public API preserves trusted process context: node-tap-all-pass
+ok 13 - public API preserves trusted process context: node-tap-all-pass
+  ---
+  duration_ms: 3.172084
+  type: 'test'
+  ...
+# Subtest: public API preserves trusted process context: node-tap-zero-tests
+ok 14 - public API preserves trusted process context: node-tap-zero-tests
+  ---
+  duration_ms: 0.340709
+  type: 'test'
+  ...
+# Subtest: public API preserves trusted process context: node-tap-middle-failure
+ok 15 - public API preserves trusted process context: node-tap-middle-failure
+  ---
+  duration_ms: 2.467875
+  type: 'test'
+  ...
+# Subtest: public API preserves trusted process context: rg-json-multiple-unicode-long
+ok 16 - public API preserves trusted process context: rg-json-multiple-unicode-long
+  ---
+  duration_ms: 2.733083
+  type: 'test'
+  ...
+# Subtest: public API preserves trusted process context: rg-json-no-results
+ok 17 - public API preserves trusted process context: rg-json-no-results
+  ---
+  duration_ms: 0.224541
+  type: 'test'
+  ...
+# Subtest: public API preserves trusted process context: rg-json-invalid-path
+ok 18 - public API preserves trusted process context: rg-json-invalid-path
+  ---
+  duration_ms: 0.2035
+  type: 'test'
+  ...
+# Subtest: candidate identity, absence, unknown keys and full original accepted
+ok 19 - candidate identity, absence, unknown keys and full original accepted
+  ---
+  duration_ms: 3.569667
+  type: 'test'
+  ...
+# Subtest: line deletion sweep never accepts lost required evidence
+ok 20 - line deletion sweep never accepts lost required evidence
+  ---
+  duration_ms: 216.812125
+  type: 'test'
+  ...
+# Subtest: insertion sweep never treats synthesized assertions as original
+ok 21 - insertion sweep never treats synthesized assertions as original
+  ---
+  duration_ms: 29.323458
+  type: 'test'
+  ...
+# Subtest: metadata faults and truncation fail open
+ok 22 - metadata faults and truncation fail open
+  ---
+  duration_ms: 1.456375
+  type: 'test'
+  ...
+# Subtest: input limits and invalid budgets cannot force lossy output
+ok 23 - input limits and invalid budgets cannot force lossy output
+  ---
+  duration_ms: 10.11275
+  type: 'test'
+  ...
+# Subtest: malformed nested TAP and custom logging remain intact
+ok 24 - malformed nested TAP and custom logging remain intact
+  ---
+  duration_ms: 1.007208
+  type: 'test'
+  ...
+# Subtest: rg corrupt structure, count, unknown records and truncated JSON fail open
+ok 25 - rg corrupt structure, count, unknown records and truncated JSON fail open
+  ---
+  duration_ms: 1.915667
+  type: 'test'
+  ...
+# Subtest: UTF16 length handles emoji without splitting codepoints
+ok 26 - UTF16 length handles emoji without splitting codepoints
+  ---
+  duration_ms: 0.681542
+  type: 'test'
+  ...
+# Subtest: transport errors are explicit
+ok 27 - transport errors are explicit
+  ---
+  duration_ms: 0.242875
+  type: 'test'
+  ...
+# Subtest: non-numeric optional pass timing is unsupported data and stays visible
+ok 28 - non-numeric optional pass timing is unsupported data and stays visible
+  ---
+  duration_ms: 0.342334
+  type: 'test'
+  ...
+# Subtest: preserved string sets do not allow swapping path-line associations
+ok 29 - preserved string sets do not allow swapping path-line associations
+  ---
+  duration_ms: 0.391417
+  type: 'test'
+  ...
+1..29
+# tests 29
+# suites 0
+# pass 29
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 320.189834

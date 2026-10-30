@@ -35,6 +35,7 @@ function fixture(t) {
     'dist/contextguard.mjs': 'export const fixture = true;\n',
     'fixtures/example-request.json': '{}', 'evaluation/example-ledger.synthetic.jsonl': '',
     'evaluation/ledger.test.mjs': "import test from 'node:test'; test('fixture ledger', () => {});\n",
+    'evaluation/evaluate-nested-tap.mjs': '// fixture\n',
     'evaluation/ledger.mjs': '// fixture\n', 'evaluation/audit.mjs': '// fixture\n',
     'evaluation/evaluate.mjs': `import {writeFileSync} from 'node:fs';
 if (process.env.DELIVERY_MUTATE_DURING_VERIFY) writeFileSync('tools/example.mjs', '// changed during checks');

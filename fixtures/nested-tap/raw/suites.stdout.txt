@@ -1,0 +1,228 @@
+TAP version 13
+# Subtest: ordinary passing test 0
+ok 1 - ordinary passing test 0
+  ---
+  duration_ms: 0.74125
+  type: 'test'
+  ...
+# Subtest: ordinary passing test 1
+ok 2 - ordinary passing test 1
+  ---
+  duration_ms: 0.045333
+  type: 'test'
+  ...
+# Subtest: ordinary passing test 2
+ok 3 - ordinary passing test 2
+  ---
+  duration_ms: 0.043708
+  type: 'test'
+  ...
+# Subtest: ordinary passing test 3
+ok 4 - ordinary passing test 3
+  ---
+  duration_ms: 0.030458
+  type: 'test'
+  ...
+# Subtest: ordinary passing test 4
+ok 5 - ordinary passing test 4
+  ---
+  duration_ms: 0.035042
+  type: 'test'
+  ...
+# Subtest: ordinary passing test 5
+ok 6 - ordinary passing test 5
+  ---
+  duration_ms: 0.026375
+  type: 'test'
+  ...
+# Subtest: ordinary passing test 6
+ok 7 - ordinary passing test 6
+  ---
+  duration_ms: 0.023417
+  type: 'test'
+  ...
+# Subtest: ordinary passing test 7
+ok 8 - ordinary passing test 7
+  ---
+  duration_ms: 0.036292
+  type: 'test'
+  ...
+# Subtest: ordinary passing test 8
+ok 9 - ordinary passing test 8
+  ---
+  duration_ms: 0.04325
+  type: 'test'
+  ...
+# Subtest: ordinary passing test 9
+ok 10 - ordinary passing test 9
+  ---
+  duration_ms: 0.056917
+  type: 'test'
+  ...
+# Subtest: ordinary passing test 10
+ok 11 - ordinary passing test 10
+  ---
+  duration_ms: 0.033917
+  type: 'test'
+  ...
+# Subtest: ordinary passing test 11
+ok 12 - ordinary passing test 11
+  ---
+  duration_ms: 0.029167
+  type: 'test'
+  ...
+# Subtest: suite 月兔
+    # Subtest: shared title
+    ok 1 - shared title
+      ---
+      duration_ms: 0.047667
+      type: 'test'
+      ...
+    # Subtest: inner: nested scope
+        # Subtest: shared title
+        ok 1 - shared title
+          ---
+          duration_ms: 0.036584
+          type: 'test'
+          ...
+        # Subtest: broken identity
+        not ok 2 - broken identity
+          ---
+          duration_ms: 0.367833
+          type: 'test'
+          location: '/Users/cjy/Documents/ChatGPT/黑客松新项目/repositories/moonbit-contextguard/fixtures/nested-tap/sources/suites.cjs:8:5'
+          failureType: 'testCodeFailure'
+          error: |-
+            Expected values to be strictly equal:
+            
+            2 !== 3
+            
+          code: 'ERR_ASSERTION'
+          name: 'AssertionError'
+          expected: 3
+          actual: 2
+          operator: 'strictEqual'
+          stack: |-
+            TestContext.<anonymous> (/Users/cjy/Documents/ChatGPT/黑客松新项目/repositories/moonbit-contextguard/fixtures/nested-tap/sources/suites.cjs:8:40)
+            Test.runInAsyncScope (node:async_hooks:226:14)
+            Test.run (node:internal/test_runner/test:1397:25)
+            Suite.processPendingSubtests (node:internal/test_runner/test:969:18)
+            Test.postRun (node:internal/test_runner/test:1537:19)
+            Test.run (node:internal/test_runner/test:1462:12)
+            async Promise.all (index 0)
+            async Suite.run (node:internal/test_runner/test:1889:7)
+            async Suite.processPendingSubtests (node:internal/test_runner/test:969:7)
+          ...
+        # Subtest: later skipped
+        ok 3 - later skipped # SKIP
+          ---
+          duration_ms: 0.0225
+          type: 'test'
+          ...
+        # Subtest: future
+        ok 4 - future # TODO
+          ---
+          duration_ms: 0.041917
+          type: 'test'
+          ...
+        1..4
+    not ok 2 - inner: nested scope
+      ---
+      duration_ms: 0.826375
+      type: 'suite'
+      location: '/Users/cjy/Documents/ChatGPT/黑客松新项目/repositories/moonbit-contextguard/fixtures/nested-tap/sources/suites.cjs:6:3'
+      failureType: 'subtestsFailed'
+      error: '1 subtest failed'
+      code: 'ERR_TEST_FAILURE'
+      ...
+    1..2
+not ok 13 - suite 月兔
+  ---
+  duration_ms: 1.002167
+  type: 'suite'
+  location: '/Users/cjy/Documents/ChatGPT/黑客松新项目/repositories/moonbit-contextguard/fixtures/nested-tap/sources/suites.cjs:4:1'
+  failureType: 'subtestsFailed'
+  error: '1 subtest failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Subtest: ordinary passing test 12
+ok 14 - ordinary passing test 12
+  ---
+  duration_ms: 0.022709
+  type: 'test'
+  ...
+# Subtest: ordinary passing test 13
+ok 15 - ordinary passing test 13
+  ---
+  duration_ms: 0.01375
+  type: 'test'
+  ...
+# Subtest: ordinary passing test 14
+ok 16 - ordinary passing test 14
+  ---
+  duration_ms: 0.012416
+  type: 'test'
+  ...
+# Subtest: ordinary passing test 15
+ok 17 - ordinary passing test 15
+  ---
+  duration_ms: 0.016
+  type: 'test'
+  ...
+# Subtest: ordinary passing test 16
+ok 18 - ordinary passing test 16
+  ---
+  duration_ms: 0.011625
+  type: 'test'
+  ...
+# Subtest: ordinary passing test 17
+ok 19 - ordinary passing test 17
+  ---
+  duration_ms: 0.014291
+  type: 'test'
+  ...
+# Subtest: ordinary passing test 18
+ok 20 - ordinary passing test 18
+  ---
+  duration_ms: 0.011916
+  type: 'test'
+  ...
+# Subtest: ordinary passing test 19
+ok 21 - ordinary passing test 19
+  ---
+  duration_ms: 0.010916
+  type: 'test'
+  ...
+# Subtest: ordinary passing test 20
+ok 22 - ordinary passing test 20
+  ---
+  duration_ms: 0.011333
+  type: 'test'
+  ...
+# Subtest: ordinary passing test 21
+ok 23 - ordinary passing test 21
+  ---
+  duration_ms: 0.012542
+  type: 'test'
+  ...
+# Subtest: ordinary passing test 22
+ok 24 - ordinary passing test 22
+  ---
+  duration_ms: 0.012667
+  type: 'test'
+  ...
+# Subtest: ordinary passing test 23
+ok 25 - ordinary passing test 23
+  ---
+  duration_ms: 0.013292
+  type: 'test'
+  ...
+1..25
+# tests 29
+# suites 2
+# pass 26
+# fail 1
+# cancelled 0
+# skipped 1
+# todo 1
+# duration_ms 42.517583

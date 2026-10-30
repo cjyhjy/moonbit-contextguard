@@ -1,0 +1,312 @@
+{
+  "schema_version": 1,
+  "node": "v26.7.0",
+  "captured_at": "2026-10-30T12:45:33.142Z",
+  "origin": "Six controlled fixture programs plus this project regression command, executed by real node --test; not production traces or online model evidence.",
+  "regeneration": "node evaluation/capture-nested-tap.mjs",
+  "fixtures": [
+    {
+      "id": "suites",
+      "source_files": [
+        {
+          "path": "fixtures/nested-tap/sources/suites.cjs",
+          "sha256": "701a80cd8dde687f3e0315c8bcc8eafe6f3d5ed16131a53408b338b6c19cc721"
+        }
+      ],
+      "source": "fixtures/nested-tap/sources/suites.cjs",
+      "source_sha256": "701a80cd8dde687f3e0315c8bcc8eafe6f3d5ed16131a53408b338b6c19cc721",
+      "stdout": "fixtures/nested-tap/raw/suites.stdout.txt",
+      "stderr": "fixtures/nested-tap/raw/suites.stderr.txt",
+      "stdout_sha256": "cce4f610c5cc048e0d319521eb89d8167a327463c267b3df2ae5554cceb108e1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process": {
+        "exit_code": 1,
+        "scope": [
+          "node",
+          "--test",
+          "--test-reporter=tap",
+          "fixtures/nested-tap/sources/suites.cjs"
+        ],
+        "truncated": false
+      },
+      "expected_decision": "compressed",
+      "required_spans": [
+        {
+          "kind": "header",
+          "start_line": 1,
+          "end_line": 1,
+          "text": "TAP version 13"
+        },
+        {
+          "kind": "branch",
+          "start_line": 74,
+          "end_line": 147,
+          "text": "# Subtest: suite 月兔\n    # Subtest: shared title\n    ok 1 - shared title\n      ---\n      duration_ms: 0.047667\n      type: 'test'\n      ...\n    # Subtest: inner: nested scope\n        # Subtest: shared title\n        ok 1 - shared title\n          ---\n          duration_ms: 0.036584\n          type: 'test'\n          ...\n        # Subtest: broken identity\n        not ok 2 - broken identity\n          ---\n          duration_ms: 0.367833\n          type: 'test'\n          location: '/Users/cjy/Documents/ChatGPT/黑客松新项目/repositories/moonbit-contextguard/fixtures/nested-tap/sources/suites.cjs:8:5'\n          failureType: 'testCodeFailure'\n          error: |-\n            Expected values to be strictly equal:\n            \n            2 !== 3\n            \n          code: 'ERR_ASSERTION'\n          name: 'AssertionError'\n          expected: 3\n          actual: 2\n          operator: 'strictEqual'\n          stack: |-\n            TestContext.<anonymous> (/Users/cjy/Documents/ChatGPT/黑客松新项目/repositories/moonbit-contextguard/fixtures/nested-tap/sources/suites.cjs:8:40)\n            Test.runInAsyncScope (node:async_hooks:226:14)\n            Test.run (node:internal/test_runner/test:1397:25)\n            Suite.processPendingSubtests (node:internal/test_runner/test:969:18)\n            Test.postRun (node:internal/test_runner/test:1537:19)\n            Test.run (node:internal/test_runner/test:1462:12)\n            async Promise.all (index 0)\n            async Suite.run (node:internal/test_runner/test:1889:7)\n            async Suite.processPendingSubtests (node:internal/test_runner/test:969:7)\n          ...\n        # Subtest: later skipped\n        ok 3 - later skipped # SKIP\n          ---\n          duration_ms: 0.0225\n          type: 'test'\n          ...\n        # Subtest: future\n        ok 4 - future # TODO\n          ---\n          duration_ms: 0.041917\n          type: 'test'\n          ...\n        1..4\n    not ok 2 - inner: nested scope\n      ---\n      duration_ms: 0.826375\n      type: 'suite'\n      location: '/Users/cjy/Documents/ChatGPT/黑客松新项目/repositories/moonbit-contextguard/fixtures/nested-tap/sources/suites.cjs:6:3'\n      failureType: 'subtestsFailed'\n      error: '1 subtest failed'\n      code: 'ERR_TEST_FAILURE'\n      ...\n    1..2\nnot ok 13 - suite 月兔\n  ---\n  duration_ms: 1.002167\n  type: 'suite'\n  location: '/Users/cjy/Documents/ChatGPT/黑客松新项目/repositories/moonbit-contextguard/fixtures/nested-tap/sources/suites.cjs:4:1'\n  failureType: 'subtestsFailed'\n  error: '1 subtest failed'\n  code: 'ERR_TEST_FAILURE'\n  ..."
+        },
+        {
+          "kind": "summary",
+          "start_line": 220,
+          "end_line": 228,
+          "text": "1..25\n# tests 29\n# suites 2\n# pass 26\n# fail 1\n# cancelled 0\n# skipped 1\n# todo 1\n# duration_ms 42.517583"
+        }
+      ]
+    },
+    {
+      "id": "parent",
+      "source_files": [
+        {
+          "path": "fixtures/nested-tap/sources/parent.cjs",
+          "sha256": "1a71c86901eb10d1af9ceb61570fab5bb120d3b5089c1c92fb1f9bb20031235e"
+        }
+      ],
+      "source": "fixtures/nested-tap/sources/parent.cjs",
+      "source_sha256": "1a71c86901eb10d1af9ceb61570fab5bb120d3b5089c1c92fb1f9bb20031235e",
+      "stdout": "fixtures/nested-tap/raw/parent.stdout.txt",
+      "stderr": "fixtures/nested-tap/raw/parent.stderr.txt",
+      "stdout_sha256": "5847a295b572e1569f7f70cf694c7766eaf55580063486ed1cec047c5736810c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process": {
+        "exit_code": 1,
+        "scope": [
+          "node",
+          "--test",
+          "--test-reporter=tap",
+          "fixtures/nested-tap/sources/parent.cjs"
+        ],
+        "truncated": false
+      },
+      "expected_decision": "compressed",
+      "required_spans": [
+        {
+          "kind": "header",
+          "start_line": 1,
+          "end_line": 1,
+          "text": "TAP version 13"
+        },
+        {
+          "kind": "branch",
+          "start_line": 2,
+          "end_line": 45,
+          "text": "# Subtest: parent with child tests\n    # Subtest: child passes\n    ok 1 - child passes\n      ---\n      duration_ms: 0.22525\n      type: 'test'\n      ...\n    # Subtest: child fails\n    not ok 2 - child fails\n      ---\n      duration_ms: 0.384875\n      type: 'test'\n      location: '/Users/cjy/Documents/ChatGPT/黑客松新项目/repositories/moonbit-contextguard/fixtures/nested-tap/sources/parent.cjs:5:11'\n      failureType: 'testCodeFailure'\n      error: |-\n        Expected values to be strictly equal:\n        \n        1 !== 2\n        \n      code: 'ERR_ASSERTION'\n      name: 'AssertionError'\n      expected: 2\n      actual: 1\n      operator: 'strictEqual'\n      stack: |-\n        TestContext.<anonymous> (/Users/cjy/Documents/ChatGPT/黑客松新项目/repositories/moonbit-contextguard/fixtures/nested-tap/sources/parent.cjs:5:44)\n        Test.runInAsyncScope (node:async_hooks:226:14)\n        Test.run (node:internal/test_runner/test:1397:25)\n        Test.start (node:internal/test_runner/test:1257:17)\n        TestContext.test (node:internal/test_runner/test:399:20)\n        TestContext.<anonymous> (/Users/cjy/Documents/ChatGPT/黑客松新项目/repositories/moonbit-contextguard/fixtures/nested-tap/sources/parent.cjs:5:11)\n        async Test.run (node:internal/test_runner/test:1404:7)\n        async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)\n      ...\n    1..2\nnot ok 1 - parent with child tests\n  ---\n  duration_ms: 0.944583\n  type: 'test'\n  location: '/Users/cjy/Documents/ChatGPT/黑客松新项目/repositories/moonbit-contextguard/fixtures/nested-tap/sources/parent.cjs:3:1'\n  failureType: 'subtestsFailed'\n  error: '1 subtest failed'\n  code: 'ERR_TEST_FAILURE'\n  ..."
+        },
+        {
+          "kind": "branch",
+          "start_line": 46,
+          "end_line": 51,
+          "text": "# Subtest: skipped suite\nok 2 - skipped suite # SKIP\n  ---\n  duration_ms: 0.051958\n  type: 'suite'\n  ..."
+        },
+        {
+          "kind": "branch",
+          "start_line": 52,
+          "end_line": 64,
+          "text": "# Subtest: todo suite\n    # Subtest: todo child\n    ok 1 - todo child # TODO\n      ---\n      duration_ms: 0.364041\n      type: 'test'\n      ...\n    1..1\nok 3 - todo suite # TODO\n  ---\n  duration_ms: 0.447041\n  type: 'suite'\n  ..."
+        },
+        {
+          "kind": "summary",
+          "start_line": 71,
+          "end_line": 79,
+          "text": "1..4\n# tests 4\n# suites 3\n# pass 1\n# fail 2\n# cancelled 0\n# skipped 0\n# todo 1\n# duration_ms 38.238583"
+        }
+      ]
+    },
+    {
+      "id": "all-pass",
+      "source_files": [
+        {
+          "path": "fixtures/nested-tap/sources/all-pass.cjs",
+          "sha256": "3e63d73a9a2691a3923203e2cc30d1449f6f3fafede9d3b0449764d841ee4bae"
+        }
+      ],
+      "source": "fixtures/nested-tap/sources/all-pass.cjs",
+      "source_sha256": "3e63d73a9a2691a3923203e2cc30d1449f6f3fafede9d3b0449764d841ee4bae",
+      "stdout": "fixtures/nested-tap/raw/all-pass.stdout.txt",
+      "stderr": "fixtures/nested-tap/raw/all-pass.stderr.txt",
+      "stdout_sha256": "63373a2437c82e8681048a6838bf4024c494280485209465532579f6ba0b05ab",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process": {
+        "exit_code": 0,
+        "scope": [
+          "node",
+          "--test",
+          "--test-reporter=tap",
+          "fixtures/nested-tap/sources/all-pass.cjs"
+        ],
+        "truncated": false
+      },
+      "expected_decision": "compressed",
+      "required_spans": [
+        {
+          "kind": "header",
+          "start_line": 1,
+          "end_line": 1,
+          "text": "TAP version 13"
+        },
+        {
+          "kind": "summary",
+          "start_line": 229,
+          "end_line": 237,
+          "text": "1..1\n# tests 32\n# suites 5\n# pass 32\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 43.04025"
+        }
+      ]
+    },
+    {
+      "id": "directives",
+      "source_files": [
+        {
+          "path": "fixtures/nested-tap/sources/directives.cjs",
+          "sha256": "e73e3d6aa070ee8c9357bce223c4cfbe7de81823fafc190890b3775056312e64"
+        }
+      ],
+      "source": "fixtures/nested-tap/sources/directives.cjs",
+      "source_sha256": "e73e3d6aa070ee8c9357bce223c4cfbe7de81823fafc190890b3775056312e64",
+      "stdout": "fixtures/nested-tap/raw/directives.stdout.txt",
+      "stderr": "fixtures/nested-tap/raw/directives.stderr.txt",
+      "stdout_sha256": "ea367bfe94c2a7589b68c9b6e0eac914f30c6444781eb97457901425b99485ac",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process": {
+        "exit_code": 0,
+        "scope": [
+          "node",
+          "--test",
+          "--test-reporter=tap",
+          "fixtures/nested-tap/sources/directives.cjs"
+        ],
+        "truncated": false
+      },
+      "expected_decision": "compressed",
+      "required_spans": [
+        {
+          "kind": "header",
+          "start_line": 1,
+          "end_line": 1,
+          "text": "TAP version 13"
+        },
+        {
+          "kind": "branch",
+          "start_line": 2,
+          "end_line": 49,
+          "text": "# Subtest: suite containing directives\n    # Subtest: expected TODO failure\n    not ok 1 - expected TODO failure # TODO\n      ---\n      duration_ms: 0.529291\n      type: 'test'\n      location: '/Users/cjy/Documents/ChatGPT/黑客松新项目/repositories/moonbit-contextguard/fixtures/nested-tap/sources/directives.cjs:4:6'\n      failureType: 'testCodeFailure'\n      error: |-\n        Expected values to be strictly equal:\n        \n        1 !== 2\n        \n      code: 'ERR_ASSERTION'\n      name: 'AssertionError'\n      expected: 2\n      actual: 1\n      operator: 'strictEqual'\n      stack: |-\n        TestContext.<anonymous> (/Users/cjy/Documents/ChatGPT/黑客松新项目/repositories/moonbit-contextguard/fixtures/nested-tap/sources/directives.cjs:4:49)\n        Test.runInAsyncScope (node:async_hooks:226:14)\n        Test.run (node:internal/test_runner/test:1397:25)\n        Test.start (node:internal/test_runner/test:1257:17)\n        node:internal/test_runner/test:1887:71\n        node:internal/per_context/primordials:504:82\n        new Promise (<anonymous>)\n        new SafePromise (node:internal/per_context/primordials:478:3)\n        node:internal/per_context/primordials:504:9\n        Array.map (<anonymous>)\n      ...\n    # Subtest: named \\# SKIP but actually passes\n    ok 2 - named \\# SKIP but actually passes\n      ---\n      duration_ms: 0.049125\n      type: 'test'\n      ...\n    # Subtest: actual skip\n    ok 3 - actual skip # SKIP\n      ---\n      duration_ms: 0.032833\n      type: 'test'\n      ...\n    1..3\nok 1 - suite containing directives\n  ---\n  duration_ms: 0.981917\n  type: 'suite'\n  ..."
+        },
+        {
+          "kind": "summary",
+          "start_line": 50,
+          "end_line": 58,
+          "text": "1..1\n# tests 3\n# suites 1\n# pass 1\n# fail 0\n# cancelled 0\n# skipped 1\n# todo 1\n# duration_ms 40.551208"
+        }
+      ]
+    },
+    {
+      "id": "cancelled",
+      "source_files": [
+        {
+          "path": "fixtures/nested-tap/sources/cancelled.cjs",
+          "sha256": "1c98df10f9d3c2bc55ac610b24c2919c55ed11c8be3243ecd4d65a53640b7124"
+        }
+      ],
+      "source": "fixtures/nested-tap/sources/cancelled.cjs",
+      "source_sha256": "1c98df10f9d3c2bc55ac610b24c2919c55ed11c8be3243ecd4d65a53640b7124",
+      "stdout": "fixtures/nested-tap/raw/cancelled.stdout.txt",
+      "stderr": "fixtures/nested-tap/raw/cancelled.stderr.txt",
+      "stdout_sha256": "bca3d69ec9d002669f82a5d62b004a97956aec09d790ca54c778a2abfb3c14a5",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process": {
+        "exit_code": 1,
+        "scope": [
+          "node",
+          "--test",
+          "--test-reporter=tap",
+          "fixtures/nested-tap/sources/cancelled.cjs"
+        ],
+        "truncated": false
+      },
+      "expected_decision": "fallback",
+      "required_spans": [
+        {
+          "kind": "original",
+          "start_line": 1,
+          "end_line": 33,
+          "text": "TAP version 13\n# Subtest: timeout suite\n    # Subtest: cancelled by timeout\n    not ok 1 - cancelled by timeout\n      ---\n      duration_ms: 11.499625\n      type: 'test'\n      location: '/Users/cjy/Documents/ChatGPT/黑客松新项目/repositories/moonbit-contextguard/fixtures/nested-tap/sources/cancelled.cjs:3:3'\n      failureType: 'testTimeoutFailure'\n      error: 'test timed out after 10ms'\n      code: 'ERR_TEST_FAILURE'\n      stack: |-\n        async Promise.all (index 0)\n      ...\n    1..1\nnot ok 1 - timeout suite\n  ---\n  duration_ms: 12.161375\n  type: 'suite'\n  location: '/Users/cjy/Documents/ChatGPT/黑客松新项目/repositories/moonbit-contextguard/fixtures/nested-tap/sources/cancelled.cjs:2:1'\n  failureType: 'subtestsFailed'\n  error: '1 subtest failed'\n  code: 'ERR_TEST_FAILURE'\n  ...\n1..1\n# tests 1\n# suites 1\n# pass 0\n# fail 0\n# cancelled 1\n# skipped 0\n# todo 0\n# duration_ms 95.988834"
+        }
+      ]
+    },
+    {
+      "id": "custom-log",
+      "source_files": [
+        {
+          "path": "fixtures/nested-tap/sources/custom-log.cjs",
+          "sha256": "563e2767b28b81357641d2d469f5396666f7ec9b311fc1c68412cef9ecb6cc1f"
+        }
+      ],
+      "source": "fixtures/nested-tap/sources/custom-log.cjs",
+      "source_sha256": "563e2767b28b81357641d2d469f5396666f7ec9b311fc1c68412cef9ecb6cc1f",
+      "stdout": "fixtures/nested-tap/raw/custom-log.stdout.txt",
+      "stderr": "fixtures/nested-tap/raw/custom-log.stderr.txt",
+      "stdout_sha256": "7425a2254234e45ace97d6fc6c7206a4c3685c0c1eb425ec12c51b105b26dc46",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process": {
+        "exit_code": 0,
+        "scope": [
+          "node",
+          "--test",
+          "--test-reporter=tap",
+          "fixtures/nested-tap/sources/custom-log.cjs"
+        ],
+        "truncated": false
+      },
+      "expected_decision": "fallback",
+      "required_spans": [
+        {
+          "kind": "original",
+          "start_line": 1,
+          "end_line": 24,
+          "text": "TAP version 13\n# CUSTOM IMPORTANT DIAGNOSTIC\n# Subtest: custom output suite\n    # Subtest: prints meaningful output\n    ok 1 - prints meaningful output\n      ---\n      duration_ms: 0.435208\n      type: 'test'\n      ...\n    1..1\nok 1 - custom output suite\n  ---\n  duration_ms: 0.765417\n  type: 'suite'\n  ...\n1..1\n# tests 1\n# suites 1\n# pass 1\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 35.119167"
+        }
+      ]
+    },
+    {
+      "id": "project-regression",
+      "source_files": [
+        {
+          "path": "tests/core.test.mjs",
+          "sha256": "11042b7d44781e57a91993a41906bc77ac344bfcff37a1e483fc581c86cca2cd"
+        },
+        {
+          "path": "tests/core-optimization.test.mjs",
+          "sha256": "38164e2fd8d1c3eba4eaf8929f26b96be46ab0fa8e683de63c6aa32ad133c6ac"
+        }
+      ],
+      "source": "tests/core.test.mjs",
+      "source_sha256": "11042b7d44781e57a91993a41906bc77ac344bfcff37a1e483fc581c86cca2cd",
+      "stdout": "fixtures/nested-tap/raw/project-regression.stdout.txt",
+      "stderr": "fixtures/nested-tap/raw/project-regression.stderr.txt",
+      "stdout_sha256": "c188b6f9b417d35fba9a176ac169f197f094b6c81608cea7dc823a0c4e9cadc2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process": {
+        "exit_code": 0,
+        "scope": [
+          "node",
+          "--test",
+          "--test-reporter=tap",
+          "tests/core.test.mjs",
+          "tests/core-optimization.test.mjs"
+        ],
+        "truncated": false
+      },
+      "expected_decision": "compressed",
+      "required_spans": [
+        {
+          "kind": "header",
+          "start_line": 1,
+          "end_line": 1,
+          "text": "TAP version 13"
+        },
+        {
+          "kind": "summary",
+          "start_line": 176,
+          "end_line": 184,
+          "text": "1..29\n# tests 29\n# suites 0\n# pass 29\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 320.189834"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "module": "cjyhjy/contextguard",
+  "version": "0.1.2",
+  "status": "passed",
+  "checks": [
+    {
+      "id": "registry-add",
+      "command": [
+        "moon",
+        "add",
+        "cjyhjy/contextguard@0.1.2"
+      ],
+      "exit_code": 0,
+      "output": "Registry index cloned successfully\nSymbols updated successfully\nDownloading cjyhjy/contextguard@0.1.2\n"
+    },
+    {
+      "id": "consumer-check-js",
+      "command": [
+        "moon",
+        "check",
+        "--target",
+        "js"
+      ],
+      "exit_code": 0,
+      "output": "Finished. moon: ran 4 tasks, now up to date\n"
+    },
+    {
+      "id": "consumer-test-js",
+      "command": [
+        "moon",
+        "test",
+        "--target",
+        "js"
+      ],
+      "exit_code": 0,
+      "output": "Total tests: 6, passed: 6, failed: 0.\n"
+    },
+    {
+      "id": "consumer-check-native",
+      "command": [
+        "moon",
+        "check",
+        "--target",
+        "native"
+      ],
+      "exit_code": 0,
+      "output": "Finished. moon: ran 4 tasks, now up to date\n"
+    },
+    {
+      "id": "consumer-test-native",
+      "command": [
+        "moon",
+        "test",
+        "--target",
+        "native"
+      ],
+      "exit_code": 0,
+      "output": "Total tests: 6, passed: 6, failed: 0.\n"
+    },
+    {
+      "id": "consumer-check-wasm-gc",
+      "command": [
+        "moon",
+        "check",
+        "--target",
+        "wasm-gc"
+      ],
+      "exit_code": 0,
+      "output": "Finished. moon: ran 4 tasks, now up to date\n"
+    },
+    {
+      "id": "consumer-test-wasm-gc",
+      "command": [
+        "moon",
+        "test",
+        "--target",
+        "wasm-gc"
+      ],
+      "exit_code": 0,
+      "output": "Total tests: 6, passed: 6, failed: 0.\n"
+    }
+  ],
+  "fresh_registry_cache": true,
+  "local_path_overrides": false,
+  "matching_archive_files": 21,
+  "checked_at": "2026-10-30T12:34:18.026895+00:00"
+}

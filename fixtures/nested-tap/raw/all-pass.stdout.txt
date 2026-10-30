@@ -1,0 +1,237 @@
+TAP version 13
+# Subtest: passing outer suite
+    # Subtest: inner 0
+        # Subtest: case 0
+        ok 1 - case 0
+          ---
+          duration_ms: 0.2885
+          type: 'test'
+          ...
+        # Subtest: case 1
+        ok 2 - case 1
+          ---
+          duration_ms: 0.041
+          type: 'test'
+          ...
+        # Subtest: case 2
+        ok 3 - case 2
+          ---
+          duration_ms: 0.032209
+          type: 'test'
+          ...
+        # Subtest: case 3
+        ok 4 - case 3
+          ---
+          duration_ms: 0.0385
+          type: 'test'
+          ...
+        # Subtest: case 4
+        ok 5 - case 4
+          ---
+          duration_ms: 0.031333
+          type: 'test'
+          ...
+        # Subtest: case 5
+        ok 6 - case 5
+          ---
+          duration_ms: 0.028333
+          type: 'test'
+          ...
+        # Subtest: case 6
+        ok 7 - case 6
+          ---
+          duration_ms: 0.043166
+          type: 'test'
+          ...
+        # Subtest: case 7
+        ok 8 - case 7
+          ---
+          duration_ms: 0.03425
+          type: 'test'
+          ...
+        1..8
+    ok 1 - inner 0
+      ---
+      duration_ms: 0.945625
+      type: 'suite'
+      ...
+    # Subtest: inner 1
+        # Subtest: case 0
+        ok 1 - case 0
+          ---
+          duration_ms: 0.067625
+          type: 'test'
+          ...
+        # Subtest: case 1
+        ok 2 - case 1
+          ---
+          duration_ms: 0.04325
+          type: 'test'
+          ...
+        # Subtest: case 2
+        ok 3 - case 2
+          ---
+          duration_ms: 0.042167
+          type: 'test'
+          ...
+        # Subtest: case 3
+        ok 4 - case 3
+          ---
+          duration_ms: 0.022167
+          type: 'test'
+          ...
+        # Subtest: case 4
+        ok 5 - case 4
+          ---
+          duration_ms: 0.017625
+          type: 'test'
+          ...
+        # Subtest: case 5
+        ok 6 - case 5
+          ---
+          duration_ms: 0.024333
+          type: 'test'
+          ...
+        # Subtest: case 6
+        ok 7 - case 6
+          ---
+          duration_ms: 0.014708
+          type: 'test'
+          ...
+        # Subtest: case 7
+        ok 8 - case 7
+          ---
+          duration_ms: 0.308917
+          type: 'test'
+          ...
+        1..8
+    ok 2 - inner 1
+      ---
+      duration_ms: 0.666042
+      type: 'suite'
+      ...
+    # Subtest: inner 2
+        # Subtest: case 0
+        ok 1 - case 0
+          ---
+          duration_ms: 0.035792
+          type: 'test'
+          ...
+        # Subtest: case 1
+        ok 2 - case 1
+          ---
+          duration_ms: 0.013792
+          type: 'test'
+          ...
+        # Subtest: case 2
+        ok 3 - case 2
+          ---
+          duration_ms: 0.012125
+          type: 'test'
+          ...
+        # Subtest: case 3
+        ok 4 - case 3
+          ---
+          duration_ms: 0.011042
+          type: 'test'
+          ...
+        # Subtest: case 4
+        ok 5 - case 4
+          ---
+          duration_ms: 0.010792
+          type: 'test'
+          ...
+        # Subtest: case 5
+        ok 6 - case 5
+          ---
+          duration_ms: 0.010958
+          type: 'test'
+          ...
+        # Subtest: case 6
+        ok 7 - case 6
+          ---
+          duration_ms: 0.010667
+          type: 'test'
+          ...
+        # Subtest: case 7
+        ok 8 - case 7
+          ---
+          duration_ms: 0.01075
+          type: 'test'
+          ...
+        1..8
+    ok 3 - inner 2
+      ---
+      duration_ms: 0.174917
+      type: 'suite'
+      ...
+    # Subtest: inner 3
+        # Subtest: case 0
+        ok 1 - case 0
+          ---
+          duration_ms: 0.028708
+          type: 'test'
+          ...
+        # Subtest: case 1
+        ok 2 - case 1
+          ---
+          duration_ms: 0.015125
+          type: 'test'
+          ...
+        # Subtest: case 2
+        ok 3 - case 2
+          ---
+          duration_ms: 0.014
+          type: 'test'
+          ...
+        # Subtest: case 3
+        ok 4 - case 3
+          ---
+          duration_ms: 0.010875
+          type: 'test'
+          ...
+        # Subtest: case 4
+        ok 5 - case 4
+          ---
+          duration_ms: 0.010417
+          type: 'test'
+          ...
+        # Subtest: case 5
+        ok 6 - case 5
+          ---
+          duration_ms: 0.010208
+          type: 'test'
+          ...
+        # Subtest: case 6
+        ok 7 - case 6
+          ---
+          duration_ms: 0.010291
+          type: 'test'
+          ...
+        # Subtest: case 7
+        ok 8 - case 7
+          ---
+          duration_ms: 0.010292
+          type: 'test'
+          ...
+        1..8
+    ok 4 - inner 3
+      ---
+      duration_ms: 0.169667
+      type: 'suite'
+      ...
+    1..4
+ok 1 - passing outer suite
+  ---
+  duration_ms: 2.57625
+  type: 'suite'
+  ...
+1..1
+# tests 32
+# suites 5
+# pass 32
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 43.04025

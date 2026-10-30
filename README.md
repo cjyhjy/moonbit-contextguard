@@ -1,15 +1,15 @@
 # ContextGuard
 
-用 MoonBit 校验工具输出压缩后的必要证据。适用于明确约定的 **Node 平面 TAP** 和 **ripgrep JSONL**：检查候选正文，补回缺失的完整证据单元；发现篡改、未知格式、原始截断或预算不足时保留原文。
+用 MoonBit 校验工具输出压缩后的必要证据。适用于明确约定的 **Node 平面与嵌套 TAP** 和 **ripgrep JSONL**：检查候选正文，补回缺失的完整证据单元；发现篡改、未知格式、原始截断或预算不足时保留原文。
 
-当前版本 **0.1.2**。核心支持 JS、native、wasm-gc，固定 `moonc 0.10.18+6c83a7f62`，满足比赛不低于 0.10.16 的要求。公开仓库：[cjyhjy/moonbit-contextguard](https://github.com/cjyhjy/moonbit-contextguard)；逐条验收见 [ACCEPTANCE.md](ACCEPTANCE.md)，发布核验见 [reports/publication-0.1.2.json](reports/publication-0.1.2.json)。
+当前版本 **0.2.0**。核心支持 JS、native、wasm-gc，固定 `moonc 0.10.18+6c83a7f62`，满足比赛不低于 0.10.16 的要求。公开仓库：[cjyhjy/moonbit-contextguard](https://github.com/cjyhjy/moonbit-contextguard)；逐条验收见 [ACCEPTANCE.md](ACCEPTANCE.md)，发布核验见 [reports/publication-0.2.0.json](reports/publication-0.2.0.json)。
 
 它验证限定格式的证据保留，不承诺任意语义无损、模型 token 减少、净费用降低或在线任务成功率提升。
 
 ## 安装 MoonBit 库
 
 ```sh
-moon add cjyhjy/contextguard@0.1.2
+moon add cjyhjy/contextguard@0.2.0
 ```
 
 在 `moon.pkg` 中添加 `import { "cjyhjy/contextguard" @guard }`，调用 `@guard.guard_request(request_json)`。完整用法见 [README.mbt.md](README.mbt.md)。仓库附带纯 MoonBit 示例：
@@ -41,6 +41,8 @@ node demo/server.mjs
 node tools/run.mjs --format node-tap --text -- node --test --test-reporter=tap fixtures/sources/many-tests.test.cjs
 node tools/run.mjs --format rg-json --text -- rg --json --no-config -C 1 needle fixtures/sources/search
 ```
+
+嵌套套件还可用 `node tools/run.mjs --format node-tap --text -- node --test --test-reporter=tap fixtures/nested-tap/sources/suites.cjs` 验证（预期退出码 1）。新增格式契约、语料来源和对比数据见 [嵌套 TAP 说明](docs/NESTED_TAP.md)。
 
 第一个例子故意有一个失败，包装器因此返回退出码 **1**；这是预期演示。stdout 经过核心，stderr 原样单独保留。输出注明退出状态、命令范围、采集是否完整和原文目录。`reports/captures/` 中每次生成独立记录，不覆盖旧结果。
 

@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "checks": [
+    {
+      "id": "moon-package",
+      "exit_code": 0,
+      "output": "Running moon check ...\nFinished. moon: no work to do\nCheck passed\nPackage to <PROJECT_ROOT>/_build/publish/cjyhjy-contextguard-0.1.2.zip\n"
+    },
+    {
+      "id": "consumer-check-js",
+      "exit_code": 0,
+      "output": "Finished. moon: ran 12 tasks, now up to date\n"
+    },
+    {
+      "id": "consumer-test-js",
+      "exit_code": 0,
+      "output": "Total tests: 6, passed: 6, failed: 0.\n"
+    },
+    {
+      "id": "packaged-example-js",
+      "exit_code": 0,
+      "output": "{\"schema_version\":1,\"format\":\"node-tap\",\"decision\":\"compressed\",\"reason\":\"required_source_units_verified\",\"output\":\"TAP version 13\\n1..1\\n# tests 1\\n# suites 0\\n# pass 1\\n# fail 0\\n# cancelled 0\\n# skipped 0\\n# todo 0\\n# duration_ms 1\\n\",\"process\":{\"exit_code\":0,\"scope\":[\"node\",\"--test\",\"example.test.cjs\"],\"truncated\":false},\"evidence\":[{\"id\":\"E1\",\"kind\":\"header\",\"start_line\":1,\"end_line\":1,\"text\":\"TAP version 13\"},{\"id\":\"E3\",\"kind\":\"summary\",\"start_line\":8,\"end_line\":16,\"text\":\"1..1\\n# tests 1\\n# suites 0\\n# pass 1\\n# fail 0\\n# cancelled 0\\n# skipped 0\\n# todo 0\\n# duration_ms 1\"}],\"metrics\":{\"input_chars\":188,\"output_chars\":110,\"required_facts\":2,\"missing_facts\":0,\"char_unit\":\"utf16_code_units\"},\"assurance\":\"required_source_units_verified\",\"output_kind\":\"evidence_projection\"}\n"
+    },
+    {
+      "id": "consumer-check-native",
+      "exit_code": 0,
+      "output": "Finished. moon: ran 9 tasks, now up to date\n"
+    },
+    {
+      "id": "consumer-test-native",
+      "exit_code": 0,
+      "output": "Total tests: 6, passed: 6, failed: 0.\n"
+    },
+    {
+      "id": "packaged-example-native",
+      "exit_code": 0,
+      "output": "{\"schema_version\":1,\"format\":\"node-tap\",\"decision\":\"compressed\",\"reason\":\"required_source_units_verified\",\"output\":\"TAP version 13\\n1..1\\n# tests 1\\n# suites 0\\n# pass 1\\n# fail 0\\n# cancelled 0\\n# skipped 0\\n# todo 0\\n# duration_ms 1\\n\",\"process\":{\"exit_code\":0,\"scope\":[\"node\",\"--test\",\"example.test.cjs\"],\"truncated\":false},\"evidence\":[{\"id\":\"E1\",\"kind\":\"header\",\"start_line\":1,\"end_line\":1,\"text\":\"TAP version 13\"},{\"id\":\"E3\",\"kind\":\"summary\",\"start_line\":8,\"end_line\":16,\"text\":\"1..1\\n# tests 1\\n# suites 0\\n# pass 1\\n# fail 0\\n# cancelled 0\\n# skipped 0\\n# todo 0\\n# duration_ms 1\"}],\"metrics\":{\"input_chars\":188,\"output_chars\":110,\"required_facts\":2,\"missing_facts\":0,\"char_unit\":\"utf16_code_units\"},\"assurance\":\"required_source_units_verified\",\"output_kind\":\"evidence_projection\"}\n"
+    },
+    {
+      "id": "consumer-check-wasm-gc",
+      "exit_code": 0,
+      "output": "Finished. moon: ran 9 tasks, now up to date\n"
+    },
+    {
+      "id": "consumer-test-wasm-gc",
+      "exit_code": 0,
+      "output": "Total tests: 6, passed: 6, failed: 0.\n"
+    },
+    {
+      "id": "packaged-example-wasm-gc",
+      "exit_code": 0,
+      "output": "{\"schema_version\":1,\"format\":\"node-tap\",\"decision\":\"compressed\",\"reason\":\"required_source_units_verified\",\"output\":\"TAP version 13\\n1..1\\n# tests 1\\n# suites 0\\n# pass 1\\n# fail 0\\n# cancelled 0\\n# skipped 0\\n# todo 0\\n# duration_ms 1\\n\",\"process\":{\"exit_code\":0,\"scope\":[\"node\",\"--test\",\"example.test.cjs\"],\"truncated\":false},\"evidence\":[{\"id\":\"E1\",\"kind\":\"header\",\"start_line\":1,\"end_line\":1,\"text\":\"TAP version 13\"},{\"id\":\"E3\",\"kind\":\"summary\",\"start_line\":8,\"end_line\":16,\"text\":\"1..1\\n# tests 1\\n# suites 0\\n# pass 1\\n# fail 0\\n# cancelled 0\\n# skipped 0\\n# todo 0\\n# duration_ms 1\"}],\"metrics\":{\"input_chars\":188,\"output_chars\":110,\"required_facts\":2,\"missing_facts\":0,\"char_unit\":\"utf16_code_units\"},\"assurance\":\"required_source_units_verified\",\"output_kind\":\"evidence_projection\"}\n"
+    }
+  ],
+  "scope": "Offline archive/external consumer validation; not a registry publication receipt.",
+  "module": "cjyhjy/contextguard",
+  "version": "0.1.2",
+  "files": [
+    "LICENSE",
+    "README.mbt.md",
+    "THIRD_PARTY_NOTICES.md",
+    "cmd/example/main.mbt",
+    "cmd/example/moon.pkg",
+    "cmd/example/pkg.generated.mbti",
+    "contextguard.mbt",
+    "contextguard_test.mbt",
+    "moon.mod",
+    "moon.pkg",
+    "pkg.generated.mbti",
+    "src/compressor.mbt",
+    "src/core_optimization_wbtest.mbt",
+    "src/guard_wbtest.mbt",
+    "src/moon.pkg",
+    "src/pkg.generated.mbti",
+    "src/request.mbt",
+    "src/rg.mbt",
+    "src/tap.mbt",
+    "src/types.mbt",
+    "src/validator.mbt"
+  ],
+  "archive_sha256": "3bbabd501568fa19cf2fb8b5e154120861be47f9ecaa31c7ba34fdc01b3f5b92",
+  "archive_bytes": 19039
+}

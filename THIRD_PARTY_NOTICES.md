@@ -18,4 +18,4 @@ Node.js、Python、ripgrep、MoonBit 工具链为外部执行依赖，未随便�
 
 ## Mooncakes 分发范围
 
-以上清单描述完整 GitHub 仓库与 Node 便携包。Mooncakes 0.1.2 仅分发本项目 MoonBit 源码、测试、示例、README 与许可，不包含 `dist`、`vendor`、`research` 或第三方对照实现；标准库由消费者的 MoonBit 工具链提供。
+以上清单描述完整 GitHub 仓库与 Node 便携包。Mooncakes 0.1.2 起仅分发本项目 MoonBit 源码、测试、示例、README 与许可，不包含 `dist`、`vendor`、`research` 或第三方对照实现；标准库由消费者的 MoonBit 工具链提供。

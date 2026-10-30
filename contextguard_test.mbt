@@ -82,3 +82,32 @@ fn field(value : Json, key : String) -> Json? {
     _ => None
   }
 }
+
+///|
+fn nested_public_sample() -> String {
+  "TAP version 13\n# Subtest: parent suite\n    # Subtest: ordinary pass\n    ok 1 - ordinary pass\n      ---\n      duration_ms: 1\n      type: 'test'\n      ...\n    # Subtest: skipped child\n    ok 2 - skipped child # SKIP\n      ---\n      duration_ms: 1\n      type: 'test'\n      ...\n    1..2\nok 1 - parent suite\n  ---\n  duration_ms: 2\n  type: 'suite'\n  ...\n1..1\n# tests 2\n# suites 1\n# pass 1\n# fail 0\n# cancelled 0\n# skipped 1\n# todo 0\n# duration_ms 3\n"
+}
+
+///|
+test "public library keeps nested skipped evidence with its enclosing scope" {
+  let raw = nested_public_sample()
+  let result = response(raw, Json::null(), 16000, "node-tap")
+  assert_eq(field(result, "decision"), Some(Json::string("compressed")))
+  assert_eq(field(result, "output"), Some(Json::string(raw)))
+}
+
+///|
+test "public library repairs nested source deletions without accepting changed child status" {
+  let raw = nested_public_sample()
+  let missing = raw.replace(old="    ok 2 - skipped child # SKIP\n", new="")
+  let repaired = response(raw, Json::string(missing), 16000, "node-tap")
+  assert_eq(field(repaired, "decision"), Some(Json::string("repaired")))
+  assert_eq(field(repaired, "output"), Some(Json::string(raw)))
+  let changed = raw.replace(
+    old="skipped child # SKIP",
+    new="skipped child # TODO",
+  )
+  let rejected = response(raw, Json::string(changed), 16000, "node-tap")
+  assert_eq(field(rejected, "decision"), Some(Json::string("fallback")))
+  assert_eq(field(rejected, "output"), Some(Json::string(raw)))
+}

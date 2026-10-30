@@ -2,28 +2,28 @@
   "schema_version": 2,
   "project": "ContextGuard",
   "status": "passed",
-  "generated_at": "2026-10-30T12:31:06Z",
+  "generated_at": "2026-10-30T12:48:57Z",
   "boundary": "Clean extraction used only bundled compiled core, source, Python standard library and installed Node. No network, no MoonBit rebuild, no platform-specific RTK executable. Remote CI and online model tasks not run.",
   "clean_directory": true,
   "directory_removed_after_check": true,
-  "checksums_checked": 303,
+  "checksums_checked": 334,
   "command": [
     "node",
     "tools/verify.mjs",
     "--portable"
   ],
   "exit_code": 0,
-  "stdout_stderr": "passed: public-api-process-adapter-http-tests\npassed: paired-ledger-tests\npassed: independent-evaluation\npassed: independent-mutation-audit\npassed: paired-ledger-example\npassed: json-cli\npassed: example\n",
+  "stdout_stderr": "passed: public-api-process-adapter-http-tests\npassed: paired-ledger-tests\npassed: independent-evaluation\npassed: nested-tap-evaluation\npassed: independent-mutation-audit\npassed: paired-ledger-example\npassed: json-cli\npassed: example\n",
   "execution": {
     "environment": "local"
   },
-  "source_verification_run_id": "3ec3400b-a4d6-4f34-b78b-59e6411220d7",
-  "inputs_sha256": "2a8a7fcc6151563421cb51dee514ee1ad103c3e5bca2258c4a7bd64eef107e33",
+  "source_verification_run_id": "cc36634f-27da-4b67-b363-b2c3d7d7b052",
+  "inputs_sha256": "13904e094dbf1b1c9462b0facef33bb2a9aed47a8c672044b2c06df40ea81c39",
   "portable_verification": {
     "schema_version": 2,
     "project": "ContextGuard",
-    "run_id": "0424f798-2fc3-4fb5-b4ce-58b3a9f2f7de",
-    "started_at": "2026-10-30T12:31:07.230Z",
+    "run_id": "e93bcf20-e468-4bd0-9a82-89ff9f6bad26",
+    "started_at": "2026-10-30T12:48:57.274Z",
     "user_timezone": "America/New_York",
     "mode": "portable_prebuilt",
     "status": "passed",
@@ -39,9 +39,9 @@
       {
         "id": "compiled-source-correspondence",
         "status": "passed",
-        "source_sha256": "d9ced37384874d99b19ee97e4ad8ee3818947d58a9d8130713aee88537eb7374",
-        "artifact_sha256": "6777ff48013eda6b5af445887b64ca0b2e8e530626df504e1659c956b877c07a",
-        "manifest_sha256": "826fa8ad4acdb5053d33ca7eefbd13347bee41b3f2c38943e8c453debf522816"
+        "source_sha256": "4dbf8552d5ce5e6167b59a4c4bda6854cb4c6f68adab8f1eed1ce14b8aa93cb7",
+        "artifact_sha256": "3f9efbd779c49c57eb0f7c0182f4a16dd1fd74a442c3c8c0a5117dcdb024c14c",
+        "manifest_sha256": "ec5a23622d950bfb956595d510d8a127fac7a02992ac68c6c1f66dabf0a66133"
       },
       {
         "id": "public-api-process-adapter-http-tests",
@@ -54,6 +54,7 @@
           "tests/delivery.test.mjs",
           "tests/demo-server.test.mjs",
           "tests/demo-session.test.mjs",
+          "tests/nested-tap.test.mjs",
           "tests/process.test.mjs",
           "tests/runtime-optimization.test.mjs",
           "tests/toolchain.test.mjs"
@@ -61,7 +62,7 @@
         "status": "passed",
         "exit_code": 0,
         "signal": null,
-        "elapsed_ms": 10098.608209,
+        "elapsed_ms": 9815.309584,
         "log": "reports/logs/public-api-process-adapter-http-tests.log"
       },
       {
@@ -74,7 +75,7 @@
         "status": "passed",
         "exit_code": 0,
         "signal": null,
-        "elapsed_ms": 66.64404099999956,
+        "elapsed_ms": 60.99370799999997,
         "log": "reports/logs/paired-ledger-tests.log"
       },
       {
@@ -86,8 +87,20 @@
         "status": "passed",
         "exit_code": 0,
         "signal": null,
-        "elapsed_ms": 594.7463329999991,
+        "elapsed_ms": 523.5008749999997,
         "log": "reports/logs/independent-evaluation.log"
+      },
+      {
+        "id": "nested-tap-evaluation",
+        "command": [
+          "/opt/homebrew/Cellar/node/26.7.0/bin/node",
+          "evaluation/evaluate-nested-tap.mjs"
+        ],
+        "status": "passed",
+        "exit_code": 0,
+        "signal": null,
+        "elapsed_ms": 63.199625000001106,
+        "log": "reports/logs/nested-tap-evaluation.log"
       },
       {
         "id": "independent-mutation-audit",
@@ -98,7 +111,7 @@
         "status": "passed",
         "exit_code": 0,
         "signal": null,
-        "elapsed_ms": 185.30224999999882,
+        "elapsed_ms": 177.71808299999975,
         "log": "reports/logs/independent-mutation-audit.log"
       },
       {
@@ -113,7 +126,7 @@
         "status": "passed",
         "exit_code": 0,
         "signal": null,
-        "elapsed_ms": 26.66645900000003,
+        "elapsed_ms": 24.968917000000147,
         "log": "reports/logs/paired-ledger-example.log"
       },
       {
@@ -126,7 +139,7 @@
         "status": "passed",
         "exit_code": 0,
         "signal": null,
-        "elapsed_ms": 35.33124999999927,
+        "elapsed_ms": 32.149499999999534,
         "log": "reports/logs/json-cli.log"
       },
       {
@@ -138,7 +151,7 @@
         "status": "passed",
         "exit_code": 0,
         "signal": null,
-        "elapsed_ms": 37.12916700000096,
+        "elapsed_ms": 33.88633300000038,
         "log": "reports/logs/example.log"
       },
       {
@@ -149,6 +162,9 @@
     "external_evidence": {
       "fixtures": "fixtures/manifest.json",
       "comparison": "reports/evaluation.json",
+      "nested_fixtures": "fixtures/nested-tap/manifest.json",
+      "nested_comparison": "reports/nested-tap-evaluation.json",
+      "nested_audit": "reports/nested-tap-audit.json",
       "peer_pins": "research/peers-lock.json",
       "adapter": "reports/adapter-protocol.json",
       "browser": "reports/demo-browser.json"
@@ -162,10 +178,10 @@
       "public_package_publication",
       "formal_contest_submission"
     ],
-    "boundary": "All workload sources are synthetic; captured stdout/stderr are historical real process fixtures. Fresh peer availability and unrun entries are recorded in evaluation.json. Portable mode does not compile MoonBit. execution records this run only; no online agent or package publication is certified.",
-    "version": "0.1.2",
+    "boundary": "Controlled fixture programs and a project regression command produce the captured stdout/stderr; fixture manifests distinguish their sources. Fresh peer availability and unrun entries are recorded in evaluation.json. Portable mode does not compile MoonBit. execution records this run only; no online agent or package publication is certified.",
+    "version": "0.2.0",
     "inputs": {
-      "sha256": "2a8a7fcc6151563421cb51dee514ee1ad103c3e5bca2258c4a7bd64eef107e33",
+      "sha256": "13904e094dbf1b1c9462b0facef33bb2a9aed47a8c672044b2c06df40ea81c39",
       "files": [
         {
           "path": ".github/workflows/ci.yml",
@@ -181,15 +197,15 @@
         },
         {
           "path": "ACCEPTANCE.md",
-          "sha256": "e7577fa81f53cfbcbfbc7c71e22571621f85ba02ddb99fd57d2843f1cdca0fd0"
+          "sha256": "0520f0b249ffae39095d6d602ce0d0051f1562fb8bc5b194c183f42882654193"
         },
         {
           "path": "CHANGELOG.md",
-          "sha256": "14af74a71bb0626439d6bde75ea8df50787f877ea4e345cdd065c2a3f6450fe9"
+          "sha256": "fe85f0825427c1e8437ca6531bbebdffe21765c8c6a85d09c7d5c599d744a7d2"
         },
         {
           "path": "DELIVERY.md",
-          "sha256": "51f9664b19f0f4997997ff7fcf681464ddcc34d499a5281723de6c9c4e62ec0e"
+          "sha256": "ce31580df686bafc2b86dc67db7cff1e29b53c3908fd29fbcdd9f8a5894bca7c"
         },
         {
           "path": "LICENSE",
@@ -197,15 +213,15 @@
         },
         {
           "path": "README.mbt.md",
-          "sha256": "4cb1eb8d9aefe7c045d112fa4f3dadc2985e5771d502c3c49c0d46e97b44289e"
+          "sha256": "75b8bf6ae0e21eaf75929e97f3c11cce8ff8c2b8f36a8f8ebaf29c6b0007478b"
         },
         {
           "path": "README.md",
-          "sha256": "445a00c532c5a89aae8920ca0bd9cb2370392d7be8ed1f09b9cbf1c1ef64cdfc"
+          "sha256": "d94c7c6ec02836ce138d0fd460f67e1d92abb39830865f4c6b7d2fe96ddf5893"
         },
         {
           "path": "THIRD_PARTY_NOTICES.md",
-          "sha256": "84736ab90fcc8fa1b1d1ff95de3d1cb0b1d9971b6e0b613487145029a4febf87"
+          "sha256": "004fbd2ceb3eac374ec6f04407e08e72f259c0eb16d68b16da8d09e68d6b0ec7"
         },
         {
           "path": "adapters/opencode-pin.json",
@@ -265,7 +281,7 @@
         },
         {
           "path": "contextguard_test.mbt",
-          "sha256": "42c2460ca144622109738b94ff7f53828007fb65b399a15a869bfc2680856165"
+          "sha256": "a05c4f71c944ae88305b05e4041a5a7ce230c9ace6d9cd4dbd109c78914faab3"
         },
         {
           "path": "demo/app.mjs",
@@ -293,15 +309,15 @@
         },
         {
           "path": "docs/AI_USAGE.md",
-          "sha256": "bcf600f629043656c6ecdd98a5460896a5624df3bafb737b0042d946bb860270"
+          "sha256": "277c3beb38ed18a49b1f81c81838e00527548ab9d704f2be3c31d0debad5296b"
         },
         {
           "path": "docs/API.md",
-          "sha256": "98c3d4fec17d1b6e1f0c5c3861dcb25305c34fa5b14e4133bba1e6019291d580"
+          "sha256": "44763f34440c231c4117a56b0a50bd247797112abed4c3052566e07e1873abec"
         },
         {
           "path": "docs/ARCHITECTURE.md",
-          "sha256": "72ecdb8a305c573f940f10f1bdf16dbeadac20cbdafb276768b2e910f9cf6089"
+          "sha256": "6242b976bb3fb9c67aa74a0ff2e27f7fc38379f29f56606ae1cad6e41563f044"
         },
         {
           "path": "docs/COMPARISON.md",
@@ -313,7 +329,7 @@
         },
         {
           "path": "docs/DEVELOPMENT_LOG.md",
-          "sha256": "3677179e9ae04262fcd311838a4be24bdafad6b7b12d7c442a07db46c01b9eda"
+          "sha256": "6d89f161c47d5a91a700a3aa028cb79d4df8df2a0ac4d57d7635f7bb95736e0c"
         },
         {
           "path": "docs/EVALUATION.md",
@@ -324,8 +340,12 @@
           "sha256": "b11b07cf11a94ac5b92a92ada0534ae3e57819131f559e92080a19d835ce9153"
         },
         {
+          "path": "docs/NESTED_TAP.md",
+          "sha256": "bb3c08aa154e2f01b43a513417fb4ae59318d41fcc44b2e76f096e28aa99055b"
+        },
+        {
           "path": "docs/OPTIMIZATION.md",
-          "sha256": "a98542dbf5b0291e3b7255373e71a3db85f74f61d55e0108c693d3180af10e86"
+          "sha256": "350f9972bc4977e9096b29041631ee57629a66c8206af0d61aa34d7f0f95b6be"
         },
         {
           "path": "evaluation/audit.mjs",
@@ -334,6 +354,14 @@
         {
           "path": "evaluation/capture-fixtures.mjs",
           "sha256": "67172a988c4e1ac8825797480e6ca46b1ef27626db036b07395eb1937ab0a650"
+        },
+        {
+          "path": "evaluation/capture-nested-tap.mjs",
+          "sha256": "fd050dda595f4c7c7a8107418981086cdc17a1532ed19093d73dbfa73763cb71"
+        },
+        {
+          "path": "evaluation/evaluate-nested-tap.mjs",
+          "sha256": "178c06f2d12986a3acc3f6f2e064111be8d5aec6741626e3e25272be6eb3b942"
         },
         {
           "path": "evaluation/evaluate.mjs",
@@ -416,6 +444,90 @@
           "sha256": "d7d85bd7e171e8a17bacc8f5fd69dc121a4fdb7732a611241695f79d8ce2c8ab"
         },
         {
+          "path": "fixtures/nested-tap/manifest.json",
+          "sha256": "08de64b3c04f86518ddfb7b2e605e9f5b192cb091b5a55ba3ac04547b1b60fa7"
+        },
+        {
+          "path": "fixtures/nested-tap/raw/all-pass.stderr.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "fixtures/nested-tap/raw/all-pass.stdout.txt",
+          "sha256": "63373a2437c82e8681048a6838bf4024c494280485209465532579f6ba0b05ab"
+        },
+        {
+          "path": "fixtures/nested-tap/raw/cancelled.stderr.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "fixtures/nested-tap/raw/cancelled.stdout.txt",
+          "sha256": "bca3d69ec9d002669f82a5d62b004a97956aec09d790ca54c778a2abfb3c14a5"
+        },
+        {
+          "path": "fixtures/nested-tap/raw/custom-log.stderr.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "fixtures/nested-tap/raw/custom-log.stdout.txt",
+          "sha256": "7425a2254234e45ace97d6fc6c7206a4c3685c0c1eb425ec12c51b105b26dc46"
+        },
+        {
+          "path": "fixtures/nested-tap/raw/directives.stderr.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "fixtures/nested-tap/raw/directives.stdout.txt",
+          "sha256": "ea367bfe94c2a7589b68c9b6e0eac914f30c6444781eb97457901425b99485ac"
+        },
+        {
+          "path": "fixtures/nested-tap/raw/parent.stderr.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "fixtures/nested-tap/raw/parent.stdout.txt",
+          "sha256": "5847a295b572e1569f7f70cf694c7766eaf55580063486ed1cec047c5736810c"
+        },
+        {
+          "path": "fixtures/nested-tap/raw/project-regression.stderr.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "fixtures/nested-tap/raw/project-regression.stdout.txt",
+          "sha256": "c188b6f9b417d35fba9a176ac169f197f094b6c81608cea7dc823a0c4e9cadc2"
+        },
+        {
+          "path": "fixtures/nested-tap/raw/suites.stderr.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "fixtures/nested-tap/raw/suites.stdout.txt",
+          "sha256": "cce4f610c5cc048e0d319521eb89d8167a327463c267b3df2ae5554cceb108e1"
+        },
+        {
+          "path": "fixtures/nested-tap/sources/all-pass.cjs",
+          "sha256": "3e63d73a9a2691a3923203e2cc30d1449f6f3fafede9d3b0449764d841ee4bae"
+        },
+        {
+          "path": "fixtures/nested-tap/sources/cancelled.cjs",
+          "sha256": "1c98df10f9d3c2bc55ac610b24c2919c55ed11c8be3243ecd4d65a53640b7124"
+        },
+        {
+          "path": "fixtures/nested-tap/sources/custom-log.cjs",
+          "sha256": "563e2767b28b81357641d2d469f5396666f7ec9b311fc1c68412cef9ecb6cc1f"
+        },
+        {
+          "path": "fixtures/nested-tap/sources/directives.cjs",
+          "sha256": "e73e3d6aa070ee8c9357bce223c4cfbe7de81823fafc190890b3775056312e64"
+        },
+        {
+          "path": "fixtures/nested-tap/sources/parent.cjs",
+          "sha256": "1a71c86901eb10d1af9ceb61570fab5bb120d3b5089c1c92fb1f9bb20031235e"
+        },
+        {
+          "path": "fixtures/nested-tap/sources/suites.cjs",
+          "sha256": "701a80cd8dde687f3e0315c8bcc8eafe6f3d5ed16131a53408b338b6c19cc721"
+        },
+        {
           "path": "fixtures/raw/node-tap-all-pass.stderr.txt",
           "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
         },
@@ -485,7 +597,7 @@
         },
         {
           "path": "moon.mod",
-          "sha256": "eac68686c2f8f2839de45e3ee15b0a05945df4683dbab327f4c7405666b4f8bf"
+          "sha256": "96843ebcaf2deb039de659aa1e37c4321d159f1237edce1c9ed0ea4dc5d1470a"
         },
         {
           "path": "moon.pkg",
@@ -493,7 +605,7 @@
         },
         {
           "path": "package.json",
-          "sha256": "7f3ea448e5c391bbae4aa93e8b17fbb55127094663ebf7c21aa3288ffceb7251"
+          "sha256": "d5f0d9eae81b62e62797689bf8ac5a044cc92c9c456ad25213c5a18d7fff62c8"
         },
         {
           "path": "pkg.generated.mbti",
@@ -640,6 +752,10 @@
           "sha256": "2389f5230802991c8e3d18433f66aae068d9bce75a5ea78b1c6dc83b461b56ef"
         },
         {
+          "path": "src/nested_tap_wbtest.mbt",
+          "sha256": "089a689a4dba306d734d48bf69df07886c9a795a2e2790060e5d42b68ab9eb9f"
+        },
+        {
           "path": "src/pkg.generated.mbti",
           "sha256": "921c902aca15c5268ac7dd10b326c7d86d85845047fbf1874c9c9f031c640043"
         },
@@ -653,7 +769,7 @@
         },
         {
           "path": "src/tap.mbt",
-          "sha256": "e2a42e93e97aa2bc6011af8a41725e13e2426a92c0b2f1ddac42e4cbd2bcabbc"
+          "sha256": "8f6437082cda1ef2114d05e48e5ca77a1707ef5d4913bce7b6f9f9fa3c5babc9"
         },
         {
           "path": "src/types.mbt",
@@ -673,11 +789,11 @@
         },
         {
           "path": "tests/core.test.mjs",
-          "sha256": "66869c91edaec9193b4f4337083fa41506fda6588cd7736867c0de17ee9dc455"
+          "sha256": "11042b7d44781e57a91993a41906bc77ac344bfcff37a1e483fc581c86cca2cd"
         },
         {
           "path": "tests/delivery.test.mjs",
-          "sha256": "3416006f7c2f28446aa540fb0c286f94f330c2b873803ba4323f6be275fdd089"
+          "sha256": "426132e2525c6d420ae7c42ddad3983fc4c47c1d96a185e83f38558aa725e7ee"
         },
         {
           "path": "tests/demo-browser.mjs",
@@ -690,6 +806,10 @@
         {
           "path": "tests/demo-session.test.mjs",
           "sha256": "f5eac872c3baefef4ee0e395c905df0d81ef09383ef73a070b722c1a9de48a37"
+        },
+        {
+          "path": "tests/nested-tap.test.mjs",
+          "sha256": "ac411d06a111b5107dfcaf20d6a563bb470c5a1827c2c4dbae37074a739e888e"
         },
         {
           "path": "tests/process.test.mjs",
@@ -757,11 +877,11 @@
         },
         {
           "path": "tools/verify-registry.py",
-          "sha256": "a9b139e31f1dd161d7516f544fdb123b356677854ddbdd595883c1dbdd787209"
+          "sha256": "4d94fa510d1c52eb9b03a1e8b529646444b99488f4735eef20ef741882c180a4"
         },
         {
           "path": "tools/verify.mjs",
-          "sha256": "fc25c0e0019d9134956611c6c93bc22d404a86c0def1c3a6c5c679d9a3ecc9b2"
+          "sha256": "1840269052551e50a960cfce740ec4d366e62ab43728b4b6350aee4cdaab6731"
         },
         {
           "path": "vendor/harnesspro/LICENSE",
@@ -798,7 +918,7 @@
       ]
     },
     "source": {
-      "sha256": "d9ced37384874d99b19ee97e4ad8ee3818947d58a9d8130713aee88537eb7374",
+      "sha256": "4dbf8552d5ce5e6167b59a4c4bda6854cb4c6f68adab8f1eed1ce14b8aa93cb7",
       "files": [
         {
           "path": "cmd/bridge/entry.mbt",
@@ -822,11 +942,11 @@
         },
         {
           "path": "contextguard_test.mbt",
-          "sha256": "42c2460ca144622109738b94ff7f53828007fb65b399a15a869bfc2680856165"
+          "sha256": "a05c4f71c944ae88305b05e4041a5a7ce230c9ace6d9cd4dbd109c78914faab3"
         },
         {
           "path": "moon.mod",
-          "sha256": "eac68686c2f8f2839de45e3ee15b0a05945df4683dbab327f4c7405666b4f8bf"
+          "sha256": "96843ebcaf2deb039de659aa1e37c4321d159f1237edce1c9ed0ea4dc5d1470a"
         },
         {
           "path": "moon.pkg",
@@ -849,6 +969,10 @@
           "sha256": "2389f5230802991c8e3d18433f66aae068d9bce75a5ea78b1c6dc83b461b56ef"
         },
         {
+          "path": "src/nested_tap_wbtest.mbt",
+          "sha256": "089a689a4dba306d734d48bf69df07886c9a795a2e2790060e5d42b68ab9eb9f"
+        },
+        {
           "path": "src/request.mbt",
           "sha256": "8cdd5b0a34d019af7494cbbc9a72fab6f40eab95a6bdb3543d61c6478eb112cb"
         },
@@ -858,7 +982,7 @@
         },
         {
           "path": "src/tap.mbt",
-          "sha256": "e2a42e93e97aa2bc6011af8a41725e13e2426a92c0b2f1ddac42e4cbd2bcabbc"
+          "sha256": "8f6437082cda1ef2114d05e48e5ca77a1707ef5d4913bce7b6f9f9fa3c5babc9"
         },
         {
           "path": "src/types.mbt",
@@ -871,12 +995,12 @@
       ]
     },
     "build": {
-      "source_sha256": "d9ced37384874d99b19ee97e4ad8ee3818947d58a9d8130713aee88537eb7374",
-      "artifact_sha256": "6777ff48013eda6b5af445887b64ca0b2e8e530626df504e1659c956b877c07a",
-      "manifest_sha256": "826fa8ad4acdb5053d33ca7eefbd13347bee41b3f2c38943e8c453debf522816"
+      "source_sha256": "4dbf8552d5ce5e6167b59a4c4bda6854cb4c6f68adab8f1eed1ce14b8aa93cb7",
+      "artifact_sha256": "3f9efbd779c49c57eb0f7c0182f4a16dd1fd74a442c3c8c0a5117dcdb024c14c",
+      "manifest_sha256": "ec5a23622d950bfb956595d510d8a127fac7a02992ac68c6c1f66dabf0a66133"
     },
-    "generated_at": "2026-10-30T12:31:18.296Z"
+    "generated_at": "2026-10-30T12:49:08.027Z"
   },
-  "elapsed_seconds": 11.368649959564209,
+  "elapsed_seconds": 11.051499843597412,
   "immutable_snapshot": true
 }

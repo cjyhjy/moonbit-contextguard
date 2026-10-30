@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "source": {
-    "sha256": "d9ced37384874d99b19ee97e4ad8ee3818947d58a9d8130713aee88537eb7374",
+    "sha256": "4dbf8552d5ce5e6167b59a4c4bda6854cb4c6f68adab8f1eed1ce14b8aa93cb7",
     "files": [
       {
         "path": "cmd/bridge/entry.mbt",
@@ -25,11 +25,11 @@
       },
       {
         "path": "contextguard_test.mbt",
-        "sha256": "42c2460ca144622109738b94ff7f53828007fb65b399a15a869bfc2680856165"
+        "sha256": "a05c4f71c944ae88305b05e4041a5a7ce230c9ace6d9cd4dbd109c78914faab3"
       },
       {
         "path": "moon.mod",
-        "sha256": "eac68686c2f8f2839de45e3ee15b0a05945df4683dbab327f4c7405666b4f8bf"
+        "sha256": "96843ebcaf2deb039de659aa1e37c4321d159f1237edce1c9ed0ea4dc5d1470a"
       },
       {
         "path": "moon.pkg",
@@ -52,6 +52,10 @@
         "sha256": "2389f5230802991c8e3d18433f66aae068d9bce75a5ea78b1c6dc83b461b56ef"
       },
       {
+        "path": "src/nested_tap_wbtest.mbt",
+        "sha256": "089a689a4dba306d734d48bf69df07886c9a795a2e2790060e5d42b68ab9eb9f"
+      },
+      {
         "path": "src/request.mbt",
         "sha256": "8cdd5b0a34d019af7494cbbc9a72fab6f40eab95a6bdb3543d61c6478eb112cb"
       },
@@ -61,7 +65,7 @@
       },
       {
         "path": "src/tap.mbt",
-        "sha256": "e2a42e93e97aa2bc6011af8a41725e13e2426a92c0b2f1ddac42e4cbd2bcabbc"
+        "sha256": "8f6437082cda1ef2114d05e48e5ca77a1707ef5d4913bce7b6f9f9fa3c5babc9"
       },
       {
         "path": "src/types.mbt",
@@ -74,5 +78,5 @@
     ]
   },
   "compiler": "moon 0.1.20261028 (e1e1f15 2026-10-28) ~/Documents/ChatGPT/黑客松新项目/repositories/moonbit-contextguard/.toolchain/bin/moon\nmoonc v0.10.18+6c83a7f62 (2026-10-28) ~/Documents/ChatGPT/黑客松新项目/repositories/moonbit-contextguard/.toolchain/bin/moonc\nmoonrun 0.1.20261028 (e1e1f15 2026-10-28) ~/Documents/ChatGPT/黑客松新项目/repositories/moonbit-contextguard/.toolchain/bin/moonrun\n\nFeature flags enabled: rr_moon_mod,rr_moon_pkg",
-  "artifact_sha256": "6777ff48013eda6b5af445887b64ca0b2e8e530626df504e1659c956b877c07a"
+  "artifact_sha256": "3f9efbd779c49c57eb0f7c0182f4a16dd1fd74a442c3c8c0a5117dcdb024c14c"
 }

@@ -1,0 +1,33 @@
+TAP version 13
+# Subtest: timeout suite
+    # Subtest: cancelled by timeout
+    not ok 1 - cancelled by timeout
+      ---
+      duration_ms: 11.499625
+      type: 'test'
+      location: '/Users/cjy/Documents/ChatGPT/黑客松新项目/repositories/moonbit-contextguard/fixtures/nested-tap/sources/cancelled.cjs:3:3'
+      failureType: 'testTimeoutFailure'
+      error: 'test timed out after 10ms'
+      code: 'ERR_TEST_FAILURE'
+      stack: |-
+        async Promise.all (index 0)
+      ...
+    1..1
+not ok 1 - timeout suite
+  ---
+  duration_ms: 12.161375
+  type: 'suite'
+  location: '/Users/cjy/Documents/ChatGPT/黑客松新项目/repositories/moonbit-contextguard/fixtures/nested-tap/sources/cancelled.cjs:2:1'
+  failureType: 'subtestsFailed'
+  error: '1 subtest failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+1..1
+# tests 1
+# suites 1
+# pass 0
+# fail 0
+# cancelled 1
+# skipped 0
+# todo 0
+# duration_ms 95.988834

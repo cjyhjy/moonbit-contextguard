@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.0 — 2026-10-30
+
+- Support nested Node TAP suites and subtests with recursive identities, plans, parent statuses and test/suite totals.
+- Preserve complete root branches containing failures, skips or todos; remove only fully validated ordinary passing branches.
+- Bound nested parsing to 32 child levels and reject duplicate timing/type fields.
+- Add seven real captured Node outputs, 896 independent deletion cases, depth/tampering tests and public registry-consumer regressions.
+
+
 ## 0.1.2 — 2026-10-30
 
 - Pin MoonBit 0.10.18 and enforce the contest minimum of 0.10.16.

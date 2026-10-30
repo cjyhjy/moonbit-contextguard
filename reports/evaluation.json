@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-30T12:31:06.639Z",
+  "generated_at": "2026-10-30T12:48:56.636Z",
   "environment": {
     "node": "v26.7.0",
     "platform": "darwin",
@@ -44,7 +44,7 @@
       "fixture": "node-tap-all-pass",
       "format": "node-tap",
       "mode": "head-tail-900",
-      "elapsed_ms": 0.02891699999999986,
+      "elapsed_ms": 0.028499999999997527,
       "timing_scope": "single in-process line selection",
       "budget_group": "primary",
       "output_file": "reports/evaluation/node-tap-all-pass.head-tail-900.txt",
@@ -73,7 +73,7 @@
       "fixture": "node-tap-all-pass",
       "format": "node-tap",
       "mode": "harnesspro-tb2-lite",
-      "elapsed_ms": 53.971000000000004,
+      "elapsed_ms": 55.354417000000005,
       "timing_scope": "full Python launcher and actual hook subprocess; not apples-to-apples with in-process core",
       "peer": {
         "peer": "HarnessPro Terminal-Bench 2 Lite PostToolUse",
@@ -95,7 +95,7 @@
         "compacted": false,
         "raw_recovery_verified": false,
         "raw_file": null,
-        "elapsed_ns_including_python_subprocess": 23387000,
+        "elapsed_ns_including_python_subprocess": 23424125,
         "hook_stdout": "",
         "hook_stderr": "",
         "scope": "single offline PostToolUse event; no pre-tool RTK rewrite, agent, or model run"
@@ -127,7 +127,7 @@
       "fixture": "node-tap-all-pass",
       "format": "node-tap",
       "mode": "contextguard",
-      "elapsed_ms": 2.1932919999999996,
+      "elapsed_ms": 2.3260419999999975,
       "timing_scope": "single synchronous API call including JSON serialization",
       "decision": "compressed",
       "reason": "required_source_units_verified",
@@ -135,9 +135,9 @@
       "benchmark": {
         "metric": "in-process wall milliseconds, 5 warmups then 31 runs; not comparable with peer subprocess wall time",
         "runs": 31,
-        "median_ms": 0.06883300000000148,
-        "min_ms": 0.04412500000000108,
-        "max_ms": 0.1789159999999974
+        "median_ms": 0.07354199999999977,
+        "min_ms": 0.0536670000000008,
+        "max_ms": 0.204542
       },
       "budget_group": "primary",
       "output_file": "reports/evaluation/node-tap-all-pass.contextguard.txt",
@@ -196,7 +196,7 @@
       "format": "node-tap",
       "mode": "head-tail-4000",
       "budget_group": "same-budget-4000",
-      "elapsed_ms": 0.027625000000000455,
+      "elapsed_ms": 0.03241600000001199,
       "timing_scope": "single in-process line selection",
       "output_file": "reports/evaluation/node-tap-all-pass.head-tail-4000.txt",
       "evidence_total": 10,
@@ -224,7 +224,7 @@
       "fixture": "node-tap-all-pass",
       "format": "node-tap",
       "mode": "harnesspro-tb2-lite-4000-reference",
-      "elapsed_ms": 53.971000000000004,
+      "elapsed_ms": 55.354417000000005,
       "timing_scope": "full Python launcher and actual hook subprocess; not apples-to-apples with in-process core",
       "peer": {
         "peer": "HarnessPro Terminal-Bench 2 Lite PostToolUse",
@@ -246,7 +246,7 @@
         "compacted": false,
         "raw_recovery_verified": false,
         "raw_file": null,
-        "elapsed_ns_including_python_subprocess": 23387000,
+        "elapsed_ns_including_python_subprocess": 23424125,
         "hook_stdout": "",
         "hook_stderr": "",
         "scope": "single offline PostToolUse event; no pre-tool RTK rewrite, agent, or model run"
@@ -280,7 +280,7 @@
       "format": "node-tap",
       "mode": "contextguard-4000",
       "budget_group": "same-budget-4000",
-      "elapsed_ms": 0.1220830000000035,
+      "elapsed_ms": 0.14266699999998878,
       "timing_scope": "single synchronous API call",
       "decision": "compressed",
       "reason": "required_source_units_verified",
@@ -340,7 +340,7 @@
       "fixture": "node-tap-zero-tests",
       "format": "node-tap",
       "mode": "head-tail-900",
-      "elapsed_ms": 0.0006249999999994316,
+      "elapsed_ms": 0.0003750000000053433,
       "timing_scope": "single in-process line selection",
       "budget_group": "primary",
       "output_file": "reports/evaluation/node-tap-zero-tests.head-tail-900.txt",
@@ -369,7 +369,7 @@
       "fixture": "node-tap-zero-tests",
       "format": "node-tap",
       "mode": "harnesspro-tb2-lite",
-      "elapsed_ms": 54.266125,
+      "elapsed_ms": 47.418625000000006,
       "timing_scope": "full Python launcher and actual hook subprocess; not apples-to-apples with in-process core",
       "peer": {
         "peer": "HarnessPro Terminal-Bench 2 Lite PostToolUse",
@@ -391,7 +391,7 @@
         "compacted": false,
         "raw_recovery_verified": false,
         "raw_file": null,
-        "elapsed_ns_including_python_subprocess": 25201292,
+        "elapsed_ns_including_python_subprocess": 20407167,
         "hook_stdout": "",
         "hook_stderr": "",
         "scope": "single offline PostToolUse event; no pre-tool RTK rewrite, agent, or model run"
@@ -423,7 +423,7 @@
       "fixture": "node-tap-zero-tests",
       "format": "node-tap",
       "mode": "contextguard",
-      "elapsed_ms": 0.06325000000001069,
+      "elapsed_ms": 0.06341700000000117,
       "timing_scope": "single synchronous API call including JSON serialization",
       "decision": "compressed",
       "reason": "required_source_units_verified",
@@ -431,9 +431,9 @@
       "benchmark": {
         "metric": "in-process wall milliseconds, 5 warmups then 31 runs; not comparable with peer subprocess wall time",
         "runs": 31,
-        "median_ms": 0.041667000000003895,
-        "min_ms": 0.028958000000002926,
-        "max_ms": 0.18649999999999523
+        "median_ms": 0.04066699999999912,
+        "min_ms": 0.03495800000000315,
+        "max_ms": 0.1345840000000038
       },
       "budget_group": "primary",
       "output_file": "reports/evaluation/node-tap-zero-tests.contextguard.txt",
@@ -492,7 +492,7 @@
       "format": "node-tap",
       "mode": "head-tail-4000",
       "budget_group": "same-budget-4000",
-      "elapsed_ms": 0.0007499999999822649,
+      "elapsed_ms": 0.001125000000001819,
       "timing_scope": "single in-process line selection",
       "output_file": "reports/evaluation/node-tap-zero-tests.head-tail-4000.txt",
       "evidence_total": 10,
@@ -520,7 +520,7 @@
       "fixture": "node-tap-zero-tests",
       "format": "node-tap",
       "mode": "harnesspro-tb2-lite-4000-reference",
-      "elapsed_ms": 54.266125,
+      "elapsed_ms": 47.418625000000006,
       "timing_scope": "full Python launcher and actual hook subprocess; not apples-to-apples with in-process core",
       "peer": {
         "peer": "HarnessPro Terminal-Bench 2 Lite PostToolUse",
@@ -542,7 +542,7 @@
         "compacted": false,
         "raw_recovery_verified": false,
         "raw_file": null,
-        "elapsed_ns_including_python_subprocess": 25201292,
+        "elapsed_ns_including_python_subprocess": 20407167,
         "hook_stdout": "",
         "hook_stderr": "",
         "scope": "single offline PostToolUse event; no pre-tool RTK rewrite, agent, or model run"
@@ -576,7 +576,7 @@
       "format": "node-tap",
       "mode": "contextguard-4000",
       "budget_group": "same-budget-4000",
-      "elapsed_ms": 0.09191699999999514,
+      "elapsed_ms": 0.10350000000002524,
       "timing_scope": "single synchronous API call",
       "decision": "compressed",
       "reason": "required_source_units_verified",
@@ -636,7 +636,7 @@
       "fixture": "node-tap-middle-failure",
       "format": "node-tap",
       "mode": "head-tail-900",
-      "elapsed_ms": 0.03854200000000674,
+      "elapsed_ms": 0.1519580000000076,
       "timing_scope": "single in-process line selection",
       "budget_group": "primary",
       "output_file": "reports/evaluation/node-tap-middle-failure.head-tail-900.txt",
@@ -708,7 +708,7 @@
       "fixture": "node-tap-middle-failure",
       "format": "node-tap",
       "mode": "harnesspro-tb2-lite",
-      "elapsed_ms": 53.23045799999997,
+      "elapsed_ms": 47.556917,
       "timing_scope": "full Python launcher and actual hook subprocess; not apples-to-apples with in-process core",
       "peer": {
         "peer": "HarnessPro Terminal-Bench 2 Lite PostToolUse",
@@ -730,7 +730,7 @@
         "compacted": true,
         "raw_recovery_verified": true,
         "raw_file": "reports/evaluation/peer-runs/.rho_runtime/raw/0bdbc87eb282f48c0c0255a4f37985ac9f99730d39a86512df502df04d39ecc0.json",
-        "elapsed_ns_including_python_subprocess": 23659750,
+        "elapsed_ns_including_python_subprocess": 20740334,
         "hook_stdout": "{\"decision\": \"block\", \"reason\": \"[Tool output compacted from 10335 characters. Full raw result: .rho_runtime/raw/0bdbc87eb282f48c0c0255a4f37985ac9f99730d39a86512df502df04d39ecc0.json. Read only a targeted range if more detail is necessary.]\\nTAP version 13\\n# Subtest: before 01 — 中文 passes\\nok 1 - before 01 — 中文 passes\\n  ---\\n  duration_ms: 0.737625\\n  type: 'test'\\n  ...\\n# Subtest: before 02 — 中文 passes\\nok 2 - before 02 — 中文 passes\\n  ---\\n  duration_ms: 0.069375\\n  type: 'test'\\n  ...\\n# Subtest: before 03 — 中文 passes\\nok 3 - before 03 — 中文 passes\\n  ---\\n  duration_ms: 0.037291\\n  type: 'test'\\n  ...\\n# Subtest: before 04 — 中文 passes\\nok 4 - before 04 — 中文 passes\\n  ---\\n  duration_ms: 0.579084\\n  type: 'test'\\n  ...\\n# Subtest: before 05 — 中文 passes\\nok 5 - before 05 — 中文 passes\\n  ---\\n  duration_ms: 0.046917\\n  type: 'test'\\n  ...\\n# Subtest: before 06 — 中文 passes\\nok 6 - before 06 — 中文 passes\\n  ---\\n  duration_ms: 0.028625\\n  type: 'test'\\n  ...\\n# Subtest: before 07 — 中文 passes\\nok 7 - before 07 — 中文 passes\\n  ---\\n  duration_ms: 0.029458\\n  type: 'test'\\n  ...\\n# Subtest: before 08 — 中文 passes\\nok 8 - before 08 — 中文 passes\\n  ---\\n  duration_ms: 0.028042\\n  type: 'test'\\n  ...\\n# Subtest: before 09 — 中文 passes\\nok 9 - before 09 — 中文 passes\\n  ---\\n  duration_ms: 0.043333\\n  type: 'test'\\n  ...\\n# Subtest: before 10 — 中文 passes\\nok 10 - before 10 — 中文 passes\\n  ---\\n  duration_ms: 0.066292\\n  type: 'test'\\n  ...\\n# Subtest: before 11 — 中文 passes\\nok 11 - before 11 — 中文 passes\\n  ---\\n  duration_ms: 0.0385\\n  type: 'test'\\n  ...\\n# Subtest: before 12 — 中文 passes\\nok 12 - before 12 — 中文 passes\\n  ---\\n  duration_ms: 0.376916\\n  type: 'test'\\n  ...\\n# Subtest: before 13 — 中文 passes\\nok 13 - before 13 — 中文 passes\\n  ---\\n  duration_ms: 0.041166\\n  type: 'test'\\n  ...\\n# Subtest: before 14 — 中文 passes\\nok 14 - before 14 — 中文 passes\\n  ---\\n  duration_ms: 0.0215\\n  type: 'test'\\n  ...\\n# Subtest: before 15 — 中文 passes\\nok 15 - before 15 — 中文 passes\\n  ---\\n  duration_ms: 0.017208\\n  type: 'test'\\n  ...\\n# Subtest: before 16 — 中文 passes\\nok 16 - before 16 — 中文 passes\\n  ---\\n  duration_ms: 0.0195\\n  type: 'test'\\n  ...\\n# Subtest: before 17 — 中文 passes\\nok 17 - before 17 — 中文 passes\\n  ---\\n  duration_ms: 0.014541\\n  type: 'test'\\n  ...\\n# Subtest: before 18 — 中文 passes\\nok 18 - before 18 — 中文 passes\\n  ---\\n  duration_ms: 0.012417\\n  type: 'test'\\n  ...\\n# Subtest: before 19 — 中文 passes\\nok 19 - before 19 — 中文 passes\\n  ---\\n  duration_ms: 0.01175\\n  type: 'test'\\n  ...\\n# Subtest: before 20 — 中文 passes\\nok 20 - before 20 — 中文 passes\\n  ---\\n  duration_ms: 0.014542\\n  type: 'test'\\n  ...\\n# Subtest: before 21 — 中文 passes\\nok 21 - before 21 — 中文 passes\\n  ---\\n  duration_ms: 0.011084\\n  type: 'test'\\n  ...\\n# Subte\\n... [7034 characters omitted; use the raw path for a targeted range] ...\\ntion_ms: 0.013542\\n  type: 'test'\\n  ...\\n# Subtest: after 31 — unicode λ passes\\nok 70 - after 31 — unicode λ passes\\n  ---\\n  duration_ms: 0.017833\\n  type: 'test'\\n  ...\\n# Subtest: after 32 — unicode λ passes\\nok 71 - after 32 — unicode λ passes\\n  ---\\n  duration_ms: 0.014667\\n  type: 'test'\\n  ...\\n# Subtest: after 33 — unicode λ passes\\nok 72 - after 33 — unicode λ passes\\n  ---\\n  duration_ms: 0.015083\\n  type: 'test'\\n  ...\\n# Subtest: after 34 — unicode λ passes\\nok 73 - after 34 — unicode λ passes\\n  ---\\n  duration_ms: 0.026541\\n  type: 'test'\\n  ...\\n# Subtest: after 35 — unicode λ passes\\nok 74 - after 35 — unicode λ passes\\n  ---\\n  duration_ms: 0.025042\\n  type: 'test'\\n  ...\\n# Subtest: after 36 — unicode λ passes\\nok 75 - after 36 — unicode λ passes\\n  ---\\n  duration_ms: 0.014875\\n  type: 'test'\\n  ...\\n1..75\\n# tests 75\\n# suites 0\\n# pass 72\\n# fail 1\\n# cancelled 0\\n# skipped 1\\n# todo 1\\n# duration_ms 91.549292\", \"hookSpecificOutput\": {\"hookEventName\": \"PostToolUse\", \"additionalContext\": \"The original tool result was replaced by a recoverable head/tail view. Do not rerun the command merely to recover omitted progress noise.\"}}\n",
         "hook_stderr": "",
         "scope": "single offline PostToolUse event; no pre-tool RTK rewrite, agent, or model run"
@@ -805,7 +805,7 @@
       "fixture": "node-tap-middle-failure",
       "format": "node-tap",
       "mode": "contextguard",
-      "elapsed_ms": 0.3440829999999835,
+      "elapsed_ms": 0.3795419999999865,
       "timing_scope": "single synchronous API call including JSON serialization",
       "decision": "compressed",
       "reason": "required_source_units_verified",
@@ -813,9 +813,9 @@
       "benchmark": {
         "metric": "in-process wall milliseconds, 5 warmups then 31 runs; not comparable with peer subprocess wall time",
         "runs": 31,
-        "median_ms": 0.2682920000000024,
-        "min_ms": 0.21545800000001236,
-        "max_ms": 0.3855000000000075
+        "median_ms": 0.27462500000001455,
+        "min_ms": 0.2200420000000065,
+        "max_ms": 0.36404200000001197
       },
       "budget_group": "primary",
       "output_file": "reports/evaluation/node-tap-middle-failure.contextguard.txt",
@@ -874,7 +874,7 @@
       "format": "node-tap",
       "mode": "head-tail-4000",
       "budget_group": "same-budget-4000",
-      "elapsed_ms": 0.040291000000024724,
+      "elapsed_ms": 0.03937500000000682,
       "timing_scope": "single in-process line selection",
       "output_file": "reports/evaluation/node-tap-middle-failure.head-tail-4000.txt",
       "evidence_total": 17,
@@ -945,7 +945,7 @@
       "fixture": "node-tap-middle-failure",
       "format": "node-tap",
       "mode": "harnesspro-tb2-lite-4000-reference",
-      "elapsed_ms": 53.23045799999997,
+      "elapsed_ms": 47.556917,
       "timing_scope": "full Python launcher and actual hook subprocess; not apples-to-apples with in-process core",
       "peer": {
         "peer": "HarnessPro Terminal-Bench 2 Lite PostToolUse",
@@ -967,7 +967,7 @@
         "compacted": true,
         "raw_recovery_verified": true,
         "raw_file": "reports/evaluation/peer-runs/.rho_runtime/raw/0bdbc87eb282f48c0c0255a4f37985ac9f99730d39a86512df502df04d39ecc0.json",
-        "elapsed_ns_including_python_subprocess": 23659750,
+        "elapsed_ns_including_python_subprocess": 20740334,
         "hook_stdout": "{\"decision\": \"block\", \"reason\": \"[Tool output compacted from 10335 characters. Full raw result: .rho_runtime/raw/0bdbc87eb282f48c0c0255a4f37985ac9f99730d39a86512df502df04d39ecc0.json. Read only a targeted range if more detail is necessary.]\\nTAP version 13\\n# Subtest: before 01 — 中文 passes\\nok 1 - before 01 — 中文 passes\\n  ---\\n  duration_ms: 0.737625\\n  type: 'test'\\n  ...\\n# Subtest: before 02 — 中文 passes\\nok 2 - before 02 — 中文 passes\\n  ---\\n  duration_ms: 0.069375\\n  type: 'test'\\n  ...\\n# Subtest: before 03 — 中文 passes\\nok 3 - before 03 — 中文 passes\\n  ---\\n  duration_ms: 0.037291\\n  type: 'test'\\n  ...\\n# Subtest: before 04 — 中文 passes\\nok 4 - before 04 — 中文 passes\\n  ---\\n  duration_ms: 0.579084\\n  type: 'test'\\n  ...\\n# Subtest: before 05 — 中文 passes\\nok 5 - before 05 — 中文 passes\\n  ---\\n  duration_ms: 0.046917\\n  type: 'test'\\n  ...\\n# Subtest: before 06 — 中文 passes\\nok 6 - before 06 — 中文 passes\\n  ---\\n  duration_ms: 0.028625\\n  type: 'test'\\n  ...\\n# Subtest: before 07 — 中文 passes\\nok 7 - before 07 — 中文 passes\\n  ---\\n  duration_ms: 0.029458\\n  type: 'test'\\n  ...\\n# Subtest: before 08 — 中文 passes\\nok 8 - before 08 — 中文 passes\\n  ---\\n  duration_ms: 0.028042\\n  type: 'test'\\n  ...\\n# Subtest: before 09 — 中文 passes\\nok 9 - before 09 — 中文 passes\\n  ---\\n  duration_ms: 0.043333\\n  type: 'test'\\n  ...\\n# Subtest: before 10 — 中文 passes\\nok 10 - before 10 — 中文 passes\\n  ---\\n  duration_ms: 0.066292\\n  type: 'test'\\n  ...\\n# Subtest: before 11 — 中文 passes\\nok 11 - before 11 — 中文 passes\\n  ---\\n  duration_ms: 0.0385\\n  type: 'test'\\n  ...\\n# Subtest: before 12 — 中文 passes\\nok 12 - before 12 — 中文 passes\\n  ---\\n  duration_ms: 0.376916\\n  type: 'test'\\n  ...\\n# Subtest: before 13 — 中文 passes\\nok 13 - before 13 — 中文 passes\\n  ---\\n  duration_ms: 0.041166\\n  type: 'test'\\n  ...\\n# Subtest: before 14 — 中文 passes\\nok 14 - before 14 — 中文 passes\\n  ---\\n  duration_ms: 0.0215\\n  type: 'test'\\n  ...\\n# Subtest: before 15 — 中文 passes\\nok 15 - before 15 — 中文 passes\\n  ---\\n  duration_ms: 0.017208\\n  type: 'test'\\n  ...\\n# Subtest: before 16 — 中文 passes\\nok 16 - before 16 — 中文 passes\\n  ---\\n  duration_ms: 0.0195\\n  type: 'test'\\n  ...\\n# Subtest: before 17 — 中文 passes\\nok 17 - before 17 — 中文 passes\\n  ---\\n  duration_ms: 0.014541\\n  type: 'test'\\n  ...\\n# Subtest: before 18 — 中文 passes\\nok 18 - before 18 — 中文 passes\\n  ---\\n  duration_ms: 0.012417\\n  type: 'test'\\n  ...\\n# Subtest: before 19 — 中文 passes\\nok 19 - before 19 — 中文 passes\\n  ---\\n  duration_ms: 0.01175\\n  type: 'test'\\n  ...\\n# Subtest: before 20 — 中文 passes\\nok 20 - before 20 — 中文 passes\\n  ---\\n  duration_ms: 0.014542\\n  type: 'test'\\n  ...\\n# Subtest: before 21 — 中文 passes\\nok 21 - before 21 — 中文 passes\\n  ---\\n  duration_ms: 0.011084\\n  type: 'test'\\n  ...\\n# Subte\\n... [7034 characters omitted; use the raw path for a targeted range] ...\\ntion_ms: 0.013542\\n  type: 'test'\\n  ...\\n# Subtest: after 31 — unicode λ passes\\nok 70 - after 31 — unicode λ passes\\n  ---\\n  duration_ms: 0.017833\\n  type: 'test'\\n  ...\\n# Subtest: after 32 — unicode λ passes\\nok 71 - after 32 — unicode λ passes\\n  ---\\n  duration_ms: 0.014667\\n  type: 'test'\\n  ...\\n# Subtest: after 33 — unicode λ passes\\nok 72 - after 33 — unicode λ passes\\n  ---\\n  duration_ms: 0.015083\\n  type: 'test'\\n  ...\\n# Subtest: after 34 — unicode λ passes\\nok 73 - after 34 — unicode λ passes\\n  ---\\n  duration_ms: 0.026541\\n  type: 'test'\\n  ...\\n# Subtest: after 35 — unicode λ passes\\nok 74 - after 35 — unicode λ passes\\n  ---\\n  duration_ms: 0.025042\\n  type: 'test'\\n  ...\\n# Subtest: after 36 — unicode λ passes\\nok 75 - after 36 — unicode λ passes\\n  ---\\n  duration_ms: 0.014875\\n  type: 'test'\\n  ...\\n1..75\\n# tests 75\\n# suites 0\\n# pass 72\\n# fail 1\\n# cancelled 0\\n# skipped 1\\n# todo 1\\n# duration_ms 91.549292\", \"hookSpecificOutput\": {\"hookEventName\": \"PostToolUse\", \"additionalContext\": \"The original tool result was replaced by a recoverable head/tail view. Do not rerun the command merely to recover omitted progress noise.\"}}\n",
         "hook_stderr": "",
         "scope": "single offline PostToolUse event; no pre-tool RTK rewrite, agent, or model run"
@@ -1044,7 +1044,7 @@
       "format": "node-tap",
       "mode": "contextguard-4000",
       "budget_group": "same-budget-4000",
-      "elapsed_ms": 0.2792079999999828,
+      "elapsed_ms": 0.38820799999996325,
       "timing_scope": "single synchronous API call",
       "decision": "compressed",
       "reason": "required_source_units_verified",
@@ -1104,7 +1104,7 @@
       "fixture": "rg-json-multiple-unicode-long",
       "format": "rg-json",
       "mode": "head-tail-900",
-      "elapsed_ms": 0.008832999999981439,
+      "elapsed_ms": 0.008041999999989002,
       "timing_scope": "single in-process line selection",
       "budget_group": "primary",
       "output_file": "reports/evaluation/rg-json-multiple-unicode-long.head-tail-900.txt",
@@ -1206,7 +1206,7 @@
       "fixture": "rg-json-multiple-unicode-long",
       "format": "rg-json",
       "mode": "harnesspro-tb2-lite",
-      "elapsed_ms": 52.28604100000001,
+      "elapsed_ms": 47.996541000000036,
       "timing_scope": "full Python launcher and actual hook subprocess; not apples-to-apples with in-process core",
       "peer": {
         "peer": "HarnessPro Terminal-Bench 2 Lite PostToolUse",
@@ -1228,7 +1228,7 @@
         "compacted": true,
         "raw_recovery_verified": true,
         "raw_file": "reports/evaluation/peer-runs/.rho_runtime/raw/fbc535bdcdd94edf67179dd9b4ef6f7a41ac555085320b43c45c7a5a93f658d7.json",
-        "elapsed_ns_including_python_subprocess": 23464417,
+        "elapsed_ns_including_python_subprocess": 21069125,
         "hook_stdout": "{\"decision\": \"block\", \"reason\": \"[Tool output compacted from 6740 characters. Full raw result: .rho_runtime/raw/fbc535bdcdd94edf67179dd9b4ef6f7a41ac555085320b43c45c7a5a93f658d7.json. Read only a targeted range if more detail is necessary.]\\n{\\\"type\\\":\\\"begin\\\",\\\"data\\\":{\\\"path\\\":{\\\"text\\\":\\\"fixtures/sources/search/gamma.txt\\\"}}}\\n{\\\"type\\\":\\\"context\\\",\\\"data\\\":{\\\"path\\\":{\\\"text\\\":\\\"fixtures/sources/search/gamma.txt\\\"},\\\"lines\\\":{\\\"text\\\":\\\"before gamma\\\\n\\\"},\\\"line_number\\\":1,\\\"absolute_offset\\\":0,\\\"submatches\\\":[]}}\\n{\\\"type\\\":\\\"match\\\",\\\"data\\\":{\\\"path\\\":{\\\"text\\\":\\\"fixtures/sources/search/gamma.txt\\\"},\\\"lines\\\":{\\\"text\\\":\\\"needle gamma one\\\\n\\\"},\\\"line_number\\\":2,\\\"absolute_offset\\\":13,\\\"submatches\\\":[{\\\"match\\\":{\\\"text\\\":\\\"needle\\\"},\\\"start\\\":0,\\\"end\\\":6}]}}\\n{\\\"type\\\":\\\"match\\\",\\\"data\\\":{\\\"path\\\":{\\\"text\\\":\\\"fixtures/sources/search/gamma.txt\\\"},\\\"lines\\\":{\\\"text\\\":\\\"needle gamma adjacent\\\\n\\\"},\\\"line_number\\\":3,\\\"absolute_offset\\\":30,\\\"submatches\\\":[{\\\"match\\\":{\\\"text\\\":\\\"needle\\\"},\\\"start\\\":0,\\\"end\\\":6}]}}\\n{\\\"type\\\":\\\"context\\\",\\\"data\\\":{\\\"path\\\":{\\\"text\\\":\\\"fixtures/sources/search/gamma.txt\\\"},\\\"lines\\\":{\\\"text\\\":\\\"after gamma\\\\n\\\"},\\\"line_number\\\":4,\\\"absolute_offset\\\":52,\\\"submatches\\\":[]}}\\n{\\\"type\\\":\\\"end\\\",\\\"data\\\":{\\\"path\\\":{\\\"text\\\":\\\"fixtures/sources/search/gamma.txt\\\"},\\\"binary_offset\\\":null,\\\"stats\\\":{\\\"elapsed\\\":{\\\"secs\\\":0,\\\"nanos\\\":51625,\\\"human\\\":\\\"0.000052s\\\"},\\\"searches\\\":1,\\\"searches_with_match\\\":1,\\\"bytes_searched\\\":81,\\\"bytes_printed\\\":843,\\\"matched_lines\\\":2,\\\"matches\\\":2}}}\\n{\\\"type\\\":\\\"begin\\\",\\\"data\\\":{\\\"path\\\":{\\\"text\\\":\\\"fixtures/sources/search/βeta.txt\\\"}}}\\n{\\\"type\\\":\\\"context\\\",\\\"data\\\":{\\\"path\\\":{\\\"text\\\":\\\"fixtures/sources/search/βeta.txt\\\"},\\\"lines\\\":{\\\"text\\\":\\\"before a long middle hit\\\\n\\\"},\\\"line_number\\\":2,\\\"absolute_offset\\\":22,\\\"submatches\\\":[]}}\\n{\\\"type\\\":\\\"match\\\",\\\"data\\\":{\\\"path\\\":{\\\"text\\\":\\\"fixtures/sources/search/βeta.txt\\\"},\\\"lines\\\":{\\\"text\\\":\\\"needle long-middle 保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-\\n... [3439 characters omitted; use the raw path for a targeted range] ...\\n{\\\"text\\\":\\\"fixtures/sources/search/alpha.txt\\\"},\\\"lines\\\":{\\\"text\\\":\\\"needle first match 中文\\\\n\\\"},\\\"line_number\\\":3,\\\"absolute_offset\\\":39,\\\"submatches\\\":[{\\\"match\\\":{\\\"text\\\":\\\"needle\\\"},\\\"start\\\":0,\\\"end\\\":6}]}}\\n{\\\"type\\\":\\\"context\\\",\\\"data\\\":{\\\"path\\\":{\\\"text\\\":\\\"fixtures/sources/search/alpha.txt\\\"},\\\"lines\\\":{\\\"text\\\":\\\"context after first hit\\\\n\\\"},\\\"line_number\\\":4,\\\"absolute_offset\\\":65,\\\"submatches\\\":[]}}\\n{\\\"type\\\":\\\"end\\\",\\\"data\\\":{\\\"path\\\":{\\\"text\\\":\\\"fixtures/sources/search/alpha.txt\\\"},\\\"binary_offset\\\":null,\\\"stats\\\":{\\\"elapsed\\\":{\\\"secs\\\":0,\\\"nanos\\\":3750,\\\"human\\\":\\\"0.000004s\\\"},\\\"searches\\\":1,\\\"searches_with_match\\\":1,\\\"bytes_searched\\\":105,\\\"bytes_printed\\\":658,\\\"matched_lines\\\":1,\\\"matches\\\":1}}}\\n{\\\"data\\\":{\\\"elapsed_total\\\":{\\\"human\\\":\\\"0.004955s\\\",\\\"nanos\\\":4954709,\\\"secs\\\":0},\\\"stats\\\":{\\\"bytes_printed\\\":9457,\\\"bytes_searched\\\":7084,\\\"elapsed\\\":{\\\"human\\\":\\\"0.000071s\\\",\\\"nanos\\\":71333,\\\"secs\\\":0},\\\"matched_lines\\\":5,\\\"matches\\\":5,\\\"searches\\\":3,\\\"searches_with_match\\\":3}},\\\"type\\\":\\\"summary\\\"}\", \"hookSpecificOutput\": {\"hookEventName\": \"PostToolUse\", \"additionalContext\": \"The original tool result was replaced by a recoverable head/tail view. Do not rerun the command merely to recover omitted progress noise.\"}}\n",
         "hook_stderr": "",
         "scope": "single offline PostToolUse event; no pre-tool RTK rewrite, agent, or model run"
@@ -1303,7 +1303,7 @@
       "fixture": "rg-json-multiple-unicode-long",
       "format": "rg-json",
       "mode": "contextguard",
-      "elapsed_ms": 1.730542000000014,
+      "elapsed_ms": 1.6460839999999735,
       "timing_scope": "single synchronous API call including JSON serialization",
       "decision": "compressed",
       "reason": "required_source_units_verified",
@@ -1311,9 +1311,9 @@
       "benchmark": {
         "metric": "in-process wall milliseconds, 5 warmups then 31 runs; not comparable with peer subprocess wall time",
         "runs": 31,
-        "median_ms": 0.41066699999998946,
-        "min_ms": 0.3216669999999908,
-        "max_ms": 0.6234170000000177
+        "median_ms": 0.36262499999998,
+        "min_ms": 0.32337499999999864,
+        "max_ms": 0.5762500000000159
       },
       "budget_group": "primary",
       "output_file": "reports/evaluation/rg-json-multiple-unicode-long.contextguard.txt",
@@ -1372,7 +1372,7 @@
       "format": "rg-json",
       "mode": "head-tail-4000",
       "budget_group": "same-budget-4000",
-      "elapsed_ms": 0.015958000000011907,
+      "elapsed_ms": 0.01474999999999227,
       "timing_scope": "single in-process line selection",
       "output_file": "reports/evaluation/rg-json-multiple-unicode-long.head-tail-4000.txt",
       "evidence_total": 14,
@@ -1419,7 +1419,7 @@
       "fixture": "rg-json-multiple-unicode-long",
       "format": "rg-json",
       "mode": "harnesspro-tb2-lite-4000-reference",
-      "elapsed_ms": 52.28604100000001,
+      "elapsed_ms": 47.996541000000036,
       "timing_scope": "full Python launcher and actual hook subprocess; not apples-to-apples with in-process core",
       "peer": {
         "peer": "HarnessPro Terminal-Bench 2 Lite PostToolUse",
@@ -1441,7 +1441,7 @@
         "compacted": true,
         "raw_recovery_verified": true,
         "raw_file": "reports/evaluation/peer-runs/.rho_runtime/raw/fbc535bdcdd94edf67179dd9b4ef6f7a41ac555085320b43c45c7a5a93f658d7.json",
-        "elapsed_ns_including_python_subprocess": 23464417,
+        "elapsed_ns_including_python_subprocess": 21069125,
         "hook_stdout": "{\"decision\": \"block\", \"reason\": \"[Tool output compacted from 6740 characters. Full raw result: .rho_runtime/raw/fbc535bdcdd94edf67179dd9b4ef6f7a41ac555085320b43c45c7a5a93f658d7.json. Read only a targeted range if more detail is necessary.]\\n{\\\"type\\\":\\\"begin\\\",\\\"data\\\":{\\\"path\\\":{\\\"text\\\":\\\"fixtures/sources/search/gamma.txt\\\"}}}\\n{\\\"type\\\":\\\"context\\\",\\\"data\\\":{\\\"path\\\":{\\\"text\\\":\\\"fixtures/sources/search/gamma.txt\\\"},\\\"lines\\\":{\\\"text\\\":\\\"before gamma\\\\n\\\"},\\\"line_number\\\":1,\\\"absolute_offset\\\":0,\\\"submatches\\\":[]}}\\n{\\\"type\\\":\\\"match\\\",\\\"data\\\":{\\\"path\\\":{\\\"text\\\":\\\"fixtures/sources/search/gamma.txt\\\"},\\\"lines\\\":{\\\"text\\\":\\\"needle gamma one\\\\n\\\"},\\\"line_number\\\":2,\\\"absolute_offset\\\":13,\\\"submatches\\\":[{\\\"match\\\":{\\\"text\\\":\\\"needle\\\"},\\\"start\\\":0,\\\"end\\\":6}]}}\\n{\\\"type\\\":\\\"match\\\",\\\"data\\\":{\\\"path\\\":{\\\"text\\\":\\\"fixtures/sources/search/gamma.txt\\\"},\\\"lines\\\":{\\\"text\\\":\\\"needle gamma adjacent\\\\n\\\"},\\\"line_number\\\":3,\\\"absolute_offset\\\":30,\\\"submatches\\\":[{\\\"match\\\":{\\\"text\\\":\\\"needle\\\"},\\\"start\\\":0,\\\"end\\\":6}]}}\\n{\\\"type\\\":\\\"context\\\",\\\"data\\\":{\\\"path\\\":{\\\"text\\\":\\\"fixtures/sources/search/gamma.txt\\\"},\\\"lines\\\":{\\\"text\\\":\\\"after gamma\\\\n\\\"},\\\"line_number\\\":4,\\\"absolute_offset\\\":52,\\\"submatches\\\":[]}}\\n{\\\"type\\\":\\\"end\\\",\\\"data\\\":{\\\"path\\\":{\\\"text\\\":\\\"fixtures/sources/search/gamma.txt\\\"},\\\"binary_offset\\\":null,\\\"stats\\\":{\\\"elapsed\\\":{\\\"secs\\\":0,\\\"nanos\\\":51625,\\\"human\\\":\\\"0.000052s\\\"},\\\"searches\\\":1,\\\"searches_with_match\\\":1,\\\"bytes_searched\\\":81,\\\"bytes_printed\\\":843,\\\"matched_lines\\\":2,\\\"matches\\\":2}}}\\n{\\\"type\\\":\\\"begin\\\",\\\"data\\\":{\\\"path\\\":{\\\"text\\\":\\\"fixtures/sources/search/βeta.txt\\\"}}}\\n{\\\"type\\\":\\\"context\\\",\\\"data\\\":{\\\"path\\\":{\\\"text\\\":\\\"fixtures/sources/search/βeta.txt\\\"},\\\"lines\\\":{\\\"text\\\":\\\"before a long middle hit\\\\n\\\"},\\\"line_number\\\":2,\\\"absolute_offset\\\":22,\\\"submatches\\\":[]}}\\n{\\\"type\\\":\\\"match\\\",\\\"data\\\":{\\\"path\\\":{\\\"text\\\":\\\"fixtures/sources/search/βeta.txt\\\"},\\\"lines\\\":{\\\"text\\\":\\\"needle long-middle 保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-λ-保留证据-\\n... [3439 characters omitted; use the raw path for a targeted range] ...\\n{\\\"text\\\":\\\"fixtures/sources/search/alpha.txt\\\"},\\\"lines\\\":{\\\"text\\\":\\\"needle first match 中文\\\\n\\\"},\\\"line_number\\\":3,\\\"absolute_offset\\\":39,\\\"submatches\\\":[{\\\"match\\\":{\\\"text\\\":\\\"needle\\\"},\\\"start\\\":0,\\\"end\\\":6}]}}\\n{\\\"type\\\":\\\"context\\\",\\\"data\\\":{\\\"path\\\":{\\\"text\\\":\\\"fixtures/sources/search/alpha.txt\\\"},\\\"lines\\\":{\\\"text\\\":\\\"context after first hit\\\\n\\\"},\\\"line_number\\\":4,\\\"absolute_offset\\\":65,\\\"submatches\\\":[]}}\\n{\\\"type\\\":\\\"end\\\",\\\"data\\\":{\\\"path\\\":{\\\"text\\\":\\\"fixtures/sources/search/alpha.txt\\\"},\\\"binary_offset\\\":null,\\\"stats\\\":{\\\"elapsed\\\":{\\\"secs\\\":0,\\\"nanos\\\":3750,\\\"human\\\":\\\"0.000004s\\\"},\\\"searches\\\":1,\\\"searches_with_match\\\":1,\\\"bytes_searched\\\":105,\\\"bytes_printed\\\":658,\\\"matched_lines\\\":1,\\\"matches\\\":1}}}\\n{\\\"data\\\":{\\\"elapsed_total\\\":{\\\"human\\\":\\\"0.004955s\\\",\\\"nanos\\\":4954709,\\\"secs\\\":0},\\\"stats\\\":{\\\"bytes_printed\\\":9457,\\\"bytes_searched\\\":7084,\\\"elapsed\\\":{\\\"human\\\":\\\"0.000071s\\\",\\\"nanos\\\":71333,\\\"secs\\\":0},\\\"matched_lines\\\":5,\\\"matches\\\":5,\\\"searches\\\":3,\\\"searches_with_match\\\":3}},\\\"type\\\":\\\"summary\\\"}\", \"hookSpecificOutput\": {\"hookEventName\": \"PostToolUse\", \"additionalContext\": \"The original tool result was replaced by a recoverable head/tail view. Do not rerun the command merely to recover omitted progress noise.\"}}\n",
         "hook_stderr": "",
         "scope": "single offline PostToolUse event; no pre-tool RTK rewrite, agent, or model run"
@@ -1518,7 +1518,7 @@
       "format": "rg-json",
       "mode": "contextguard-4000",
       "budget_group": "same-budget-4000",
-      "elapsed_ms": 0.5103330000000028,
+      "elapsed_ms": 0.4922080000000051,
       "timing_scope": "single synchronous API call",
       "decision": "fallback",
       "reason": "output_budget_exceeded",
@@ -1578,7 +1578,7 @@
       "fixture": "rg-json-no-results",
       "format": "rg-json",
       "mode": "head-tail-900",
-      "elapsed_ms": 0.0006250000000136424,
+      "elapsed_ms": 0.0007909999999924366,
       "timing_scope": "single in-process line selection",
       "budget_group": "primary",
       "output_file": "reports/evaluation/rg-json-no-results.head-tail-900.txt",
@@ -1607,7 +1607,7 @@
       "fixture": "rg-json-no-results",
       "format": "rg-json",
       "mode": "harnesspro-tb2-lite",
-      "elapsed_ms": 52.59970800000002,
+      "elapsed_ms": 47.998625000000004,
       "timing_scope": "full Python launcher and actual hook subprocess; not apples-to-apples with in-process core",
       "peer": {
         "peer": "HarnessPro Terminal-Bench 2 Lite PostToolUse",
@@ -1629,7 +1629,7 @@
         "compacted": false,
         "raw_recovery_verified": false,
         "raw_file": null,
-        "elapsed_ns_including_python_subprocess": 23192083,
+        "elapsed_ns_including_python_subprocess": 20805334,
         "hook_stdout": "",
         "hook_stderr": "",
         "scope": "single offline PostToolUse event; no pre-tool RTK rewrite, agent, or model run"
@@ -1661,7 +1661,7 @@
       "fixture": "rg-json-no-results",
       "format": "rg-json",
       "mode": "contextguard",
-      "elapsed_ms": 0.051916000000005624,
+      "elapsed_ms": 0.04958299999998417,
       "timing_scope": "single synchronous API call including JSON serialization",
       "decision": "compressed",
       "reason": "required_source_units_verified",
@@ -1669,9 +1669,9 @@
       "benchmark": {
         "metric": "in-process wall milliseconds, 5 warmups then 31 runs; not comparable with peer subprocess wall time",
         "runs": 31,
-        "median_ms": 0.02983399999999392,
-        "min_ms": 0.02666599999997743,
-        "max_ms": 0.06679200000002083
+        "median_ms": 0.028500000000008185,
+        "min_ms": 0.027832999999986896,
+        "max_ms": 0.09437500000001364
       },
       "budget_group": "primary",
       "output_file": "reports/evaluation/rg-json-no-results.contextguard.txt",
@@ -1730,7 +1730,7 @@
       "format": "rg-json",
       "mode": "head-tail-4000",
       "budget_group": "same-budget-4000",
-      "elapsed_ms": 0.0014170000000035543,
+      "elapsed_ms": 0.001082999999994172,
       "timing_scope": "single in-process line selection",
       "output_file": "reports/evaluation/rg-json-no-results.head-tail-4000.txt",
       "evidence_total": 1,
@@ -1758,7 +1758,7 @@
       "fixture": "rg-json-no-results",
       "format": "rg-json",
       "mode": "harnesspro-tb2-lite-4000-reference",
-      "elapsed_ms": 52.59970800000002,
+      "elapsed_ms": 47.998625000000004,
       "timing_scope": "full Python launcher and actual hook subprocess; not apples-to-apples with in-process core",
       "peer": {
         "peer": "HarnessPro Terminal-Bench 2 Lite PostToolUse",
@@ -1780,7 +1780,7 @@
         "compacted": false,
         "raw_recovery_verified": false,
         "raw_file": null,
-        "elapsed_ns_including_python_subprocess": 23192083,
+        "elapsed_ns_including_python_subprocess": 20805334,
         "hook_stdout": "",
         "hook_stderr": "",
         "scope": "single offline PostToolUse event; no pre-tool RTK rewrite, agent, or model run"
@@ -1814,7 +1814,7 @@
       "format": "rg-json",
       "mode": "contextguard-4000",
       "budget_group": "same-budget-4000",
-      "elapsed_ms": 0.10966599999994742,
+      "elapsed_ms": 0.103999999999985,
       "timing_scope": "single synchronous API call",
       "decision": "compressed",
       "reason": "required_source_units_verified",
@@ -1874,7 +1874,7 @@
       "fixture": "rg-json-invalid-path",
       "format": "rg-json",
       "mode": "head-tail-900",
-      "elapsed_ms": 0.0002089999999839165,
+      "elapsed_ms": 0.00020799999998644125,
       "timing_scope": "single in-process line selection",
       "budget_group": "primary",
       "output_file": "reports/evaluation/rg-json-invalid-path.head-tail-900.txt",
@@ -1903,7 +1903,7 @@
       "fixture": "rg-json-invalid-path",
       "format": "rg-json",
       "mode": "harnesspro-tb2-lite",
-      "elapsed_ms": 50.34458300000006,
+      "elapsed_ms": 47.339417000000026,
       "timing_scope": "full Python launcher and actual hook subprocess; not apples-to-apples with in-process core",
       "peer": {
         "peer": "HarnessPro Terminal-Bench 2 Lite PostToolUse",
@@ -1925,7 +1925,7 @@
         "compacted": false,
         "raw_recovery_verified": false,
         "raw_file": null,
-        "elapsed_ns_including_python_subprocess": 22169292,
+        "elapsed_ns_including_python_subprocess": 20766500,
         "hook_stdout": "",
         "hook_stderr": "",
         "scope": "single offline PostToolUse event; no pre-tool RTK rewrite, agent, or model run"
@@ -1957,7 +1957,7 @@
       "fixture": "rg-json-invalid-path",
       "format": "rg-json",
       "mode": "contextguard",
-      "elapsed_ms": 0.07524999999998272,
+      "elapsed_ms": 0.075458000000026,
       "timing_scope": "single synchronous API call including JSON serialization",
       "decision": "fallback",
       "reason": "rg_exit_mismatch",
@@ -1965,9 +1965,9 @@
       "benchmark": {
         "metric": "in-process wall milliseconds, 5 warmups then 31 runs; not comparable with peer subprocess wall time",
         "runs": 31,
-        "median_ms": 0.022749999999973625,
-        "min_ms": 0.02199999999999136,
-        "max_ms": 0.1360419999999749
+        "median_ms": 0.023707999999999174,
+        "min_ms": 0.023082999999985532,
+        "max_ms": 0.13549999999997908
       },
       "budget_group": "primary",
       "output_file": "reports/evaluation/rg-json-invalid-path.contextguard.txt",
@@ -2026,7 +2026,7 @@
       "format": "rg-json",
       "mode": "head-tail-4000",
       "budget_group": "same-budget-4000",
-      "elapsed_ms": 0.0014579999999568827,
+      "elapsed_ms": 0.001291999999921245,
       "timing_scope": "single in-process line selection",
       "output_file": "reports/evaluation/rg-json-invalid-path.head-tail-4000.txt",
       "evidence_total": 1,
@@ -2054,7 +2054,7 @@
       "fixture": "rg-json-invalid-path",
       "format": "rg-json",
       "mode": "harnesspro-tb2-lite-4000-reference",
-      "elapsed_ms": 50.34458300000006,
+      "elapsed_ms": 47.339417000000026,
       "timing_scope": "full Python launcher and actual hook subprocess; not apples-to-apples with in-process core",
       "peer": {
         "peer": "HarnessPro Terminal-Bench 2 Lite PostToolUse",
@@ -2076,7 +2076,7 @@
         "compacted": false,
         "raw_recovery_verified": false,
         "raw_file": null,
-        "elapsed_ns_including_python_subprocess": 22169292,
+        "elapsed_ns_including_python_subprocess": 20766500,
         "hook_stdout": "",
         "hook_stderr": "",
         "scope": "single offline PostToolUse event; no pre-tool RTK rewrite, agent, or model run"
@@ -2110,7 +2110,7 @@
       "format": "rg-json",
       "mode": "contextguard-4000",
       "budget_group": "same-budget-4000",
-      "elapsed_ms": 0.09483299999999417,
+      "elapsed_ms": 0.0817499999999427,
       "timing_scope": "single synchronous API call",
       "decision": "fallback",
       "reason": "rg_exit_mismatch",
@@ -2185,7 +2185,7 @@
       },
       "decision": "fallback",
       "reason": "output_budget_exceeded",
-      "elapsed_ms": 0.05329100000000153,
+      "elapsed_ms": 0.06933300000000031,
       "checks": {
         "required_evidence": true,
         "exact_original_lines": true,
@@ -2230,7 +2230,7 @@
       },
       "decision": "fallback",
       "reason": "source_truncated",
-      "elapsed_ms": 0.06383300000000247,
+      "elapsed_ms": 0.06945900000000904,
       "checks": {
         "required_evidence": true,
         "exact_original_lines": true,
@@ -2267,7 +2267,7 @@
       "request_overrides": {},
       "decision": "accepted",
       "reason": "required_source_units_verified",
-      "elapsed_ms": 0.04850000000001842,
+      "elapsed_ms": 0.049000000000006594,
       "checks": {
         "required_evidence": true,
         "exact_original_lines": true,
@@ -2306,7 +2306,7 @@
       },
       "decision": "fallback",
       "reason": "output_budget_exceeded",
-      "elapsed_ms": 0.02845800000000054,
+      "elapsed_ms": 0.03362500000000068,
       "checks": {
         "required_evidence": true,
         "exact_original_lines": true,
@@ -2351,7 +2351,7 @@
       },
       "decision": "fallback",
       "reason": "source_truncated",
-      "elapsed_ms": 0.037750000000016826,
+      "elapsed_ms": 0.03691699999998832,
       "checks": {
         "required_evidence": true,
         "exact_original_lines": true,
@@ -2388,7 +2388,7 @@
       "request_overrides": {},
       "decision": "repaired",
       "reason": "missing_or_partial_source_units",
-      "elapsed_ms": 0.38537500000001046,
+      "elapsed_ms": 0.3155829999999469,
       "checks": {
         "required_evidence": true,
         "exact_original_lines": true,
@@ -2427,7 +2427,7 @@
       },
       "decision": "fallback",
       "reason": "output_budget_exceeded",
-      "elapsed_ms": 0.263499999999965,
+      "elapsed_ms": 0.3369999999999891,
       "checks": {
         "required_evidence": true,
         "exact_original_lines": true,
@@ -2472,7 +2472,7 @@
       },
       "decision": "fallback",
       "reason": "source_truncated",
-      "elapsed_ms": 0.14620800000000145,
+      "elapsed_ms": 0.14137499999998226,
       "checks": {
         "required_evidence": true,
         "exact_original_lines": true,
@@ -2509,7 +2509,7 @@
       "request_overrides": {},
       "decision": "repaired",
       "reason": "missing_or_partial_source_units",
-      "elapsed_ms": 0.5445829999999887,
+      "elapsed_ms": 0.5136249999999905,
       "checks": {
         "required_evidence": true,
         "exact_original_lines": true,
@@ -2546,7 +2546,7 @@
       "request_overrides": {},
       "decision": "fallback",
       "reason": "candidate_changed_or_reordered_source",
-      "elapsed_ms": 0.5432079999999928,
+      "elapsed_ms": 0.5729159999999638,
       "checks": {
         "required_evidence": true,
         "exact_original_lines": true,
@@ -2583,7 +2583,7 @@
       "request_overrides": {},
       "decision": "fallback",
       "reason": "candidate_changed_or_reordered_source",
-      "elapsed_ms": 0.45650000000000546,
+      "elapsed_ms": 0.5195420000000013,
       "checks": {
         "required_evidence": true,
         "exact_original_lines": true,
@@ -2620,7 +2620,7 @@
       "request_overrides": {},
       "decision": "fallback",
       "reason": "candidate_changed_or_reordered_source",
-      "elapsed_ms": 0.39945799999998144,
+      "elapsed_ms": 0.4637079999999969,
       "checks": {
         "required_evidence": true,
         "exact_original_lines": true,
@@ -2657,7 +2657,7 @@
       "request_overrides": {},
       "decision": "repaired",
       "reason": "missing_or_partial_source_units",
-      "elapsed_ms": 0.5371660000000134,
+      "elapsed_ms": 0.453125,
       "checks": {
         "required_evidence": true,
         "exact_original_lines": true,
@@ -2696,7 +2696,7 @@
       },
       "decision": "fallback",
       "reason": "output_budget_exceeded",
-      "elapsed_ms": 0.37591699999995853,
+      "elapsed_ms": 0.33441599999997607,
       "checks": {
         "required_evidence": true,
         "exact_original_lines": true,
@@ -2741,7 +2741,7 @@
       },
       "decision": "fallback",
       "reason": "source_truncated",
-      "elapsed_ms": 0.13508300000000872,
+      "elapsed_ms": 0.12416699999999992,
       "checks": {
         "required_evidence": true,
         "exact_original_lines": true,
@@ -2778,7 +2778,7 @@
       "request_overrides": {},
       "decision": "repaired",
       "reason": "missing_or_partial_source_units",
-      "elapsed_ms": 0.44074999999998,
+      "elapsed_ms": 0.4271659999999997,
       "checks": {
         "required_evidence": true,
         "exact_original_lines": true,
@@ -2815,7 +2815,7 @@
       "request_overrides": {},
       "decision": "fallback",
       "reason": "candidate_changed_or_reordered_source",
-      "elapsed_ms": 0.5585000000000377,
+      "elapsed_ms": 0.5088749999999891,
       "checks": {
         "required_evidence": true,
         "exact_original_lines": true,
@@ -2852,7 +2852,7 @@
       "request_overrides": {},
       "decision": "fallback",
       "reason": "candidate_changed_or_reordered_source",
-      "elapsed_ms": 0.4392080000000078,
+      "elapsed_ms": 0.47154199999999946,
       "checks": {
         "required_evidence": true,
         "exact_original_lines": true,
@@ -2889,7 +2889,7 @@
       "request_overrides": {},
       "decision": "fallback",
       "reason": "candidate_changed_or_reordered_source",
-      "elapsed_ms": 0.4541250000000332,
+      "elapsed_ms": 0.44858399999998255,
       "checks": {
         "required_evidence": true,
         "exact_original_lines": true,
@@ -2926,7 +2926,7 @@
       "request_overrides": {},
       "decision": "accepted",
       "reason": "required_source_units_verified",
-      "elapsed_ms": 0.07045800000003055,
+      "elapsed_ms": 0.0654999999999859,
       "checks": {
         "required_evidence": true,
         "exact_original_lines": true,
@@ -2965,7 +2965,7 @@
       },
       "decision": "fallback",
       "reason": "output_budget_exceeded",
-      "elapsed_ms": 0.035208999999952084,
+      "elapsed_ms": 0.03604200000000901,
       "checks": {
         "required_evidence": true,
         "exact_original_lines": true,
@@ -3010,7 +3010,7 @@
       },
       "decision": "fallback",
       "reason": "source_truncated",
-      "elapsed_ms": 0.01712499999996453,
+      "elapsed_ms": 0.017291999999997643,
       "checks": {
         "required_evidence": true,
         "exact_original_lines": true,
@@ -3047,7 +3047,7 @@
       "request_overrides": {},
       "decision": "fallback",
       "reason": "rg_exit_mismatch",
-      "elapsed_ms": 0.05295800000010331,
+      "elapsed_ms": 0.045040999999969245,
       "checks": {
         "required_evidence": true,
         "exact_original_lines": true,
@@ -3086,7 +3086,7 @@
       },
       "decision": "fallback",
       "reason": "rg_exit_mismatch",
-      "elapsed_ms": 0.027874999999994543,
+      "elapsed_ms": 0.026416000000040185,
       "checks": {
         "required_evidence": true,
         "exact_original_lines": true,
@@ -3131,7 +3131,7 @@
       },
       "decision": "fallback",
       "reason": "source_truncated",
-      "elapsed_ms": 0.014665999999920132,
+      "elapsed_ms": 0.015207999999915955,
       "checks": {
         "required_evidence": true,
         "exact_original_lines": true,

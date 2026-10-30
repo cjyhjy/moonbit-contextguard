@@ -57,3 +57,9 @@ python3 -B tools/package.py
 - 新增 6 个纯 MoonBit 公共 API 黑盒测试和 `cmd/example`，覆盖压缩、接受、修复、篡改/预算回退、未知格式与非法 JSON。
 - Mooncakes 使用白名单发布源码、测试、最小示例和许可。验收从实际 ZIP 解压，在独立消费者中通过三个后端的公共 API 测试与示例。
 - 更新可复现安装与逐条验收表，区分历史证据和新提交验证。
+
+## 0.2.0：嵌套 Node TAP 与项目语料
+
+0.1.2 对真实 `describe/it` 与 `t.test()` 输出整段回退，固定旧编译产物的实际对照见 `reports/nested-tap-before-after.json`。新解析器逐层核对编号、计划和类型统计；含必要证据的顶层分支整体保留。源深度上限 32，父级状态矛盾、取消、自定义日志和未知语法仍回退。
+
+新增六份控制程序和一次项目回归命令的真实 stdout/stderr，来源、哈希与独立证据标注见 `fixtures/nested-tap/manifest.json`。896 次候选删行审计以原始标注为 oracle，不依赖核心返回的 evidence/metrics。复现命令、范围和字符测量见 `docs/NESTED_TAP.md`。

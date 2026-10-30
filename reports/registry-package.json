@@ -5,7 +5,7 @@
     {
       "id": "moon-package",
       "exit_code": 0,
-      "output": "Running moon check ...\nFinished. moon: no work to do\nCheck passed\nPackage to <PROJECT_ROOT>/_build/publish/cjyhjy-contextguard-0.1.2.zip\n"
+      "output": "Running moon check ...\nFinished. moon: no work to do\nCheck passed\nPackage to <PROJECT_ROOT>/_build/publish/cjyhjy-contextguard-0.2.0.zip\n"
     },
     {
       "id": "consumer-check-js",
@@ -15,7 +15,7 @@
     {
       "id": "consumer-test-js",
       "exit_code": 0,
-      "output": "Total tests: 6, passed: 6, failed: 0.\n"
+      "output": "Total tests: 8, passed: 8, failed: 0.\n"
     },
     {
       "id": "packaged-example-js",
@@ -30,7 +30,7 @@
     {
       "id": "consumer-test-native",
       "exit_code": 0,
-      "output": "Total tests: 6, passed: 6, failed: 0.\n"
+      "output": "Total tests: 8, passed: 8, failed: 0.\n"
     },
     {
       "id": "packaged-example-native",
@@ -45,7 +45,7 @@
     {
       "id": "consumer-test-wasm-gc",
       "exit_code": 0,
-      "output": "Total tests: 6, passed: 6, failed: 0.\n"
+      "output": "Total tests: 8, passed: 8, failed: 0.\n"
     },
     {
       "id": "packaged-example-wasm-gc",
@@ -55,7 +55,7 @@
   ],
   "scope": "Offline archive/external consumer validation; not a registry publication receipt.",
   "module": "cjyhjy/contextguard",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "files": [
     "LICENSE",
     "README.mbt.md",
@@ -72,6 +72,7 @@
     "src/core_optimization_wbtest.mbt",
     "src/guard_wbtest.mbt",
     "src/moon.pkg",
+    "src/nested_tap_wbtest.mbt",
     "src/pkg.generated.mbti",
     "src/request.mbt",
     "src/rg.mbt",
@@ -79,6 +80,6 @@
     "src/types.mbt",
     "src/validator.mbt"
   ],
-  "archive_sha256": "3bbabd501568fa19cf2fb8b5e154120861be47f9ecaa31c7ba34fdc01b3f5b92",
-  "archive_bytes": 19039
+  "archive_sha256": "6dd23182769fdb39e2744732e9a3cfe8e8aa06baedcde2b90587716866e50d36",
+  "archive_bytes": 21131
 }

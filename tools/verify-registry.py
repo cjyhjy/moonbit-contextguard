@@ -67,7 +67,7 @@ def main():
                     run('consumer-check-' + target, ['check', '--target', target], consumer)
                     output = run('consumer-test-' + target,
                                  ['test', '--target', target, '-p', 'acceptance/consumer'], consumer)
-                    if not re.search(r'Total tests: 6, passed: 6, failed: 0', output):
+                    if not re.search(r'Total tests: 8, passed: 8, failed: 0', output):
                         raise RuntimeError('Consumer tests did not run: ' + target + ': ' + output)
                     output = run('packaged-example-' + target,
                                  ['run', 'cmd/example', '--target', target], library)

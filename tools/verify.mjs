@@ -19,9 +19,9 @@ const report = {
   started_at: new Date().toISOString(), user_timezone: 'America/New_York',
   mode: portable ? 'portable_prebuilt' : 'source_and_prebuilt', status: 'running',
   environment: {node: process.version, platform: process.platform, arch: process.arch}, execution, checks: [],
-  external_evidence: {fixtures: 'fixtures/manifest.json', comparison: 'reports/evaluation.json', peer_pins: 'research/peers-lock.json', adapter: 'reports/adapter-protocol.json', browser: 'reports/demo-browser.json'},
+  external_evidence: {fixtures: 'fixtures/manifest.json', comparison: 'reports/evaluation.json', nested_fixtures: 'fixtures/nested-tap/manifest.json', nested_comparison: 'reports/nested-tap-evaluation.json', nested_audit: 'reports/nested-tap-audit.json', peer_pins: 'research/peers-lock.json', adapter: 'reports/adapter-protocol.json', browser: 'reports/demo-browser.json'},
   not_tested: ['online_model_task_success', 'actual_model_token_counts', 'provider_billed_cost_or_net_savings', 'live_agent_installation', ...(!githubActions ? ['remote_CI'] : []), 'public_package_publication', 'formal_contest_submission'],
-  boundary: 'All workload sources are synthetic; captured stdout/stderr are historical real process fixtures. Fresh peer availability and unrun entries are recorded in evaluation.json. Portable mode does not compile MoonBit. execution records this run only; no online agent or package publication is certified.'
+  boundary: 'Controlled fixture programs and a project regression command produce the captured stdout/stderr; fixture manifests distinguish their sources. Fresh peer availability and unrun entries are recorded in evaluation.json. Portable mode does not compile MoonBit. execution records this run only; no online agent or package publication is certified.'
 };
 function save() {
   const temporary = `${reportPath}.${report.run_id}.tmp`;
@@ -76,6 +76,7 @@ try {
   run('public-api-process-adapter-http-tests', process.execPath, ['--test', ...tests]);
   run('paired-ledger-tests', process.execPath, ['--test', 'evaluation/ledger.test.mjs']);
   run('independent-evaluation', process.execPath, ['evaluation/evaluate.mjs']);
+  run('nested-tap-evaluation', process.execPath, ['evaluation/evaluate-nested-tap.mjs']);
   run('independent-mutation-audit', process.execPath, ['evaluation/audit.mjs']);
   run('paired-ledger-example', process.execPath, ['evaluation/ledger.mjs', 'evaluation/example-ledger.synthetic.jsonl', '--output', 'reports/evaluation-ledger.synthetic.json']);
   run('json-cli', process.execPath, ['tools/cli.mjs', 'fixtures/example-request.json']);

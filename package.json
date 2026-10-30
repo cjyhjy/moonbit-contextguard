@@ -1,6 +1,6 @@
 {
   "name": "contextguard-local",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "description": "MoonBit tool-output evidence validation and repair",

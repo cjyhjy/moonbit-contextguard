@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-30T12:48:56.699Z",
+  "version": "0.2.0",
+  "node": "v26.7.0",
+  "platform": "darwin",
+  "arch": "arm64",
+  "scope": "Six controlled fixture programs and a real project regression command, actual captured Node output. Counts concern stdout UTF-16 units, not tokens, total integration envelope, model cost or online success.",
+  "timing": "Same process, 5 warmups then median of 31 API calls per case; not an end-to-end performance claim.",
+  "baseline": null,
+  "cases": [
+    {
+      "fixture": "suites",
+      "stdout_sha256": "cce4f610c5cc048e0d319521eb89d8167a327463c267b3df2ae5554cceb108e1",
+      "input_utf16": 5495,
+      "output_utf16": 2650,
+      "decision": "compressed",
+      "reason": "required_source_units_verified",
+      "required_spans": 3,
+      "retained_spans": 3,
+      "net_stdout_reduction": 2845,
+      "median_api_ms": 0.22662499999999852
+    },
+    {
+      "fixture": "parent",
+      "stdout_sha256": "5847a295b572e1569f7f70cf694c7766eaf55580063486ed1cec047c5736810c",
+      "input_utf16": 2212,
+      "output_utf16": 2118,
+      "decision": "compressed",
+      "reason": "required_source_units_verified",
+      "required_spans": 5,
+      "retained_spans": 5,
+      "net_stdout_reduction": 94,
+      "median_api_ms": 0.10158400000000256
+    },
+    {
+      "fixture": "all-pass",
+      "stdout_sha256": "63373a2437c82e8681048a6838bf4024c494280485209465532579f6ba0b05ab",
+      "input_utf16": 4908,
+      "output_utf16": 119,
+      "decision": "compressed",
+      "reason": "required_source_units_verified",
+      "required_spans": 2,
+      "retained_spans": 2,
+      "net_stdout_reduction": 4789,
+      "median_api_ms": 0.1138339999999971
+    },
+    {
+      "fixture": "directives",
+      "stdout_sha256": "ea367bfe94c2a7589b68c9b6e0eac914f30c6444781eb97457901425b99485ac",
+      "input_utf16": 1704,
+      "output_utf16": 1704,
+      "decision": "compressed",
+      "reason": "required_source_units_verified",
+      "required_spans": 3,
+      "retained_spans": 3,
+      "net_stdout_reduction": 0,
+      "median_api_ms": 0.0695829999999944
+    },
+    {
+      "fixture": "cancelled",
+      "stdout_sha256": "bca3d69ec9d002669f82a5d62b004a97956aec09d790ca54c778a2abfb3c14a5",
+      "input_utf16": 885,
+      "output_utf16": 885,
+      "decision": "fallback",
+      "reason": "tap_summary_mismatch",
+      "required_spans": 1,
+      "retained_spans": 1,
+      "net_stdout_reduction": 0,
+      "median_api_ms": 0.03170899999999932
+    },
+    {
+      "fixture": "custom-log",
+      "stdout_sha256": "7425a2254234e45ace97d6fc6c7206a4c3685c0c1eb425ec12c51b105b26dc46",
+      "input_utf16": 410,
+      "output_utf16": 410,
+      "decision": "fallback",
+      "reason": "tap_missing_plan",
+      "required_spans": 1,
+      "retained_spans": 1,
+      "net_stdout_reduction": 0,
+      "median_api_ms": 0.016582999999997128
+    },
+    {
+      "fixture": "project-regression",
+      "stdout_sha256": "c188b6f9b417d35fba9a176ac169f197f094b6c81608cea7dc823a0c4e9cadc2",
+      "input_utf16": 6005,
+      "output_utf16": 122,
+      "decision": "compressed",
+      "reason": "required_source_units_verified",
+      "required_spans": 2,
+      "retained_spans": 2,
+      "net_stdout_reduction": 5883,
+      "median_api_ms": 0.10208300000000037
+    }
+  ],
+  "all_required_spans_retained": true
+}

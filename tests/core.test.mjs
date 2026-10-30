@@ -48,7 +48,7 @@ test('input limits and invalid budgets cannot force lossy output',()=>{
   }
   const result=guard({...request(tap),candidate:'x'.repeat(1048577)});assert.equal(result.reason,'candidate_budget_exceeded');
 });
-test('nested or custom Node TAP profiles remain intact',()=>{
+test('malformed nested TAP and custom logging remain intact',()=>{
   for(const raw of [tap.raw.replace('# Subtest:','    # Subtest:'),tap.raw.replace('TAP version 13','TAP version 14'),tap.raw+'# extra\n',tap.raw.replace('  type:',"  secret_extra: 'do not drop'\n  type:")]) {
     const result=guard({...request(tap),raw});assert.equal(result.decision,'fallback');assert.equal(result.output,raw);
   }

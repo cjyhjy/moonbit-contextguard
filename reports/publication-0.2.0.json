@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "version": "0.2.0",
+  "checked_at": "2026-10-30T12:49:26.738680+00:00",
+  "repository": "https://github.com/cjyhjy/moonbit-contextguard",
+  "previous_public_commit": "fc061bd48b64eebd8106c120daedf5650036898f",
+  "local_verification": "passed",
+  "moon_publish_dry_run": {
+    "status": "passed",
+    "http_status": 202
+  },
+  "registry_publication": "pending",
+  "remote_ci": "pending",
+  "scope": "Nested TAP implementation, seven actual Node outputs, 35 tests per MoonBit backend, 86 Node tests and independent deletion audits. Actual publication/CI status is recorded after completion."
+}

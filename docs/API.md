@@ -53,7 +53,9 @@ MoonBit 库入口：`@guard.guard_request(request_json : String) -> String`，�
 
 ## 支持的格式
 
-**Node 平面 TAP v13**：`# Subtest:` 后跟顺序编号的 `ok/not ok` 和 Node YAML 诊断块；完整计划、tests/suites/pass/fail/cancelled/skipped/todo/duration 汇总。保留整个失败块（身份、状态、断言、实际/期望、位置、堆栈等）、skip/todo 块、协议头和全部汇总。只丢弃仅含 duration/type 的普通通过测试块。嵌套套件、自定义日志、bailout、取消、不同 reporter/未知字段均回退。测试名称、通过测试耗时不在必保契约中，可回查原文。
+**Node TAP v13（平面与嵌套）**：`# Subtest:`、逐层编号的 `ok/not ok`、Node YAML 诊断块和完整计划/汇总。支持 Node 的 `describe/it` 套件、`t.test()` 子测试及空套件。嵌套层级按每级四个空格识别，每个子范围校验自己的编号和计划；递归核对 tests/suites/pass/fail/skipped/todo 计数及父级状态。套件不计入 tests，带子测试的普通 test 自身计入 tests。根层以下最多 32 层；超限回退 `tap_depth_limit`。
+
+平面测试仍按原子块处理。嵌套树中任一失败、skip/todo 会使整个顶层分支成为必需单元，保留所有父级身份、子计划、断言、位置、堆栈及该分支中的通过测试。只丢弃已经完整校验、所有后代均普通通过、且所有诊断仅包含 duration/type 的顶层分支。不会把嵌套失败扁平化为失去父级上下文的片段。证据 kind 新增 `suite` 与 `subtests`；id 仍对应顶层连续单元。自定义日志、bailout、取消、不同 reporter/未知字段均回退。通过分支的名称、耗时不在必保契约中，可回查原文。详见 [嵌套 TAP](NESTED_TAP.md)。
 
 **ripgrep JSONL**：检查 begin/end 配对、路径关联、行号/绝对偏移递增与相邻行衔接、submatch 的实际字节范围/内容/顺序、逐文件计数及最终计数与 exit 状态。`text` 与 base64 `bytes` 必须二选一，按实际 UTF-8/解码字节核对匹配，不能把 UTF-16 索引当字节偏移。保留每个 match/context 的完整原始 JSON 行和 summary。有正文事件的文件可省略 begin/end；没有正文的文件保留两个边界，避免丢掉其唯一的路径证据。`binary_offset` 必须显式为 null；重复键、未知字段/事件、不合法统计或编码、缺失 summary、错误退出均完整回退。该 profile 是单输入行匹配；多行或 NUL 分隔数据保守回退。`--max-count` 等搜索限制的含义由 scope 原样保留，不把搜索结果说成全仓库完备证明。
 
