@@ -75,6 +75,9 @@ pub fn guard_request(source : String) -> String {
   guard parse_json(source) is Some(request) else {
     return obj([("error", Json::string("invalid_json_request"))]).stringify()
   }
+  if !json_keys_unique(source) {
+    return obj([("error", Json::string("invalid_json_request"))]).stringify()
+  }
   guard str(field(request, "raw")) is Some(raw) else {
     return obj([("error", Json::string("raw_must_be_string"))]).stringify()
   }
@@ -122,10 +125,10 @@ pub fn guard_request(source : String) -> String {
   if raw.length() > input_limit {
     return fallback("input_budget_exceeded")
   }
-  let lines = lines_of(raw)
-  if lines.length() > 50000 {
+  if !line_budget_ok(raw) {
     return fallback("line_budget_exceeded")
   }
+  let lines = lines_of(raw)
   let parsed = match format {
     "rg-json" => parse_rg(lines, exit_code)
     "node-tap" => parse_tap(lines, exit_code)
@@ -144,6 +147,9 @@ pub fn guard_request(source : String) -> String {
   })
   if produced.length() > input_limit {
     return fallback("candidate_budget_exceeded")
+  }
+  if !line_budget_ok(produced) {
+    return fallback("candidate_line_budget_exceeded")
   }
   let verdict = validate_candidate(lines, parsed.units, produced)
   let answer = fn(output : String, decision : String, reason : String) {

@@ -42,7 +42,7 @@ export function createContextGuardPlugin(options = {}) {
     return { ...entry, scope: [...entry.scope], format: inferred };
   });
   const budget = options.maxOutputChars ?? 12000;
-  if (!Number.isSafeInteger(budget) || budget < 0) throw new TypeError('maxOutputChars must be a nonnegative integer');
+  if (!Number.isSafeInteger(budget) || budget < 0 || budget > 4194304) throw new TypeError('maxOutputChars must be an integer from 0 to 4194304');
 
   return async function ContextGuard(context) {
     const directory = resolve(context?.directory ?? '.');
@@ -101,14 +101,23 @@ export function createContextGuardPlugin(options = {}) {
             evidence: decisionPath,
           });
           const rendered = header + '\n--- ContextGuard tool output ---\n' + result.output;
-          const decisionText = JSON.stringify({ ...result, adapter_metrics: {
+          // A shorter core payload is useful only when the whole hook-visible
+          // envelope is shorter. Keep fallbacks and small results byte-for-byte.
+          const apply = result.decision !== 'fallback' && rendered.length < raw.length;
+          const visible = apply ? rendered : raw;
+          const adapterDecision = result.decision === 'fallback'
+            ? 'original_kept_core_fallback'
+            : apply ? 'applied' : 'original_kept_no_visible_reduction';
+          const decisionText = JSON.stringify({ ...result, adapter_decision: adapterDecision, adapter_metrics: {
             char_unit: 'utf16_code_units',
-            agent_visible_chars: rendered.length,
-            envelope_chars: rendered.length - result.output.length,
+            agent_visible_chars: visible.length,
+            envelope_chars: apply ? rendered.length - result.output.length : 0,
             input_chars: raw.length,
+            net_reduction_chars: raw.length - visible.length,
+            proposed_agent_visible_chars: rendered.length,
           } }, null, 2) + '\n';
           await writeFile(decisionPath, decisionText, { mode: 0o600 });
-          output.output = rendered;
+          output.output = visible;
         } catch {
           // Disk, build, parser, or bridge errors must not hide tool output.
           output.output = raw;

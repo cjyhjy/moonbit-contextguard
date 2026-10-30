@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "source": {
-    "sha256": "8c9a70d6f9fa261c6078183acbb5f4ce562098cdea3e50f8021ee43d3d30119a",
+    "sha256": "3ee38956dc51281b46ed92774e75fa75454c079e8bdd4044405108a0d94795bd",
     "files": [
       {
         "path": "cmd/bridge/entry.mbt",
@@ -13,11 +13,15 @@
       },
       {
         "path": "moon.mod",
-        "sha256": "137b77c4744de2ef1d2cc099130fde59a6419fb39e5157f3e16ce2f65f415ab2"
+        "sha256": "7c3f30993f707b293a11c251d6cc6b7c7ee13b7a390d00f1d481dae5fde05538"
       },
       {
         "path": "src/compressor.mbt",
         "sha256": "cbafc57f651fff179ce44211b23db0df03853bf883f1cfa85830f7036f6138c4"
+      },
+      {
+        "path": "src/core_optimization_wbtest.mbt",
+        "sha256": "fba43bcdb288a9686e04c73dc3c381d8db917816d4022c2afe9ac5004857b1bd"
       },
       {
         "path": "src/guard_wbtest.mbt",
@@ -25,15 +29,15 @@
       },
       {
         "path": "src/moon.pkg",
-        "sha256": "0c9c8b5768ee43ba43fead81e79b877ec73f2ab9742f23fc18d5c816775b3272"
+        "sha256": "2389f5230802991c8e3d18433f66aae068d9bce75a5ea78b1c6dc83b461b56ef"
       },
       {
         "path": "src/request.mbt",
-        "sha256": "244c4976ab0c7a82a5c9060ba0a375ebe4f95d22f0a41a2116b24660da457d53"
+        "sha256": "8cdd5b0a34d019af7494cbbc9a72fab6f40eab95a6bdb3543d61c6478eb112cb"
       },
       {
         "path": "src/rg.mbt",
-        "sha256": "909e3cdfb9fca331fdaa86ffc03c64b8822a857038eb6831043ed152c6f9198f"
+        "sha256": "d643e62b7b507e89fddf7313980abd3e81b81ecc646506bd6bdca7c4fc0fb906"
       },
       {
         "path": "src/tap.mbt",
@@ -41,7 +45,7 @@
       },
       {
         "path": "src/types.mbt",
-        "sha256": "913ce9ccf291b1659dc089a3ab25744a94c54d010cde7f27fac77958a1cd0332"
+        "sha256": "bb9cd6f93e6b9fe5cb3c1539f5537b38647112e15310f914470115c5d3624c00"
       },
       {
         "path": "src/validator.mbt",
@@ -50,5 +54,5 @@
     ]
   },
   "compiler": "moon 0.1.20261012 (748b63c 2026-10-12)\n\nFeature flags enabled: rr_moon_mod,rr_moon_pkg",
-  "artifact_sha256": "a1602e0b1ccf59da8fd01ddcb93aec2f278990998c53fe28a955765ae7aea6a6"
+  "artifact_sha256": "d955745db94ab579bed3079bf1a0a6ff0f61ce074945930dbddea9e33d005be4"
 }

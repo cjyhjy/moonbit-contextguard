@@ -1,10 +1,8 @@
 # ContextGuard
 
-[![CI](https://github.com/cjyhjy/moonbit-contextguard/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/cjyhjy/moonbit-contextguard/actions/workflows/ci.yml)
-
 用 MoonBit 校验工具输出压缩后的必要证据。适用于明确约定的 **Node 平面 TAP** 和 **ripgrep JSONL**：检查候选正文，补回缺失的完整证据单元；发现篡改、未知格式、原始截断或预算不足时保留原文。
 
-这是可运行的 0.1.0 源码版本，公开仓库为 [cjyhjy/moonbit-contextguard](https://github.com/cjyhjy/moonbit-contextguard)。GitHub Actions 对每次提交执行 Linux 源码与便携包验收，实际结论以徽章和对应提交的 run 为准。没有调用付费模型 API、安装到当前 Agent、发布 Mooncakes/npm 包或正式参赛提交。它验证限定格式的证据保留，不承诺任意语义无损、模型 token 减少、净费用降低或在线任务成功率提升。
+这是可运行的 0.1.1 优化版本。新增严格的 rg 字节区间与重复 JSON 键检查、进程失败处理、短输出保护和演示请求防串用，详见[优化记录](docs/OPTIMIZATION.md)。2026-10-30 根据用户授权同步至本独立仓库，CI 结果请按本次提交查看 [Actions](https://github.com/cjyhjy/moonbit-contextguard/actions/workflows/ci.yml)。运行与评测没有调用付费模型 API、安装到当前 Agent 或提交参赛表单；它验证限定格式的证据保留，不承诺任意语义无损、模型 token 减少、净费用降低或在线任务成功率提升。
 
 ## 直接运行
 
@@ -34,17 +32,14 @@ node tools/recall.mjs CAPTURE_DIR stdout 1 20
 
 回查前验证 SHA-256。默认进程超时 30 秒、stdout 与 stderr 合计采集上限 8 MiB；达到限制会终止该次进程并明确标记不完整。非 UTF-8 输出保存原始字节，文本仅作解码显示，不声称字节无损。
 
+命令启动前校验所有预算；超时的包装器退出码为 124，采集超限或证据保存失败为 125，实际子进程状态仍在 `process.exit_code`。保存失败时返回已采集的两条流并标记 `capture.available=false`。`delivery_metrics` 计入进程说明和 stderr，因此小输出的净字符减少量可以是负数；OpenCode 适配器则只在完整可见结果更短时替换正文。
+
 ## 从 MoonBit 源码构建
 
-使用现有 MoonBit 工具链即可；也可运行下方 bootstrap，把官方固定版本归档下载到本仓库并验证锁文件中的 SHA-256。支持 macOS arm64 与 Linux x86_64，不改变全局环境。版本为 moon 0.1.20261012、moonc v0.10.15+943464bfa。
+使用现有 MoonBit 工具链即可；不自动改变全局环境。已验证 moon 0.1.20261012、moonc v0.10.15+943464bfa。
 
 ```sh
-# 可选：通过 Python 3 与 curl 下载已锁定的官方工具链，仅写本仓库。
-python3 -B tools/bootstrap.py
-export MOON_HOME="$PWD/.toolchain"
-node tools/verify.mjs
-
-# 或复用已有工具链；moon 已在 PATH 中时，不必设置 MOON_HOME。
+# moon 已在 PATH 中时，不必设置 MOON_HOME。
 export MOON_HOME=/path/to/your/moonbit-toolchain
 node tools/build.mjs
 sh tools/moon check --target js
@@ -65,14 +60,13 @@ node tools/verify.mjs
 python3 -B tools/package.py
 ```
 
-夹具的**测试程序和搜索文本是合成的，stdout/stderr 来自真实本地进程**。历史 macOS 对照执行了固定版本的 HarnessPro hook 和 RTK 二进制。仓库与便携包不携带平台专用 RTK 可执行文件；新运行中缺失或平台不兼容时明确记为 unrun，HarnessPro 仍实际执行。Headroom 和 Mooncakes 近邻只做源码/注册信息调查，不能写成已运行。RTK 在本测试范围内透传成功；HarnessPro 的原文缓存可恢复遗漏内容。各方法预算、初始输出和回查后的完整性分别报告。
+夹具的**测试程序和搜索文本是合成的，stdout/stderr 来自真实本地进程**。对照执行了固定版本的 HarnessPro hook，以及当前机器可用的 RTK 二进制。Headroom 和 Mooncakes 近邻只做源码/注册信息调查，不能写成已运行。RTK 在本测试范围内透传成功；HarnessPro 的原文缓存可恢复遗漏内容。各方法预算、初始输出和回查后的完整性分别报告。
 
 - [API 与支持边界](docs/API.md)：严格提取式契约、错误状态、预算单位。
 - [架构与信任边界](docs/ARCHITECTURE.md)：候选正文如何独立验证。
 - [比较说明](docs/COMPARISON.md)、[独立评测](docs/EVALUATION.md)、[评测结果](reports/evaluation.md)。
 - [可选 OpenCode 适配](docs/ADAPTER.md)：固定 v1.2.0，仅离线协议验收，不改全局配置。
 - [AI 协作与来源](docs/AI_USAGE.md)、[许可](THIRD_PARTY_NOTICES.md)。
-- [交付与准确复现命令](DELIVERY.md)、[历史本地验收结果](reports/verification.json)。
-- [独立仓库历史与发布边界](docs/HISTORY.md)：保留九条真实开发提交；最新 Linux 证据从对应 Actions run 的 artifact 获取。
+- [交付与准确复现命令](DELIVERY.md)、[机器验收结果](reports/verification.json)。
 
 压缩结果是标注来源的**证据摘录**，不能重新当成完整 TAP 或完整 rg 事件流交给下游解析器。原文始终可回查；通过测试的名称和耗时可从原文找回。stdout 字符减少不包含 stderr、进程头、索引、缓存、回查和重试成本。

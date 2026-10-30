@@ -20,7 +20,7 @@
 
 允许列表是调用者确认的进程范围，不从候选文本读取。未知工具、MCP 结果、缺少退出码、缺少截断信息、工作目录变化均保持原对象不变。已截断输入或混合诊断导致格式不被核心识别时，核心回退原文。磁盘写入失败、核心异常或返回的进程上下文变化也保持原文。
 
-`output.metadata`、`title`、`attachments` 保持原值和对象引用。唯一修改字段是 `output.output`，其中包含一行可信进程信封，再跟校验后的输出。信封明确写出退出码、范围、截断状态、决策、输出类型以及本地证据路径。`evidence_projection` 是保留必要证据的文本投影，不能当作完整可重新解析的 TAP 或 rg JSON 数据流。
+`output.metadata`、`title`、`attachments` 保持原值和对象引用。只有核心成功且**连同说明后的完整可见结果严格短于原文**，才替换 `output.output`；核心回退或收益不足时逐字保留原输出，决策保存在本地 sidecar。实际替换的正文包含一行可信进程信封，再跟校验后的输出。信封写出退出码、范围、截断状态、决策、输出类型以及本地证据路径。`evidence_projection` 是保留必要证据的文本投影，不能当作完整可重新解析的 TAP 或 rg JSON 数据流。
 
 ## 选择启用
 
@@ -45,7 +45,7 @@ export { ContextGuard } from '../../adapters/opencode.example.mjs';
 
 OpenCode 原生 bash 可能将 stdout 和 stderr 合并；上游也可能已截断。这里不能恢复钩子之前的数据，更不能称其为完整原始进程字节。需要两条流的字节证据时，应使用项目的 `tools/run.mjs` 进程包装器。
 
-`decision-<sha256>.json` 保存核心完整结果、证据行号与适配器可见长度。`metrics.output_chars` 仅统计核心输出；`adapter_metrics.agent_visible_chars` 包含信封，`envelope_chars` 单独报告信封开销，全部采用 UTF-16 单位。
+`decision-<sha256>.json` 保存核心完整结果、证据行号与适配器可见长度。`adapter_decision` 区分 `applied`、`original_kept_core_fallback` 和 `original_kept_no_visible_reduction`。`metrics.output_chars` 仅统计核心输出；`adapter_metrics.agent_visible_chars` 是最终实际可见长度，`envelope_chars` 为实际说明开销，`net_reduction_chars` 为实际净减少量。`proposed_agent_visible_chars` 另记拟替换长度；全部采用 UTF-16 单位，不能换算为真实 token 或账单。
 
 ```sh
 node adapters/recall.mjs .contextguard/evidence/receipt-REPLACE_WITH_HASH.json 218 256

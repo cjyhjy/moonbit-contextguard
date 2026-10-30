@@ -2,7 +2,7 @@ import { createServer } from 'node:http';
 import { readFile, realpath } from 'node:fs/promises';
 import { dirname, extname, resolve, sep } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
-import { guard } from '../tools/api.mjs';
+import { guardJson } from '../tools/api.mjs';
 
 const demoRoot = dirname(fileURLToPath(import.meta.url));
 const projectRoot = resolve(demoRoot, '..');
@@ -15,7 +15,7 @@ function send(res, status, value, type = 'application/json; charset=utf-8') {
   res.end(type.startsWith('application/json') && typeof value !== 'string' && !Buffer.isBuffer(value) ? JSON.stringify(value) : value);
 }
 
-export function createDemoServer({ guardFn = guard } = {}) {
+export function createDemoServer({ guardFn = guardJson } = {}) {
   return createServer(async (req, res) => {
     try {
       const port = req.socket.localPort;
@@ -24,7 +24,7 @@ export function createDemoServer({ guardFn = guard } = {}) {
       const pathname = decodeURIComponent(new URL(req.url, 'http://127.0.0.1').pathname);
       if (pathname === '/api/guard') {
         if (req.method !== 'POST') return send(res, 405, { error: 'POST required' });
-        if (!req.headers['content-type']?.startsWith('application/json')) return send(res, 415, { error: 'JSON required' });
+        if (req.headers['content-type']?.split(';')[0].trim().toLowerCase() !== 'application/json') return send(res, 415, { error: 'JSON required' });
         let size = 0;
         const chunks = [];
         for await (const chunk of req) {
@@ -32,11 +32,15 @@ export function createDemoServer({ guardFn = guard } = {}) {
           if (size > bodyLimit) { send(res, 413, { error: 'Request exceeds 2 MiB' }); return; }
           chunks.push(chunk);
         }
-        let request;
-        try { request = JSON.parse(Buffer.concat(chunks).toString('utf8')); }
-        catch { return send(res, 400, { error: 'Invalid JSON' }); }
-        if (!request || typeof request.raw !== 'string') return send(res, 400, { error: 'raw must be a string' });
-        return send(res, 200, guardFn(request));
+        let source;
+        try { source = new TextDecoder('utf-8', { fatal: true }).decode(Buffer.concat(chunks)); }
+        catch { return send(res, 400, { error: 'Request must contain valid UTF-8' }); }
+        // Preserve duplicate keys for the core's raw transport validation.
+        try { return send(res, 200, guardFn(source)); }
+        catch (error) {
+          if (error instanceof TypeError) return send(res, 400, { error: error.message });
+          throw error;
+        }
       }
       if (pathname === '/api/health') return send(res, 200, { status: 'ok', engine: 'MoonBit core via tools/api.mjs', remote_model_calls: false });
       if (req.method !== 'GET' && req.method !== 'HEAD') return send(res, 405, { error: 'GET required' });

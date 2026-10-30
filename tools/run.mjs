@@ -9,10 +9,14 @@ import { guard } from './api.mjs';
 
 /** Captures a real argv process. No shell, inference, network or global hooks. */
 export async function runProcess(argv, options = {}) {
-  if (!Array.isArray(argv) || argv.length === 0 || argv.some(v => typeof v !== 'string')) throw new TypeError('argv required');
+  if (!Array.isArray(argv) || argv.length === 0 || !argv[0] || argv.some(v => typeof v !== 'string' || v.includes('\0'))) throw new TypeError('argv must contain a nonempty command and NUL-free string arguments');
   const timeoutMs = options.timeoutMs ?? 30000;
   const maxCaptureBytes = options.maxCaptureBytes ?? 8 * 1024 * 1024;
-  if (!Number.isInteger(timeoutMs) || timeoutMs < 1 || !Number.isInteger(maxCaptureBytes) || maxCaptureBytes < 1) throw new TypeError('invalid process budget');
+  const maxOutputChars = options.maxOutputChars ?? 16000;
+  if (!Number.isSafeInteger(timeoutMs) || timeoutMs < 1 || timeoutMs > 2147483647) throw new TypeError('timeoutMs must be an integer from 1 to 2147483647');
+  if (!Number.isSafeInteger(maxCaptureBytes) || maxCaptureBytes < 1 || maxCaptureBytes > 64 * 1024 * 1024) throw new TypeError('maxCaptureBytes must be an integer from 1 to 67108864');
+  if (!Number.isSafeInteger(maxOutputChars) || maxOutputChars < 0 || maxOutputChars > 4194304) throw new TypeError('maxOutputChars must be an integer from 0 to 4194304');
+  if (options.format !== undefined && typeof options.format !== 'string') throw new TypeError('format must be a string');
   const cwd = resolve(options.cwd ?? process.cwd());
   const captureDir = resolve(options.captureDir ?? join(cwd, 'reports', 'captures', randomUUID()));
   // Never overwrite an existing capture, even when a caller supplies its path.
@@ -25,6 +29,12 @@ export async function runProcess(argv, options = {}) {
   let bytes = 0, captureLimitHit = false, timedOut = false, spawnError = null;
   const terminate = () => {
     try { if (process.platform !== 'win32' && child.pid) process.kill(-child.pid, 'SIGKILL'); else child.kill('SIGKILL'); } catch { /* already exited */ }
+    // A detached descendant can outlive this process group while retaining the
+    // inherited pipe. Stop our reads so its open fd cannot defeat the deadline.
+    // close still carries the direct child's actual exit code or signal.
+    child.kill('SIGKILL');
+    child.stdout.destroy();
+    child.stderr.destroy();
   };
   const timer = setTimeout(() => { timedOut = true; terminate(); }, timeoutMs);
   for (const stream of ['stdout','stderr']) child[stream].on('data', chunk => {
@@ -43,7 +53,7 @@ export async function runProcess(argv, options = {}) {
   const processMeta = { exit_code: spawnError ? 127 : (status.code ?? signalExit), scope: [JSON.stringify(argv)], truncated: captureLimitHit || timedOut || invalidUtf8 || spawnError !== null || status.signal !== null, signal:status.signal, timed_out:timedOut, capture_limit_hit:captureLimitHit, invalid_utf8:invalidUtf8, spawn_error:spawnError };
   processMeta.exit_code_source = spawnError ? 'synthesized_spawn_error' : status.code === null ? 'synthesized_signal' : 'process';
   let result;
-  try { result = guard({format:options.format ?? 'unknown', raw:stdout, process:processMeta, max_output_chars:options.maxOutputChars ?? 16000}); }
+  try { result = guard({format:options.format ?? 'unknown', raw:stdout, process:processMeta, max_output_chars:maxOutputChars}); }
   catch (error) {
     result = {schema_version:1,format:options.format??'unknown',decision:'fallback',reason:'core_transport_error',core_error:error.message,output:stdout,process:processMeta,evidence:[],metrics:{input_chars:stdout.length,output_chars:stdout.length,required_facts:0,missing_facts:0,char_unit:'utf16_code_units'},assurance:'original_passthrough',output_kind:'original'};
   }
@@ -51,14 +61,28 @@ export async function runProcess(argv, options = {}) {
   if (invalidUtf8) result = {...result, reason:'non_utf8_capture', assurance:'captured_decoded_text_only'};
   const hashes = {};
   for (const stream of ['stdout','stderr']) {
-    writeFileSync(join(captureDir, `${stream}.bin`), buffers[stream], {flag:'wx',mode:0o600});
     hashes[stream] = createHash('sha256').update(buffers[stream]).digest('hex');
   }
   const manifest = { schema_version:1, kind:'real_process_capture', started_at:started, elapsed_ms:performance.now()-before, argv, cwd, process:processMeta, hashes, bytes:{stdout:buffers.stdout.length,stderr:buffers.stderr.length}, format:options.format ?? 'unknown' };
-  writeFileSync(join(captureDir,'manifest.json'),JSON.stringify(manifest,null,2)+'\n',{flag:'wx',mode:0o600});
-  result = {...result, stderr, capture:{directory:captureDir,sha256:hashes}, elapsed_ms:manifest.elapsed_ms};
-  writeFileSync(join(captureDir,'result.json'),JSON.stringify(result,null,2)+'\n',{flag:'wx',mode:0o600});
+  result = {...result, stderr, capture:{available:true,directory:captureDir,sha256:hashes}, elapsed_ms:manifest.elapsed_ms, runner_exit_code:timedOut?124:captureLimitHit?125:processMeta.exit_code};
+  result.delivery_metrics=deliveryMetrics(result,stdout);
+  try {
+    for (const stream of ['stdout','stderr']) writeFileSync(join(captureDir,`${stream}.bin`),buffers[stream],{flag:'wx',mode:0o600});
+    writeFileSync(join(captureDir,'manifest.json'),JSON.stringify(manifest,null,2)+'\n',{flag:'wx',mode:0o600});
+    writeFileSync(join(captureDir,'result.json'),JSON.stringify(result,null,2)+'\n',{flag:'wx',mode:0o600});
+  } catch (error) {
+    // A command has already run: never replace its captured output with just a storage exception.
+    result={...result,decision:'fallback',reason:'evidence_storage_failed',output:stdout,output_kind:'original',assurance:invalidUtf8?'captured_decoded_text_only':'original_passthrough',evidence:[],metrics:{...result.metrics,output_chars:stdout.length,required_facts:0,missing_facts:0},capture:{...result.capture,available:false,error_code:error.code??'storage_error'},runner_exit_code:125};
+    result.delivery_metrics=deliveryMetrics(result,stdout);
+  }
   return result;
+}
+
+function deliveryMetrics(result, raw) {
+  const visible=renderForAgent(result).length;
+  const originalBody=raw.length+result.stderr.length;
+  const deliveredBody=result.output.length+result.stderr.length;
+  return {char_unit:'utf16_code_units',baseline:'original_stdout_plus_stderr_without_wrapper',original_body_chars:originalBody,delivered_body_chars:deliveredBody,agent_visible_chars:visible,envelope_chars:visible-deliveredBody,net_reduction_chars:originalBody-visible};
 }
 
 export function renderForAgent(result) {
@@ -66,7 +90,8 @@ export function renderForAgent(result) {
   return `[ContextGuard ${result.output_kind}; ${result.decision}; reason=${result.reason}]\n` +
     `exit_code=${p.exit_code}; truncated=${p.truncated}; scope=${JSON.stringify(p.scope)}\n` +
     `exit_code_source=${p.exit_code_source ?? 'unspecified'}; signal=${JSON.stringify(p.signal ?? null)}; timed_out=${Boolean(p.timed_out)}; capture_limit_hit=${Boolean(p.capture_limit_hit)}; invalid_utf8=${Boolean(p.invalid_utf8)}; spawn_error=${JSON.stringify(p.spawn_error ?? null)}\n` +
-    `evidence=${result.capture.directory}; recall: node tools/recall.mjs ${JSON.stringify(result.capture.directory)} stdout START END\n` +
+    `runner_exit_code=${result.runner_exit_code ?? p.exit_code}\n` +
+    (result.capture.available===false ? `evidence=unavailable; storage_error=${result.capture.error_code}\n` : `evidence=${result.capture.directory}; recall: node tools/recall.mjs ${JSON.stringify(result.capture.directory)} stdout START END\n`) +
     `--- stdout ---\n${result.output}${result.output.endsWith('\n')?'':'\n'}--- stderr (uncompressed) ---\n${result.stderr}`;
 }
 
@@ -83,9 +108,8 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
       if (!name || i+1>=split) throw new Error(`invalid option ${key}`);
       options[name]=name==='format'||name==='captureDir'?args[++i]:Number(args[++i]);
     }
-    if (!options.captureDir) mkdirSync(resolve('reports/captures'),{recursive:true});
     const result=await runProcess(args.slice(split+1),options);
     process.stdout.write(textMode?renderForAgent(result):JSON.stringify(result)+'\n');
-    process.exitCode=Math.min(255,Math.max(0,result.process.exit_code));
+    process.exitCode=Math.min(255,Math.max(0,result.runner_exit_code));
   } catch (error) {console.error(JSON.stringify({error:error.message}));process.exitCode=2;}
 }

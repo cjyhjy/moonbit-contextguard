@@ -1,0 +1,28 @@
+{
+  "recorded_at": "2026-10-22T16:14:10.784Z",
+  "observations": [
+    {
+      "issue": "invalid output budget still launches process",
+      "reproduced": true
+    },
+    {
+      "issue": "post-execution evidence write failure loses API result",
+      "reproduced": true,
+      "error_code": "ENOENT"
+    },
+    {
+      "issue": "adapter expands unchanged short output",
+      "reproduced": true,
+      "original_utf16": 263,
+      "delivered_utf16": 962
+    },
+    {
+      "issue": "detached descendant keeps inherited pipes open beyond timeout",
+      "timeout_ms": 250,
+      "observed_elapsed_ms": 1569.3577500000001,
+      "actual_child_exit_code": 0,
+      "runner_exit_code": 124,
+      "reproduced": true
+    }
+  ]
+}

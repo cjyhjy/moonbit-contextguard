@@ -43,6 +43,24 @@ test('rejects foreign-origin, non-JSON, malformed requests and arbitrary routes'
   assert.equal((await fetch(url + '/api/guard')).status, 405);
   assert.equal((await fetch(url + '/api/guard', { method: 'POST', headers: { origin: 'https://example.com', 'content-type': 'application/json' }, body: '{}' })).status, 403);
   assert.equal((await fetch(url + '/api/guard', { method: 'POST', body: '{}' })).status, 415);
+  assert.equal((await fetch(url + '/api/guard', { method: 'POST', headers: { 'content-type': 'application/json-invalid' }, body: '{}' })).status, 415);
   assert.equal((await fetch(url + '/api/guard', { method: 'POST', headers: { 'content-type': 'application/json' }, body: '{bad' })).status, 400);
   assert.equal((await fetch(url + '/api/execute', { method: 'POST', headers: { 'content-type': 'application/json' }, body: '{"command":"echo never"}' })).status, 405);
+});
+
+test('raw HTTP transport rejects duplicate keys and invalid UTF-8 before normalization', async (t) => {
+  const url = await setup(t);
+  const cases = [
+    '{"format":"unknown","raw":"first","raw":"second"}',
+    '{"format":"unknown","raw":"first","r\\u0061w":"second"}',
+    '{"format":"unknown","raw":"text","process":{"exit_code":0,"exit_code":1}}',
+    Buffer.concat([Buffer.from('{"format":"unknown","raw":"'), Buffer.from([0xc3, 0x28]), Buffer.from('"}')]),
+  ];
+  for (const body of cases) {
+    const response = await fetch(url + '/api/guard', { method: 'POST', headers: { 'content-type': 'application/json' }, body });
+    assert.equal(response.status, 400);
+    const result = await response.json();
+    assert.equal(typeof result.error, 'string');
+    assert.equal(result.output, undefined);
+  }
 });

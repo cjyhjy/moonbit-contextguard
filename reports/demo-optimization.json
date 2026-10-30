@@ -1,0 +1,163 @@
+{
+  "url": "http://127.0.0.1:4188/",
+  "tool": "Installed Tabbit CLI, actual browser UI",
+  "checks": [
+    {
+      "sourceRange": "L218–256",
+      "input": "10,335",
+      "name": "happy-source-recall",
+      "decision": "COMPRESSED",
+      "output": "1,725"
+    },
+    {
+      "name": "head-tail-missing-evidence",
+      "decision": "REPAIRED",
+      "missing": "候选缺失 4 条必要证据"
+    },
+    {
+      "name": "empty-external-candidate",
+      "decision": "REPAIRED"
+    },
+    {
+      "exactRaw": true,
+      "name": "budget-fallback",
+      "budget": 100,
+      "feedback": "交付超出预算 10,235 单位 · 为保留必要证据，交付完整原文。"
+    },
+    {
+      "name": "blank-budget-rejected",
+      "error": "输出预算必须是非负整数，且不能为空。",
+      "focused": true
+    },
+    {
+      "name": "blank-exit-rejected",
+      "error": "退出码必须是整数，且不能为空。",
+      "focused": true
+    },
+    {
+      "name": "four-way-comparison",
+      "rows": [
+        "原文候选10,3350accepted10,335",
+        "头尾截断1854repaired1,725",
+        "自定义候选05repaired1,725",
+        "自动抽取候选核心生成0compressed1,725"
+      ]
+    },
+    {
+      "olderResponseDiscarded": true,
+      "finalDecision": "FALLBACK",
+      "method": "Held a real HTTP response in browser fetch and ignored AbortSignal; edited raw and completed a newer request before releasing old response",
+      "name": "stale-in-flight-response-and-exact-snapshot",
+      "oldEvidenceSnapshotPreserved": true,
+      "comparisonInvalidated": true
+    },
+    {
+      "allFourLateResponsesDiscarded": true,
+      "truncatedFallback": true,
+      "name": "comparison-in-flight-process-edit",
+      "staleRowsNotRepopulated": true
+    },
+    {
+      "staleCopyBlocked": true,
+      "message": "服务未返回有效 JSON（HTTP 503），请检查本地服务后重试。",
+      "name": "non-json-http-error",
+      "injection": "HTTP 503 plain text response in browser fetch"
+    },
+    {
+      "name": "error-recovery",
+      "decision": "COMPRESSED",
+      "copyEnabled": true
+    },
+    {
+      "name": "unicode-long-match",
+      "sourceRange": "L9–9",
+      "endMarkerPresentInOutputAndSource": true
+    },
+    {
+      "name": "mobile-390",
+      "layout": {
+        "width": 390,
+        "scrollWidth": 375,
+        "height": 844
+      },
+      "budgetAndRepairAndRecall": true
+    },
+    {
+      "method": "Held real fixture manifest response in a scratch page",
+      "customInputPreserved": true,
+      "name": "initialization-edit-preserved",
+      "fixtureSelectionStillAvailable": true
+    },
+    {
+      "failureRecall": true,
+      "outputUtf16": 1725,
+      "recordedAt": "2026-10-22T16:23:53.241Z",
+      "name": "final-core-restarted-smoke",
+      "decision": "REPAIRED"
+    }
+  ],
+  "mobile": {
+    "width": 390,
+    "scrollWidth": 375,
+    "height": 844
+  },
+  "limitations": [
+    "Local UI checks with synthetic fixtures from real local process outputs, not external user testing",
+    "Race checks deliberately held real responses and ignored AbortSignal to test stale-response defense",
+    "HTTP 503 error was injected in browser fetch",
+    "Screenshots include the browser assistant overlay"
+  ],
+  "desktop": {
+    "width": 1440,
+    "scrollWidth": 1425,
+    "height": 1000
+  },
+  "remote_model_calls": false,
+  "screenshots": [
+    {
+      "path": "reports/demo-optimization-desktop.png",
+      "bytes": 270576,
+      "sha256": "8d85eaee31b0d11035eb2ca0e87ecaaaa1507ffa4cf4d7b77c672cbfee023f69",
+      "visually_inspected": true
+    },
+    {
+      "path": "reports/demo-optimization-mobile.png",
+      "bytes": 203374,
+      "sha256": "bd4a0f49d8fc9f1dec648be73354fb07c3c94bf25af0ee056a65044c7ff555a4",
+      "visually_inspected": true
+    }
+  ],
+  "recorded_at": "2026-10-22T16:23:54.907Z",
+  "tests": {
+    "command": "node --test tests/demo-session.test.mjs tests/demo-server.test.mjs",
+    "passed": 7,
+    "failed": 0,
+    "browser_command": "node tests/demo-browser.mjs",
+    "browser_script_passed": true
+  },
+  "http_transport": {
+    "raw_json": "guardJson receives the unparsed JSON source",
+    "utf8": "fatal TextDecoder",
+    "duplicate_top_level_key": 400,
+    "duplicate_escaped_key": 400,
+    "duplicate_nested_process_key": 400,
+    "invalid_utf8": 400
+  },
+  "browser_test_corrections": [
+    "An initial Unicode assertion selected the first match at L3; inspection identified the long match at L9, and the corrected source-recall check passed."
+  ],
+  "server": {
+    "url": "http://127.0.0.1:4188/",
+    "binding": "127.0.0.1 only",
+    "restarted_after_final_core_build": true,
+    "existing_4187_process_untouched": true
+  },
+  "source_sha256": {
+    "demo/app.mjs": "b3ac3bec64323ccbd72010a8339cdfd742655b218a24eb821ec3c95dc5b3532f",
+    "demo/index.html": "c7de27b903a7df01c47737dfb965d9dda893c7eb3763c6a05ff11627ed6b226d",
+    "demo/style.css": "254f85a40d1b089a80837e0655ea09fc97e1e0c1239ccb4956446c06217e22d7",
+    "demo/request-session.mjs": "9a93f5db52b991c7f7a170f7db867967f89cc853613cc834398f7a09ce43ffd6",
+    "demo/server.mjs": "0abbf081e344c0b38477dc08be9ead9d465bca1b7f8d119cbac5198a76757957",
+    "dist/contextguard.mjs": "d955745db94ab579bed3079bf1a0a6ff0f61ce074945930dbddea9e33d005be4"
+  }
+}

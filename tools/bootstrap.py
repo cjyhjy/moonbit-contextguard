@@ -23,6 +23,7 @@ def unpack(url, checksum, destination):
         print('Downloading ' + url, flush=True)
         temporary = archive_path.with_suffix('.download')
         subprocess.run(['curl', '--fail', '--location', '--retry', '3',
+                        '--proto', '=https', '--proto-redir', '=https',
                         '--connect-timeout', '30', '--max-time', '300',
                         '--output', str(temporary), url], check=True)
         temporary.replace(archive_path)
@@ -52,13 +53,14 @@ def main():
         raise SystemExit('Pinned bootstrap supports macOS arm64 and Linux x86_64.')
     moonc = INSTALL / 'bin/moonc'
     marker = INSTALL / 'contextguard-bootstrap.json'
-    if moonc.exists():
+    if INSTALL.exists() and any(INSTALL.iterdir()):
+        if not moonc.is_file() or not marker.is_file() or json.loads(marker.read_text()) != LOCK:
+            raise SystemExit('Existing .toolchain is not a completed installation of this lock; move it aside first.')
         version = subprocess.check_output([str(moonc), '-v'], env=ENV, text=True)
         if 'v' + LOCK['moonc'] + ' ' not in version:
             raise SystemExit('Existing .toolchain has a different compiler; move it aside first.')
-        if marker.exists() and json.loads(marker.read_text()) == LOCK:
-            print('Pinned toolchain already installed: ' + version.strip())
-            return
+        print('Pinned toolchain already installed: ' + version.strip())
+        return
     name = 'moonbit-' + key + '.tar.gz'
     unpack(LOCK['compiler_base_url'] + name,
            LOCK['official_archive_sha256_from_existing_local_lock'][name], INSTALL)

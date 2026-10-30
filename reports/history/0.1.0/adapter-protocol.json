@@ -1,0 +1,79 @@
+{
+  "recorded_at": "2026-10-22T15:39:58.416259+00:00",
+  "environment": {
+    "node": "v26.7.0",
+    "platform": "Darwin",
+    "machine": "arm64"
+  },
+  "remote_model_calls": false,
+  "user_agent_configuration_modified": false,
+  "publicly_hosted": false,
+  "verification_level": "offline source-pinned protocol replay with actual MoonBit core; no full OpenCode process or model session",
+  "opencode_pin": {
+    "version": "1.2.0",
+    "commit": "ffc000de8e446c63d41a2e352d119d9ff43530d0",
+    "repository": "https://github.com/anomalyco/opencode",
+    "verified_on": "2026-10-22",
+    "sources": [
+      {
+        "path": "packages/plugin/src/index.ts",
+        "blob_sha": "bd4ba530498d5af7dfa12b6cda885e8dbdafde53",
+        "url": "https://github.com/anomalyco/opencode/blob/ffc000de8e446c63d41a2e352d119d9ff43530d0/packages/plugin/src/index.ts"
+      },
+      {
+        "path": "packages/plugin/package.json",
+        "blob_sha": "7fd11531b7e396a4ac64f81d8bbae71555c41674",
+        "url": "https://github.com/anomalyco/opencode/blob/ffc000de8e446c63d41a2e352d119d9ff43530d0/packages/plugin/package.json"
+      },
+      {
+        "path": "packages/opencode/src/session/prompt.ts",
+        "blob_sha": "f705f209aa9a2e11052209aac7dcf23b0a4a6079",
+        "url": "https://github.com/anomalyco/opencode/blob/ffc000de8e446c63d41a2e352d119d9ff43530d0/packages/opencode/src/session/prompt.ts"
+      },
+      {
+        "path": "packages/opencode/src/tool/bash.ts",
+        "blob_sha": "67559b78c08516215753f24a38bd068a2ee2fd67",
+        "url": "https://github.com/anomalyco/opencode/blob/ffc000de8e446c63d41a2e352d119d9ff43530d0/packages/opencode/src/tool/bash.ts"
+      },
+      {
+        "path": "packages/opencode/src/plugin/index.ts",
+        "blob_sha": "24dc695d6350d59104496050543d97d368d1cdd4",
+        "url": "https://github.com/anomalyco/opencode/blob/ffc000de8e446c63d41a2e352d119d9ff43530d0/packages/opencode/src/plugin/index.ts"
+      },
+      {
+        "path": "packages/opencode/src/tool/tool.ts",
+        "blob_sha": "3d17ea192d32a71272ecda2d953619c76688ff8b",
+        "url": "https://github.com/anomalyco/opencode/blob/ffc000de8e446c63d41a2e352d119d9ff43530d0/packages/opencode/src/tool/tool.ts"
+      }
+    ]
+  },
+  "command": "node --test --test-reporter=tap tests/adapter-opencode.test.mjs tests/demo-server.test.mjs",
+  "result": {
+    "tests": 11,
+    "passed": 11,
+    "failed": 0,
+    "skipped": 0
+  },
+  "raw_test_output": "reports/adapter-demo-tests.tap",
+  "protocol_tests": 8,
+  "http_tests": 3,
+  "checks": [
+    "official type snapshot Git blob SHA",
+    "execute actual pinned trigger body with injected hooks state",
+    "same output object and metadata/attachment references preserved",
+    "real-core compression/fallback",
+    "trusted process context in visible envelope",
+    "raw SHA and original metadata persisted before mutation",
+    "source recall integrity check and tamper rejection",
+    "allowlist and cwd gate",
+    "missing exit/truncation fail open",
+    "unknown tools and shell-composition skip",
+    "disk/core failure retains output",
+    "envelope UTF16 overhead measured separately"
+  ],
+  "limitations": [
+    "Full OpenCode and Bun runtime not launched",
+    "No paid API or online model task run",
+    "Hook-visible raw may have upstream truncation or combined stdout/stderr"
+  ]
+}

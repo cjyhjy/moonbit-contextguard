@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-22T16:25:27.912Z",
+  "source": "GitHub REST via connected GitHub fetch",
+  "url": "https://github.com/cjyhjy/moonbit-contextguard/actions/runs/39812762490",
+  "run_id": 39812762490,
+  "head_sha": "18d5fcc7ac060eb320fdfb4e4dc4dfb8ba065b6d",
+  "status": "completed",
+  "conclusion": "success",
+  "event": "workflow_dispatch",
+  "created_at": "2026-10-22T16:17:29Z",
+  "updated_at": "2026-10-22T16:17:59Z",
+  "boundary": "This successful run verifies publication commit 18d5fcc only. It does not verify the local 0.1.1 optimization. No remote workflow was triggered or repository modified by this optimization chat.",
+  "local_reference_commit": "18d5fcc7ac060eb320fdfb4e4dc4dfb8ba065b6d"
+}

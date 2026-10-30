@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "project": "ContextGuard",
+  "generated_at": "2026-10-22T16:26:19.516758+00:00",
+  "status": "isolated_delivery_regressions_passed",
+  "scope": "Verification receipts, complete shipping-input inventories, and immutable portable archive construction.",
+  "findings": [
+    {
+      "id": "added-file-coverage",
+      "original": "Packaging only rehashed paths already listed in verification.json; newly added shipping inputs were not compared with a current complete inventory.",
+      "resolution": "A shared recursive inventory compares the entire path/hash manifest against the receipt, including new root, dist, and reports runtime files."
+    },
+    {
+      "id": "stale-passed-receipt",
+      "original": "The previous passed verification report remained on disk until all new checks completed.",
+      "resolution": "Verification atomically writes a fresh run_id with running status before checks, persists progress, and writes failed or passed only after final stability checks."
+    },
+    {
+      "id": "package-live-reread",
+      "original": "Packaging read files for hashes, then for the initial ZIP, then again after smoke validation; source bytes could change between those reads.",
+      "resolution": "Read shipping files once, validate their frozen snapshot, test a fresh extraction, then construct the final ZIP solely from the frozen bytes and new receipt."
+    },
+    {
+      "id": "failed-package-replacement",
+      "original": "The existing archive was replaced before clean-directory verification succeeded.",
+      "resolution": "Archive and checksum replacements happen only after all snapshot, extraction, portable verification, membership, and final archive-byte gates pass."
+    }
+  ],
+  "verification": {
+    "command": [
+      "node",
+      "--test",
+      "tests/delivery.test.mjs"
+    ],
+    "tests": 11,
+    "passed": 11,
+    "failed": 0,
+    "elapsed_ms": 9685.144375,
+    "cases": [
+      "Dynamic package version, complete archived checksums, and private-file exclusions",
+      "New root/dist/reports runtime files, deleted inputs, edited inputs, and compiled artifact tampering are rejected",
+      "Portable failure preserves existing ZIP and SHA-256 sidecar bytes",
+      "Live workspace mutation during portable smoke cannot enter final ZIP",
+      "Input mutation during verification invalidates the run",
+      "A failed test replaces the previous pass even with unchanged inputs",
+      "Compiled artifact mutation after the initial correspondence check is detected",
+      "SIGKILL during verification leaves running and prevents stale-pass packaging",
+      "A zero-exit smoke process without a fresh portable receipt cannot reuse an old pass",
+      "A release-build failure in any of js/native/wasm-gc makes the source run fail",
+      "Offline cached bootstrap archives: successful extraction, bad SHA rejection, traversal/link/device rejection, and preservation of an existing unmarked toolchain"
+    ],
+    "fixture_boundary": "Orchestration tests use minimal isolated source trees under reports/.delivery-scratch, a synthetic prebuilt artifact, and a controllable Moon shim. They run the real verification/package scripts and inspect real ZIP bytes. Bootstrap tests use synthetic cached tar archives with subprocess downloads disabled. They do not certify the Moon compiler, actual official archive downloads, or product semantics."
+  },
+  "inventory_policy": {
+    "generated_report_formats": [
+      "json",
+      "jsonl",
+      "txt",
+      "md",
+      "png",
+      "jpg",
+      "jpeg",
+      "webp",
+      "db",
+      "tap"
+    ],
+    "report_runtime_files": "All other report-file types remain verification inputs; reports/new-runtime.mjs is covered by a rejection regression.",
+    "build_outputs": "dist/contextguard.mjs and dist/build-manifest.json are independently checked before and after tests and against the frozen package snapshot.",
+    "exclusions": "Git/build/toolchain/cache/private-config directories, release/, local captures/logs/scratch, research downloads/runs, the platform-specific RTK executable, credentials filenames, temporary files and redundant upstream audit.jsonl are not shipped. Bootstrap .toolchain-downloads and .pem/.key private-key filenames are also excluded."
+  },
+  "integration_status": "Root must run final source verification and package creation after all source/docs edits freeze. No main-project verification, package replacement, Git operation or publication was performed by this review.",
+  "limitations": [
+    "Manifest matching is an integrity/freshness gate, not a cryptographic attestation against an attacker who can rewrite both scripts and receipts.",
+    "Generated report data may change during evaluation and is not part of the source-input digest; the archived bytes are still covered by CHECKSUMS.sha256."
+  ],
+  "reference_ci_integration": {
+    "read_only_reference": "repositories/moonbit-contextguard",
+    "reference_commit_reported_by_coordinator": "18d5fcc",
+    "reference_ci_url": "https://github.com/cjyhjy/moonbit-contextguard/actions/runs/39812762490",
+    "reference_ci_counts_reported_by_coordinator": {
+      "public_tests": 35,
+      "ledger_tests": 14,
+      "mutation_audit_cases": 768
+    },
+    "evidence_boundary": "The coordinator reported the reference Linux CI success. This integration read local reference files; it did not independently query the remote run or rerun Linux. These historical 0.1.0 counts do not represent the new local 0.1.1 optimization suite.",
+    "merged": [
+      "tools/bootstrap.py",
+      "toolchain.lock.json",
+      ".github/workflows/ci.yml",
+      ".gitignore",
+      "all three backend check/build/test gates",
+      "execution environment and CI identity in v2 receipts"
+    ],
+    "preserved": [
+      "schema v2 running/failed/passed receipt lifecycle",
+      "complete verification-input manifest",
+      "immutable package snapshot",
+      "previous ZIP retention on failed gates",
+      "dynamic version naming"
+    ],
+    "bootstrap_adjustments": [
+      "HTTPS-only source and redirect protocols",
+      "finite connection, transfer, and retry limits inherited from reference",
+      "nonempty unmarked or differently locked local toolchain refused without overwriting contents"
+    ],
+    "no_new_toolchain_download": true,
+    "local_0_1_1_pushed": false,
+    "reference_repository_modified": false
+  }
+}

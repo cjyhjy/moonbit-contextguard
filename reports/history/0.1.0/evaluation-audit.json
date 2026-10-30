@@ -1,0 +1,5421 @@
+{
+  "schema_version": 1,
+  "seed_hex": "0x5eeda11",
+  "scope": "Deterministic candidate-deletion audit on six actual captured outputs; no guard evidence/metrics used as oracle.",
+  "cases": 768,
+  "passed": 768,
+  "resolved_findings": [
+    {
+      "issue": "Signal-terminated child was always reported as exit137 and complete",
+      "resolution": "Signal-specific 128+signal number; signal marks source incomplete",
+      "observed": {
+        "exit_code": 143,
+        "scope": [
+          "[\"/opt/homebrew/Cellar/node/26.7.0/bin/node\",\"-e\",\"process.kill(process.pid, 'SIGTERM')\"]"
+        ],
+        "truncated": true,
+        "signal": "SIGTERM",
+        "timed_out": false,
+        "capture_limit_hit": false,
+        "invalid_utf8": false,
+        "spawn_error": null,
+        "exit_code_source": "synthesized_signal"
+      },
+      "passed": true
+    },
+    {
+      "issue": "Unsupported nonnumeric pass duration could be discarded",
+      "resolution": "Flat TAP profile validates numeric duration and fails open otherwise",
+      "observed": {
+        "decision": "fallback",
+        "reason": "tap_invalid_duration",
+        "exact_original_preserved": true
+      },
+      "passed": true
+    }
+  ],
+  "decisions": {
+    "accepted": 73,
+    "compressed": 0,
+    "repaired": 510,
+    "fallback": 185
+  },
+  "results": [
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-0",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-1",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-2",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-3",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-4",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-5",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-6",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-7",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-8",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-9",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-10",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-11",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-12",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-13",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-14",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-15",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-16",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-17",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-18",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-19",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-20",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-21",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-22",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-23",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-24",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-25",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-26",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-27",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-28",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-29",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-30",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-31",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-32",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-33",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-34",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-35",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-36",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-37",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-38",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-39",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-40",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-41",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-42",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-43",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-44",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-45",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-46",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-47",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-48",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-49",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-50",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-51",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-52",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-53",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-54",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-55",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-56",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-57",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-58",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-59",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-60",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-61",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-62",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-63",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-64",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-65",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-66",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-67",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-68",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-69",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-70",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-71",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-72",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-73",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-74",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-75",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-76",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-77",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-78",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-79",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-80",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-81",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-82",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-83",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-84",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-85",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-86",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-87",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-88",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-89",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-90",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-91",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-92",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-93",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-94",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-95",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-96",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-97",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-98",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-99",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-100",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-101",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-102",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-103",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-104",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-105",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-106",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-107",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-108",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-109",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-110",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-111",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-112",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-113",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-114",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-115",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-116",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-117",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-118",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-119",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-120",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-121",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-122",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-123",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-124",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-125",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-126",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-all-pass",
+      "case": "seeded-subset-127",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-0",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-1",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-2",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-3",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-4",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-5",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-6",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-7",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-8",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-9",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-10",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-11",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-12",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-13",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-14",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-15",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-16",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-17",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-18",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-19",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-20",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-21",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-22",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-23",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-24",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-25",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-26",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-27",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-28",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-29",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-30",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-31",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-32",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-33",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-34",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-35",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-36",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-37",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-38",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-39",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-40",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-41",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-42",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-43",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-44",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-45",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-46",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-47",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-48",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-49",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-50",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-51",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-52",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-53",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-54",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-55",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-56",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-57",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-58",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-59",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-60",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-61",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-62",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-63",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-64",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-65",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-66",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-67",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-68",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-69",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-70",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-71",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-72",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-73",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-74",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-75",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-76",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-77",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-78",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-79",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-80",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-81",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-82",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-83",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-84",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-85",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-86",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-87",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-88",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-89",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-90",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-91",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-92",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-93",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-94",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-95",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-96",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-97",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-98",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-99",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-100",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-101",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-102",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-103",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-104",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-105",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-106",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-107",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-108",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-109",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-110",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-111",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-112",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-113",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-114",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-115",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-116",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-117",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-118",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-119",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-120",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-121",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-122",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-123",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-124",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-125",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-126",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-zero-tests",
+      "case": "seeded-subset-127",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-0",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-1",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-2",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-3",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-4",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-5",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-6",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-7",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-8",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-9",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-10",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-11",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-12",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-13",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-14",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-15",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-16",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-17",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-18",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-19",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-20",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-21",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-22",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-23",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-24",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-25",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-26",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-27",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-28",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-29",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-30",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-31",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-32",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-33",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-34",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-35",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-36",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-37",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-38",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-39",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-40",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-41",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-42",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-43",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-44",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-45",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-46",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-47",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-48",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-49",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-50",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-51",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-52",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-53",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-54",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-55",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-56",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-57",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-58",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-59",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-60",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-61",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-62",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-63",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-64",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-65",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-66",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-67",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-68",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-69",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-70",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-71",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-72",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-73",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-74",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-75",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-76",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-77",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-78",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-79",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-80",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-81",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-82",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-83",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-84",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-85",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-86",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-87",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-88",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-89",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-90",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-91",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-92",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-93",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-94",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-95",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-96",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-97",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-98",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-99",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-100",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-101",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-102",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-103",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-104",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-105",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-106",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-107",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-108",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-109",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-110",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-111",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-112",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-113",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-114",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-115",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-116",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-117",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-118",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-119",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-120",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-121",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-122",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-123",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-124",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-125",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-126",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "node-tap-middle-failure",
+      "case": "seeded-subset-127",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-0",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-1",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-2",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-3",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-4",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-5",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-6",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-7",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-8",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-9",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-10",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-11",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-12",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-13",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-14",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-15",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-16",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-17",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-18",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-19",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-20",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-21",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-22",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-23",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-24",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-25",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-26",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-27",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-28",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-29",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-30",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-31",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-32",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-33",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-34",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-35",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-36",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-37",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-38",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-39",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-40",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-41",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-42",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-43",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-44",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-45",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-46",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-47",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-48",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-49",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-50",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-51",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-52",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-53",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-54",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-55",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-56",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-57",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-58",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-59",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-60",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-61",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-62",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-63",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-64",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-65",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-66",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-67",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-68",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-69",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-70",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-71",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-72",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-73",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-74",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-75",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-76",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-77",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-78",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-79",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-80",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-81",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-82",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-83",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-84",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-85",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-86",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-87",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-88",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-89",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-90",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-91",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-92",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-93",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-94",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-95",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-96",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-97",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-98",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-99",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-100",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-101",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-102",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-103",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-104",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-105",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-106",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-107",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-108",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-109",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-110",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-111",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-112",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-113",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-114",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-115",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-116",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-117",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-118",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-119",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-120",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-121",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-122",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-123",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-124",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-125",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-126",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-multiple-unicode-long",
+      "case": "seeded-subset-127",
+      "decision": "repaired",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-0",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-1",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-2",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-3",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-4",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-5",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-6",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-7",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-8",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-9",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-10",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-11",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-12",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-13",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-14",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-15",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-16",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-17",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-18",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-19",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-20",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-21",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-22",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-23",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-24",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-25",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-26",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-27",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-28",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-29",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-30",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-31",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-32",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-33",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-34",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-35",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-36",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-37",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-38",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-39",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-40",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-41",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-42",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-43",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-44",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-45",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-46",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-47",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-48",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-49",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-50",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-51",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-52",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-53",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-54",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-55",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-56",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-57",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-58",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-59",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-60",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-61",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-62",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-63",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-64",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-65",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-66",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-67",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-68",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-69",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-70",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-71",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-72",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-73",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-74",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-75",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-76",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-77",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-78",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-79",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-80",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-81",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-82",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-83",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-84",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-85",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-86",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-87",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-88",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-89",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-90",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-91",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-92",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-93",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-94",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-95",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-96",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-97",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-98",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-99",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-100",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-101",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-102",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-103",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-104",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-105",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-106",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-107",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-108",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-109",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-110",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-111",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-112",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-113",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-114",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-115",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-116",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-117",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-118",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-119",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-120",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-121",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-122",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-123",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-124",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-125",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-126",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-no-results",
+      "case": "seeded-subset-127",
+      "decision": "accepted",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-0",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-1",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-2",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-3",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-4",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-5",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-6",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-7",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-8",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-9",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-10",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-11",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-12",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-13",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-14",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-15",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-16",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-17",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-18",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-19",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-20",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-21",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-22",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-23",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-24",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-25",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-26",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-27",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-28",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-29",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-30",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-31",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-32",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-33",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-34",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-35",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-36",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-37",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-38",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-39",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-40",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-41",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-42",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-43",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-44",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-45",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-46",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-47",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-48",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-49",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-50",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-51",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-52",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-53",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-54",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-55",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-56",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-57",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-58",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-59",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-60",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-61",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-62",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-63",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-64",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-65",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-66",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-67",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-68",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-69",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-70",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-71",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-72",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-73",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-74",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-75",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-76",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-77",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-78",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-79",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-80",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-81",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-82",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-83",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-84",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-85",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-86",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-87",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-88",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-89",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-90",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-91",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-92",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-93",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-94",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-95",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-96",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-97",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-98",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-99",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-100",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-101",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-102",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-103",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-104",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-105",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-106",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-107",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-108",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-109",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-110",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-111",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-112",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-113",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-114",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-115",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-116",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-117",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-118",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-119",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-120",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-121",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-122",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-123",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-124",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-125",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-126",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    },
+    {
+      "fixture": "rg-json-invalid-path",
+      "case": "seeded-subset-127",
+      "decision": "fallback",
+      "retained": true,
+      "originalLinesOnly": true
+    }
+  ]
+}

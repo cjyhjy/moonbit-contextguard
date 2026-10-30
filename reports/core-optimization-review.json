@@ -1,0 +1,283 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-10-22T16:22:28.073Z",
+  "component": "ContextGuard MoonBit core optimization",
+  "data_boundary": "Local code review, synthetic adversarial mutations, existing captured subprocess fixtures, and current local Node/ripgrep subprocess executions. No model API calls, production traces, publishing, or semantic-equivalence proof.",
+  "findings": [
+    {
+      "id": "unknown_begin_data",
+      "issue": "Unknown begin.data.error was omitted with the begin event.",
+      "origin": "synthetic mutation of captured real ripgrep stdout",
+      "before": {
+        "decision": "compressed",
+        "reason": "required_source_units_verified",
+        "output_shorter_than_source": true,
+        "observed_before_edit": true
+      },
+      "after": {
+        "decision": "fallback",
+        "reason": "rg_unknown_fields",
+        "exact_original_returned": true
+      },
+      "input_sha256": "379fccb884efe925347f7ad54ded6fcbdaa8e29496f216907968b88540340003"
+    },
+    {
+      "id": "unknown_end_stats",
+      "issue": "Unknown end.stats.error_count was omitted with the end event.",
+      "origin": "synthetic mutation of captured real ripgrep stdout",
+      "before": {
+        "decision": "compressed",
+        "reason": "required_source_units_verified",
+        "output_shorter_than_source": true,
+        "observed_before_edit": true
+      },
+      "after": {
+        "decision": "fallback",
+        "reason": "rg_invalid_stats",
+        "exact_original_returned": true
+      },
+      "input_sha256": "fd7b09ffde461f427804c51e01b8ee56042b7bc99ce19ee730ba5209eaead4e5"
+    },
+    {
+      "id": "missing_binary_offset",
+      "issue": "Missing binary_offset was treated as explicit null.",
+      "origin": "synthetic mutation of captured real ripgrep stdout",
+      "before": {
+        "decision": "compressed",
+        "reason": "required_source_units_verified",
+        "output_shorter_than_source": true,
+        "observed_before_edit": true
+      },
+      "after": {
+        "decision": "fallback",
+        "reason": "rg_missing_binary_offset",
+        "exact_original_returned": true
+      },
+      "input_sha256": "63292f2ec8794e07e4c43b8cf3a6915fc7db1d49ef014914e85c40b5cae8c898"
+    },
+    {
+      "id": "out_of_bounds_submatch",
+      "issue": "Submatch end was never bounded against decoded line bytes.",
+      "origin": "synthetic mutation of captured real ripgrep stdout",
+      "before": {
+        "decision": "compressed",
+        "reason": "required_source_units_verified",
+        "output_shorter_than_source": true,
+        "observed_before_edit": true
+      },
+      "after": {
+        "decision": "fallback",
+        "reason": "rg_invalid_submatch",
+        "exact_original_returned": true
+      },
+      "input_sha256": "be3c9b3eae17a944c297ec4864280c427439d0ce1c5a8cab214adafbf23b54d0"
+    },
+    {
+      "id": "incorrect_submatch_text",
+      "issue": "Submatch bytes were not compared with the line range.",
+      "origin": "synthetic mutation of captured real ripgrep stdout",
+      "before": {
+        "decision": "compressed",
+        "reason": "required_source_units_verified",
+        "output_shorter_than_source": true,
+        "observed_before_edit": true
+      },
+      "after": {
+        "decision": "fallback",
+        "reason": "rg_submatch_content_mismatch",
+        "exact_original_returned": true
+      },
+      "input_sha256": "3a3b273bff4d4d5bc78682877084dfa2699280fda69404f065d8938f2e0c7a1b"
+    },
+    {
+      "id": "duplicate_key",
+      "issue": "JSON duplicate type keys were folded before inspecting the event.",
+      "origin": "synthetic mutation of captured real ripgrep stdout",
+      "before": {
+        "decision": "compressed",
+        "reason": "required_source_units_verified",
+        "output_shorter_than_source": true,
+        "observed_before_edit": true
+      },
+      "after": {
+        "decision": "fallback",
+        "reason": "rg_duplicate_json_key",
+        "exact_original_returned": true
+      },
+      "input_sha256": "fcf66b85d420a8d6bab85eb2977bd06b47f3c335e9257e5fa3b6e7d6b0c14e40"
+    },
+    {
+      "id": "out_of_order_position",
+      "issue": "Positive source positions were not checked against preceding records.",
+      "origin": "synthetic mutation of captured real ripgrep stdout",
+      "before": {
+        "decision": "compressed",
+        "reason": "required_source_units_verified",
+        "output_shorter_than_source": true,
+        "observed_before_edit": true
+      },
+      "after": {
+        "decision": "fallback",
+        "reason": "rg_inconsistent_position",
+        "exact_original_returned": true
+      },
+      "input_sha256": "5cb9c3c0e0902bc4ed1a32a7f220b2d4dc00852ea363e2b65a023dca8bd45534"
+    }
+  ],
+  "additional_changes": [
+    {
+      "id": "unambiguous_tagged_bytes",
+      "change": "Require exactly one text/base64 bytes representation; decode base64 and validate UTF8 byte range associations; reject invalid base64 and overlapping submatch ranges."
+    },
+    {
+      "id": "zero_record_path_evidence",
+      "change": "Keep begin/end as required units when the file has no match/context event, so its only path occurrence is retained; omitted boundaries are repaired.",
+      "evidence": "Regression tested; original loss was identified in code review rather than separately executed against the pre-edit build."
+    },
+    {
+      "id": "request_key_ambiguity",
+      "change": "Duplicate keys in the raw JSON request, including escaped aliases and nested metadata keys, return invalid_json_request before selecting raw/process."
+    },
+    {
+      "id": "preallocation_line_budget",
+      "change": "Count logical lines before splitting raw and candidate strings; candidate over 50,000 lines falls back with candidate_line_budget_exceeded. Existing 50,000 source-line budget unchanged."
+    },
+    {
+      "id": "candidate_ambiguity_review",
+      "change": "No candidate matching implementation change was justified. Tests show repeated same-text units need distinct occurrences and partial similar failure blocks are repaired."
+    }
+  ],
+  "compatibility": [
+    {
+      "id": "node-tap-all-pass",
+      "decision": "compressed",
+      "reason": "required_source_units_verified",
+      "input_chars": 338,
+      "output_chars": 118,
+      "evidence_units": 2,
+      "external_required_annotations_preserved": true
+    },
+    {
+      "id": "node-tap-zero-tests",
+      "decision": "compressed",
+      "reason": "required_source_units_verified",
+      "input_chars": 117,
+      "output_chars": 117,
+      "evidence_units": 2,
+      "external_required_annotations_preserved": true
+    },
+    {
+      "id": "node-tap-middle-failure",
+      "decision": "compressed",
+      "reason": "required_source_units_verified",
+      "input_chars": 10335,
+      "output_chars": 1725,
+      "evidence_units": 5,
+      "external_required_annotations_preserved": true
+    },
+    {
+      "id": "rg-json-multiple-unicode-long",
+      "decision": "compressed",
+      "reason": "required_source_units_verified",
+      "input_chars": 6740,
+      "output_chars": 5698,
+      "evidence_units": 14,
+      "external_required_annotations_preserved": true
+    },
+    {
+      "id": "rg-json-no-results",
+      "decision": "compressed",
+      "reason": "required_source_units_verified",
+      "input_chars": 263,
+      "output_chars": 263,
+      "evidence_units": 1,
+      "external_required_annotations_preserved": true
+    },
+    {
+      "id": "rg-json-invalid-path",
+      "decision": "fallback",
+      "reason": "rg_exit_mismatch",
+      "input_chars": 255,
+      "output_chars": 255,
+      "evidence_units": 0,
+      "external_required_annotations_preserved": true
+    }
+  ],
+  "verification": {
+    "moonbit_toolchain": "/Users/cjy/Documents/ChatGPT/黑客松比赛项目/.toolchain",
+    "moonbit": [
+      {
+        "target": "js",
+        "passed": 24,
+        "failed": 0
+      },
+      {
+        "target": "wasm-gc",
+        "passed": 24,
+        "failed": 0
+      },
+      {
+        "target": "native",
+        "passed": 24,
+        "failed": 0
+      }
+    ],
+    "public_api": {
+      "command": "node --test tests/core.test.mjs tests/core-optimization.test.mjs",
+      "passed": 29,
+      "failed": 0,
+      "skipped": 0,
+      "new_tests": 12
+    },
+    "source_format": {
+      "command": "MOON_HOME=<existing toolchain> sh tools/moon fmt src",
+      "exit_code": 0
+    },
+    "check": {
+      "command": "MOON_HOME=<existing toolchain> sh tools/moon check --target js --deny-warn",
+      "exit_code": 0
+    },
+    "live_subprocesses": [
+      "Node TAP two identically named failing tests, each omitted in a separate candidate",
+      "ripgrep --json needle over UTF8 stdin",
+      "ripgrep --json needle over non-UTF8 stdin using base64 JSON fields"
+    ],
+    "rg_version": "ripgrep 15.2.0 (rev e89fff89ac)\n\nfeatures:+pcre2\nsimd(compile):+NEON\nsimd(runtime):+NEON\n\nPCRE2 10.45 is available (JIT is available)",
+    "node_version": "v26.7.0",
+    "test_harness_correction": "The real child Node TAP test removes inherited NODE_TEST_CONTEXT; its first attempt inherited node:test IPC reporter settings, then the corrected test executed and passed."
+  },
+  "limitations": [
+    "The guarded source profiles remain flat Node TAP and single-line ripgrep JSON. Multiline or NUL-delimited ripgrep records conservatively return the original.",
+    "Known optional ancillary ripgrep statistics may be omitted in minimal fixtures; supplied values must be known and well typed. This is not a complete versioned ripgrep schema validator.",
+    "Input metadata and source facts are not authenticated. Byte-range and count consistency do not prove filesystem truth, search completeness, test correctness, or resistance to malicious original instructions.",
+    "Counters and positions use the existing int32 numeric profile; larger values fall back.",
+    "Line preflight avoids allocating an oversized line array, but character/line budgets are not a strict RSS memory quota.",
+    "The parent agent owns final dist rebuild, integrated checks and packaging; this report does not claim publication, CI or submission."
+  ],
+  "files": [
+    {
+      "path": "src/types.mbt",
+      "sha256": "bb9cd6f93e6b9fe5cb3c1539f5537b38647112e15310f914470115c5d3624c00"
+    },
+    {
+      "path": "src/request.mbt",
+      "sha256": "8cdd5b0a34d019af7494cbbc9a72fab6f40eab95a6bdb3543d61c6478eb112cb"
+    },
+    {
+      "path": "src/rg.mbt",
+      "sha256": "d643e62b7b507e89fddf7313980abd3e81b81ecc646506bd6bdca7c4fc0fb906"
+    },
+    {
+      "path": "src/moon.pkg",
+      "sha256": "2389f5230802991c8e3d18433f66aae068d9bce75a5ea78b1c6dc83b461b56ef"
+    },
+    {
+      "path": "src/core_optimization_wbtest.mbt",
+      "sha256": "fba43bcdb288a9686e04c73dc3c381d8db917816d4022c2afe9ac5004857b1bd"
+    },
+    {
+      "path": "tests/core-optimization.test.mjs",
+      "sha256": "38164e2fd8d1c3eba4eaf8929f26b96be46ab0fa8e683de63c6aa32ad133c6ac"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # API 契约（schema_version 1）
 
-MoonBit 库入口：`@guard.guard_request(request_json : String) -> String`，包路径 `contextguard/guard/src`。JS 胶水入口：`import { guard } from './tools/api.mjs'`，同步返回对象。CLI 从 stdin 或一个文件读单个 JSON 请求，stdout 输出单个 JSON 响应；非法 JSON/传输上限错误以退出码 2 写 stderr。
+MoonBit 库入口：`@guard.guard_request(request_json : String) -> String`，包路径 `contextguard/guard/src`。JS 胶水入口：`import { guard, guardJson } from './tools/api.mjs'`，同步返回对象；前者接受对象，后者接受原始 JSON 字符串。CLI 从 stdin 或一个文件流式读取单个 JSON 请求，严格解码 UTF-8 并在传输预算耗尽时停止读取，stdout 输出单个 JSON 响应；非法 JSON/UTF-8/传输上限错误以退出码 2 写 stderr。原始 JSON 中同一对象的重复键（包括转义后同名）拒绝为 `invalid_json_request`；调用 `guard(object)` 前已经被宿主解析丢失的信息无法恢复。
 
 ```json
 {
@@ -28,7 +28,7 @@ MoonBit 库入口：`@guard.guard_request(request_json : String) -> String`，�
 | max_input_chars | 默认 1,048,576，最大 4,194,304，正整数 |
 | max_output_chars | 默认 16,000，范围 0–4,194,304 |
 
-长度以 **UTF-16 code units** 计，与 JS `string.length` 一致；不是 token 数。还有 50,000 行、JSON 嵌套 64 层限制。最外层 JSON 请求硬限 8,388,608 个 UTF-16 单元；无法安全解析时返回 `error`，JS API 抛出异常，不能宣称已回退或 verified。真实进程包装器捕获该错误，另外明确返回 `core_transport_error` 并保存采集原文。
+长度以 **UTF-16 code units** 计，与 JS `string.length` 一致；不是 token 数。原文与候选各有 50,000 行上限，分配行数组前检查；JSON 嵌套限制 64 层。最外层 JSON 请求硬限 8,388,608 个 UTF-16 单元；无法安全解析时返回 `error`，JS API 抛出异常，不能宣称已回退或 verified。真实进程包装器捕获该错误，另外明确返回 `core_transport_error` 并保存采集原文。
 
 `max_output_chars` 是期望预算，不是强制截断：证据不能放下时返回可能更长的原文。原始截断时只保留**已收到的原文**，不补造丢失部分。
 
@@ -45,13 +45,17 @@ MoonBit 库入口：`@guard.guard_request(request_json : String) -> String`，�
 | evidence | 必需单元的 id、kind、1 基含首尾的行范围、原文 text；不含被省略的普通通过测试 |
 | metrics | input_chars、output_chars、required_facts、missing_facts、char_unit；facts 计数是**单元数**，不是独立评测标注字段数 |
 
-`missing_facts` 描述修复前候选缺失的单元数；有部分单元或未对齐内容时是保守诊断值，不是语义错误数量。原文无法识别时 evidence 为空。进程包装器另加 stderr、capture（目录和双流 SHA-256）、耗时及采集状态。
+`missing_facts` 描述修复前候选缺失的单元数；有部分单元或未对齐内容时是保守诊断值，不是语义错误数量。原文无法识别时 evidence 为空。进程包装器另加 stderr、capture（可用状态、目录和双流 SHA-256）、耗时及采集状态。
+
+进程包装器在启动命令前限制 `timeoutMs` 为 1–2,147,483,647 毫秒、`maxCaptureBytes` 为 1–67,108,864 字节、`maxOutputChars` 为 0–4,194,304 UTF-16 单元，均须整数。实际子进程状态保存在 `process.exit_code`；`runner_exit_code` 为超时 124、采集超限/保存失败 125，其他情况沿用实际状态，CLI 返回该值。命令执行后保存证据失败时不再抛弃结果：两条流仍返回，`reason=evidence_storage_failed`、`capture.available=false`，不展示可回查承诺。`delivery_metrics` 记录原始两流、交付两流、完整可见文本及说明开销，`net_reduction_chars` 可为负数。
+
+超时/超限会终止原进程组和直接子进程，并关闭本地管道读取，避免已脱离进程组的后代持有管道而无限阻塞返回。此时已捕获的输出明确为不完整；包装器不能保证清理自行脱离原进程组的后代，也不是进程沙箱。
 
 ## 支持的格式
 
 **Node 平面 TAP v13**：`# Subtest:` 后跟顺序编号的 `ok/not ok` 和 Node YAML 诊断块；完整计划、tests/suites/pass/fail/cancelled/skipped/todo/duration 汇总。保留整个失败块（身份、状态、断言、实际/期望、位置、堆栈等）、skip/todo 块、协议头和全部汇总。只丢弃仅含 duration/type 的普通通过测试块。嵌套套件、自定义日志、bailout、取消、不同 reporter/未知字段均回退。测试名称、通过测试耗时不在必保契约中，可回查原文。
 
-**ripgrep JSONL**：检查 begin/end 配对、路径关联、行号/绝对偏移、submatch 区间、逐文件计数及最终计数与 exit 状态。保留每个 match/context 的完整原始 JSON 行和 summary。无二进制截断标记时可省略 begin/end（其路径、命中事实和汇总在保留事件中）；非 null binary_offset、未知事件、缺失 summary、错误退出或坏 JSON 回退。该 profile 是文本单行匹配；多行匹配的统计差异可能触发保守回退。`--max-count` 等搜索限制的含义由 scope 原样保留，不把搜索结果说成全仓库完备证明。
+**ripgrep JSONL**：检查 begin/end 配对、路径关联、行号/绝对偏移递增与相邻行衔接、submatch 的实际字节范围/内容/顺序、逐文件计数及最终计数与 exit 状态。`text` 与 base64 `bytes` 必须二选一，按实际 UTF-8/解码字节核对匹配，不能把 UTF-16 索引当字节偏移。保留每个 match/context 的完整原始 JSON 行和 summary。有正文事件的文件可省略 begin/end；没有正文的文件保留两个边界，避免丢掉其唯一的路径证据。`binary_offset` 必须显式为 null；重复键、未知字段/事件、不合法统计或编码、缺失 summary、错误退出均完整回退。该 profile 是单输入行匹配；多行或 NUL 分隔数据保守回退。`--max-count` 等搜索限制的含义由 scope 原样保留，不把搜索结果说成全仓库完备证明。
 
 ## 候选内容规则
 

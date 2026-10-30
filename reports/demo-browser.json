@@ -84,5 +84,11 @@
     "Character counts are not model tokens or measured costs",
     "Fixture stderr shown separately and excluded from stdout reduction",
     "Screenshots include the browser assistant overlay"
-  ]
+  ],
+  "record_scope": {
+    "version": "0.1.0",
+    "kind": "historical_baseline",
+    "current_optimization_evidence": "reports/demo-optimization.json",
+    "integrated_check": "reports/verification.json"
+  }
 }

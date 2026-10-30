@@ -75,5 +75,11 @@
     "Full OpenCode and Bun runtime not launched",
     "No paid API or online model task run",
     "Hook-visible raw may have upstream truncation or combined stdout/stderr"
-  ]
+  ],
+  "record_scope": {
+    "version": "0.1.0",
+    "kind": "historical_baseline",
+    "current_optimization_evidence": "reports/runtime-optimization-review.json",
+    "integrated_check": "reports/verification.json"
+  }
 }

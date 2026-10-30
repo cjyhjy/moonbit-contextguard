@@ -66,6 +66,9 @@ test('actual pinned trigger mutates same output while preserving metadata and at
   const decision = JSON.parse(await readFile(info.evidence, 'utf8'));
   assert.equal(decision.adapter_metrics.agent_visible_chars, value.output.length);
   assert.equal(decision.adapter_metrics.envelope_chars, value.output.length - payload.length);
+  assert.equal(decision.adapter_decision, 'applied');
+  assert(value.output.length < raw.length);
+  assert.equal(decision.adapter_metrics.net_reduction_chars, raw.length - value.output.length);
   const failure = decision.evidence.find((entry) => entry.kind === 'failure');
   const recalled = recallAdapter(info.receipt, failure.start_line, failure.end_line);
   assert.equal(recalled.text, failure.text);
@@ -87,15 +90,37 @@ test('missing exit code, missing truncation, unsupported tool, wrong command and
   assert.deepEqual(await readdir(directory), []);
 });
 
-test('upstream truncated and mixed unsupported output fail open through real core', async (t) => {
-  const { invoke } = await setup(t);
+test('upstream truncated and mixed unsupported output stay exactly original with audit sidecars', async (t) => {
+  const { directory, invoke } = await setup(t);
   for (const value of [output({ metadata: { exit: 1, truncated: true } }), output({ output: 'shell: stderr diagnostic\n' + raw })]) {
     const before = value.output;
     await invoke(value);
-    const info = JSON.parse(value.output.split('\n')[0]);
-    assert.equal(info.decision, 'fallback');
-    assert.equal(value.output.split('--- ContextGuard tool output ---\n')[1], before);
+    assert.equal(value.output, before);
   }
+  const decisions = await Promise.all((await readdir(join(directory,'evidence'))).filter(name=>name.startsWith('decision-')).map(async name=>JSON.parse(await readFile(join(directory,'evidence',name),'utf8'))));
+  assert.equal(decisions.length,2);
+  for(const decision of decisions) {
+    assert.equal(decision.decision,'fallback');
+    assert.equal(decision.adapter_decision,'original_kept_core_fallback');
+    assert.equal(decision.adapter_metrics.net_reduction_chars,0);
+    assert.equal(decision.adapter_metrics.envelope_chars,0);
+  }
+});
+
+test('small valid results retain original text when the evidence envelope would grow it', async (t) => {
+  const smallFixture = fixtureManifest.fixtures.find(x=>x.id==='rg-json-no-results');
+  const smallRaw = await readFile(new URL('../'+smallFixture.stdout,import.meta.url),'utf8');
+  const smallCommand=smallFixture.invocation.shell_display;
+  const {directory,invoke}=await setup(t,{allowCommands:[{command:smallCommand,scope:smallFixture.process.scope}]});
+  const value=output({output:smallRaw,metadata:{exit:smallFixture.process.exit_code,truncated:false}});
+  await invoke(value,{...input,args:{command:smallCommand}});
+  assert.equal(value.output,smallRaw);
+  const file=(await readdir(join(directory,'evidence'))).find(name=>name.startsWith('decision-'));
+  const decision=JSON.parse(await readFile(join(directory,'evidence',file),'utf8'));
+  assert.equal(decision.adapter_decision,'original_kept_no_visible_reduction');
+  assert.equal(decision.adapter_metrics.agent_visible_chars,smallRaw.length);
+  assert.equal(decision.adapter_metrics.net_reduction_chars,0);
+  assert(decision.adapter_metrics.proposed_agent_visible_chars>smallRaw.length);
 });
 
 test('guard errors or changed process context do not alter visible output', async (t) => {

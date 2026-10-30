@@ -1,6 +1,6 @@
 # 本轮开发记录
 
-日期：2026-10-22。所有步骤在 ContextGuard 所属目录完成，没有修改共享 Git 索引/分支或相邻项目；以下记录原本地开发阶段；对应真实提交现已按 `HISTORY.md` 提取为独立仓库历史。
+日期：2026-10-22。所有步骤在 ContextGuard 所属目录完成，没有修改共享 Git 索引/分支或相邻项目；以下是本地开发记录，不是公开 commit 历史。
 
 1. 检查任务简报与空目标目录，读取相邻项目既有工具链版本；保留原项目。固定主要近邻来源，启动三个 Astra ultra 并行任务。
 2. 实现 MoonBit 严格原文 profile、连续证据单元、独立候选正文验证、缺失修复和原文回退。选择 Node 平面 TAP 与 rg JSONL，未知格式不冒险解析。
@@ -10,4 +10,18 @@
 6. 实现固定 OpenCode v1.2.0 可选 hook、真实核心驱动的本地演示、离线成对账本与边界文档。在线模型评测保持未测。
 7. 最终检查、构建来源校验、干净目录解包和 ZIP 校验以 `reports/verification.json`、`reports/package-verification.json` 为准。中间失败不计作最终通过；最终报告记录实际命令和状态。
 
-独立发布阶段替换了未能解析的 `hustcer/setup-moonbit@v1.22`：改用官方固定版本归档与锁定 SHA-256，安装到仓库内 `.toolchain/`。Linux CI 对 JS、native、wasm-gc 分别 check/build/test，并执行完整 API/真实进程/OpenCode 协议/HTTP、独立评测、变异审计与干净目录 portable 验收。每次运行保存证据 artifact；实际结论见对应提交的 [Actions run](https://github.com/cjyhjy/moonbit-contextguard/actions/workflows/ci.yml)，历史本地报告不冒充新 CI 结果。
+以上为 0.1.0 初始本地交付记录，当时尚未运行远程 CI。后续独立发布仓库修复安装 action 地址失效，改为官方固定版本归档及 SHA-256 校验；[提交 18d5fcc 的 Linux CI](https://github.com/cjyhjy/moonbit-contextguard/actions/runs/39812762490) 已通过。本轮通过 GitHub REST 只读核验其状态，详见 `reports/publication-reference.json`。
+
+## 0.1.1 自主优化
+
+1. 保存 0.1.0 关键报告到 `reports/history/0.1.0/`，保留旧 ZIP；仅修改所属项目目录。
+2. 实际复现 7 种 rg 原文误接受，补上重复键、未知字段、二进制标记、字节区间/内容及位置一致性检查；无正文文件保留路径边界。原文及候选在分行前做预算检查。
+3. 实际复现无效预算仍执行命令、采集后磁盘错误丢失 API 结果、短输出被适配器说明放大三项问题。增加执行前校验、保留采集结果、区分 child/runner 状态和完整可见长度保护；CLI 流式限量并严格解码 UTF-8。
+4. 演示请求绑定具体输入快照；编辑或新请求取消旧结果的提交权。实际浏览器延迟旧响应、输入切换、错误恢复、桌面及手机布局验证，避免旧结果伪装成新证据。
+5. 验收使用完整输入清单、唯一 run_id、原子状态及前后摘要检查；从冻结字节快照构建并验收 ZIP。隔离回归覆盖新增/删除/篡改、失败/中断、打包时源文件变化及旧 ZIP 保留。
+6. 只读移植独立发布仓库的固定工具链 bootstrap 和 CI 安装修复，保留本轮新的验收/打包实现；补齐三后端 check/build/test。没有把旧提交的 Linux 通过视为当前优化版已通过远程 CI。
+7. 最终本地验收、报告、便携 ZIP 与校验和以 `reports/verification.json`、`reports/package-verification.json` 为准。当前工作目录的优化尚未同步至独立发布副本，未提交参赛表单。
+
+## 2026-10-30 发布同步
+
+用户要求先推送项目。本次将已验收的 0.1.1 源码、预编译产物、测试和文档同步至干净的独立仓库，保留原提交历史及 `docs/HISTORY.md`，并保存原本地验收报告。发布前核对远端分支与输入/产物一致性，重跑 portable 验收；推送后的源码三后端及打包检查由对应提交的 Linux CI 实际执行并另行核验。

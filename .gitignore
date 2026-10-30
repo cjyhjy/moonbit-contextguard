@@ -13,6 +13,7 @@ release/
 research/downloads/
 research/runs/
 reports/evaluation/audit/
+reports/.delivery-scratch/
 **/audit.jsonl
 vendor/rtk-oss-v1.0.1-darwin-arm64/rtk
 .env
