@@ -1,9 +1,9 @@
 {
   "name": "contextguard-local",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "type": "module",
-  "description": "MoonBit evidence guard, local development version",
+  "description": "MoonBit tool-output evidence validation and repair",
   "scripts": {
     "build": "node tools/build.mjs",
     "test": "node --test tests/*.test.mjs",

@@ -35,7 +35,7 @@ function digestFiles(root, files) {
 }
 
 export function sourceDigest(root) {
-  return digestFiles(root, distributionFiles(root).filter(path => path === 'moon.mod'
+  return digestFiles(root, distributionFiles(root).filter(path => ['moon.mod', 'moon.pkg', 'contextguard.mbt', 'contextguard_test.mbt'].includes(path)
     || /^(src|cmd)\//.test(path) && (path.endsWith('.mbt') || path.endsWith('/moon.pkg'))));
 }
 

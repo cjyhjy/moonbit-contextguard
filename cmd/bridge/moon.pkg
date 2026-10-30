@@ -1,5 +1,5 @@
 import {
-  "contextguard/guard/src" @guard,
+  "cjyhjy/contextguard" @guard,
 }
 
 pkgtype(kind: "foreign_library")

@@ -1,0 +1,5 @@
+import {
+  "cjyhjy/contextguard" @guard,
+}
+
+pkgtype(kind: "executable")

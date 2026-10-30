@@ -30,6 +30,7 @@ function fixture(t) {
     'package.json': JSON.stringify({name: 'delivery-fixture', version: '9.8.7', type: 'module'}),
     'moon.mod': 'fixture', 'src/main.mbt': '// fixture', 'cmd/bridge/main.mbt': '// fixture',
     'tools/moon': 'if [ "$1:$3" = "build:${DELIVERY_FAIL_BACKEND:-none}" ]; then exit 23; fi\nexit 0\n', 'tools/build.mjs': '// prebuilt fixture\n',
+    'tools/check-toolchain.mjs': '// synthetic fixture gate\n', 'tools/verify-registry.py': '# synthetic fixture registry check\n',
     'tools/cli.mjs': '// fixture cli\n', 'tools/example.mjs': '// original snapshot\n',
     'dist/contextguard.mjs': 'export const fixture = true;\n',
     'fixtures/example-request.json': '{}', 'evaluation/example-ledger.synthetic.jsonl': '',

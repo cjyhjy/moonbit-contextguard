@@ -57,6 +57,7 @@ try {
   save();
   if (!portable) {
     run('moon-version', 'sh', ['tools/moon', 'version', '--all']);
+    run('moon-toolchain-gate', process.execPath, ['tools/check-toolchain.mjs']);
     run('moon-format', 'sh', ['tools/moon', 'fmt', '--check']);
     for (const target of ['js', 'native', 'wasm-gc']) {
       run(`moon-check-${target}`, 'sh', ['tools/moon', 'check', '--target', target]);
@@ -64,6 +65,7 @@ try {
       run(`moon-test-${target}`, 'sh', ['tools/moon', 'test', '--target', target]);
     }
     run('moon-build', process.execPath, ['tools/build.mjs']);
+    run('registry-package-consumer', 'python3', ['-B', 'tools/verify-registry.py']);
   }
   try {
     report.build = buildIdentity();

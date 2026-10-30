@@ -49,3 +49,11 @@ python3 -B tools/package.py
 只读参考独立仓库提交 `18d5fcc7ac060eb320fdfb4e4dc4dfb8ba065b6d`，移植官方固定版本编译器/core 归档、SHA-256 校验、有限 curl 重试与 CI 配置；TLS 校验保留，工具链只写项目内部。保留本轮 v2 验收和冻结打包机制，补齐 JS/native/wasm-gc 各 check/build/test。
 
 该旧提交的 [Linux CI](https://github.com/cjyhjy/moonbit-contextguard/actions/runs/39812762490) 已通过，优化开发时已只读复核；0.1.1 原始通过证据来自本机 macOS 与干净目录，保存于 `reports/history/0.1.1-local/`。2026-10-30 用户授权同步优化至独立仓库，本次远程 CI 按对应提交另行核验。包注册表与正式参赛提交仍分别记录。
+
+## 0.1.2：比赛验收与包可用性（2026-10-30）
+
+- 从 0.10.15 升级到固定 0.10.18，增加最低版本及精确版本门禁。
+- 模块名改为 `cjyhjy/contextguard`，根包导出 `guard_request`；Node JSON API 保持不变。
+- 新增 6 个纯 MoonBit 公共 API 黑盒测试和 `cmd/example`，覆盖压缩、接受、修复、篡改/预算回退、未知格式与非法 JSON。
+- Mooncakes 使用白名单发布源码、测试、最小示例和许可。验收从实际 ZIP 解压，在独立消费者中通过三个后端的公共 API 测试与示例。
+- 更新可复现安装与逐条验收表，区分历史证据和新提交验证。

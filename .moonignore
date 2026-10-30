@@ -1,0 +1,16 @@
+# Registry ships the MoonBit library, runnable example, docs and license only.
+/*
+!/moon.mod
+!/moon.pkg
+!/contextguard.mbt
+!/contextguard_test.mbt
+!/pkg.generated.mbti
+!/src/
+!/src/**
+!/cmd/
+/cmd/*
+!/cmd/example/
+!/cmd/example/**
+!/README.mbt.md
+!/LICENSE
+!/THIRD_PARTY_NOTICES.md

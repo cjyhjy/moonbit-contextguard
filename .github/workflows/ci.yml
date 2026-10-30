@@ -15,7 +15,7 @@ jobs:
           node-version: '26.7.0'
       - name: Install pinned official MoonBit archives
         run: python3 -B tools/bootstrap.py
-      - name: Build and verify local artifacts
+      - name: Check, build, test all backends and verify registry consumer
         run: node tools/verify.mjs
       - name: Verify portable package
         run: python3 -B tools/package.py

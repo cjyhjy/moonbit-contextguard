@@ -1,13 +1,17 @@
-name = "contextguard/guard"
+name = "cjyhjy/contextguard"
 
-version = "0.1.1"
+version = "0.1.2"
 
 license = "MIT"
 
-readme = "README.md"
+readme = "README.mbt.md"
 
 preferred_target = "js"
 
 supported_targets = "+js+wasm-gc+native"
 
 description = "Extractive evidence validation for bounded tool-output formats"
+
+repository = "https://github.com/cjyhjy/moonbit-contextguard"
+
+keywords = [ "context", "evidence", "tap", "ripgrep" ]

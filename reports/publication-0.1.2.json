@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "version": "0.1.2",
+  "checked_at": "2026-10-30T12:32:14.732826+00:00",
+  "repository": "https://github.com/cjyhjy/moonbit-contextguard",
+  "previous_public_commit": "671b33e3fad3ae04f53a4f9c2d64934a3b7f6672",
+  "local_verification": "passed",
+  "registry_archive_verification": "passed",
+  "moon_publish_dry_run": {
+    "status": "passed",
+    "http_status": 202,
+    "account": "cjyhjy"
+  },
+  "registry_publication": "pending",
+  "remote_ci": "pending",
+  "boundary": "Dry run and offline consumer tests do not certify publication. Final registry and CI receipts will be recorded after verification."
+}

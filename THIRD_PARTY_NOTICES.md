@@ -15,3 +15,7 @@ ContextGuard 新写的源码、测试、文档和合成夹具使用根目录 MIT
 所有远端固定源文件的永久链接、Git blob 或归档哈希以 `research/source-index.json`、`research/peers-lock.json` 与 `adapters/` 锁定记录为准。仓库名、公开宣传数字及旧对话快照均不视为本项目实测结果。
 
 Node.js、Python、ripgrep、MoonBit 工具链为外部执行依赖，未随便携包分发。没有复制相邻项目的 URI Template 业务实现，没有下载/保存用户密钥。编译产物 SHA-256 与 MoonBit 源码摘要见 `dist/build-manifest.json`。
+
+## Mooncakes 分发范围
+
+以上清单描述完整 GitHub 仓库与 Node 便携包。Mooncakes 0.1.2 仅分发本项目 MoonBit 源码、测试、示例、README 与许可，不包含 `dist`、`vendor`、`research` 或第三方对照实现；标准库由消费者的 MoonBit 工具链提供。

@@ -2,7 +2,25 @@
 
 用 MoonBit 校验工具输出压缩后的必要证据。适用于明确约定的 **Node 平面 TAP** 和 **ripgrep JSONL**：检查候选正文，补回缺失的完整证据单元；发现篡改、未知格式、原始截断或预算不足时保留原文。
 
-这是可运行的 0.1.1 优化版本。新增严格的 rg 字节区间与重复 JSON 键检查、进程失败处理、短输出保护和演示请求防串用，详见[优化记录](docs/OPTIMIZATION.md)。2026-10-30 根据用户授权同步至本独立仓库，CI 结果请按本次提交查看 [Actions](https://github.com/cjyhjy/moonbit-contextguard/actions/workflows/ci.yml)。运行与评测没有调用付费模型 API、安装到当前 Agent 或提交参赛表单；它验证限定格式的证据保留，不承诺任意语义无损、模型 token 减少、净费用降低或在线任务成功率提升。
+当前版本 **0.1.2**。核心支持 JS、native、wasm-gc，固定 `moonc 0.10.18+6c83a7f62`，满足比赛不低于 0.10.16 的要求。公开仓库：[cjyhjy/moonbit-contextguard](https://github.com/cjyhjy/moonbit-contextguard)；逐条验收见 [ACCEPTANCE.md](ACCEPTANCE.md)，发布核验见 [reports/publication-0.1.2.json](reports/publication-0.1.2.json)。
+
+它验证限定格式的证据保留，不承诺任意语义无损、模型 token 减少、净费用降低或在线任务成功率提升。
+
+## 安装 MoonBit 库
+
+```sh
+moon add cjyhjy/contextguard@0.1.2
+```
+
+在 `moon.pkg` 中添加 `import { "cjyhjy/contextguard" @guard }`，调用 `@guard.guard_request(request_json)`。完整用法见 [README.mbt.md](README.mbt.md)。仓库附带纯 MoonBit 示例：
+
+```sh
+python3 -B tools/bootstrap.py
+export MOON_HOME="$PWD/.toolchain"
+sh tools/moon run cmd/example --target js
+```
+
+示例输出的 `decision` 应为 `compressed`，`assurance` 为 `required_source_units_verified`；也支持 `--target native` 和 `--target wasm-gc`。
 
 ## 直接运行
 
@@ -36,17 +54,17 @@ node tools/recall.mjs CAPTURE_DIR stdout 1 20
 
 ## 从 MoonBit 源码构建
 
-使用现有 MoonBit 工具链即可；不自动改变全局环境。已验证 moon 0.1.20261012、moonc v0.10.15+943464bfa。
+使用仓库锁定的官方工具链。bootstrap 核对归档 SHA-256，仅安装到本仓库 `.toolchain`，支持 macOS arm64/Linux x86_64。需要 Python 3.9+、curl、Node.js 22+；CI 使用 Node 26.7.0。
 
 ```sh
-# moon 已在 PATH 中时，不必设置 MOON_HOME。
-export MOON_HOME=/path/to/your/moonbit-toolchain
-node tools/build.mjs
-sh tools/moon check --target js
-sh tools/moon test --target js
-sh tools/moon test --target native
-sh tools/moon test --target wasm-gc
+python3 -B tools/bootstrap.py
+export MOON_HOME="$PWD/.toolchain"
+node tools/check-toolchain.mjs
+node tools/verify.mjs
+python3 -B tools/package.py
 ```
+
+`verify.mjs` 包含格式检查、三个后端的 check/build/test、Node 集成回归、独立评测、变异审计，以及 Mooncakes 源码包在独立消费项目中的导入和运行检查。已有相同版本时可将 `MOON_HOME` 指向该工具链；版本门禁拒绝旧版本和与锁定版本不一致的编译器。
 
 MoonBit 实现位于 `src/`，包括原文格式识别、证据提取、候选正文校验、压缩选择、修复和预算决策。Node 负责 JSON/文件/进程/HTTP 胶水；未把核心算法移到 JavaScript。工具链安装参考 [MoonBit 官方文档](https://docs.moonbitlang.com/en/latest/getting-started.html)。
 

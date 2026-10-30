@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "source": {
-    "sha256": "3ee38956dc51281b46ed92774e75fa75454c079e8bdd4044405108a0d94795bd",
+    "sha256": "d9ced37384874d99b19ee97e4ad8ee3818947d58a9d8130713aee88537eb7374",
     "files": [
       {
         "path": "cmd/bridge/entry.mbt",
@@ -9,11 +9,31 @@
       },
       {
         "path": "cmd/bridge/moon.pkg",
-        "sha256": "ae4dff2413aacebe6e6db44dcdacdef34012ab6edf57047fda163b9cea0a1e5a"
+        "sha256": "35f3c8735137d17866bf3eea6bc5f1471e5f7fa3b260f0925aab6827478afd31"
+      },
+      {
+        "path": "cmd/example/main.mbt",
+        "sha256": "3ec9274cb6f2287d0566a65cfe63567c71a0ac28655ecbed6ab99d127ab4becd"
+      },
+      {
+        "path": "cmd/example/moon.pkg",
+        "sha256": "d0a9fc7dc332cdb4d8499021531a0f0cdec56fbef26c9a96543ef3392a439b4f"
+      },
+      {
+        "path": "contextguard.mbt",
+        "sha256": "7014029accbdcc00a494b920c94f8ee60d0b857013b75e7bbf33d7482e176219"
+      },
+      {
+        "path": "contextguard_test.mbt",
+        "sha256": "42c2460ca144622109738b94ff7f53828007fb65b399a15a869bfc2680856165"
       },
       {
         "path": "moon.mod",
-        "sha256": "7c3f30993f707b293a11c251d6cc6b7c7ee13b7a390d00f1d481dae5fde05538"
+        "sha256": "eac68686c2f8f2839de45e3ee15b0a05945df4683dbab327f4c7405666b4f8bf"
+      },
+      {
+        "path": "moon.pkg",
+        "sha256": "eea5b6962932eca9deb9925af4acf6ab805a4eb88f80045fd90d46cff904dc41"
       },
       {
         "path": "src/compressor.mbt",
@@ -53,6 +73,6 @@
       }
     ]
   },
-  "compiler": "moon 0.1.20261012 (748b63c 2026-10-12)\n\nFeature flags enabled: rr_moon_mod,rr_moon_pkg",
-  "artifact_sha256": "d955745db94ab579bed3079bf1a0a6ff0f61ce074945930dbddea9e33d005be4"
+  "compiler": "moon 0.1.20261028 (e1e1f15 2026-10-28) ~/Documents/ChatGPT/黑客松新项目/repositories/moonbit-contextguard/.toolchain/bin/moon\nmoonc v0.10.18+6c83a7f62 (2026-10-28) ~/Documents/ChatGPT/黑客松新项目/repositories/moonbit-contextguard/.toolchain/bin/moonc\nmoonrun 0.1.20261028 (e1e1f15 2026-10-28) ~/Documents/ChatGPT/黑客松新项目/repositories/moonbit-contextguard/.toolchain/bin/moonrun\n\nFeature flags enabled: rr_moon_mod,rr_moon_pkg",
+  "artifact_sha256": "6777ff48013eda6b5af445887b64ca0b2e8e530626df504e1659c956b877c07a"
 }

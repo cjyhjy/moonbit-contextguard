@@ -1,6 +1,6 @@
 # API 契约（schema_version 1）
 
-MoonBit 库入口：`@guard.guard_request(request_json : String) -> String`，包路径 `contextguard/guard/src`。JS 胶水入口：`import { guard, guardJson } from './tools/api.mjs'`，同步返回对象；前者接受对象，后者接受原始 JSON 字符串。CLI 从 stdin 或一个文件流式读取单个 JSON 请求，严格解码 UTF-8 并在传输预算耗尽时停止读取，stdout 输出单个 JSON 响应；非法 JSON/UTF-8/传输上限错误以退出码 2 写 stderr。原始 JSON 中同一对象的重复键（包括转义后同名）拒绝为 `invalid_json_request`；调用 `guard(object)` 前已经被宿主解析丢失的信息无法恢复。
+MoonBit 库入口：`@guard.guard_request(request_json : String) -> String`，包路径 `cjyhjy/contextguard`。JS 胶水入口：`import { guard, guardJson } from './tools/api.mjs'`，同步返回对象；前者接受对象，后者接受原始 JSON 字符串。CLI 从 stdin 或一个文件流式读取单个 JSON 请求，严格解码 UTF-8 并在传输预算耗尽时停止读取，stdout 输出单个 JSON 响应；非法 JSON/UTF-8/传输上限错误以退出码 2 写 stderr。原始 JSON 中同一对象的重复键（包括转义后同名）拒绝为 `invalid_json_request`；调用 `guard(object)` 前已经被宿主解析丢失的信息无法恢复。
 
 ```json
 {
