@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "version": "0.2.0",
-  "checked_at": "2026-10-30T12:49:26.738680+00:00",
+  "checked_at": "2026-10-30T12:53:13.423117+00:00",
   "repository": "https://github.com/cjyhjy/moonbit-contextguard",
   "previous_public_commit": "fc061bd48b64eebd8106c120daedf5650036898f",
   "local_verification": "passed",
@@ -9,7 +9,41 @@
     "status": "passed",
     "http_status": 202
   },
-  "registry_publication": "pending",
-  "remote_ci": "pending",
-  "scope": "Nested TAP implementation, seven actual Node outputs, 35 tests per MoonBit backend, 86 Node tests and independent deletion audits. Actual publication/CI status is recorded after completion."
+  "registry_publication": {
+    "status": "published",
+    "http_status": 200,
+    "module": "cjyhjy/contextguard",
+    "version": "0.2.0",
+    "url": "https://mooncakes.io/docs/cjyhjy/contextguard@0.2.0",
+    "api_url": "https://mooncakes.io/api/v0/modules/cjyhjy/contextguard",
+    "build_status": "success",
+    "yanked": false,
+    "license": "MIT",
+    "registry_checksum": "6dd23182769fdb39e2744732e9a3cfe8e8aa06baedcde2b90587716866e50d36",
+    "created_at": "2026-10-30T12:51:48.647275+00:00",
+    "local_archive_sha256": "6dd23182769fdb39e2744732e9a3cfe8e8aa06baedcde2b90587716866e50d36",
+    "archive_bytes": 21131
+  },
+  "remote_ci": {
+    "status": "completed",
+    "conclusion": "success",
+    "id": 41058316444,
+    "head_sha": "6fba1e30f3efd7242fd9566ecbba0b7943ccb302",
+    "url": "https://github.com/cjyhjy/moonbit-contextguard/actions/runs/41058316444"
+  },
+  "scope": "Nested TAP implementation, seven actual Node outputs, 35 tests per MoonBit backend, 86 Node tests and independent deletion audits. Actual publication/CI status is recorded after completion.",
+  "source_commit": "6fba1e30f3efd7242fd9566ecbba0b7943ccb302",
+  "clean_registry_import": {
+    "status": "passed",
+    "receipt": "reports/registry-published-smoke-0.2.0.json",
+    "fresh_registry_cache": true,
+    "local_path_overrides": false,
+    "tests_per_backend": 8,
+    "targets": [
+      "js",
+      "native",
+      "wasm-gc"
+    ]
+  },
+  "boundary": "The implementation commit CI, Mooncakes build, uploaded bytes and fresh external download are verified. Subsequent CI dependency maintenance is verified by its own Actions run. No online model cost/success or contest form submission claim."
 }

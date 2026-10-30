@@ -37,3 +37,9 @@
 ## 0.1.2 验收补齐
 
 2026-10-30 根据用户提供的九条比赛验收要求升级至 moonc 0.10.18，增加账号命名空间下的根库入口、纯 MoonBit 示例、三后端包消费测试和 Mooncakes 发布流程。发布结果以 `reports/publication-0.1.2.json` 为准；上述旧版本“未发布 Mooncakes”范围仅描述历史状态。
+
+## 0.2.0 发布与 CI 维护
+
+0.2.0 增加嵌套 TAP 原子分支、七份实际 Node 输出和独立审计。实现提交 `6fba1e3` 的 Linux CI 通过后发布到 Mooncakes，空注册表缓存重新下载的全部文件与上传包一致，公开 API 在三个后端各 8 项测试通过。具体收据见 `reports/publication-0.2.0.json`。
+
+该次 CI 提示旧版官方 Action 的 Node 20 运行时已弃用。随后检查官方稳定版的 `action.yml`，将 Checkout 7.0.1、Setup Node 7.1.0、Upload Artifact 7.0.2（均使用 Node 24）锁定至各自实际发布提交，最终工作流按后续提交另行验收。测试用 Node 保持锁定的 26.7.0。

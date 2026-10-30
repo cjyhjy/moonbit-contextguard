@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
   "project": "ContextGuard",
-  "run_id": "cc36634f-27da-4b67-b363-b2c3d7d7b052",
-  "started_at": "2026-10-30T12:48:41.909Z",
+  "run_id": "c456e36f-a456-4f9e-aec9-26d529e52adb",
+  "started_at": "2026-10-30T12:53:13.452Z",
   "user_timezone": "America/New_York",
   "mode": "source_and_prebuilt",
   "status": "passed",
@@ -26,7 +26,7 @@
       "status": "passed",
       "exit_code": 0,
       "signal": null,
-      "elapsed_ms": 46.460167,
+      "elapsed_ms": 14.124249999999996,
       "log": "reports/logs/moon-version.log"
     },
     {
@@ -38,7 +38,7 @@
       "status": "passed",
       "exit_code": 0,
       "signal": null,
-      "elapsed_ms": 43.82558300000001,
+      "elapsed_ms": 38.479833,
       "log": "reports/logs/moon-toolchain-gate.log"
     },
     {
@@ -52,7 +52,7 @@
       "status": "passed",
       "exit_code": 0,
       "signal": null,
-      "elapsed_ms": 12.065832999999998,
+      "elapsed_ms": 9.026291999999998,
       "log": "reports/logs/moon-format.log"
     },
     {
@@ -67,7 +67,7 @@
       "status": "passed",
       "exit_code": 0,
       "signal": null,
-      "elapsed_ms": 34.397875,
+      "elapsed_ms": 22.485749999999996,
       "log": "reports/logs/moon-check-js.log"
     },
     {
@@ -83,7 +83,7 @@
       "status": "passed",
       "exit_code": 0,
       "signal": null,
-      "elapsed_ms": 21.46395799999999,
+      "elapsed_ms": 19.483542000000014,
       "log": "reports/logs/moon-build-js.log"
     },
     {
@@ -98,7 +98,7 @@
       "status": "passed",
       "exit_code": 0,
       "signal": null,
-      "elapsed_ms": 106.29437499999997,
+      "elapsed_ms": 79.51925,
       "log": "reports/logs/moon-test-js.log"
     },
     {
@@ -113,7 +113,7 @@
       "status": "passed",
       "exit_code": 0,
       "signal": null,
-      "elapsed_ms": 37.603624999999965,
+      "elapsed_ms": 20.815084000000013,
       "log": "reports/logs/moon-check-native.log"
     },
     {
@@ -129,7 +129,7 @@
       "status": "passed",
       "exit_code": 0,
       "signal": null,
-      "elapsed_ms": 54.590333000000044,
+      "elapsed_ms": 32.091459000000015,
       "log": "reports/logs/moon-build-native.log"
     },
     {
@@ -144,7 +144,7 @@
       "status": "passed",
       "exit_code": 0,
       "signal": null,
-      "elapsed_ms": 55.013958,
+      "elapsed_ms": 47.95112499999999,
       "log": "reports/logs/moon-test-native.log"
     },
     {
@@ -159,7 +159,7 @@
       "status": "passed",
       "exit_code": 0,
       "signal": null,
-      "elapsed_ms": 23.303958000000023,
+      "elapsed_ms": 19.870416999999975,
       "log": "reports/logs/moon-check-wasm-gc.log"
     },
     {
@@ -175,7 +175,7 @@
       "status": "passed",
       "exit_code": 0,
       "signal": null,
-      "elapsed_ms": 21.198624999999993,
+      "elapsed_ms": 18.83699999999999,
       "log": "reports/logs/moon-build-wasm-gc.log"
     },
     {
@@ -190,7 +190,7 @@
       "status": "passed",
       "exit_code": 0,
       "signal": null,
-      "elapsed_ms": 72.49120900000008,
+      "elapsed_ms": 45.36400000000003,
       "log": "reports/logs/moon-test-wasm-gc.log"
     },
     {
@@ -202,7 +202,7 @@
       "status": "passed",
       "exit_code": 0,
       "signal": null,
-      "elapsed_ms": 71.00633299999993,
+      "elapsed_ms": 63.919624999999996,
       "log": "reports/logs/moon-build.log"
     },
     {
@@ -215,7 +215,7 @@
       "status": "passed",
       "exit_code": 0,
       "signal": null,
-      "elapsed_ms": 3635.494292,
+      "elapsed_ms": 2522.2556250000002,
       "log": "reports/logs/registry-package-consumer.log"
     },
     {
@@ -244,7 +244,7 @@
       "status": "passed",
       "exit_code": 0,
       "signal": null,
-      "elapsed_ms": 9848.83625,
+      "elapsed_ms": 9732.501667,
       "log": "reports/logs/public-api-process-adapter-http-tests.log"
     },
     {
@@ -257,7 +257,7 @@
       "status": "passed",
       "exit_code": 0,
       "signal": null,
-      "elapsed_ms": 70.6002499999995,
+      "elapsed_ms": 62.644874999999956,
       "log": "reports/logs/paired-ledger-tests.log"
     },
     {
@@ -269,7 +269,7 @@
       "status": "passed",
       "exit_code": 0,
       "signal": null,
-      "elapsed_ms": 543.5766669999994,
+      "elapsed_ms": 535.4793330000011,
       "log": "reports/logs/independent-evaluation.log"
     },
     {
@@ -281,7 +281,7 @@
       "status": "passed",
       "exit_code": 0,
       "signal": null,
-      "elapsed_ms": 62.32750000000124,
+      "elapsed_ms": 63.49720800000068,
       "log": "reports/logs/nested-tap-evaluation.log"
     },
     {
@@ -293,7 +293,7 @@
       "status": "passed",
       "exit_code": 0,
       "signal": null,
-      "elapsed_ms": 176.93458400000054,
+      "elapsed_ms": 174.40883399999984,
       "log": "reports/logs/independent-mutation-audit.log"
     },
     {
@@ -308,7 +308,7 @@
       "status": "passed",
       "exit_code": 0,
       "signal": null,
-      "elapsed_ms": 25.003458999999566,
+      "elapsed_ms": 23.567250000000058,
       "log": "reports/logs/paired-ledger-example.log"
     },
     {
@@ -321,7 +321,7 @@
       "status": "passed",
       "exit_code": 0,
       "signal": null,
-      "elapsed_ms": 32.58958300000086,
+      "elapsed_ms": 32.28337499999907,
       "log": "reports/logs/json-cli.log"
     },
     {
@@ -333,7 +333,7 @@
       "status": "passed",
       "exit_code": 0,
       "signal": null,
-      "elapsed_ms": 35.35254099999838,
+      "elapsed_ms": 34.324375000000146,
       "log": "reports/logs/example.log"
     },
     {
@@ -363,11 +363,11 @@
   "boundary": "Controlled fixture programs and a project regression command produce the captured stdout/stderr; fixture manifests distinguish their sources. Fresh peer availability and unrun entries are recorded in evaluation.json. Portable mode does not compile MoonBit. execution records this run only; no online agent or package publication is certified.",
   "version": "0.2.0",
   "inputs": {
-    "sha256": "13904e094dbf1b1c9462b0facef33bb2a9aed47a8c672044b2c06df40ea81c39",
+    "sha256": "4a4d0c911dffd926682b27ca8a2859b08e1f7f0db80720b9d09e3747550c64bc",
     "files": [
       {
         "path": ".github/workflows/ci.yml",
-        "sha256": "c6acbd530dbdbf82262f1501d48b83a723f9ca86ceb2e01018750b3e7bb13401"
+        "sha256": "88b079d1fd7cb5daff36d94e72e70cfc8de1fd23fb92ef1eec3b0d76074cc2b2"
       },
       {
         "path": ".gitignore",
@@ -519,7 +519,7 @@
       },
       {
         "path": "docs/HISTORY.md",
-        "sha256": "b11b07cf11a94ac5b92a92ada0534ae3e57819131f559e92080a19d835ce9153"
+        "sha256": "26abde533511eef07c59a29db7fe6c92f3bf0fc3d28ea5563c97abbaa02a6d46"
       },
       {
         "path": "docs/NESTED_TAP.md",
@@ -1181,5 +1181,5 @@
     "artifact_sha256": "3f9efbd779c49c57eb0f7c0182f4a16dd1fd74a442c3c8c0a5117dcdb024c14c",
     "manifest_sha256": "ec5a23622d950bfb956595d510d8a127fac7a02992ac68c6c1f66dabf0a66133"
   },
-  "generated_at": "2026-10-30T12:48:56.982Z"
+  "generated_at": "2026-10-30T12:53:27.106Z"
 }

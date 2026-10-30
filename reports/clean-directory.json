@@ -2,11 +2,11 @@
   "schema_version": 2,
   "project": "ContextGuard",
   "status": "passed",
-  "generated_at": "2026-10-30T12:48:57Z",
+  "generated_at": "2026-10-30T12:53:27Z",
   "boundary": "Clean extraction used only bundled compiled core, source, Python standard library and installed Node. No network, no MoonBit rebuild, no platform-specific RTK executable. Remote CI and online model tasks not run.",
   "clean_directory": true,
   "directory_removed_after_check": true,
-  "checksums_checked": 334,
+  "checksums_checked": 341,
   "command": [
     "node",
     "tools/verify.mjs",
@@ -17,13 +17,13 @@
   "execution": {
     "environment": "local"
   },
-  "source_verification_run_id": "cc36634f-27da-4b67-b363-b2c3d7d7b052",
-  "inputs_sha256": "13904e094dbf1b1c9462b0facef33bb2a9aed47a8c672044b2c06df40ea81c39",
+  "source_verification_run_id": "c456e36f-a456-4f9e-aec9-26d529e52adb",
+  "inputs_sha256": "4a4d0c911dffd926682b27ca8a2859b08e1f7f0db80720b9d09e3747550c64bc",
   "portable_verification": {
     "schema_version": 2,
     "project": "ContextGuard",
-    "run_id": "e93bcf20-e468-4bd0-9a82-89ff9f6bad26",
-    "started_at": "2026-10-30T12:48:57.274Z",
+    "run_id": "36766f4e-befe-4c41-abf0-410dbb847775",
+    "started_at": "2026-10-30T12:53:27.400Z",
     "user_timezone": "America/New_York",
     "mode": "portable_prebuilt",
     "status": "passed",
@@ -62,7 +62,7 @@
         "status": "passed",
         "exit_code": 0,
         "signal": null,
-        "elapsed_ms": 9815.309584,
+        "elapsed_ms": 9732.303833,
         "log": "reports/logs/public-api-process-adapter-http-tests.log"
       },
       {
@@ -75,7 +75,7 @@
         "status": "passed",
         "exit_code": 0,
         "signal": null,
-        "elapsed_ms": 60.99370799999997,
+        "elapsed_ms": 61.0034169999999,
         "log": "reports/logs/paired-ledger-tests.log"
       },
       {
@@ -87,7 +87,7 @@
         "status": "passed",
         "exit_code": 0,
         "signal": null,
-        "elapsed_ms": 523.5008749999997,
+        "elapsed_ms": 517.0494589999998,
         "log": "reports/logs/independent-evaluation.log"
       },
       {
@@ -99,7 +99,7 @@
         "status": "passed",
         "exit_code": 0,
         "signal": null,
-        "elapsed_ms": 63.199625000001106,
+        "elapsed_ms": 61.27679200000057,
         "log": "reports/logs/nested-tap-evaluation.log"
       },
       {
@@ -111,7 +111,7 @@
         "status": "passed",
         "exit_code": 0,
         "signal": null,
-        "elapsed_ms": 177.71808299999975,
+        "elapsed_ms": 174.85612500000025,
         "log": "reports/logs/independent-mutation-audit.log"
       },
       {
@@ -126,7 +126,7 @@
         "status": "passed",
         "exit_code": 0,
         "signal": null,
-        "elapsed_ms": 24.968917000000147,
+        "elapsed_ms": 23.10004200000003,
         "log": "reports/logs/paired-ledger-example.log"
       },
       {
@@ -139,7 +139,7 @@
         "status": "passed",
         "exit_code": 0,
         "signal": null,
-        "elapsed_ms": 32.149499999999534,
+        "elapsed_ms": 32.670874999999796,
         "log": "reports/logs/json-cli.log"
       },
       {
@@ -151,7 +151,7 @@
         "status": "passed",
         "exit_code": 0,
         "signal": null,
-        "elapsed_ms": 33.88633300000038,
+        "elapsed_ms": 35.14191700000083,
         "log": "reports/logs/example.log"
       },
       {
@@ -181,11 +181,11 @@
     "boundary": "Controlled fixture programs and a project regression command produce the captured stdout/stderr; fixture manifests distinguish their sources. Fresh peer availability and unrun entries are recorded in evaluation.json. Portable mode does not compile MoonBit. execution records this run only; no online agent or package publication is certified.",
     "version": "0.2.0",
     "inputs": {
-      "sha256": "13904e094dbf1b1c9462b0facef33bb2a9aed47a8c672044b2c06df40ea81c39",
+      "sha256": "4a4d0c911dffd926682b27ca8a2859b08e1f7f0db80720b9d09e3747550c64bc",
       "files": [
         {
           "path": ".github/workflows/ci.yml",
-          "sha256": "c6acbd530dbdbf82262f1501d48b83a723f9ca86ceb2e01018750b3e7bb13401"
+          "sha256": "88b079d1fd7cb5daff36d94e72e70cfc8de1fd23fb92ef1eec3b0d76074cc2b2"
         },
         {
           "path": ".gitignore",
@@ -337,7 +337,7 @@
         },
         {
           "path": "docs/HISTORY.md",
-          "sha256": "b11b07cf11a94ac5b92a92ada0534ae3e57819131f559e92080a19d835ce9153"
+          "sha256": "26abde533511eef07c59a29db7fe6c92f3bf0fc3d28ea5563c97abbaa02a6d46"
         },
         {
           "path": "docs/NESTED_TAP.md",
@@ -999,8 +999,8 @@
       "artifact_sha256": "3f9efbd779c49c57eb0f7c0182f4a16dd1fd74a442c3c8c0a5117dcdb024c14c",
       "manifest_sha256": "ec5a23622d950bfb956595d510d8a127fac7a02992ac68c6c1f66dabf0a66133"
     },
-    "generated_at": "2026-10-30T12:49:08.027Z"
+    "generated_at": "2026-10-30T12:53:38.061Z"
   },
-  "elapsed_seconds": 11.051499843597412,
+  "elapsed_seconds": 10.96106219291687,
   "immutable_snapshot": true
 }

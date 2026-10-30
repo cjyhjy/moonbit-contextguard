@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-30T12:48:56.699Z",
+  "generated_at": "2026-10-30T12:53:26.828Z",
   "version": "0.2.0",
   "node": "v26.7.0",
   "platform": "darwin",
@@ -19,7 +19,7 @@
       "required_spans": 3,
       "retained_spans": 3,
       "net_stdout_reduction": 2845,
-      "median_api_ms": 0.22662499999999852
+      "median_api_ms": 0.21912499999999824
     },
     {
       "fixture": "parent",
@@ -31,7 +31,7 @@
       "required_spans": 5,
       "retained_spans": 5,
       "net_stdout_reduction": 94,
-      "median_api_ms": 0.10158400000000256
+      "median_api_ms": 0.09979200000000077
     },
     {
       "fixture": "all-pass",
@@ -43,7 +43,7 @@
       "required_spans": 2,
       "retained_spans": 2,
       "net_stdout_reduction": 4789,
-      "median_api_ms": 0.1138339999999971
+      "median_api_ms": 0.11179199999999412
     },
     {
       "fixture": "directives",
@@ -55,7 +55,7 @@
       "required_spans": 3,
       "retained_spans": 3,
       "net_stdout_reduction": 0,
-      "median_api_ms": 0.0695829999999944
+      "median_api_ms": 0.06912499999999966
     },
     {
       "fixture": "cancelled",
@@ -67,7 +67,7 @@
       "required_spans": 1,
       "retained_spans": 1,
       "net_stdout_reduction": 0,
-      "median_api_ms": 0.03170899999999932
+      "median_api_ms": 0.031125000000002956
     },
     {
       "fixture": "custom-log",
@@ -79,7 +79,7 @@
       "required_spans": 1,
       "retained_spans": 1,
       "net_stdout_reduction": 0,
-      "median_api_ms": 0.016582999999997128
+      "median_api_ms": 0.017125000000000057
     },
     {
       "fixture": "project-regression",
@@ -91,7 +91,7 @@
       "required_spans": 2,
       "retained_spans": 2,
       "net_stdout_reduction": 5883,
-      "median_api_ms": 0.10208300000000037
+      "median_api_ms": 0.10641599999999585
     }
   ],
   "all_required_spans_retained": true
