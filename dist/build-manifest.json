@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "source": {
-    "sha256": "4dbf8552d5ce5e6167b59a4c4bda6854cb4c6f68adab8f1eed1ce14b8aa93cb7",
+    "sha256": "7e16d9f54a6bf8ff6577f3abb5baeac9f96f469e7adc2b72a1f3c313a170418f",
     "files": [
       {
         "path": "cmd/bridge/entry.mbt",
@@ -29,7 +29,7 @@
       },
       {
         "path": "moon.mod",
-        "sha256": "96843ebcaf2deb039de659aa1e37c4321d159f1237edce1c9ed0ea4dc5d1470a"
+        "sha256": "be04cae8bd7cb7952e4b61782bfec34ff415124a31d5e62345ffb86a8343b4b2"
       },
       {
         "path": "moon.pkg",

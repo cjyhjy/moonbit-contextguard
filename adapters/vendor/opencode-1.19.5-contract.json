@@ -1,0 +1,119 @@
+{
+  "pin": {
+    "version": "1.19.5",
+    "commit": "810c0eba1a7348036f8bdf61e6632d0c36c6876c",
+    "repository": "https://github.com/anomalyco/opencode",
+    "verified_on": "2026-11-03",
+    "sources": [
+      {
+        "path": "packages/plugin/src/index.ts",
+        "blob_sha": "edfa0139dfcaf0e877ab906fabe8e0527afc3915",
+        "url": "https://github.com/anomalyco/opencode/blob/810c0eba1a7348036f8bdf61e6632d0c36c6876c/packages/plugin/src/index.ts"
+      },
+      {
+        "path": "packages/opencode/src/config/plugin.ts",
+        "blob_sha": "60bba4d636343448aef14ec0f174e769b95b248f",
+        "url": "https://github.com/anomalyco/opencode/blob/810c0eba1a7348036f8bdf61e6632d0c36c6876c/packages/opencode/src/config/plugin.ts"
+      },
+      {
+        "path": "packages/opencode/src/session/tools.ts",
+        "blob_sha": "99f7aec4fdfdfc857702b50b0ca3ce7c8651af4c",
+        "url": "https://github.com/anomalyco/opencode/blob/810c0eba1a7348036f8bdf61e6632d0c36c6876c/packages/opencode/src/session/tools.ts"
+      },
+      {
+        "path": "packages/opencode/src/tool/shell.ts",
+        "blob_sha": "1e4423e017740617bc6e0df36ad9dcdb0197bccb",
+        "url": "https://github.com/anomalyco/opencode/blob/810c0eba1a7348036f8bdf61e6632d0c36c6876c/packages/opencode/src/tool/shell.ts"
+      },
+      {
+        "path": "packages/opencode/src/tool/shell/id.ts",
+        "blob_sha": "061253f8fb5562c2534c58dac42576365fc2d023",
+        "url": "https://github.com/anomalyco/opencode/blob/810c0eba1a7348036f8bdf61e6632d0c36c6876c/packages/opencode/src/tool/shell/id.ts"
+      },
+      {
+        "path": "packages/opencode/src/tool/truncate.ts",
+        "blob_sha": "0010636571ca043e69d3b7c73bda8243a2a828f4",
+        "url": "https://github.com/anomalyco/opencode/blob/810c0eba1a7348036f8bdf61e6632d0c36c6876c/packages/opencode/src/tool/truncate.ts"
+      }
+    ],
+    "archives": [
+      {
+        "name": "opencode-darwin-arm64.zip",
+        "url": "https://github.com/anomalyco/opencode/releases/download/v1.19.5/opencode-darwin-arm64.zip",
+        "sha256": "c1c9e62521192192ef4c3ed1355ada2144055bddb61682217e997b03c55203c1"
+      },
+      {
+        "name": "opencode-linux-x64.tar.gz",
+        "url": "https://github.com/anomalyco/opencode/releases/download/v1.19.5/opencode-linux-x64.tar.gz",
+        "sha256": "588310a336fa3b9df36b3f0225b26f679d453efaad0cf3d66c3651ef3ec1647a"
+      }
+    ]
+  },
+  "snippets": [
+    {
+      "path": "packages/opencode/src/config/plugin.ts",
+      "excerpts": [
+        {
+          "start_line": 18,
+          "end_line": 30,
+          "text": "export async function load(dir: string) {\n  const plugins: ConfigPluginV1.Spec[] = []\n\n  for (const item of await Glob.scan(\"{plugin,plugins}/*.{ts,js}\", {\n    cwd: dir,\n    absolute: true,\n    dot: true,\n    symlink: true,\n  })) {\n    plugins.push(pathToFileURL(item).href)\n  }\n  return plugins\n}"
+        }
+      ]
+    },
+    {
+      "path": "packages/opencode/src/session/tools.ts",
+      "excerpts": [
+        {
+          "start_line": 102,
+          "end_line": 130,
+          "text": "      execute(args, options) {\n        return run.promise(\n          Effect.gen(function* () {\n            const ctx = context(args, options)\n            yield* plugin.trigger(\n              \"tool.execute.before\",\n              { tool: item.id, sessionID: ctx.sessionID, callID: ctx.callID },\n              { args },\n            )\n            const result = yield* item.execute(args, ctx)\n            const output = {\n              ...result,\n              attachments: result.attachments?.map((attachment) => ({\n                ...attachment,\n                id: PartID.ascending(),\n                sessionID: ctx.sessionID,\n                messageID: input.processor.message.id,\n              })),\n            }\n            yield* plugin.trigger(\n              \"tool.execute.after\",\n              { tool: item.id, sessionID: ctx.sessionID, callID: ctx.callID, args },\n              output,\n            )\n            if (options.abortSignal?.aborted) {\n              yield* input.processor.completeToolCall(options.toolCallId, output)\n            }\n            return output\n          }),"
+        }
+      ]
+    },
+    {
+      "path": "packages/opencode/src/tool/shell.ts",
+      "excerpts": [
+        {
+          "start_line": 428,
+          "end_line": 440,
+          "text": "    const run = Effect.fn(\"ShellTool.run\")(function* (\n      input: {\n        shell: string\n        command: string\n        cwd: string\n        env: NodeJS.ProcessEnv\n        timeout: number\n      },\n      ctx: Tool.Context,\n    ) {\n      const limits = yield* trunc.limits()\n      const keep = limits.maxBytes * 2\n      let full = \"\""
+        },
+        {
+          "start_line": 481,
+          "end_line": 513,
+          "text": "      const code: number | null = yield* Effect.scoped(\n        Effect.gen(function* () {\n          yield* Effect.addFinalizer(closeSink)\n          const handle = yield* spawner.spawn(cmd(input.shell, input.command, input.cwd, input.env))\n\n          yield* Effect.forkScoped(\n            Stream.runForEach(Stream.decodeText(handle.all), (chunk) => {\n              const size = Buffer.byteLength(chunk, \"utf-8\")\n              list.push({ text: chunk, size })\n              used += size\n              while (used > keep && list.length > 1) {\n                const item = list.shift()\n                if (!item) break\n                used -= item.size\n                cut = true\n              }\n\n              last = preview(last + chunk)\n\n              if (file) {\n                sink?.write(chunk)\n              } else {\n                full += chunk\n                if (Buffer.byteLength(full, \"utf-8\") > limits.maxBytes) {\n                  return trunc.write(full).pipe(\n                    Effect.andThen((next) =>\n                      Effect.sync(() => {\n                        file = next\n                        cut = true\n                        sink = createWriteStream(next, { flags: \"a\" })\n                        full = \"\"\n                      }),\n                    ),"
+        },
+        {
+          "start_line": 561,
+          "end_line": 594,
+          "text": "      const meta: string[] = []\n      if (expired) {\n        meta.push(\n          `shell tool terminated command after exceeding timeout ${input.timeout} ms. If this command is expected to take longer and is not waiting for interactive input, retry with a larger timeout value in milliseconds.`,\n        )\n      }\n      if (aborted) meta.push(\"User aborted the command\")\n      const raw = list.map((item) => item.text).join(\"\")\n      const end = tail(raw, limits.maxLines, limits.maxBytes)\n      if (end.cut) cut = true\n      if (!file && end.cut) {\n        file = yield* trunc.write(raw)\n      }\n\n      let output = end.text\n      if (!output) output = \"(no output)\"\n\n      if (cut && file) {\n        output = `...output truncated...\\n\\nFull output saved to: ${file}\\n\\n` + output\n      }\n\n      if (meta.length > 0) {\n        output += \"\\n\\n<shell_metadata>\\n\" + meta.join(\"\\n\") + \"\\n</shell_metadata>\"\n      }\n      return {\n        title: input.command,\n        metadata: {\n          output: last || preview(output),\n          exit: code,\n          truncated: cut,\n          ...(cut && file ? { outputPath: file } : {}),\n        },\n        output,\n      }"
+        }
+      ]
+    },
+    {
+      "path": "packages/opencode/src/tool/shell/id.ts",
+      "excerpts": [
+        {
+          "start_line": 1,
+          "end_line": 20,
+          "text": "const kinds = [\"bash\", \"pwsh\", \"powershell\", \"cmd\"] as const\nexport type Kind = (typeof kinds)[number]\n\nconst shellKinds = new Set<string>(kinds)\n\nfunction isKind(value: string): value is Kind {\n  return shellKinds.has(value)\n}\n\nexport function toKind(value: string): Kind {\n  return isKind(value) ? value : \"bash\"\n}\n\n// Keep the exposed tool ID and permission key as \"bash\" for compatibility with\n// existing plugins, users, and saved permissions. Rename with opencode 2.0.\nexport const ToolID = \"bash\"\nexport type ToolID = typeof ToolID\n\nexport * as ShellID from \"./id\"\n"
+        }
+      ]
+    },
+    {
+      "path": "packages/opencode/src/tool/truncate.ts",
+      "excerpts": [
+        {
+          "start_line": 14,
+          "end_line": 24,
+          "text": "export const MAX_LINES = 2000\nexport const MAX_BYTES = 50 * 1024\nexport const DIR = TRUNCATION_DIR\nexport const GLOB = path.join(TRUNCATION_DIR, \"*\")\n\nexport type Result = { content: string; truncated: false } | { content: string; truncated: true; outputPath: string }\n\nexport interface Options {\n  maxLines?: number\n  maxBytes?: number\n  direction?: \"head\" | \"tail\""
+        },
+        {
+          "start_line": 75,
+          "end_line": 95,
+          "text": "    const limits = Effect.fn(\"Truncate.limits\")(function* () {\n      const configSvc = yield* Effect.serviceOption(Config.Service)\n      if (Option.isNone(configSvc)) return { maxLines: MAX_LINES, maxBytes: MAX_BYTES }\n      const cfg = yield* configSvc.value.get().pipe(Effect.catch(() => Effect.succeed(undefined)))\n      return {\n        maxLines: cfg?.tool_output?.max_lines ?? MAX_LINES,\n        maxBytes: cfg?.tool_output?.max_bytes ?? MAX_BYTES,\n      }\n    })\n\n    const output = Effect.fn(\"Truncate.output\")(function* (text: string, options: Options = {}, agent?: Agent.Info) {\n      const resolved = yield* limits()\n      const maxLines = options.maxLines ?? resolved.maxLines\n      const maxBytes = options.maxBytes ?? resolved.maxBytes\n      const direction = options.direction ?? \"head\"\n      const lines = text.split(\"\\n\")\n      const totalBytes = Buffer.byteLength(text, \"utf-8\")\n\n      if (lines.length <= maxLines && totalBytes <= maxBytes) {\n        return { content: text, truncated: false } as const\n      }"
+        }
+      ]
+    }
+  ]
+}

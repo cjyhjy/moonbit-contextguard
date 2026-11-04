@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.3.0-dev.1 — 未发布
+
+- 固定 OpenCode 1.19.5 的源码与官方二进制，修正项目插件自动发现入口为 `.js`。
+- 增加逐调用观测、跳过/回退/异常原因、原生失败事件、基线 observe 模式和有审计的 SHA 回查。
+- 增加隔离运行时验收、五类合成配对任务、外部验收、请求级用量去重与完整性检查。
+- 保留全部未触发任务；本地协议响应、用量和修复决策均明确标注 synthetic。
+- 增加真实 DeepSeek 请求采集、SSE 用量一致性检查、人民币/美元原币种预算预留和离线证据复核。
+- 完成五对真实模型先导，任务仍为受控合成故障/对照；原始 API 用量与费用估算分开记录。
+- 核心格式契约未扩展；真实项目效果、独立实付账单、远端 CI 和本版本发布未验证或执行。
+
 ## 0.2.0 — 2026-10-30
 
 - Support nested Node TAP suites and subtests with recursive identities, plans, parent statuses and test/suite totals.

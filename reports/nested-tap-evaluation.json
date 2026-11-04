@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-30T12:53:26.828Z",
-  "version": "0.2.0",
+  "generated_at": "2026-11-04T07:06:30.755Z",
+  "version": "0.3.0-dev.1",
   "node": "v26.7.0",
   "platform": "darwin",
   "arch": "arm64",
@@ -19,7 +19,7 @@
       "required_spans": 3,
       "retained_spans": 3,
       "net_stdout_reduction": 2845,
-      "median_api_ms": 0.21912499999999824
+      "median_api_ms": 0.23345799999999883
     },
     {
       "fixture": "parent",
@@ -31,7 +31,7 @@
       "required_spans": 5,
       "retained_spans": 5,
       "net_stdout_reduction": 94,
-      "median_api_ms": 0.09979200000000077
+      "median_api_ms": 0.09866699999999895
     },
     {
       "fixture": "all-pass",
@@ -43,7 +43,7 @@
       "required_spans": 2,
       "retained_spans": 2,
       "net_stdout_reduction": 4789,
-      "median_api_ms": 0.11179199999999412
+      "median_api_ms": 0.1173339999999996
     },
     {
       "fixture": "directives",
@@ -55,7 +55,7 @@
       "required_spans": 3,
       "retained_spans": 3,
       "net_stdout_reduction": 0,
-      "median_api_ms": 0.06912499999999966
+      "median_api_ms": 0.06991699999999668
     },
     {
       "fixture": "cancelled",
@@ -67,7 +67,7 @@
       "required_spans": 1,
       "retained_spans": 1,
       "net_stdout_reduction": 0,
-      "median_api_ms": 0.031125000000002956
+      "median_api_ms": 0.03458400000000239
     },
     {
       "fixture": "custom-log",
@@ -79,7 +79,7 @@
       "required_spans": 1,
       "retained_spans": 1,
       "net_stdout_reduction": 0,
-      "median_api_ms": 0.017125000000000057
+      "median_api_ms": 0.01658400000000171
     },
     {
       "fixture": "project-regression",
@@ -91,7 +91,7 @@
       "required_spans": 2,
       "retained_spans": 2,
       "net_stdout_reduction": 5883,
-      "median_api_ms": 0.10641599999999585
+      "median_api_ms": 0.10941700000000054
     }
   ],
   "all_required_spans_retained": true

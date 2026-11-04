@@ -1,13 +1,14 @@
 {
   "name": "contextguard-local",
-  "version": "0.2.0",
+  "version": "0.3.0-dev.1",
   "private": true,
   "type": "module",
   "description": "MoonBit tool-output evidence validation and repair",
   "scripts": {
     "build": "node tools/build.mjs",
     "test": "node --test tests/*.test.mjs",
-    "demo": "node demo/server.mjs"
+    "demo": "node demo/server.mjs",
+    "acceptance:local": "node evaluation/local-acceptance.mjs"
   },
   "engines": {
     "node": ">=22"

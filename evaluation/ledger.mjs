@@ -31,7 +31,7 @@ export function parseLedger(text) {
 }
 export function accountLedger(records) {
   check(Array.isArray(records) && records.length > 0, 'ledger', 'must contain records');
-  const offline = new Map(), runs = [], runIds = new Set(), pairs = new Map();
+  const offline = new Map(), runs = [], runIds = new Set(), pairs = new Map(), requestIds = new Set();
   records.forEach((record, index) => {
     const context = `record ${index + 1}`;
     check(record && typeof record === 'object' && !Array.isArray(record), context, 'must be an object');
@@ -59,6 +59,10 @@ export function accountLedger(records) {
     record.charges.forEach((charge, chargeIndex) => {
       check(charge && categories.includes(charge.category), context, `charge ${chargeIndex + 1}: invalid category`);
       validateCost(charge, record.evidence_kind, `${context} charge ${chargeIndex + 1}`);
+      if (charge.request_id !== undefined) {
+        check(nonempty(charge.request_id) && !requestIds.has(charge.request_id), context, 'request_id must be unique across all charges/runs');
+        requestIds.add(charge.request_id);
+      }
       check(!('amortization_runs' in charge), context, 'amortization is only declared on standalone offline_cost records');
     });
     check(Array.isArray(record.offline_optimization_ids) && record.offline_optimization_ids.every(nonempty), context, 'offline_optimization_ids array required');

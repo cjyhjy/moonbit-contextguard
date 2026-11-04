@@ -1,0 +1,344 @@
+{
+  "schema_version": 1,
+  "boundary": "This tool validates and totals submitted ledger data; it does not execute tasks, verify provider bills, estimate token counts, or establish causal quality/cost improvements.",
+  "online_model_evaluation": "not_run",
+  "real_cost_evaluation": "not_run",
+  "counts": {
+    "records": 10,
+    "pairs": 5,
+    "runs": 10,
+    "actual_online_runs": 0,
+    "synthetic_runs": 10,
+    "offline_replay_runs": 0
+  },
+  "offline_costs": [],
+  "runs": [
+    {
+      "run_id": "e3ac9a86-07b5-4035-9bfe-fe523226402f",
+      "pair_id": "7937f19b-a184-4327-b495-ca6daa713806-flat-failure-repeat-1",
+      "condition": "original",
+      "evidence_kind": "synthetic",
+      "status": "completed",
+      "task_success": true,
+      "duration_ms": 11482.480875,
+      "recorded_online_usage": {
+        "input_uncached_tokens": 550,
+        "input_cached_tokens": 50,
+        "output_tokens": 100
+      },
+      "cost_sources": [
+        "synthetic"
+      ],
+      "costs_usd": {
+        "primary": 0,
+        "summary": 0,
+        "retrieval": 0,
+        "retry": 0,
+        "offline_optimization": 0
+      },
+      "direct_cost_usd": 0,
+      "allocated_total_cost_usd": 0
+    },
+    {
+      "run_id": "80d9a602-c575-4919-ab66-e6e9610243b2",
+      "pair_id": "7937f19b-a184-4327-b495-ca6daa713806-flat-failure-repeat-1",
+      "condition": "guard",
+      "evidence_kind": "synthetic",
+      "status": "completed",
+      "task_success": true,
+      "duration_ms": 4047.837374999999,
+      "recorded_online_usage": {
+        "input_uncached_tokens": 660,
+        "input_cached_tokens": 60,
+        "output_tokens": 120
+      },
+      "cost_sources": [
+        "synthetic"
+      ],
+      "costs_usd": {
+        "primary": 0,
+        "summary": 0,
+        "retrieval": 0,
+        "retry": 0,
+        "offline_optimization": 0
+      },
+      "direct_cost_usd": 0,
+      "allocated_total_cost_usd": 0
+    },
+    {
+      "run_id": "933111b4-803e-47c2-aa08-52fd46d2441e",
+      "pair_id": "7937f19b-a184-4327-b495-ca6daa713806-nested-failure-repeat-1",
+      "condition": "guard",
+      "evidence_kind": "synthetic",
+      "status": "completed",
+      "task_success": true,
+      "duration_ms": 3973.207374999998,
+      "recorded_online_usage": {
+        "input_uncached_tokens": 660,
+        "input_cached_tokens": 60,
+        "output_tokens": 120
+      },
+      "cost_sources": [
+        "synthetic"
+      ],
+      "costs_usd": {
+        "primary": 0,
+        "summary": 0,
+        "retrieval": 0,
+        "retry": 0,
+        "offline_optimization": 0
+      },
+      "direct_cost_usd": 0,
+      "allocated_total_cost_usd": 0
+    },
+    {
+      "run_id": "998e0a58-8c36-4d2f-89f9-86d93326014e",
+      "pair_id": "7937f19b-a184-4327-b495-ca6daa713806-nested-failure-repeat-1",
+      "condition": "original",
+      "evidence_kind": "synthetic",
+      "status": "completed",
+      "task_success": true,
+      "duration_ms": 3750.7707500000033,
+      "recorded_online_usage": {
+        "input_uncached_tokens": 550,
+        "input_cached_tokens": 50,
+        "output_tokens": 100
+      },
+      "cost_sources": [
+        "synthetic"
+      ],
+      "costs_usd": {
+        "primary": 0,
+        "summary": 0,
+        "retrieval": 0,
+        "retry": 0,
+        "offline_optimization": 0
+      },
+      "direct_cost_usd": 0,
+      "allocated_total_cost_usd": 0
+    },
+    {
+      "run_id": "1140fa0d-cedc-4db3-9467-be2a2a7bf868",
+      "pair_id": "7937f19b-a184-4327-b495-ca6daa713806-rg-repair-repeat-1",
+      "condition": "original",
+      "evidence_kind": "synthetic",
+      "status": "completed",
+      "task_success": true,
+      "duration_ms": 3752.273541999999,
+      "recorded_online_usage": {
+        "input_uncached_tokens": 550,
+        "input_cached_tokens": 50,
+        "output_tokens": 100
+      },
+      "cost_sources": [
+        "synthetic"
+      ],
+      "costs_usd": {
+        "primary": 0,
+        "summary": 0,
+        "retrieval": 0,
+        "retry": 0,
+        "offline_optimization": 0
+      },
+      "direct_cost_usd": 0,
+      "allocated_total_cost_usd": 0
+    },
+    {
+      "run_id": "556d1fd9-d4b0-4f15-80ad-f0188483aa8c",
+      "pair_id": "7937f19b-a184-4327-b495-ca6daa713806-rg-repair-repeat-1",
+      "condition": "guard",
+      "evidence_kind": "synthetic",
+      "status": "completed",
+      "task_success": true,
+      "duration_ms": 3826.781500000001,
+      "recorded_online_usage": {
+        "input_uncached_tokens": 550,
+        "input_cached_tokens": 50,
+        "output_tokens": 100
+      },
+      "cost_sources": [
+        "synthetic"
+      ],
+      "costs_usd": {
+        "primary": 0,
+        "summary": 0,
+        "retrieval": 0,
+        "retry": 0,
+        "offline_optimization": 0
+      },
+      "direct_cost_usd": 0,
+      "allocated_total_cost_usd": 0
+    },
+    {
+      "run_id": "e87bd993-7216-494f-b526-0c7c0dabe20a",
+      "pair_id": "7937f19b-a184-4327-b495-ca6daa713806-unsupported-control-repeat-1",
+      "condition": "guard",
+      "evidence_kind": "synthetic",
+      "status": "completed",
+      "task_success": true,
+      "duration_ms": 3615.941749999998,
+      "recorded_online_usage": {
+        "input_uncached_tokens": 330,
+        "input_cached_tokens": 30,
+        "output_tokens": 60
+      },
+      "cost_sources": [
+        "synthetic"
+      ],
+      "costs_usd": {
+        "primary": 0,
+        "summary": 0,
+        "retrieval": 0,
+        "retry": 0,
+        "offline_optimization": 0
+      },
+      "direct_cost_usd": 0,
+      "allocated_total_cost_usd": 0
+    },
+    {
+      "run_id": "28d4e3eb-7424-455f-9aab-1fa48a9d073e",
+      "pair_id": "7937f19b-a184-4327-b495-ca6daa713806-unsupported-control-repeat-1",
+      "condition": "original",
+      "evidence_kind": "synthetic",
+      "status": "completed",
+      "task_success": true,
+      "duration_ms": 3683.460291999996,
+      "recorded_online_usage": {
+        "input_uncached_tokens": 330,
+        "input_cached_tokens": 30,
+        "output_tokens": 60
+      },
+      "cost_sources": [
+        "synthetic"
+      ],
+      "costs_usd": {
+        "primary": 0,
+        "summary": 0,
+        "retrieval": 0,
+        "retry": 0,
+        "offline_optimization": 0
+      },
+      "direct_cost_usd": 0,
+      "allocated_total_cost_usd": 0
+    },
+    {
+      "run_id": "6ce83df4-3581-4d83-912e-9f0b719d90bd",
+      "pair_id": "7937f19b-a184-4327-b495-ca6daa713806-short-control-repeat-1",
+      "condition": "original",
+      "evidence_kind": "synthetic",
+      "status": "completed",
+      "task_success": true,
+      "duration_ms": 3528.3159159999996,
+      "recorded_online_usage": {
+        "input_uncached_tokens": 330,
+        "input_cached_tokens": 30,
+        "output_tokens": 60
+      },
+      "cost_sources": [
+        "synthetic"
+      ],
+      "costs_usd": {
+        "primary": 0,
+        "summary": 0,
+        "retrieval": 0,
+        "retry": 0,
+        "offline_optimization": 0
+      },
+      "direct_cost_usd": 0,
+      "allocated_total_cost_usd": 0
+    },
+    {
+      "run_id": "43cf728f-0b5c-4adc-ae8c-d21afd0039aa",
+      "pair_id": "7937f19b-a184-4327-b495-ca6daa713806-short-control-repeat-1",
+      "condition": "guard",
+      "evidence_kind": "synthetic",
+      "status": "completed",
+      "task_success": true,
+      "duration_ms": 3635.013874999997,
+      "recorded_online_usage": {
+        "input_uncached_tokens": 330,
+        "input_cached_tokens": 30,
+        "output_tokens": 60
+      },
+      "cost_sources": [
+        "synthetic"
+      ],
+      "costs_usd": {
+        "primary": 0,
+        "summary": 0,
+        "retrieval": 0,
+        "retry": 0,
+        "offline_optimization": 0
+      },
+      "direct_cost_usd": 0,
+      "allocated_total_cost_usd": 0
+    }
+  ],
+  "pairs": [
+    {
+      "pair_id": "7937f19b-a184-4327-b495-ca6daa713806-flat-failure-repeat-1",
+      "evidence_kind": "synthetic",
+      "task_id": "flat-failure",
+      "original_run_id": "e3ac9a86-07b5-4035-9bfe-fe523226402f",
+      "guard_run_id": "80d9a602-c575-4919-ab66-e6e9610243b2",
+      "original_allocated_cost_usd": 0,
+      "guard_allocated_cost_usd": 0,
+      "guard_minus_original_cost_usd": 0,
+      "original_task_success": true,
+      "guard_task_success": true,
+      "task_success_comparison": "same_recorded_outcome"
+    },
+    {
+      "pair_id": "7937f19b-a184-4327-b495-ca6daa713806-nested-failure-repeat-1",
+      "evidence_kind": "synthetic",
+      "task_id": "nested-failure",
+      "original_run_id": "998e0a58-8c36-4d2f-89f9-86d93326014e",
+      "guard_run_id": "933111b4-803e-47c2-aa08-52fd46d2441e",
+      "original_allocated_cost_usd": 0,
+      "guard_allocated_cost_usd": 0,
+      "guard_minus_original_cost_usd": 0,
+      "original_task_success": true,
+      "guard_task_success": true,
+      "task_success_comparison": "same_recorded_outcome"
+    },
+    {
+      "pair_id": "7937f19b-a184-4327-b495-ca6daa713806-rg-repair-repeat-1",
+      "evidence_kind": "synthetic",
+      "task_id": "rg-repair",
+      "original_run_id": "1140fa0d-cedc-4db3-9467-be2a2a7bf868",
+      "guard_run_id": "556d1fd9-d4b0-4f15-80ad-f0188483aa8c",
+      "original_allocated_cost_usd": 0,
+      "guard_allocated_cost_usd": 0,
+      "guard_minus_original_cost_usd": 0,
+      "original_task_success": true,
+      "guard_task_success": true,
+      "task_success_comparison": "same_recorded_outcome"
+    },
+    {
+      "pair_id": "7937f19b-a184-4327-b495-ca6daa713806-unsupported-control-repeat-1",
+      "evidence_kind": "synthetic",
+      "task_id": "unsupported-control",
+      "original_run_id": "28d4e3eb-7424-455f-9aab-1fa48a9d073e",
+      "guard_run_id": "e87bd993-7216-494f-b526-0c7c0dabe20a",
+      "original_allocated_cost_usd": 0,
+      "guard_allocated_cost_usd": 0,
+      "guard_minus_original_cost_usd": 0,
+      "original_task_success": true,
+      "guard_task_success": true,
+      "task_success_comparison": "same_recorded_outcome"
+    },
+    {
+      "pair_id": "7937f19b-a184-4327-b495-ca6daa713806-short-control-repeat-1",
+      "evidence_kind": "synthetic",
+      "task_id": "short-control",
+      "original_run_id": "6ce83df4-3581-4d83-912e-9f0b719d90bd",
+      "guard_run_id": "43cf728f-0b5c-4adc-ae8c-d21afd0039aa",
+      "original_allocated_cost_usd": 0,
+      "guard_allocated_cost_usd": 0,
+      "guard_minus_original_cost_usd": 0,
+      "original_task_success": true,
+      "guard_task_success": true,
+      "task_success_comparison": "same_recorded_outcome"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
-# ContextGuard 0.2.0 交付
+# ContextGuard 0.3.0-dev.1 本地开发交付
 
-本版本根据 2026-10-30 提供的比赛验收要求补齐工具链和 Mooncakes 库交付。逐项证据见 [ACCEPTANCE.md](ACCEPTANCE.md)，真实开发历史见 [docs/HISTORY.md](docs/HISTORY.md)。旧版本记录保留在 Git 历史及 `reports/history/` 中。
+本工作区在已发布 0.2.0 基础上补齐 OpenCode 接入、调用观测和实验准备，尚未发布。执行计划见 [docs/INTEGRATION_PLAN.md](docs/INTEGRATION_PLAN.md)，本地运行时验收见 `reports/integration-local.json`。历史比赛验收见 [ACCEPTANCE.md](ACCEPTANCE.md)；0.2.0 发布收据保持历史状态，不作为本开发版发布证明。
 
 ## 可复现流程
 
@@ -23,8 +23,8 @@ node demo/server.mjs
 ## 分发内容
 
 - Mooncakes：`cjyhjy/contextguard@0.2.0`，根包 API `guard_request(String) -> String`。包含核心源码、测试、最小示例、README 和许可。
-- GitHub：完整 MoonBit 核心、Node CLI、实际进程包装器、离线 OpenCode 适配器、本地演示、真实进程夹具与评测工具。
-- 便携 ZIP：`release/contextguard-0.2.0.zip` 和 `.sha256`，由通过当前输入验证的冻结快照生成，在新解包目录复验；哈希见 `reports/package-verification.json`。
+- 当前源码：完整 MoonBit 核心、Node CLI、进程包装器、OpenCode 1.19.5 适配器、调用观测、合成实验运行器和本地演示；提交/推送状态另行记录。
+- 开发版便携 ZIP：`release/contextguard-0.3.0-dev.1.zip` 和 `.sha256`，由通过当前输入验证的冻结快照生成，在新解包目录复验；哈希见 `reports/package-verification.json`。它不是已发布 0.2.0 的资产。
 
 Mooncakes 实际发布、外部重新下载导入和对应 CI 的状态以 `reports/publication-0.2.0.json` 为准。CI 完整报告在对应 Actions artifact 内；不能用旧提交的绿灯替代新提交验证。
 
@@ -32,4 +32,4 @@ Mooncakes 实际发布、外部重新下载导入和对应 CI 的状态以 `repo
 
 只支持明确约定的 Node 平面与嵌套 TAP 与 rg JSONL。压缩输出是带原始行索引的证据摘录，不能当作完整 TAP/rg 事件流再次解析。截断、未知格式、证据篡改或预算不足时返回原文。进程包装器保留双流、退出码、范围和 SHA-256 回查；失败示例预期返回 1，超时 124，采集超限/保存失败 125。
 
-夹具工作负载是合成的，stdout/stderr 来自真实本地进程。RTK 可选二进制不随包分发，缺失时明确标记 unrun；HarnessPro 是实际离线对照。未验证在线模型 token、账单、任务成功率或完整 Agent 会话，未修改全局 Agent 配置或提交参赛表单。
+夹具工作负载是合成的，stdout/stderr 来自真实本地进程。RTK 可选二进制不随包分发，缺失时明确标记 unrun；HarnessPro 是实际离线对照。真实 OpenCode 会话通过本地脚本化协议服务验收，模型响应、用量和修复步骤是 synthetic。在线模型 token、账单、自主任务成功率尚未验证。OpenCode 官方二进制缓存、实验工作区与原始日志均不随包分发。真实模型、全局配置、推送、发布和参赛提交不由本轮脚本自动执行。

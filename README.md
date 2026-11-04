@@ -2,7 +2,7 @@
 
 用 MoonBit 校验工具输出压缩后的必要证据。适用于明确约定的 **Node 平面与嵌套 TAP** 和 **ripgrep JSONL**：检查候选正文，补回缺失的完整证据单元；发现篡改、未知格式、原始截断或预算不足时保留原文。
 
-当前版本 **0.2.0**。核心支持 JS、native、wasm-gc，固定 `moonc 0.10.18+6c83a7f62`，满足比赛不低于 0.10.16 的要求。公开仓库：[cjyhjy/moonbit-contextguard](https://github.com/cjyhjy/moonbit-contextguard)；逐条验收见 [ACCEPTANCE.md](ACCEPTANCE.md)，发布核验见 [reports/publication-0.2.0.json](reports/publication-0.2.0.json)。
+当前工作区是 **0.3.0-dev.1，未发布**，增加 OpenCode 1.19.5 接入、调用观测和真实模型先导实验。已发布版本仍为 **0.2.0**。核心支持 JS、native、wasm-gc，固定 `moonc 0.10.18+6c83a7f62`。公开仓库：[cjyhjy/moonbit-contextguard](https://github.com/cjyhjy/moonbit-contextguard)；历史发布核验见 [reports/publication-0.2.0.json](reports/publication-0.2.0.json)，本轮计划与状态见 [docs/INTEGRATION_PLAN.md](docs/INTEGRATION_PLAN.md)。
 
 它验证限定格式的证据保留，不承诺任意语义无损、模型 token 减少、净费用降低或在线任务成功率提升。
 
@@ -85,7 +85,9 @@ python3 -B tools/package.py
 - [API 与支持边界](docs/API.md)：严格提取式契约、错误状态、预算单位。
 - [架构与信任边界](docs/ARCHITECTURE.md)：候选正文如何独立验证。
 - [比较说明](docs/COMPARISON.md)、[独立评测](docs/EVALUATION.md)、[评测结果](reports/evaluation.md)。
-- [可选 OpenCode 适配](docs/ADAPTER.md)：固定 v1.2.0，仅离线协议验收，不改全局配置。
+- [可选 OpenCode 适配](docs/ADAPTER.md)：固定 v1.19.5，项目级 `.js` 入口、调用日志、SHA 回查；真实运行时采用本地脚本化协议服务验收，不代表真实模型效果。
+- [实验准备](docs/EXPERIMENTS.md)：五类合成先导任务、配对工作目录、独立验收和请求级用量导入。
+- [真实模型先导](docs/ONLINE_PILOT.md)、[本次结果](reports/online-pilot-result.txt)：官方 DeepSeek 的五对受控合成任务、完整请求采集和原币种预算；小样本与估算费用的边界单列。
 - [AI 协作与来源](docs/AI_USAGE.md)、[许可](THIRD_PARTY_NOTICES.md)。
 - [交付与准确复现命令](DELIVERY.md)、[机器验收结果](reports/verification.json)。
 

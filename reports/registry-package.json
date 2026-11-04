@@ -5,7 +5,7 @@
     {
       "id": "moon-package",
       "exit_code": 0,
-      "output": "Running moon check ...\nFinished. moon: no work to do\nCheck passed\nPackage to <PROJECT_ROOT>/_build/publish/cjyhjy-contextguard-0.2.0.zip\n"
+      "output": "Running moon check ...\nFinished. moon: no work to do\nCheck passed\nPackage to <PROJECT_ROOT>/_build/publish/cjyhjy-contextguard-0.3.0-dev.1.zip\n"
     },
     {
       "id": "consumer-check-js",
@@ -55,7 +55,7 @@
   ],
   "scope": "Offline archive/external consumer validation; not a registry publication receipt.",
   "module": "cjyhjy/contextguard",
-  "version": "0.2.0",
+  "version": "0.3.0-dev.1",
   "files": [
     "LICENSE",
     "README.mbt.md",
@@ -80,6 +80,6 @@
     "src/types.mbt",
     "src/validator.mbt"
   ],
-  "archive_sha256": "6dd23182769fdb39e2744732e9a3cfe8e8aa06baedcde2b90587716866e50d36",
-  "archive_bytes": 21131
+  "archive_sha256": "1ac2aa0ab320d13414af37c19f6a7f876fa9ead721c4bfbd92a7cdb1c1635c64",
+  "archive_bytes": 21172
 }

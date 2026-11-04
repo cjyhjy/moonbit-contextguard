@@ -8,7 +8,7 @@ ContextGuard 新写的源码、测试、文档和合成夹具使用根目录 MIT
 | HarnessPro / RHO hook | 未修改的固定 TB2 Lite hook 用于真实外部对照；MIT、RHO MIT | `vendor/harnesspro/` 的 LICENSE、RHO-MIT、上游 THIRD-PARTY-NOTICES；SHA 见 `research/peers-lock.json` |
 | RTK OSS v1.0.1 | 实际对照用 macOS arm64 可执行文件，Apache-2.0；**可执行文件不放入便携 ZIP** | `vendor/rtk-oss-v1.0.1-darwin-arm64/LICENSE`；显式可选下载脚本、固定 archive/binary 哈希。当前完整 RTK engine/proxy 的 BUSL-1.1 不冒称为 Apache |
 | Headroom | 固定原始源码用于只读功能比较；Apache-2.0 + NOTICE | `research/sources/` 与 `source-index.json`，未合并其算法或安装依赖 |
-| OpenCode v1.2.0 | 固定上游协议类型与调用片段用于可选适配的离线验收；MIT | `adapters/vendor/` 和适配文档中的 commit/blob 校验（详见实际目录） |
+| OpenCode v1.2.0 / v1.19.5 | 历史协议重放与当前运行时接入的固定类型/调用片段；MIT。官方 CLI 仅下载至排除分发的缓存 | `adapters/vendor/` 的 LICENSE、固定类型/片段与 `adapters/opencode-pin.json` 的 commit/blob/归档 SHA |
 | posoco/ext-llm 0.2.0 | Mooncakes manifest/源码查重；包声明 Apache-2.0，下载包未附独立 LICENSE，此缺口已记录 | `research/peers-lock.json`、`source-index.json`；不合入核心 |
 | Across2005/harness-self-evolution 0.3.8 | Mooncakes/GitHub 固定源码查重；MIT | `research/sources/` 及上游 LICENSE；不合入核心 |
 

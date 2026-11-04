@@ -34,7 +34,7 @@ const output = (overrides = {}) => ({ title: 'Synthetic failure', output: raw, m
 test('vendored official type source matches Git blob SHA and mutable hook signature', () => {
   const blob = createHash('sha1').update(`blob ${Buffer.byteLength(source)}\0`).update(source).digest('hex');
   assert.equal(blob, contract.pin.sources[0].blob_sha);
-  assert.equal(contract.pin.commit, OPENCODE_PIN.commit);
+  assert.equal(contract.pin.version, '1.2.0'); // Historical trigger replay remains a compatibility regression.
   assert.match(source, /"tool.execute.after"\?: \([\s\S]*?args: any[\s\S]*?output: string[\s\S]*?metadata: any/u);
   assert.match(contract.callsite, /await Plugin.trigger\([\s\S]*?"tool.execute.after"[\s\S]*?result,[\s\S]*?return result/u);
   assert.match(contract.bash_result, /exit: proc.exitCode/u);
@@ -87,7 +87,7 @@ test('missing exit code, missing truncation, unsupported tool, wrong command and
     [output(), { ...input, args: { command, workdir: '/another/project' } }],
   ];
   for (const [value, event] of variants) { const before = structuredClone(value); await invoke(value, event); assert.deepEqual(value, before); }
-  assert.deepEqual(await readdir(directory), []);
+  assert.deepEqual(await readdir(join(directory, 'evidence')), ['events.jsonl']);
 });
 
 test('upstream truncated and mixed unsupported output stay exactly original with audit sidecars', async (t) => {
@@ -145,5 +145,15 @@ test('format inference does not accept shell composition or implicit default rep
 test('default factory does not activate any command', async (t) => {
   const { invoke, directory } = await setup(t, { allowCommands: [] });
   const value = output(); await invoke(value); assert.equal(value.output, raw);
-  assert.deepEqual(await readdir(directory), []);
+  assert.deepEqual(await readdir(join(directory, 'evidence')), ['events.jsonl']);
+});
+
+test('current official type snapshot and loader contract are pinned independently of legacy replay', async () => {
+  const pin = JSON.parse(await readFile(new URL('../adapters/opencode-pin.json', import.meta.url), 'utf8'));
+  const types = await readFile(new URL('../adapters/vendor/opencode-1.19.5-plugin-index.ts', import.meta.url), 'utf8');
+  assert.equal(pin.commit, OPENCODE_PIN.commit);
+  assert.equal(createHash('sha1').update(`blob ${Buffer.byteLength(types)}\0`).update(types).digest('hex'), pin.sources[0].blob_sha);
+  assert.match(types, /"tool.execute.after"\?: \([\s\S]*?args: any[\s\S]*?output: string[\s\S]*?metadata: any/u);
+  const contract = JSON.parse(await readFile(new URL('../adapters/vendor/opencode-1.19.5-contract.json', import.meta.url), 'utf8'));
+  assert(contract.snippets[0].excerpts[0].text.includes('{plugin,plugins}/*.{ts,js}'));
 });

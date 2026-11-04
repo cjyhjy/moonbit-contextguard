@@ -1,38 +1,50 @@
 {
-  "version": "1.2.0",
-  "commit": "ffc000de8e446c63d41a2e352d119d9ff43530d0",
+  "version": "1.19.5",
+  "commit": "810c0eba1a7348036f8bdf61e6632d0c36c6876c",
   "repository": "https://github.com/anomalyco/opencode",
-  "verified_on": "2026-10-22",
+  "verified_on": "2026-11-03",
   "sources": [
     {
       "path": "packages/plugin/src/index.ts",
-      "blob_sha": "bd4ba530498d5af7dfa12b6cda885e8dbdafde53",
-      "url": "https://github.com/anomalyco/opencode/blob/ffc000de8e446c63d41a2e352d119d9ff43530d0/packages/plugin/src/index.ts"
+      "blob_sha": "edfa0139dfcaf0e877ab906fabe8e0527afc3915",
+      "url": "https://github.com/anomalyco/opencode/blob/810c0eba1a7348036f8bdf61e6632d0c36c6876c/packages/plugin/src/index.ts"
     },
     {
-      "path": "packages/plugin/package.json",
-      "blob_sha": "7fd11531b7e396a4ac64f81d8bbae71555c41674",
-      "url": "https://github.com/anomalyco/opencode/blob/ffc000de8e446c63d41a2e352d119d9ff43530d0/packages/plugin/package.json"
+      "path": "packages/opencode/src/config/plugin.ts",
+      "blob_sha": "60bba4d636343448aef14ec0f174e769b95b248f",
+      "url": "https://github.com/anomalyco/opencode/blob/810c0eba1a7348036f8bdf61e6632d0c36c6876c/packages/opencode/src/config/plugin.ts"
     },
     {
-      "path": "packages/opencode/src/session/prompt.ts",
-      "blob_sha": "f705f209aa9a2e11052209aac7dcf23b0a4a6079",
-      "url": "https://github.com/anomalyco/opencode/blob/ffc000de8e446c63d41a2e352d119d9ff43530d0/packages/opencode/src/session/prompt.ts"
+      "path": "packages/opencode/src/session/tools.ts",
+      "blob_sha": "99f7aec4fdfdfc857702b50b0ca3ce7c8651af4c",
+      "url": "https://github.com/anomalyco/opencode/blob/810c0eba1a7348036f8bdf61e6632d0c36c6876c/packages/opencode/src/session/tools.ts"
     },
     {
-      "path": "packages/opencode/src/tool/bash.ts",
-      "blob_sha": "67559b78c08516215753f24a38bd068a2ee2fd67",
-      "url": "https://github.com/anomalyco/opencode/blob/ffc000de8e446c63d41a2e352d119d9ff43530d0/packages/opencode/src/tool/bash.ts"
+      "path": "packages/opencode/src/tool/shell.ts",
+      "blob_sha": "1e4423e017740617bc6e0df36ad9dcdb0197bccb",
+      "url": "https://github.com/anomalyco/opencode/blob/810c0eba1a7348036f8bdf61e6632d0c36c6876c/packages/opencode/src/tool/shell.ts"
     },
     {
-      "path": "packages/opencode/src/plugin/index.ts",
-      "blob_sha": "24dc695d6350d59104496050543d97d368d1cdd4",
-      "url": "https://github.com/anomalyco/opencode/blob/ffc000de8e446c63d41a2e352d119d9ff43530d0/packages/opencode/src/plugin/index.ts"
+      "path": "packages/opencode/src/tool/shell/id.ts",
+      "blob_sha": "061253f8fb5562c2534c58dac42576365fc2d023",
+      "url": "https://github.com/anomalyco/opencode/blob/810c0eba1a7348036f8bdf61e6632d0c36c6876c/packages/opencode/src/tool/shell/id.ts"
     },
     {
-      "path": "packages/opencode/src/tool/tool.ts",
-      "blob_sha": "3d17ea192d32a71272ecda2d953619c76688ff8b",
-      "url": "https://github.com/anomalyco/opencode/blob/ffc000de8e446c63d41a2e352d119d9ff43530d0/packages/opencode/src/tool/tool.ts"
+      "path": "packages/opencode/src/tool/truncate.ts",
+      "blob_sha": "0010636571ca043e69d3b7c73bda8243a2a828f4",
+      "url": "https://github.com/anomalyco/opencode/blob/810c0eba1a7348036f8bdf61e6632d0c36c6876c/packages/opencode/src/tool/truncate.ts"
+    }
+  ],
+  "archives": [
+    {
+      "name": "opencode-darwin-arm64.zip",
+      "url": "https://github.com/anomalyco/opencode/releases/download/v1.19.5/opencode-darwin-arm64.zip",
+      "sha256": "c1c9e62521192192ef4c3ed1355ada2144055bddb61682217e997b03c55203c1"
+    },
+    {
+      "name": "opencode-linux-x64.tar.gz",
+      "url": "https://github.com/anomalyco/opencode/releases/download/v1.19.5/opencode-linux-x64.tar.gz",
+      "sha256": "588310a336fa3b9df36b3f0225b26f679d453efaad0cf3d66c3651ef3ec1647a"
     }
   ]
 }

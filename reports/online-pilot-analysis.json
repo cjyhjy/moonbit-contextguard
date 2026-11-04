@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "generated_at": "2026-11-04T06:58:51.139Z",
+  "experiment_id": "c2182aa0-6468-483a-8b5b-5964140fee46",
+  "source_sha256": "d96ded0f85c809202d1098c11ee13daa1597e40782a500d275cf40bf4d07a5ae",
+  "requests_reconciled": 53,
+  "tool_calls_reconciled": 32,
+  "provider_fingerprints": [
+    "bc19ba97cbe016479903222bb1578db6"
+  ],
+  "currency": "CNY",
+  "original": {
+    "runs": 5,
+    "successes": 5,
+    "requests": 24,
+    "input_tokens": 158799,
+    "uncached_input_tokens": 42703,
+    "cached_input_tokens": 116096,
+    "output_tokens": 1478,
+    "peak_rate_estimated_cost": 0.10187384000000001,
+    "duration_ms": 54204.93354199999,
+    "tool_calls": 16,
+    "eligible": 7,
+    "applied": 0,
+    "fallback": 0,
+    "recalls": 0,
+    "retries": 0,
+    "tool_char_input": 58400,
+    "tool_char_visible": 58400,
+    "tool_char_reduction": 0
+  },
+  "guard": {
+    "runs": 5,
+    "successes": 5,
+    "requests": 24,
+    "input_tokens": 137090,
+    "uncached_input_tokens": 31490,
+    "cached_input_tokens": 105600,
+    "output_tokens": 1447,
+    "peak_rate_estimated_cost": 0.07878,
+    "duration_ms": 53487.300957,
+    "tool_calls": 16,
+    "eligible": 7,
+    "applied": 4,
+    "fallback": 2,
+    "recalls": 0,
+    "retries": 0,
+    "tool_char_input": 58377,
+    "tool_char_visible": 37174,
+    "tool_char_reduction": 21203
+  },
+  "descriptive_changes": {
+    "input_token_reduction_fraction": 0.1367074099962846,
+    "peak_rate_cost_reduction_fraction": 0.22669058121299837,
+    "triggered_tasks": 2,
+    "total_tasks": 5,
+    "triggered_subset_input_token_reduction_fraction": 0.24354371872826405
+  },
+  "all_requests": {
+    "currency": "CNY",
+    "requests": 53,
+    "usage": {
+      "input_uncached_tokens": 78788,
+      "input_cached_tokens": 229248,
+      "output_tokens": 3185,
+      "reasoning_tokens": 0
+    },
+    "peak_rate_estimated_cost": 0.19222592,
+    "cost_source": "rate_card_estimate",
+    "rate_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/"
+  },
+  "budget": {
+    "currency": "CNY",
+    "cost_source": "rate_card_estimate",
+    "rate_basis": "official_peak_rate_estimate",
+    "total_limit": 11.06,
+    "settled_cost": 0.19222592,
+    "reserved_or_uncertain_cost": 0,
+    "requests": 53,
+    "settled_requests": 53,
+    "halted": null
+  },
+  "balance_observation": {
+    "currency": "CNY",
+    "account_balance_decrease": 0,
+    "independently_attributed_to_this_experiment": false,
+    "reason": "Other account activity and billing settlement timing were not independently excluded."
+  },
+  "limitations": [
+    "Five controlled synthetic tasks, one pair each; not a real-project benchmark.",
+    "Shared provider caching, order and stochastic outputs can affect price differences, including uncompressed controls.",
+    "No spontaneous recall occurred; the separately prompted recall probe passed.",
+    "No independently attributed billed amount; account balance did not change at the immediate check.",
+    "Tool-output tokenizer is not validated; tool characters are not billed tokens.",
+    "The model alias and backend fingerprint were recorded; weights are not an immutable local snapshot."
+  ]
+}

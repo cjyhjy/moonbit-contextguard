@@ -1,0 +1,1376 @@
+{
+  "schema_version": 1,
+  "experiment_id": "c2182aa0-6468-483a-8b5b-5964140fee46",
+  "status": "completed",
+  "evidence_kind": "measured_online",
+  "task_source": "synthetic_fault_and_control",
+  "started_at": "2026-11-04T06:51:53.450Z",
+  "user_timezone": "America/Los_Angeles",
+  "artifacts_directory": "/Users/cjy/Documents/ChatGPT/黑客松新项目/repositories/moonbit-contextguard/.contextguard/online/pilot-wH1boE",
+  "integration_inputs_sha256": "d96ded0f85c809202d1098c11ee13daa1597e40782a500d275cf40bf4d07a5ae",
+  "runtime": {
+    "version": "1.19.5",
+    "commit": "810c0eba1a7348036f8bdf61e6632d0c36c6876c",
+    "binary_sha256": "feaafead8cd563af0c2dcb386b0757e4355e327ebb6bd1aaad5440fe2f83596c",
+    "archive_sha256": "c1c9e62521192192ef4c3ed1355ada2144055bddb61682217e997b03c55203c1",
+    "platform": "darwin",
+    "arch": "arm64"
+  },
+  "model": {
+    "provider": "DeepSeek official",
+    "request_model": "deepseek-flash",
+    "published_version": "DeepSeek-V4.1-Flash-1017",
+    "thinking": "disabled",
+    "temperature": 0.2,
+    "max_output_tokens": 4096,
+    "auxiliary_model": "deepseek-flash"
+  },
+  "budget": {
+    "currency": "CNY",
+    "cost_source": "rate_card_estimate",
+    "rate_basis": "official_peak_rate_estimate",
+    "total_limit": 11.06,
+    "settled_cost": 0.19222592,
+    "reserved_or_uncertain_cost": 0,
+    "requests": 53,
+    "settled_requests": 53,
+    "halted": null
+  },
+  "rate_card": {
+    "checked_date": "2026-11-03",
+    "model": "deepseek-flash",
+    "published_version": "DeepSeek-V4.1-Flash-1017",
+    "basis": "official_peak_rate_estimate",
+    "context_limit": 1048576,
+    "max_output_tokens": 4096,
+    "CNY": {
+      "input": 2,
+      "cached": 0.04,
+      "output": 8,
+      "source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/"
+    },
+    "USD": {
+      "input": 0.3,
+      "cached": 0.006,
+      "output": 1.2,
+      "source": "https://api-docs.deepseek.com/quick_start/pricing/"
+    }
+  },
+  "results": [
+    {
+      "run_id": "89dbd122-e6a5-478d-8c01-27f25ad5a66d",
+      "pair_id": "2ec5e894-a500-47d2-bc65-5f6fd57087f7-flat-failure-repeat-1",
+      "task_id": "flat-failure",
+      "condition": "original",
+      "input_sha256": "2be4739c08d49facc9ceab4c6abb1c1368bae3d696fe38ed68a70e5c4711cbd0",
+      "status": "completed",
+      "grade": {
+        "passed": true,
+        "reason": "independent_assertions_passed",
+        "exit_code": 0,
+        "error": null
+      },
+      "protocol": {
+        "requested_command_executions": 2,
+        "exit_codes": [
+          1,
+          0
+        ],
+        "passed": true
+      },
+      "task_success": true,
+      "duration_ms": 13101.525875,
+      "accounting": {
+        "currency": "CNY",
+        "requests": 6,
+        "usage": {
+          "input_uncached_tokens": 12318,
+          "input_cached_tokens": 31616,
+          "output_tokens": 447,
+          "reasoning_tokens": 0
+        },
+        "peak_rate_estimated_cost": 0.02947664,
+        "cost_source": "rate_card_estimate",
+        "rate_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/"
+      },
+      "fingerprints": [
+        "bc19ba97cbe016479903222bb1578db6"
+      ],
+      "request_count": 6,
+      "auxiliary_requests": 1,
+      "counts": {
+        "total_calls": 5,
+        "started": 5,
+        "after_hook": 5,
+        "contract_eligible": 2,
+        "applied": 0,
+        "fallback": 0,
+        "skip": 3,
+        "error": 0,
+        "observed": 2,
+        "runtime_failed": 0,
+        "unfinished": 0,
+        "missing_start": 0,
+        "delivery_mismatch": 0,
+        "recalls": 0,
+        "recall_failures": 0,
+        "recall_tool_attempts": 0,
+        "recall_tool_failures": 0,
+        "retries": 0
+      },
+      "reasons": {
+        "baseline_observation": 2,
+        "unsupported_tool": 3
+      },
+      "chars": {
+        "unit": "utf16_code_units",
+        "hook_input": 14963,
+        "hook_visible": 14963,
+        "net_reduction": 0
+      },
+      "tool_output_tokens": null,
+      "tool_tokenizer": null,
+      "delivery": [
+        {
+          "call_id": "call_00_msN5M9vV4VTx36TaWWD97295",
+          "outcome": "observed",
+          "received_by_provider": true,
+          "sha_matched": true
+        },
+        {
+          "call_id": "call_00_HWfdvW65iq4aq1ckuTUa2213",
+          "outcome": "skip",
+          "received_by_provider": true,
+          "sha_matched": true
+        },
+        {
+          "call_id": "call_01_mIDVn4VW4xjQVjQaiSEO9193",
+          "outcome": "skip",
+          "received_by_provider": true,
+          "sha_matched": true
+        },
+        {
+          "call_id": "call_00_29jfHv4KVmREH05CgfLG0730",
+          "outcome": "skip",
+          "received_by_provider": true,
+          "sha_matched": true
+        },
+        {
+          "call_id": "call_00_Xxl30AcYrO2OccxmXpM29305",
+          "outcome": "observed",
+          "received_by_provider": true,
+          "sha_matched": true
+        }
+      ],
+      "issues": [],
+      "exit_code": 0,
+      "initial_diagnostic_exit": 1
+    },
+    {
+      "run_id": "8fcfe8a7-00da-460f-a781-0d24577a33b3",
+      "pair_id": "2ec5e894-a500-47d2-bc65-5f6fd57087f7-flat-failure-repeat-1",
+      "task_id": "flat-failure",
+      "condition": "guard",
+      "input_sha256": "2be4739c08d49facc9ceab4c6abb1c1368bae3d696fe38ed68a70e5c4711cbd0",
+      "status": "completed",
+      "grade": {
+        "passed": true,
+        "reason": "independent_assertions_passed",
+        "exit_code": 0,
+        "error": null
+      },
+      "protocol": {
+        "requested_command_executions": 2,
+        "exit_codes": [
+          1,
+          0
+        ],
+        "passed": true
+      },
+      "task_success": true,
+      "duration_ms": 12936.777290999999,
+      "accounting": {
+        "currency": "CNY",
+        "requests": 6,
+        "usage": {
+          "input_uncached_tokens": 5708,
+          "input_cached_tokens": 27392,
+          "output_tokens": 446,
+          "reasoning_tokens": 0
+        },
+        "peak_rate_estimated_cost": 0.01607968,
+        "cost_source": "rate_card_estimate",
+        "rate_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/"
+      },
+      "fingerprints": [
+        "bc19ba97cbe016479903222bb1578db6"
+      ],
+      "request_count": 6,
+      "auxiliary_requests": 1,
+      "counts": {
+        "total_calls": 5,
+        "started": 5,
+        "after_hook": 5,
+        "contract_eligible": 2,
+        "applied": 2,
+        "fallback": 0,
+        "skip": 3,
+        "error": 0,
+        "observed": 0,
+        "runtime_failed": 0,
+        "unfinished": 0,
+        "missing_start": 0,
+        "delivery_mismatch": 0,
+        "recalls": 0,
+        "recall_failures": 0,
+        "recall_tool_attempts": 0,
+        "recall_tool_failures": 0,
+        "retries": 0
+      },
+      "reasons": {
+        "required_source_units_verified": 2,
+        "unsupported_tool": 3
+      },
+      "chars": {
+        "unit": "utf16_code_units",
+        "hook_input": 14959,
+        "hook_visible": 4480,
+        "net_reduction": 10479
+      },
+      "tool_output_tokens": null,
+      "tool_tokenizer": null,
+      "delivery": [
+        {
+          "call_id": "call_00_PwVEfjL9QMJgh9i0ankr4982",
+          "outcome": "applied",
+          "received_by_provider": true,
+          "sha_matched": true
+        },
+        {
+          "call_id": "call_00_WywOv0hjbOPvX5iPTAX27039",
+          "outcome": "skip",
+          "received_by_provider": true,
+          "sha_matched": true
+        },
+        {
+          "call_id": "call_01_azEWllAtmdbVPJfJWKOo5287",
+          "outcome": "skip",
+          "received_by_provider": true,
+          "sha_matched": true
+        },
+        {
+          "call_id": "call_00_FBqT5pNFmE2tUGbMc3q91305",
+          "outcome": "skip",
+          "received_by_provider": true,
+          "sha_matched": true
+        },
+        {
+          "call_id": "call_00_tYHajmIvS8OqCv49EaRU5671",
+          "outcome": "applied",
+          "received_by_provider": true,
+          "sha_matched": true
+        }
+      ],
+      "issues": [],
+      "exit_code": 0,
+      "initial_diagnostic_exit": 1
+    },
+    {
+      "run_id": "a5e1cc2b-bc33-4196-b30a-b0c5c50c52f5",
+      "pair_id": "2ec5e894-a500-47d2-bc65-5f6fd57087f7-nested-failure-repeat-1",
+      "task_id": "nested-failure",
+      "condition": "guard",
+      "input_sha256": "583355ebde103e732065e5b1d53c51cb0401168ef1f1bdd8168161d5edb930cb",
+      "status": "completed",
+      "grade": {
+        "passed": true,
+        "reason": "independent_assertions_passed",
+        "exit_code": 0,
+        "error": null
+      },
+      "protocol": {
+        "requested_command_executions": 2,
+        "exit_codes": [
+          1,
+          0
+        ],
+        "passed": true
+      },
+      "task_success": true,
+      "duration_ms": 13488.921416999998,
+      "accounting": {
+        "currency": "CNY",
+        "requests": 6,
+        "usage": {
+          "input_uncached_tokens": 6041,
+          "input_cached_tokens": 28288,
+          "output_tokens": 446,
+          "reasoning_tokens": 0
+        },
+        "peak_rate_estimated_cost": 0.01678152,
+        "cost_source": "rate_card_estimate",
+        "rate_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/"
+      },
+      "fingerprints": [
+        "bc19ba97cbe016479903222bb1578db6"
+      ],
+      "request_count": 6,
+      "auxiliary_requests": 1,
+      "counts": {
+        "total_calls": 5,
+        "started": 5,
+        "after_hook": 5,
+        "contract_eligible": 2,
+        "applied": 2,
+        "fallback": 0,
+        "skip": 3,
+        "error": 0,
+        "observed": 0,
+        "runtime_failed": 0,
+        "unfinished": 0,
+        "missing_start": 0,
+        "delivery_mismatch": 0,
+        "recalls": 0,
+        "recall_failures": 0,
+        "recall_tool_attempts": 0,
+        "recall_tool_failures": 0,
+        "retries": 0
+      },
+      "reasons": {
+        "required_source_units_verified": 2,
+        "unsupported_tool": 3
+      },
+      "chars": {
+        "unit": "utf16_code_units",
+        "hook_input": 16369,
+        "hook_visible": 5645,
+        "net_reduction": 10724
+      },
+      "tool_output_tokens": null,
+      "tool_tokenizer": null,
+      "delivery": [
+        {
+          "call_id": "call_00_k8eQ3kuDu6DsiLDerEFc4253",
+          "outcome": "applied",
+          "received_by_provider": true,
+          "sha_matched": true
+        },
+        {
+          "call_id": "call_00_oQ1NTKRrZth17fbbixcN4174",
+          "outcome": "skip",
+          "received_by_provider": true,
+          "sha_matched": true
+        },
+        {
+          "call_id": "call_01_CpRVosD529PHgAWQNmmn4553",
+          "outcome": "skip",
+          "received_by_provider": true,
+          "sha_matched": true
+        },
+        {
+          "call_id": "call_00_z4J1QnNHl7jbSucLAtD05588",
+          "outcome": "skip",
+          "received_by_provider": true,
+          "sha_matched": true
+        },
+        {
+          "call_id": "call_00_cZkGuIdqdzcOB9TJsKIX1734",
+          "outcome": "applied",
+          "received_by_provider": true,
+          "sha_matched": true
+        }
+      ],
+      "issues": [],
+      "exit_code": 0,
+      "initial_diagnostic_exit": 1
+    },
+    {
+      "run_id": "a7aa9f5c-11f4-4770-b871-df25a9abf677",
+      "pair_id": "2ec5e894-a500-47d2-bc65-5f6fd57087f7-nested-failure-repeat-1",
+      "task_id": "nested-failure",
+      "condition": "original",
+      "input_sha256": "583355ebde103e732065e5b1d53c51cb0401168ef1f1bdd8168161d5edb930cb",
+      "status": "completed",
+      "grade": {
+        "passed": true,
+        "reason": "independent_assertions_passed",
+        "exit_code": 0,
+        "error": null
+      },
+      "protocol": {
+        "requested_command_executions": 2,
+        "exit_codes": [
+          1,
+          0
+        ],
+        "passed": true
+      },
+      "task_success": true,
+      "duration_ms": 12483.179750000003,
+      "accounting": {
+        "currency": "CNY",
+        "requests": 6,
+        "usage": {
+          "input_uncached_tokens": 10516,
+          "input_cached_tokens": 34688,
+          "output_tokens": 448,
+          "reasoning_tokens": 0
+        },
+        "peak_rate_estimated_cost": 0.02600352,
+        "cost_source": "rate_card_estimate",
+        "rate_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/"
+      },
+      "fingerprints": [
+        "bc19ba97cbe016479903222bb1578db6"
+      ],
+      "request_count": 6,
+      "auxiliary_requests": 1,
+      "counts": {
+        "total_calls": 5,
+        "started": 5,
+        "after_hook": 5,
+        "contract_eligible": 2,
+        "applied": 0,
+        "fallback": 0,
+        "skip": 3,
+        "error": 0,
+        "observed": 2,
+        "runtime_failed": 0,
+        "unfinished": 0,
+        "missing_start": 0,
+        "delivery_mismatch": 0,
+        "recalls": 0,
+        "recall_failures": 0,
+        "recall_tool_attempts": 0,
+        "recall_tool_failures": 0,
+        "retries": 0
+      },
+      "reasons": {
+        "baseline_observation": 2,
+        "unsupported_tool": 3
+      },
+      "chars": {
+        "unit": "utf16_code_units",
+        "hook_input": 16385,
+        "hook_visible": 16385,
+        "net_reduction": 0
+      },
+      "tool_output_tokens": null,
+      "tool_tokenizer": null,
+      "delivery": [
+        {
+          "call_id": "call_00_30DLh8X03NBn57FUkUPA7905",
+          "outcome": "observed",
+          "received_by_provider": true,
+          "sha_matched": true
+        },
+        {
+          "call_id": "call_00_4Qt98InMYLQSrd6Q28K46539",
+          "outcome": "skip",
+          "received_by_provider": true,
+          "sha_matched": true
+        },
+        {
+          "call_id": "call_01_c86Ci44LfIK1GLuW0BvV0459",
+          "outcome": "skip",
+          "received_by_provider": true,
+          "sha_matched": true
+        },
+        {
+          "call_id": "call_00_IOLzSLzCeMyhiYAW47JT5992",
+          "outcome": "skip",
+          "received_by_provider": true,
+          "sha_matched": true
+        },
+        {
+          "call_id": "call_00_ldoerrT3kdThVq3RvGBH9225",
+          "outcome": "observed",
+          "received_by_provider": true,
+          "sha_matched": true
+        }
+      ],
+      "issues": [],
+      "exit_code": 0,
+      "initial_diagnostic_exit": 1
+    },
+    {
+      "run_id": "83ec337f-d043-407a-8726-13475be82e53",
+      "pair_id": "2ec5e894-a500-47d2-bc65-5f6fd57087f7-rg-repair-repeat-1",
+      "task_id": "rg-repair",
+      "condition": "original",
+      "input_sha256": "ed02fbc2ea5d2aa312566957b5691f52f6b151b08408dc6fa2af456d7b62ec3a",
+      "status": "completed",
+      "grade": {
+        "passed": true,
+        "reason": "independent_assertions_passed",
+        "exit_code": 0,
+        "error": null
+      },
+      "protocol": {
+        "requested_command_executions": 2,
+        "exit_codes": [
+          0,
+          0
+        ],
+        "passed": true
+      },
+      "task_success": true,
+      "duration_ms": 13582.463291,
+      "accounting": {
+        "currency": "CNY",
+        "requests": 6,
+        "usage": {
+          "input_uncached_tokens": 11656,
+          "input_cached_tokens": 35072,
+          "output_tokens": 421,
+          "reasoning_tokens": 0
+        },
+        "peak_rate_estimated_cost": 0.02808288,
+        "cost_source": "rate_card_estimate",
+        "rate_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/"
+      },
+      "fingerprints": [
+        "bc19ba97cbe016479903222bb1578db6"
+      ],
+      "request_count": 6,
+      "auxiliary_requests": 1,
+      "counts": {
+        "total_calls": 4,
+        "started": 4,
+        "after_hook": 4,
+        "contract_eligible": 2,
+        "applied": 0,
+        "fallback": 0,
+        "skip": 2,
+        "error": 0,
+        "observed": 2,
+        "runtime_failed": 0,
+        "unfinished": 0,
+        "missing_start": 0,
+        "delivery_mismatch": 0,
+        "recalls": 0,
+        "recall_failures": 0,
+        "recall_tool_attempts": 0,
+        "recall_tool_failures": 0,
+        "retries": 0
+      },
+      "reasons": {
+        "baseline_observation": 2,
+        "unsupported_tool": 2
+      },
+      "chars": {
+        "unit": "utf16_code_units",
+        "hook_input": 26830,
+        "hook_visible": 26830,
+        "net_reduction": 0
+      },
+      "tool_output_tokens": null,
+      "tool_tokenizer": null,
+      "delivery": [
+        {
+          "call_id": "call_00_TTWTxqiavshvllby2v5q5359",
+          "outcome": "observed",
+          "received_by_provider": true,
+          "sha_matched": true
+        },
+        {
+          "call_id": "call_00_wkG39ifVmTIj2LWDUEYB9306",
+          "outcome": "skip",
+          "received_by_provider": true,
+          "sha_matched": true
+        },
+        {
+          "call_id": "call_00_c97xJIeBkB75Syr9oSpK0779",
+          "outcome": "skip",
+          "received_by_provider": true,
+          "sha_matched": true
+        },
+        {
+          "call_id": "call_00_4JELkj1c945zwqzgTUbx6561",
+          "outcome": "observed",
+          "received_by_provider": true,
+          "sha_matched": true
+        }
+      ],
+      "issues": [],
+      "exit_code": 0,
+      "initial_diagnostic_exit": 0
+    },
+    {
+      "run_id": "0475ca8c-b1ff-491a-bb90-1b79601b976c",
+      "pair_id": "2ec5e894-a500-47d2-bc65-5f6fd57087f7-rg-repair-repeat-1",
+      "task_id": "rg-repair",
+      "condition": "guard",
+      "input_sha256": "ed02fbc2ea5d2aa312566957b5691f52f6b151b08408dc6fa2af456d7b62ec3a",
+      "status": "completed",
+      "grade": {
+        "passed": true,
+        "reason": "independent_assertions_passed",
+        "exit_code": 0,
+        "error": null
+      },
+      "protocol": {
+        "requested_command_executions": 2,
+        "exit_codes": [
+          0,
+          0
+        ],
+        "passed": true
+      },
+      "task_success": true,
+      "duration_ms": 12722.617958000003,
+      "accounting": {
+        "currency": "CNY",
+        "requests": 6,
+        "usage": {
+          "input_uncached_tokens": 11528,
+          "input_cached_tokens": 35200,
+          "output_tokens": 413,
+          "reasoning_tokens": 0
+        },
+        "peak_rate_estimated_cost": 0.027768,
+        "cost_source": "rate_card_estimate",
+        "rate_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/"
+      },
+      "fingerprints": [
+        "bc19ba97cbe016479903222bb1578db6"
+      ],
+      "request_count": 6,
+      "auxiliary_requests": 1,
+      "counts": {
+        "total_calls": 4,
+        "started": 4,
+        "after_hook": 4,
+        "contract_eligible": 2,
+        "applied": 0,
+        "fallback": 2,
+        "skip": 2,
+        "error": 0,
+        "observed": 0,
+        "runtime_failed": 0,
+        "unfinished": 0,
+        "missing_start": 0,
+        "delivery_mismatch": 0,
+        "recalls": 0,
+        "recall_failures": 0,
+        "recall_tool_attempts": 0,
+        "recall_tool_failures": 0,
+        "retries": 0
+      },
+      "reasons": {
+        "output_budget_exceeded": 2,
+        "unsupported_tool": 2
+      },
+      "chars": {
+        "unit": "utf16_code_units",
+        "hook_input": 26827,
+        "hook_visible": 26827,
+        "net_reduction": 0
+      },
+      "tool_output_tokens": null,
+      "tool_tokenizer": null,
+      "delivery": [
+        {
+          "call_id": "call_00_3qDt338cstYv7iwz5etr1348",
+          "outcome": "fallback",
+          "received_by_provider": true,
+          "sha_matched": true
+        },
+        {
+          "call_id": "call_00_z9uu6QpmSR862T2eegx21370",
+          "outcome": "skip",
+          "received_by_provider": true,
+          "sha_matched": true
+        },
+        {
+          "call_id": "call_00_gBu8libVKSKPRa57nDMl6184",
+          "outcome": "skip",
+          "received_by_provider": true,
+          "sha_matched": true
+        },
+        {
+          "call_id": "call_00_RbWHxybqrIcu4grGHQ2Q3595",
+          "outcome": "fallback",
+          "received_by_provider": true,
+          "sha_matched": true
+        }
+      ],
+      "issues": [],
+      "exit_code": 0,
+      "initial_diagnostic_exit": 0
+    },
+    {
+      "run_id": "fd441413-6cac-41f8-b8c3-5965e17e9ea0",
+      "pair_id": "2ec5e894-a500-47d2-bc65-5f6fd57087f7-unsupported-control-repeat-1",
+      "task_id": "unsupported-control",
+      "condition": "guard",
+      "input_sha256": "d2228f50dce007df9c7d2c5af41ba9e0f5d26a5cabdd8523168c821294c69539",
+      "status": "completed",
+      "grade": {
+        "passed": true,
+        "reason": "independent_assertions_passed",
+        "exit_code": 0,
+        "error": null
+      },
+      "protocol": {
+        "requested_command_executions": 1,
+        "exit_codes": [
+          0
+        ],
+        "passed": true
+      },
+      "task_success": true,
+      "duration_ms": 7073.394,
+      "accounting": {
+        "currency": "CNY",
+        "requests": 3,
+        "usage": {
+          "input_uncached_tokens": 4111,
+          "input_cached_tokens": 7296,
+          "output_tokens": 62,
+          "reasoning_tokens": 0
+        },
+        "peak_rate_estimated_cost": 0.00900984,
+        "cost_source": "rate_card_estimate",
+        "rate_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/"
+      },
+      "fingerprints": [
+        "bc19ba97cbe016479903222bb1578db6"
+      ],
+      "request_count": 3,
+      "auxiliary_requests": 1,
+      "counts": {
+        "total_calls": 1,
+        "started": 1,
+        "after_hook": 1,
+        "contract_eligible": 0,
+        "applied": 0,
+        "fallback": 0,
+        "skip": 1,
+        "error": 0,
+        "observed": 0,
+        "runtime_failed": 0,
+        "unfinished": 0,
+        "missing_start": 0,
+        "delivery_mismatch": 0,
+        "recalls": 0,
+        "recall_failures": 0,
+        "recall_tool_attempts": 0,
+        "recall_tool_failures": 0,
+        "retries": 0
+      },
+      "reasons": {
+        "command_not_allowlisted": 1
+      },
+      "chars": {
+        "unit": "utf16_code_units",
+        "hook_input": 23,
+        "hook_visible": 23,
+        "net_reduction": 0
+      },
+      "tool_output_tokens": null,
+      "tool_tokenizer": null,
+      "delivery": [
+        {
+          "call_id": "call_00_MwLYfuqDgGEXus4uDBy37736",
+          "outcome": "skip",
+          "received_by_provider": true,
+          "sha_matched": true
+        }
+      ],
+      "issues": [],
+      "exit_code": 0,
+      "initial_diagnostic_exit": 0
+    },
+    {
+      "run_id": "399f535f-ca37-46d2-adf0-be494b5c8257",
+      "pair_id": "2ec5e894-a500-47d2-bc65-5f6fd57087f7-unsupported-control-repeat-1",
+      "task_id": "unsupported-control",
+      "condition": "original",
+      "input_sha256": "d2228f50dce007df9c7d2c5af41ba9e0f5d26a5cabdd8523168c821294c69539",
+      "status": "completed",
+      "grade": {
+        "passed": true,
+        "reason": "independent_assertions_passed",
+        "exit_code": 0,
+        "error": null
+      },
+      "protocol": {
+        "requested_command_executions": 1,
+        "exit_codes": [
+          0
+        ],
+        "passed": true
+      },
+      "task_success": true,
+      "duration_ms": 7409.450417,
+      "accounting": {
+        "currency": "CNY",
+        "requests": 3,
+        "usage": {
+          "input_uncached_tokens": 3983,
+          "input_cached_tokens": 7424,
+          "output_tokens": 61,
+          "reasoning_tokens": 0
+        },
+        "peak_rate_estimated_cost": 0.00875096,
+        "cost_source": "rate_card_estimate",
+        "rate_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/"
+      },
+      "fingerprints": [
+        "bc19ba97cbe016479903222bb1578db6"
+      ],
+      "request_count": 3,
+      "auxiliary_requests": 1,
+      "counts": {
+        "total_calls": 1,
+        "started": 1,
+        "after_hook": 1,
+        "contract_eligible": 0,
+        "applied": 0,
+        "fallback": 0,
+        "skip": 1,
+        "error": 0,
+        "observed": 0,
+        "runtime_failed": 0,
+        "unfinished": 0,
+        "missing_start": 0,
+        "delivery_mismatch": 0,
+        "recalls": 0,
+        "recall_failures": 0,
+        "recall_tool_attempts": 0,
+        "recall_tool_failures": 0,
+        "retries": 0
+      },
+      "reasons": {
+        "command_not_allowlisted": 1
+      },
+      "chars": {
+        "unit": "utf16_code_units",
+        "hook_input": 23,
+        "hook_visible": 23,
+        "net_reduction": 0
+      },
+      "tool_output_tokens": null,
+      "tool_tokenizer": null,
+      "delivery": [
+        {
+          "call_id": "call_00_TnoSsVONeOon2desEdmA6531",
+          "outcome": "skip",
+          "received_by_provider": true,
+          "sha_matched": true
+        }
+      ],
+      "issues": [],
+      "exit_code": 0,
+      "initial_diagnostic_exit": 0
+    },
+    {
+      "run_id": "6275c18d-c239-4577-a7c1-e18dcc032de9",
+      "pair_id": "2ec5e894-a500-47d2-bc65-5f6fd57087f7-short-control-repeat-1",
+      "task_id": "short-control",
+      "condition": "original",
+      "input_sha256": "56d13ddc8483b9cc1a9e94d0ddc57cfaf738e507bdcba0107dd00e143cccabe8",
+      "status": "completed",
+      "grade": {
+        "passed": true,
+        "reason": "independent_assertions_passed",
+        "exit_code": 0,
+        "error": null
+      },
+      "protocol": {
+        "requested_command_executions": 1,
+        "exit_codes": [
+          0
+        ],
+        "passed": true
+      },
+      "task_success": true,
+      "duration_ms": 7628.314208999989,
+      "accounting": {
+        "currency": "CNY",
+        "requests": 3,
+        "usage": {
+          "input_uncached_tokens": 4230,
+          "input_cached_tokens": 7296,
+          "output_tokens": 101,
+          "reasoning_tokens": 0
+        },
+        "peak_rate_estimated_cost": 0.00955984,
+        "cost_source": "rate_card_estimate",
+        "rate_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/"
+      },
+      "fingerprints": [
+        "bc19ba97cbe016479903222bb1578db6"
+      ],
+      "request_count": 3,
+      "auxiliary_requests": 1,
+      "counts": {
+        "total_calls": 1,
+        "started": 1,
+        "after_hook": 1,
+        "contract_eligible": 1,
+        "applied": 0,
+        "fallback": 0,
+        "skip": 0,
+        "error": 0,
+        "observed": 1,
+        "runtime_failed": 0,
+        "unfinished": 0,
+        "missing_start": 0,
+        "delivery_mismatch": 0,
+        "recalls": 0,
+        "recall_failures": 0,
+        "recall_tool_attempts": 0,
+        "recall_tool_failures": 0,
+        "retries": 0
+      },
+      "reasons": {
+        "baseline_observation": 1
+      },
+      "chars": {
+        "unit": "utf16_code_units",
+        "hook_input": 199,
+        "hook_visible": 199,
+        "net_reduction": 0
+      },
+      "tool_output_tokens": null,
+      "tool_tokenizer": null,
+      "delivery": [
+        {
+          "call_id": "call_00_KUhtfQfRB3GkNIYqqhBJ6152",
+          "outcome": "observed",
+          "received_by_provider": true,
+          "sha_matched": true
+        }
+      ],
+      "issues": [],
+      "exit_code": 0,
+      "initial_diagnostic_exit": 0
+    },
+    {
+      "run_id": "26166c19-4a50-493b-a2c4-7b7d71c42d15",
+      "pair_id": "2ec5e894-a500-47d2-bc65-5f6fd57087f7-short-control-repeat-1",
+      "task_id": "short-control",
+      "condition": "guard",
+      "input_sha256": "56d13ddc8483b9cc1a9e94d0ddc57cfaf738e507bdcba0107dd00e143cccabe8",
+      "status": "completed",
+      "grade": {
+        "passed": true,
+        "reason": "independent_assertions_passed",
+        "exit_code": 0,
+        "error": null
+      },
+      "protocol": {
+        "requested_command_executions": 1,
+        "exit_codes": [
+          0
+        ],
+        "passed": true
+      },
+      "task_success": true,
+      "duration_ms": 7265.590291,
+      "accounting": {
+        "currency": "CNY",
+        "requests": 3,
+        "usage": {
+          "input_uncached_tokens": 4102,
+          "input_cached_tokens": 7424,
+          "output_tokens": 80,
+          "reasoning_tokens": 0
+        },
+        "peak_rate_estimated_cost": 0.00914096,
+        "cost_source": "rate_card_estimate",
+        "rate_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/"
+      },
+      "fingerprints": [
+        "bc19ba97cbe016479903222bb1578db6"
+      ],
+      "request_count": 3,
+      "auxiliary_requests": 1,
+      "counts": {
+        "total_calls": 1,
+        "started": 1,
+        "after_hook": 1,
+        "contract_eligible": 1,
+        "applied": 0,
+        "fallback": 0,
+        "skip": 1,
+        "error": 0,
+        "observed": 0,
+        "runtime_failed": 0,
+        "unfinished": 0,
+        "missing_start": 0,
+        "delivery_mismatch": 0,
+        "recalls": 0,
+        "recall_failures": 0,
+        "recall_tool_attempts": 0,
+        "recall_tool_failures": 0,
+        "retries": 0
+      },
+      "reasons": {
+        "no_visible_reduction": 1
+      },
+      "chars": {
+        "unit": "utf16_code_units",
+        "hook_input": 199,
+        "hook_visible": 199,
+        "net_reduction": 0
+      },
+      "tool_output_tokens": null,
+      "tool_tokenizer": null,
+      "delivery": [
+        {
+          "call_id": "call_00_ecDlYm0cU83hL7Oq8Lar1563",
+          "outcome": "skip",
+          "received_by_provider": true,
+          "sha_matched": true
+        }
+      ],
+      "issues": [],
+      "exit_code": 0,
+      "initial_diagnostic_exit": 0
+    }
+  ],
+  "probes": [
+    {
+      "kind": "protocol",
+      "run_id": "protocol-bbaf1d13-d85f-4b91-b104-23e8684e7c17",
+      "status": "passed",
+      "requests": 2,
+      "model": "deepseek-flash",
+      "system_fingerprint": "bc19ba97cbe016479903222bb1578db6"
+    },
+    {
+      "kind": "explicit_recall",
+      "run_id": "recall-525253af-3573-414f-8b2d-c62195091b6a",
+      "status": "passed",
+      "accounting": {
+        "currency": "CNY",
+        "requests": 3,
+        "usage": {
+          "input_uncached_tokens": 4251,
+          "input_cached_tokens": 7552,
+          "output_tokens": 216,
+          "reasoning_tokens": 0
+        },
+        "peak_rate_estimated_cost": 0.01053208,
+        "cost_source": "rate_card_estimate",
+        "rate_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/"
+      },
+      "counts": {
+        "total_calls": 1,
+        "started": 1,
+        "after_hook": 1,
+        "contract_eligible": 0,
+        "applied": 0,
+        "fallback": 0,
+        "skip": 1,
+        "error": 0,
+        "observed": 0,
+        "runtime_failed": 0,
+        "unfinished": 0,
+        "missing_start": 0,
+        "delivery_mismatch": 0,
+        "recalls": 1,
+        "recall_failures": 0,
+        "recall_tool_attempts": 1,
+        "recall_tool_failures": 0,
+        "retries": 0
+      },
+      "issues": [],
+      "boundary": "Explicitly requested recall from copied immutable evidence; excluded from autonomous recall counts and paired outcomes."
+    }
+  ],
+  "issues": [],
+  "boundary": "Real model autonomous execution on five controlled synthetic tasks. Peak official rate estimates are not independently attributed provider bills. No population-level quality or savings claim.",
+  "updated_at": "2026-11-04T06:53:58.279Z",
+  "pairs": [
+    {
+      "pair_id": "2ec5e894-a500-47d2-bc65-5f6fd57087f7-flat-failure-repeat-1",
+      "task_id": "flat-failure",
+      "complete": true,
+      "comparable_backend_fingerprint": true,
+      "original_success": true,
+      "guard_success": true,
+      "original_cost": 0.02947664,
+      "guard_cost": 0.01607968,
+      "guard_minus_original_cost": -0.01339696,
+      "original_usage": {
+        "input_uncached_tokens": 12318,
+        "input_cached_tokens": 31616,
+        "output_tokens": 447,
+        "reasoning_tokens": 0
+      },
+      "guard_usage": {
+        "input_uncached_tokens": 5708,
+        "input_cached_tokens": 27392,
+        "output_tokens": 446,
+        "reasoning_tokens": 0
+      },
+      "original_duration_ms": 13101.525875,
+      "guard_duration_ms": 12936.777290999999,
+      "guard_counts": {
+        "total_calls": 5,
+        "started": 5,
+        "after_hook": 5,
+        "contract_eligible": 2,
+        "applied": 2,
+        "fallback": 0,
+        "skip": 3,
+        "error": 0,
+        "observed": 0,
+        "runtime_failed": 0,
+        "unfinished": 0,
+        "missing_start": 0,
+        "delivery_mismatch": 0,
+        "recalls": 0,
+        "recall_failures": 0,
+        "recall_tool_attempts": 0,
+        "recall_tool_failures": 0,
+        "retries": 0
+      },
+      "guard_chars": {
+        "unit": "utf16_code_units",
+        "hook_input": 14959,
+        "hook_visible": 4480,
+        "net_reduction": 10479
+      },
+      "original_requests": 6,
+      "guard_requests": 6
+    },
+    {
+      "pair_id": "2ec5e894-a500-47d2-bc65-5f6fd57087f7-nested-failure-repeat-1",
+      "task_id": "nested-failure",
+      "complete": true,
+      "comparable_backend_fingerprint": true,
+      "original_success": true,
+      "guard_success": true,
+      "original_cost": 0.02600352,
+      "guard_cost": 0.01678152,
+      "guard_minus_original_cost": -0.009222,
+      "original_usage": {
+        "input_uncached_tokens": 10516,
+        "input_cached_tokens": 34688,
+        "output_tokens": 448,
+        "reasoning_tokens": 0
+      },
+      "guard_usage": {
+        "input_uncached_tokens": 6041,
+        "input_cached_tokens": 28288,
+        "output_tokens": 446,
+        "reasoning_tokens": 0
+      },
+      "original_duration_ms": 12483.179750000003,
+      "guard_duration_ms": 13488.921416999998,
+      "guard_counts": {
+        "total_calls": 5,
+        "started": 5,
+        "after_hook": 5,
+        "contract_eligible": 2,
+        "applied": 2,
+        "fallback": 0,
+        "skip": 3,
+        "error": 0,
+        "observed": 0,
+        "runtime_failed": 0,
+        "unfinished": 0,
+        "missing_start": 0,
+        "delivery_mismatch": 0,
+        "recalls": 0,
+        "recall_failures": 0,
+        "recall_tool_attempts": 0,
+        "recall_tool_failures": 0,
+        "retries": 0
+      },
+      "guard_chars": {
+        "unit": "utf16_code_units",
+        "hook_input": 16369,
+        "hook_visible": 5645,
+        "net_reduction": 10724
+      },
+      "original_requests": 6,
+      "guard_requests": 6
+    },
+    {
+      "pair_id": "2ec5e894-a500-47d2-bc65-5f6fd57087f7-rg-repair-repeat-1",
+      "task_id": "rg-repair",
+      "complete": true,
+      "comparable_backend_fingerprint": true,
+      "original_success": true,
+      "guard_success": true,
+      "original_cost": 0.02808288,
+      "guard_cost": 0.027768,
+      "guard_minus_original_cost": -0.00031488,
+      "original_usage": {
+        "input_uncached_tokens": 11656,
+        "input_cached_tokens": 35072,
+        "output_tokens": 421,
+        "reasoning_tokens": 0
+      },
+      "guard_usage": {
+        "input_uncached_tokens": 11528,
+        "input_cached_tokens": 35200,
+        "output_tokens": 413,
+        "reasoning_tokens": 0
+      },
+      "original_duration_ms": 13582.463291,
+      "guard_duration_ms": 12722.617958000003,
+      "guard_counts": {
+        "total_calls": 4,
+        "started": 4,
+        "after_hook": 4,
+        "contract_eligible": 2,
+        "applied": 0,
+        "fallback": 2,
+        "skip": 2,
+        "error": 0,
+        "observed": 0,
+        "runtime_failed": 0,
+        "unfinished": 0,
+        "missing_start": 0,
+        "delivery_mismatch": 0,
+        "recalls": 0,
+        "recall_failures": 0,
+        "recall_tool_attempts": 0,
+        "recall_tool_failures": 0,
+        "retries": 0
+      },
+      "guard_chars": {
+        "unit": "utf16_code_units",
+        "hook_input": 26827,
+        "hook_visible": 26827,
+        "net_reduction": 0
+      },
+      "original_requests": 6,
+      "guard_requests": 6
+    },
+    {
+      "pair_id": "2ec5e894-a500-47d2-bc65-5f6fd57087f7-unsupported-control-repeat-1",
+      "task_id": "unsupported-control",
+      "complete": true,
+      "comparable_backend_fingerprint": true,
+      "original_success": true,
+      "guard_success": true,
+      "original_cost": 0.00875096,
+      "guard_cost": 0.00900984,
+      "guard_minus_original_cost": 0.00025888,
+      "original_usage": {
+        "input_uncached_tokens": 3983,
+        "input_cached_tokens": 7424,
+        "output_tokens": 61,
+        "reasoning_tokens": 0
+      },
+      "guard_usage": {
+        "input_uncached_tokens": 4111,
+        "input_cached_tokens": 7296,
+        "output_tokens": 62,
+        "reasoning_tokens": 0
+      },
+      "original_duration_ms": 7409.450417,
+      "guard_duration_ms": 7073.394,
+      "guard_counts": {
+        "total_calls": 1,
+        "started": 1,
+        "after_hook": 1,
+        "contract_eligible": 0,
+        "applied": 0,
+        "fallback": 0,
+        "skip": 1,
+        "error": 0,
+        "observed": 0,
+        "runtime_failed": 0,
+        "unfinished": 0,
+        "missing_start": 0,
+        "delivery_mismatch": 0,
+        "recalls": 0,
+        "recall_failures": 0,
+        "recall_tool_attempts": 0,
+        "recall_tool_failures": 0,
+        "retries": 0
+      },
+      "guard_chars": {
+        "unit": "utf16_code_units",
+        "hook_input": 23,
+        "hook_visible": 23,
+        "net_reduction": 0
+      },
+      "original_requests": 3,
+      "guard_requests": 3
+    },
+    {
+      "pair_id": "2ec5e894-a500-47d2-bc65-5f6fd57087f7-short-control-repeat-1",
+      "task_id": "short-control",
+      "complete": true,
+      "comparable_backend_fingerprint": true,
+      "original_success": true,
+      "guard_success": true,
+      "original_cost": 0.00955984,
+      "guard_cost": 0.00914096,
+      "guard_minus_original_cost": -0.00041888,
+      "original_usage": {
+        "input_uncached_tokens": 4230,
+        "input_cached_tokens": 7296,
+        "output_tokens": 101,
+        "reasoning_tokens": 0
+      },
+      "guard_usage": {
+        "input_uncached_tokens": 4102,
+        "input_cached_tokens": 7424,
+        "output_tokens": 80,
+        "reasoning_tokens": 0
+      },
+      "original_duration_ms": 7628.314208999989,
+      "guard_duration_ms": 7265.590291,
+      "guard_counts": {
+        "total_calls": 1,
+        "started": 1,
+        "after_hook": 1,
+        "contract_eligible": 1,
+        "applied": 0,
+        "fallback": 0,
+        "skip": 1,
+        "error": 0,
+        "observed": 0,
+        "runtime_failed": 0,
+        "unfinished": 0,
+        "missing_start": 0,
+        "delivery_mismatch": 0,
+        "recalls": 0,
+        "recall_failures": 0,
+        "recall_tool_attempts": 0,
+        "recall_tool_failures": 0,
+        "retries": 0
+      },
+      "guard_chars": {
+        "unit": "utf16_code_units",
+        "hook_input": 199,
+        "hook_visible": 199,
+        "net_reduction": 0
+      },
+      "original_requests": 3,
+      "guard_requests": 3
+    }
+  ],
+  "balance_observation": {
+    "currency": "CNY",
+    "account_balance_decrease": 0,
+    "independently_attributed_to_this_experiment": false,
+    "reason": "Other account activity and billing settlement timing were not independently excluded."
+  },
+  "accounting": {
+    "currency": "CNY",
+    "requests": 53,
+    "usage": {
+      "input_uncached_tokens": 78788,
+      "input_cached_tokens": 229248,
+      "output_tokens": 3185,
+      "reasoning_tokens": 0
+    },
+    "peak_rate_estimated_cost": 0.19222592,
+    "cost_source": "rate_card_estimate",
+    "rate_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/"
+  },
+  "source_unchanged": true,
+  "finished_at": "2026-11-04T06:53:58.279Z"
+}

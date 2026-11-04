@@ -2,11 +2,11 @@
   "schema_version": 2,
   "project": "ContextGuard",
   "status": "passed",
-  "generated_at": "2026-10-30T12:53:27Z",
+  "generated_at": "2026-11-04T07:09:49Z",
   "boundary": "Clean extraction used only bundled compiled core, source, Python standard library and installed Node. No network, no MoonBit rebuild, no platform-specific RTK executable. Remote CI and online model tasks not run.",
   "clean_directory": true,
   "directory_removed_after_check": true,
-  "checksums_checked": 341,
+  "checksums_checked": 371,
   "command": [
     "node",
     "tools/verify.mjs",
@@ -17,14 +17,14 @@
   "execution": {
     "environment": "local"
   },
-  "source_verification_run_id": "c456e36f-a456-4f9e-aec9-26d529e52adb",
-  "inputs_sha256": "4a4d0c911dffd926682b27ca8a2859b08e1f7f0db80720b9d09e3747550c64bc",
+  "source_verification_run_id": "5fd2e1f0-38bc-4534-95bd-f59b4e72ad78",
+  "inputs_sha256": "f040c5863508cbb8709d88e15cd7e09dcc1c84f08dc004b99049d0328412413e",
   "portable_verification": {
     "schema_version": 2,
     "project": "ContextGuard",
-    "run_id": "36766f4e-befe-4c41-abf0-410dbb847775",
-    "started_at": "2026-10-30T12:53:27.400Z",
-    "user_timezone": "America/New_York",
+    "run_id": "2c2ff85f-7008-404c-9515-ce9aa380b1be",
+    "started_at": "2026-11-04T07:09:49.375Z",
+    "user_timezone": "America/Los_Angeles",
     "mode": "portable_prebuilt",
     "status": "passed",
     "environment": {
@@ -39,9 +39,19 @@
       {
         "id": "compiled-source-correspondence",
         "status": "passed",
-        "source_sha256": "4dbf8552d5ce5e6167b59a4c4bda6854cb4c6f68adab8f1eed1ce14b8aa93cb7",
+        "source_sha256": "7e16d9f54a6bf8ff6577f3abb5baeac9f96f469e7adc2b72a1f3c313a170418f",
         "artifact_sha256": "3f9efbd779c49c57eb0f7c0182f4a16dd1fd74a442c3c8c0a5117dcdb024c14c",
-        "manifest_sha256": "ec5a23622d950bfb956595d510d8a127fac7a02992ac68c6c1f66dabf0a66133"
+        "manifest_sha256": "7d66e9255e546f84d177c5ec5eaa138f05d40dbdf4ee518033f77f101471376f"
+      },
+      {
+        "id": "recorded-integration-source-correspondence",
+        "status": "passed",
+        "boundary": "Checks the recorded loopback acceptance source identity; this command does not rerun OpenCode or an online model."
+      },
+      {
+        "id": "recorded-online-source-correspondence",
+        "status": "passed",
+        "boundary": "Checks saved pilot and reconciliation identities only; does not call a provider, independently authenticate bills, or repeat model tasks."
       },
       {
         "id": "public-api-process-adapter-http-tests",
@@ -49,12 +59,15 @@
           "/opt/homebrew/Cellar/node/26.7.0/bin/node",
           "--test",
           "tests/adapter-opencode.test.mjs",
+          "tests/adapter-telemetry.test.mjs",
           "tests/core-optimization.test.mjs",
           "tests/core.test.mjs",
           "tests/delivery.test.mjs",
           "tests/demo-server.test.mjs",
           "tests/demo-session.test.mjs",
+          "tests/experiment.test.mjs",
           "tests/nested-tap.test.mjs",
+          "tests/online-pilot.test.mjs",
           "tests/process.test.mjs",
           "tests/runtime-optimization.test.mjs",
           "tests/toolchain.test.mjs"
@@ -62,7 +75,7 @@
         "status": "passed",
         "exit_code": 0,
         "signal": null,
-        "elapsed_ms": 9732.303833,
+        "elapsed_ms": 10235.826666,
         "log": "reports/logs/public-api-process-adapter-http-tests.log"
       },
       {
@@ -75,7 +88,7 @@
         "status": "passed",
         "exit_code": 0,
         "signal": null,
-        "elapsed_ms": 61.0034169999999,
+        "elapsed_ms": 63.55370799999946,
         "log": "reports/logs/paired-ledger-tests.log"
       },
       {
@@ -87,7 +100,7 @@
         "status": "passed",
         "exit_code": 0,
         "signal": null,
-        "elapsed_ms": 517.0494589999998,
+        "elapsed_ms": 547.916333000001,
         "log": "reports/logs/independent-evaluation.log"
       },
       {
@@ -99,7 +112,7 @@
         "status": "passed",
         "exit_code": 0,
         "signal": null,
-        "elapsed_ms": 61.27679200000057,
+        "elapsed_ms": 63.7237499999992,
         "log": "reports/logs/nested-tap-evaluation.log"
       },
       {
@@ -111,7 +124,7 @@
         "status": "passed",
         "exit_code": 0,
         "signal": null,
-        "elapsed_ms": 174.85612500000025,
+        "elapsed_ms": 181.59683300000142,
         "log": "reports/logs/independent-mutation-audit.log"
       },
       {
@@ -126,7 +139,7 @@
         "status": "passed",
         "exit_code": 0,
         "signal": null,
-        "elapsed_ms": 23.10004200000003,
+        "elapsed_ms": 24.61395799999991,
         "log": "reports/logs/paired-ledger-example.log"
       },
       {
@@ -139,7 +152,7 @@
         "status": "passed",
         "exit_code": 0,
         "signal": null,
-        "elapsed_ms": 32.670874999999796,
+        "elapsed_ms": 33.01395800000137,
         "log": "reports/logs/json-cli.log"
       },
       {
@@ -151,7 +164,7 @@
         "status": "passed",
         "exit_code": 0,
         "signal": null,
-        "elapsed_ms": 35.14191700000083,
+        "elapsed_ms": 36.46758299999965,
         "log": "reports/logs/example.log"
       },
       {
@@ -167,21 +180,24 @@
       "nested_audit": "reports/nested-tap-audit.json",
       "peer_pins": "research/peers-lock.json",
       "adapter": "reports/adapter-protocol.json",
-      "browser": "reports/demo-browser.json"
+      "browser": "reports/demo-browser.json",
+      "integration": "reports/integration-local.json",
+      "online_pilot": "reports/online-pilot.json",
+      "online_reconciliation": "reports/online-pilot-analysis.json"
     },
     "not_tested": [
       "online_model_task_success",
       "actual_model_token_counts",
       "provider_billed_cost_or_net_savings",
-      "live_agent_installation",
+      "online_agent_deployment",
       "remote_CI",
       "public_package_publication",
       "formal_contest_submission"
     ],
     "boundary": "Controlled fixture programs and a project regression command produce the captured stdout/stderr; fixture manifests distinguish their sources. Fresh peer availability and unrun entries are recorded in evaluation.json. Portable mode does not compile MoonBit. execution records this run only; no online agent or package publication is certified.",
-    "version": "0.2.0",
+    "version": "0.3.0-dev.1",
     "inputs": {
-      "sha256": "4a4d0c911dffd926682b27ca8a2859b08e1f7f0db80720b9d09e3747550c64bc",
+      "sha256": "f040c5863508cbb8709d88e15cd7e09dcc1c84f08dc004b99049d0328412413e",
       "files": [
         {
           "path": ".github/workflows/ci.yml",
@@ -197,15 +213,15 @@
         },
         {
           "path": "ACCEPTANCE.md",
-          "sha256": "0520f0b249ffae39095d6d602ce0d0051f1562fb8bc5b194c183f42882654193"
+          "sha256": "1e916335df03b9d1fa0e68f4ba6aa22828b48afe288a025cd0c6c2fd2532ee67"
         },
         {
           "path": "CHANGELOG.md",
-          "sha256": "fe85f0825427c1e8437ca6531bbebdffe21765c8c6a85d09c7d5c599d744a7d2"
+          "sha256": "3a782d4cec91133d4de238cce3aed538193fb682c14a9e6563bf500947646ed7"
         },
         {
           "path": "DELIVERY.md",
-          "sha256": "ce31580df686bafc2b86dc67db7cff1e29b53c3908fd29fbcdd9f8a5894bca7c"
+          "sha256": "ebfac4aa9262b34145b933e8af5772ba4290ae532f80d7e46de3bd138b3b92e1"
         },
         {
           "path": "LICENSE",
@@ -217,31 +233,43 @@
         },
         {
           "path": "README.md",
-          "sha256": "d94c7c6ec02836ce138d0fd460f67e1d92abb39830865f4c6b7d2fe96ddf5893"
+          "sha256": "d5c34e79d0bd3974e5e5d654d21a5093ee98fba104b63833539be0baa08f378c"
         },
         {
           "path": "THIRD_PARTY_NOTICES.md",
-          "sha256": "004fbd2ceb3eac374ec6f04407e08e72f259c0eb16d68b16da8d09e68d6b0ec7"
+          "sha256": "b02d716ea7f83d3f2d0430149249723a0e548839614018e888caef4a33a066df"
         },
         {
           "path": "adapters/opencode-pin.json",
-          "sha256": "d38d62444ca5f1b6d9e864d34de655b5d924b0fc6b467bc83784dddc36cde4ef"
+          "sha256": "e8c4f282424a27c04cf24c64962e40beae9de03519225b0c87721a2b59dd5a6b"
         },
         {
           "path": "adapters/opencode.example.mjs",
-          "sha256": "ee4559a7688121259fa8cbd09aa0faab296a603da2303b86f181c34554592f10"
+          "sha256": "787da7aa90c195c42a8c664fb2cd919cc9e14ab1628f39bda94a572edff49daa"
         },
         {
           "path": "adapters/opencode.mjs",
-          "sha256": "335be0a00a396698a889fa939541fef0acce0e933b847e85a88a5b2cef7b4f83"
+          "sha256": "5ff7357acc12a3633da02628f3c1a985fd8f06a2aa03c0c0e5f2a863a10fa59e"
         },
         {
           "path": "adapters/recall.mjs",
-          "sha256": "223dd0c01acba02de419d552c7e1b75fba1dce749cfca0186493227b023dc65d"
+          "sha256": "8384567ccb692882d193d72975bb4480905971629a3b196c1ebad1dd70a768d3"
+        },
+        {
+          "path": "adapters/telemetry.mjs",
+          "sha256": "f338d92c575878a1e51c5013518bda8657d9308579ab76af668135ea2efc2151"
         },
         {
           "path": "adapters/vendor/OPENCODE-LICENSE",
           "sha256": "d1a549bbb600032e0184f9e874d4d96cd951f26dcce6dbf1e1313c819a231dac"
+        },
+        {
+          "path": "adapters/vendor/opencode-1.19.5-contract.json",
+          "sha256": "17b72eb6f5671eea43485ecefc45f272ef3ea050cf141bd59aeb6eb59031a4f8"
+        },
+        {
+          "path": "adapters/vendor/opencode-1.19.5-plugin-index.ts",
+          "sha256": "7ce98ddab759903e6618b40a1c8beb1b621f0691f8f508ad2c07dba2041744e1"
         },
         {
           "path": "adapters/vendor/opencode-1.2.0-contract.json",
@@ -305,7 +333,7 @@
         },
         {
           "path": "docs/ADAPTER.md",
-          "sha256": "0d4f4916920166b46891f15b4f241267d512bcd73720c0ccb7fc86acf02d7fcc"
+          "sha256": "d32cabcadc1b6a4d3bddc93122b198a73f07f44353fdf211d5b04639d9f76148"
         },
         {
           "path": "docs/AI_USAGE.md",
@@ -333,15 +361,27 @@
         },
         {
           "path": "docs/EVALUATION.md",
-          "sha256": "d310507efc0a8a5908ff542ccb5f4e85fbd5ef9391d3b9a8bd5c8d911a66c92f"
+          "sha256": "da345173c47c7cbc5bc3189833ee62c2e1c47c2f3790841d34e8d2ddae57004d"
+        },
+        {
+          "path": "docs/EXPERIMENTS.md",
+          "sha256": "40c0fbcdceb385609dc05801bdd2dee7d8f7694715b1c59cd852a28f62118c24"
         },
         {
           "path": "docs/HISTORY.md",
           "sha256": "26abde533511eef07c59a29db7fe6c92f3bf0fc3d28ea5563c97abbaa02a6d46"
         },
         {
+          "path": "docs/INTEGRATION_PLAN.md",
+          "sha256": "e84181300f26a05bd0ec4848ddc9497499585be0ae777100a693a9676ace99f2"
+        },
+        {
           "path": "docs/NESTED_TAP.md",
           "sha256": "bb3c08aa154e2f01b43a513417fb4ae59318d41fcc44b2e76f096e28aa99055b"
+        },
+        {
+          "path": "docs/ONLINE_PILOT.md",
+          "sha256": "e61973d4e38232cb11b7a021df02d3d276f527e408733227c86676d6f9cb2413"
         },
         {
           "path": "docs/OPTIMIZATION.md",
@@ -360,6 +400,10 @@
           "sha256": "fd050dda595f4c7c7a8107418981086cdc17a1532ed19093d73dbfa73763cb71"
         },
         {
+          "path": "evaluation/deepseek-usage.mjs",
+          "sha256": "0372e0f206ac837e446a48374e641a96c08e08632a5b9bed4083015e3c17f7f7"
+        },
+        {
           "path": "evaluation/evaluate-nested-tap.mjs",
           "sha256": "178c06f2d12986a3acc3f6f2e064111be8d5aec6741626e3e25272be6eb3b942"
         },
@@ -373,11 +417,51 @@
         },
         {
           "path": "evaluation/ledger.mjs",
-          "sha256": "b8e7f9ef99c9a29a0fb71acb95ff0041ebbaa5b7987ee55af93a6ee122044f06"
+          "sha256": "41e9282102e4c621ba28835280600b7ca8b32f7b953898145257e9ef6848b8d2"
         },
         {
           "path": "evaluation/ledger.test.mjs",
           "sha256": "445066b5173c5c14207a386662c88ebec2590bfcbc190f3f58361b6021af6fce"
+        },
+        {
+          "path": "evaluation/local-acceptance.mjs",
+          "sha256": "b318b4c5c3305cc363de0662b6e18df19269df31d2772f49de430e17bcbd608b"
+        },
+        {
+          "path": "evaluation/online-budget.mjs",
+          "sha256": "c3cef08cc781cf3de8eff495d8ee003ac21de729814a077512666cca477f2b13"
+        },
+        {
+          "path": "evaluation/online-pilot.mjs",
+          "sha256": "56ed6b1367dd18896f8539dbfa1387ac11e0ae5483316598ace73763d924fb64"
+        },
+        {
+          "path": "evaluation/online-proxy.mjs",
+          "sha256": "8c563166134707bcde740d72dc41882137c99d7aff2c9f7b8febc6675bcc8ca0"
+        },
+        {
+          "path": "evaluation/online-runtime.mjs",
+          "sha256": "b11874c8a7501adf7f1a2a1b9b417e7a7325922a9616fbec1c9a934512012bf7"
+        },
+        {
+          "path": "evaluation/opencode-runtime.mjs",
+          "sha256": "db9bae7e7ebd362dc54b3b696e76737db4d5672d663f47ad7ee6a535ca6ffd58"
+        },
+        {
+          "path": "evaluation/prepare.mjs",
+          "sha256": "59dc989593dc93852ff35b062bd847cab8f67b248baf1a8bf274693db01acd44"
+        },
+        {
+          "path": "evaluation/tasks.mjs",
+          "sha256": "741a7cd97f4cc996c0018cf5f96e4e65e54040bb29fbeff894b1bc4b577a6e7e"
+        },
+        {
+          "path": "evaluation/telemetry.mjs",
+          "sha256": "3390bbdc7c90a042f2346b5f0e452c1ba2165b0b57851b82b68ca3f5e3458a78"
+        },
+        {
+          "path": "evaluation/usage.mjs",
+          "sha256": "fb38fed1b38cbffd502ed95d7ba4d2b1923d76d393437a3129e97501521493b0"
         },
         {
           "path": "fixtures/candidates/node-tap-all-pass.head-tail-omission.txt",
@@ -597,7 +681,7 @@
         },
         {
           "path": "moon.mod",
-          "sha256": "96843ebcaf2deb039de659aa1e37c4321d159f1237edce1c9ed0ea4dc5d1470a"
+          "sha256": "be04cae8bd7cb7952e4b61782bfec34ff415124a31d5e62345ffb86a8343b4b2"
         },
         {
           "path": "moon.pkg",
@@ -605,7 +689,7 @@
         },
         {
           "path": "package.json",
-          "sha256": "d5f0d9eae81b62e62797689bf8ac5a044cc92c9c456ad25213c5a18d7fff62c8"
+          "sha256": "404f024f199223fc979fe6e0c38a9bb6468e46fc223cc442f2e907b6f81ac024"
         },
         {
           "path": "pkg.generated.mbti",
@@ -781,7 +865,11 @@
         },
         {
           "path": "tests/adapter-opencode.test.mjs",
-          "sha256": "67d87e0effb5318dee51ad0c6d537420c0b6c9a18d83193a0e1bf72000f1691a"
+          "sha256": "d642eb27cd7277c3a90a6fd65c18fe8ea16b67ad2f3b9c3b510deb50f39ce48c"
+        },
+        {
+          "path": "tests/adapter-telemetry.test.mjs",
+          "sha256": "da315466ce9c1e73d929632eab1e54c090610bfe43e6f16667bfbe02069bac4e"
         },
         {
           "path": "tests/core-optimization.test.mjs",
@@ -808,8 +896,16 @@
           "sha256": "f5eac872c3baefef4ee0e395c905df0d81ef09383ef73a070b722c1a9de48a37"
         },
         {
+          "path": "tests/experiment.test.mjs",
+          "sha256": "4b6e1793979f83db41d8e0a4a8b90633937f5ca133754017134a74c2d8924625"
+        },
+        {
           "path": "tests/nested-tap.test.mjs",
           "sha256": "ac411d06a111b5107dfcaf20d6a563bb470c5a1827c2c4dbae37074a739e888e"
+        },
+        {
+          "path": "tests/online-pilot.test.mjs",
+          "sha256": "19aeeaae0330d09b72922a24c4b92c857d8fbadb4500ca98867daefbb57c9750"
         },
         {
           "path": "tests/process.test.mjs",
@@ -830,6 +926,10 @@
         {
           "path": "tools/api.mjs",
           "sha256": "493df1df09ee063642c0e02a3a9b26283112fd710e7ce450b21b47a9b09074ed"
+        },
+        {
+          "path": "tools/audit-online-pilot.mjs",
+          "sha256": "cde762575b303add644901a5658cdd03f3aa2f3a1ce39a8bdf5abe17d97b02ae"
         },
         {
           "path": "tools/bootstrap.py",
@@ -872,6 +972,10 @@
           "sha256": "da81350f0499e6c821c5d33da048412eac765858980c9cea02b35d24d783b6d7"
         },
         {
+          "path": "tools/setup-opencode.py",
+          "sha256": "2e73730486ed270845a31c2bb4433f992098e93191acbd23234852e456df759c"
+        },
+        {
           "path": "tools/source-digest.mjs",
           "sha256": "525b3d10ad628c613756099dc35021cfa5e67901bba1d4c299d9ab1f23c5025e"
         },
@@ -881,7 +985,7 @@
         },
         {
           "path": "tools/verify.mjs",
-          "sha256": "1840269052551e50a960cfce740ec4d366e62ab43728b4b6350aee4cdaab6731"
+          "sha256": "5404685dc90a3aedb60d1074da94160eafb112ee9cf5ce667697e41f999c53ef"
         },
         {
           "path": "vendor/harnesspro/LICENSE",
@@ -918,7 +1022,7 @@
       ]
     },
     "source": {
-      "sha256": "4dbf8552d5ce5e6167b59a4c4bda6854cb4c6f68adab8f1eed1ce14b8aa93cb7",
+      "sha256": "7e16d9f54a6bf8ff6577f3abb5baeac9f96f469e7adc2b72a1f3c313a170418f",
       "files": [
         {
           "path": "cmd/bridge/entry.mbt",
@@ -946,7 +1050,7 @@
         },
         {
           "path": "moon.mod",
-          "sha256": "96843ebcaf2deb039de659aa1e37c4321d159f1237edce1c9ed0ea4dc5d1470a"
+          "sha256": "be04cae8bd7cb7952e4b61782bfec34ff415124a31d5e62345ffb86a8343b4b2"
         },
         {
           "path": "moon.pkg",
@@ -995,16 +1099,16 @@
       ]
     },
     "build": {
-      "source_sha256": "4dbf8552d5ce5e6167b59a4c4bda6854cb4c6f68adab8f1eed1ce14b8aa93cb7",
+      "source_sha256": "7e16d9f54a6bf8ff6577f3abb5baeac9f96f469e7adc2b72a1f3c313a170418f",
       "artifact_sha256": "3f9efbd779c49c57eb0f7c0182f4a16dd1fd74a442c3c8c0a5117dcdb024c14c",
-      "manifest_sha256": "ec5a23622d950bfb956595d510d8a127fac7a02992ac68c6c1f66dabf0a66133"
+      "manifest_sha256": "7d66e9255e546f84d177c5ec5eaa138f05d40dbdf4ee518033f77f101471376f"
     },
-    "generated_at": "2026-10-30T12:53:38.061Z"
+    "generated_at": "2026-11-04T07:10:00.606Z"
   },
-  "elapsed_seconds": 10.96106219291687,
+  "elapsed_seconds": 11.548092126846313,
   "immutable_snapshot": true,
-  "archive": "release/contextguard-0.2.0.zip",
-  "sha256": "a2b2e5df6d08d349b887bbb0846792fc138e754fb5fa65b883fe2b6ad0b2c6ba",
-  "file_count": 343,
-  "archive_bytes": 1529001
+  "archive": "release/contextguard-0.3.0-dev.1.zip",
+  "sha256": "bbb4ce9f1f7a17f4a6b571a3c284a0ed1d5b1ee485817c2b4d48e28fede30de0",
+  "file_count": 373,
+  "archive_bytes": 1619810
 }

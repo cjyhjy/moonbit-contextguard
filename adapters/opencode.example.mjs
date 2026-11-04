@@ -1,5 +1,5 @@
 // Optional local loader. This file is NOT installed or automatically activated.
-// Import this module from a project-level .opencode/plugins/contextguard.mjs.
+// Import this module from a project-level .opencode/plugins/contextguard.js.
 // Adjust the import path if you copy this file into a different directory.
 import { createContextGuardPlugin } from './opencode.mjs';
 

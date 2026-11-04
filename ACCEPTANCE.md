@@ -1,5 +1,7 @@
 # 比赛验收对照
 
+当前工作区另有未发布的 0.3.0-dev.1 接入改进，见 `docs/INTEGRATION_PLAN.md`、`reports/integration-local.json` 和 `reports/verification.json`。下表保留 0.2.0 发布时的比赛要求映射与测试数量；开发版不能据此宣称已经发布。当前完整 Node 回归和账本测试数量以本轮机器报告/日志为准。
+
 依据用户于 2026-10-30 提供的九条要求，记录技术交付证据；最终审核由主办方决定。[公开仓库](https://github.com/cjyhjy/moonbit-contextguard)。
 
 | 要求 | 实现与复验入口 |

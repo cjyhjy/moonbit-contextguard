@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import {spawnSync} from 'node:child_process';
-import {readFileSync, writeFileSync, mkdirSync, readdirSync, renameSync} from 'node:fs';
+import {readFileSync, writeFileSync, mkdirSync, readdirSync, renameSync, existsSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {join} from 'node:path';
 import {createHash, randomUUID} from 'node:crypto';
@@ -16,11 +16,11 @@ const reportPath = join(root, portable ? 'reports/verification-portable.json' : 
 mkdirSync(join(root, 'reports/logs'), {recursive: true});
 const report = {
   schema_version: 2, project: 'ContextGuard', run_id: randomUUID(),
-  started_at: new Date().toISOString(), user_timezone: 'America/New_York',
+  started_at: new Date().toISOString(), user_timezone: 'America/Los_Angeles',
   mode: portable ? 'portable_prebuilt' : 'source_and_prebuilt', status: 'running',
   environment: {node: process.version, platform: process.platform, arch: process.arch}, execution, checks: [],
   external_evidence: {fixtures: 'fixtures/manifest.json', comparison: 'reports/evaluation.json', nested_fixtures: 'fixtures/nested-tap/manifest.json', nested_comparison: 'reports/nested-tap-evaluation.json', nested_audit: 'reports/nested-tap-audit.json', peer_pins: 'research/peers-lock.json', adapter: 'reports/adapter-protocol.json', browser: 'reports/demo-browser.json'},
-  not_tested: ['online_model_task_success', 'actual_model_token_counts', 'provider_billed_cost_or_net_savings', 'live_agent_installation', ...(!githubActions ? ['remote_CI'] : []), 'public_package_publication', 'formal_contest_submission'],
+  not_tested: ['online_model_task_success', 'actual_model_token_counts', 'provider_billed_cost_or_net_savings', 'online_agent_deployment', ...(!githubActions ? ['remote_CI'] : []), 'public_package_publication', 'formal_contest_submission'],
   boundary: 'Controlled fixture programs and a project regression command produce the captured stdout/stderr; fixture manifests distinguish their sources. Fresh peer availability and unrun entries are recorded in evaluation.json. Portable mode does not compile MoonBit. execution records this run only; no online agent or package publication is certified.'
 };
 function save() {
@@ -71,6 +71,32 @@ try {
     report.build = buildIdentity();
     report.checks.push({id: 'compiled-source-correspondence', status: 'passed', ...report.build});
   } catch (error) { report.checks.push({id: 'compiled-source-correspondence', status: 'failed', error: error.message}); }
+  if (existsSync(join(root, 'reports/integration-local.json'))) {
+    report.external_evidence.integration = 'reports/integration-local.json';
+    try {
+      const recorded = JSON.parse(readFileSync(join(root, 'reports/integration-local.json')));
+      const {integrationInputs} = await import('../evaluation/local-acceptance.mjs');
+      if (recorded.status !== 'passed' || recorded.integration_inputs_sha256 !== await integrationInputs())
+        throw new Error('Recorded integration evidence is failed or stale; rerun evaluation/local-acceptance.mjs');
+      report.checks.push({id: 'recorded-integration-source-correspondence', status: 'passed',
+        boundary: 'Checks the recorded loopback acceptance source identity; this command does not rerun OpenCode or an online model.'});
+    } catch (error) { report.checks.push({id: 'recorded-integration-source-correspondence', status: 'failed', error: error.message}); }
+  }
+  if (existsSync(join(root, 'reports/online-pilot.json'))) {
+    report.external_evidence.online_pilot = 'reports/online-pilot.json';
+    report.external_evidence.online_reconciliation = 'reports/online-pilot-analysis.json';
+    try {
+      const recorded = JSON.parse(readFileSync(join(root, 'reports/online-pilot.json')));
+      const audit = JSON.parse(readFileSync(join(root, 'reports/online-pilot-analysis.json')));
+      const {integrationInputs} = await import('../evaluation/local-acceptance.mjs');
+      if (recorded.status !== 'completed' || recorded.integration_inputs_sha256 !== await integrationInputs()
+        || audit.status !== 'passed' || audit.source_sha256 !== recorded.integration_inputs_sha256
+        || recorded.results.length !== 10 || recorded.budget.reserved_or_uncertain_cost !== 0)
+        throw new Error('Recorded online pilot is incomplete or stale');
+      report.checks.push({id: 'recorded-online-source-correspondence', status: 'passed',
+        boundary: 'Checks saved pilot and reconciliation identities only; does not call a provider, independently authenticate bills, or repeat model tasks.'});
+    } catch (error) { report.checks.push({id: 'recorded-online-source-correspondence', status: 'failed', error: error.message}); }
+  }
   const tests = readdirSync(join(root, 'tests')).filter(x => x.endsWith('.test.mjs')).sort().map(x => 'tests/' + x);
   if (!tests.length) throw new Error('No public API tests found');
   run('public-api-process-adapter-http-tests', process.execPath, ['--test', ...tests]);
